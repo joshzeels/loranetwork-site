@@ -1,0 +1,62 @@
+{
+  "performedAt": "2026-09-10",
+  "method": "Visual inspection of downloaded assets plus official Dragino page-title and model evidence checks.",
+  "exact": {
+    "result": "PASS",
+    "skus": [
+      "SN50v3-LB",
+      "LT-22222-L",
+      "RS485-LN",
+      "IVS-LN",
+      "LHT65N-VIB",
+      "AirFlow-LN ",
+      " CO2-LE ",
+      "Dishsense",
+      "LG01v2",
+      "AIS01-LB"
+    ],
+    "notes": "Official titles or selected image filenames identify the exact model. Images show complete devices or supplied sensor assemblies. IVS-LN uses the only product image explicitly exposed by its official page and remains lower resolution."
+  },
+  "familyConfirmed": {
+    "result": "PASS",
+    "skus": [
+      "SN50v3-NB-GE",
+      "RS485-CB-1T",
+      "D20S-NB-GE",
+      "LTC1-LS",
+      "SDI-12-NB-GE",
+      "DDS45-NB-1T",
+      "PS-NB-NA-GE",
+      "DS03A-NB-GE",
+      "SW3L-LB-004",
+      "WQS-CB-GE"
+    ],
+    "notes": "Each official title identifies the relevant base model or compressed series, and each selected image is the primary image published on that family page. Catalogue SKUs remain unchanged."
+  },
+  "ambiguousRejected": {
+    "result": "PASS",
+    "skus": [
+      "Â SN50v3-MS",
+      "RS485-LB2",
+      "CO2-FE",
+      "D20S-LB2",
+      "S31-LB2",
+      "DDS75-LB2",
+      "SW3L-LB2-004",
+      "WQS-LS",
+      "LG01v2-EC25",
+      "LPS8N-EC25"
+    ],
+    "notes": "The official candidate pages do not contain the exact catalogue SKU and do not establish that the primary image applies to the differing modem, battery, connectivity, probe, or gateway variant. Placeholders were retained."
+  },
+  "coverageReviewed": [
+    "gateways",
+    "sensors",
+    "nodes",
+    "water-related products",
+    "environmental products",
+    "accessories",
+    "NB-IoT variants",
+    "LoRaWAN variants"
+  ]
+}

@@ -1,0 +1,306 @@
+{
+    "sourceFile":  "Dragino_Price_List_For_Import_20260907.xlsx",
+    "worksheet":  "Price List Brief",
+    "productCount":  981,
+    "blankCounts":  {
+                        "sku":  0,
+                        "application":  0,
+                        "specification":  0,
+                        "iotInterface":  8,
+                        "priceUsd":  12,
+                        "productUrl":  769,
+                        "packageDimensionMm":  796,
+                        "packageWeightG":  797
+                    },
+    "duplicateSkus":  [
+
+                      ],
+    "applications":  [
+                         {
+                             "value":  "Distance Sensor",
+                             "count":  233
+                         },
+                         {
+                             "value":  "Temperature Sensor",
+                             "count":  129
+                         },
+                         {
+                             "value":  "Smart Agriculture",
+                             "count":  97
+                         },
+                         {
+                             "value":  "Water Flow Sensor",
+                             "count":  80
+                         },
+                         {
+                             "value":  "Pressure Sensor",
+                             "count":  57
+                         },
+                         {
+                             "value":  "Temperature \u0026 Humidity  Sensor",
+                             "count":  51
+                         },
+                         {
+                             "value":  "Generic Node / RS485",
+                             "count":  31
+                         },
+                         {
+                             "value":  "Water Quality Measurement",
+                             "count":  29
+                         },
+                         {
+                             "value":  "Energy Control / Monitoring ",
+                             "count":  26
+                         },
+                         {
+                             "value":  "Water Leak Detect",
+                             "count":  24
+                         },
+                         {
+                             "value":  "Smart Weather Station",
+                             "count":  23
+                         },
+                         {
+                             "value":  "AI Image",
+                             "count":  22
+                         },
+                         {
+                             "value":  "Door Sensor",
+                             "count":  22
+                         },
+                         {
+                             "value":  "Dry Contact / Counting / Interrupt",
+                             "count":  21
+                         },
+                         {
+                             "value":  "Generic Node",
+                             "count":  21
+                         },
+                         {
+                             "value":  "Accessories",
+                             "count":  19
+                         },
+                         {
+                             "value":  "Angle Sensor / Tilting",
+                             "count":  19
+                         },
+                         {
+                             "value":  "Generic Node / Analog",
+                             "count":  19
+                         },
+                         {
+                             "value":  "Gateway -- LoRaWAN",
+                             "count":  10
+                         },
+                         {
+                             "value":  "LoRa_NB Demo kit",
+                             "count":  9
+                         },
+                         {
+                             "value":  "Power Outage Monitoring Sensor",
+                             "count":  7
+                         },
+                         {
+                             "value":  "Bluetooth to LoRaWAN",
+                             "count":  3
+                         },
+                         {
+                             "value":  "Weight Sensor",
+                             "count":  3
+                         },
+                         {
+                             "value":  "6 pin extension cable",
+                             "count":  2
+                         },
+                         {
+                             "value":  "Antenna",
+                             "count":  2
+                         },
+                         {
+                             "value":  "CO2 Sensor",
+                             "count":  2
+                         },
+                         {
+                             "value":  "Gateway -- Private LoRa ",
+                             "count":  2
+                         },
+                         {
+                             "value":  "Push Button",
+                             "count":  2
+                         },
+                         {
+                             "value":  "Tracker",
+                             "count":  2
+                         },
+                         {
+                             "value":  "UVC Radation Sensor",
+                             "count":  2
+                         },
+                         {
+                             "value":  "Vibration",
+                             "count":  2
+                         },
+                         {
+                             "value":  " Dry Contact / Counting / Interrupt",
+                             "count":  1
+                         },
+                         {
+                             "value":  " Mesh Gateway",
+                             "count":  1
+                         },
+                         {
+                             "value":  "Air Flow Sensor",
+                             "count":  1
+                         },
+                         {
+                             "value":  "Air Quality Sensor",
+                             "count":  1
+                         },
+                         {
+                             "value":  "Chemical Oxygen Demand Sensor",
+                             "count":  1
+                         },
+                         {
+                             "value":  "DO Sensor",
+                             "count":  1
+                         },
+                         {
+                             "value":  "emperature \u0026 Humidity Sensor ",
+                             "count":  1
+                         },
+                         {
+                             "value":  "Gateway -- Generic IoT",
+                             "count":  1
+                         },
+                         {
+                             "value":  "Mesh Gateway",
+                             "count":  1
+                         },
+                         {
+                             "value":  "Temperature \u0026 Humidity Sensor ",
+                             "count":  1
+                         }
+                     ],
+    "iotInterfaces":  [
+                          {
+                              "value":  "LoRaWAN",
+                              "count":  203
+                          },
+                          {
+                              "value":  "LTE CAT 1",
+                              "count":  168
+                          },
+                          {
+                              "value":  "NB-IoT",
+                              "count":  135
+                          },
+                          {
+                              "value":  "LTE-M \u0026 NB-IoT",
+                              "count":  131
+                          },
+                          {
+                              "value":  "LTE-M \u0026 NB-IoT, 10 years 500MB data",
+                              "count":  128
+                          },
+                          {
+                              "value":  "NB-IoT, 10 years 500MB data",
+                              "count":  128
+                          },
+                          {
+                              "value":  "Probe",
+                              "count":  24
+                          },
+                          {
+                              "value":  "Cable",
+                              "count":  10
+                          },
+                          {
+                              "value":  "RS485, For WSC2",
+                              "count":  9
+                          },
+                          {
+                              "value":  "",
+                              "count":  8
+                          },
+                          {
+                              "value":  "Antenna",
+                              "count":  4
+                          },
+                          {
+                              "value":  "Battery",
+                              "count":  4
+                          },
+                          {
+                              "value":  "For CS01",
+                              "count":  3
+                          },
+                          {
+                              "value":  "For WSC2-Compact",
+                              "count":  2
+                          },
+                          {
+                              "value":  "LoRa",
+                              "count":  2
+                          },
+                          {
+                              "value":  "LoRaWAN ",
+                              "count":  2
+                          },
+                          {
+                              "value":  "LTE CAT-1",
+                              "count":  2
+                          },
+                          {
+                              "value":  "LTE-M \u0026 NB-IoT (NRF9151)",
+                              "count":  2
+                          },
+                          {
+                              "value":  "LTE-M\u0026NB-loT(NRF9151)",
+                              "count":  2
+                          },
+                          {
+                              "value":  "Mesh Gateway",
+                              "count":  2
+                          },
+                          {
+                              "value":  "Mesh Node",
+                              "count":  2
+                          },
+                          {
+                              "value":  "NB-IoT \u0026 LTE-M",
+                              "count":  2
+                          },
+                          {
+                              "value":  "BLE \u0026 LoRaWAN",
+                              "count":  1
+                          },
+                          {
+                              "value":  "Enclosure",
+                              "count":  1
+                          },
+                          {
+                              "value":  "Fixture For WSS-21 or DR-RG-6P",
+                              "count":  1
+                          },
+                          {
+                              "value":  "Gateway",
+                              "count":  1
+                          },
+                          {
+                              "value":  "NB-IoT\u0026LTE-M",
+                              "count":  1
+                          },
+                          {
+                              "value":  "Probe for AIS01",
+                              "count":  1
+                          },
+                          {
+                              "value":  "pulse output , for WSC2-Compact",
+                              "count":  1
+                          },
+                          {
+                              "value":  "Temperature Buffer",
+                              "count":  1
+                          }
+                      ]
+}

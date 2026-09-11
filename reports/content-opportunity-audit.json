@@ -1,0 +1,734 @@
+{
+  "generatedAt": "2026-09-11T06:39:42.254Z",
+  "totalProducts": 981,
+  "applications": [
+    {
+      "value": "Distance Sensor",
+      "count": 233
+    },
+    {
+      "value": "Temperature Sensor",
+      "count": 129
+    },
+    {
+      "value": "Smart Agriculture",
+      "count": 97
+    },
+    {
+      "value": "Water Flow Sensor",
+      "count": 80
+    },
+    {
+      "value": "Pressure Sensor",
+      "count": 57
+    },
+    {
+      "value": "Temperature & Humidity  Sensor",
+      "count": 51
+    },
+    {
+      "value": "Generic Node / RS485",
+      "count": 31
+    },
+    {
+      "value": "Water Quality Measurement",
+      "count": 29
+    },
+    {
+      "value": "Energy Control / Monitoring",
+      "count": 26
+    },
+    {
+      "value": "Water Leak Detect",
+      "count": 24
+    },
+    {
+      "value": "Smart Weather Station",
+      "count": 23
+    },
+    {
+      "value": "AI Image",
+      "count": 22
+    },
+    {
+      "value": "Door Sensor",
+      "count": 22
+    },
+    {
+      "value": "Dry Contact / Counting / Interrupt",
+      "count": 22
+    },
+    {
+      "value": "Generic Node",
+      "count": 21
+    },
+    {
+      "value": "Accessories",
+      "count": 19
+    },
+    {
+      "value": "Angle Sensor / Tilting",
+      "count": 19
+    },
+    {
+      "value": "Generic Node / Analog",
+      "count": 19
+    },
+    {
+      "value": "Gateway -- LoRaWAN",
+      "count": 10
+    },
+    {
+      "value": "LoRa_NB Demo kit",
+      "count": 9
+    },
+    {
+      "value": "Power Outage Monitoring Sensor",
+      "count": 7
+    },
+    {
+      "value": "Bluetooth to LoRaWAN",
+      "count": 3
+    },
+    {
+      "value": "Weight Sensor",
+      "count": 3
+    },
+    {
+      "value": "6 pin extension cable",
+      "count": 2
+    },
+    {
+      "value": "Antenna",
+      "count": 2
+    },
+    {
+      "value": "CO2 Sensor",
+      "count": 2
+    },
+    {
+      "value": "Gateway -- Private LoRa",
+      "count": 2
+    },
+    {
+      "value": "Mesh Gateway",
+      "count": 2
+    },
+    {
+      "value": "Push Button",
+      "count": 2
+    },
+    {
+      "value": "Tracker",
+      "count": 2
+    },
+    {
+      "value": "UVC Radation Sensor",
+      "count": 2
+    },
+    {
+      "value": "Vibration",
+      "count": 2
+    },
+    {
+      "value": "Air Flow Sensor",
+      "count": 1
+    },
+    {
+      "value": "Air Quality Sensor",
+      "count": 1
+    },
+    {
+      "value": "Chemical Oxygen Demand Sensor",
+      "count": 1
+    },
+    {
+      "value": "DO Sensor",
+      "count": 1
+    },
+    {
+      "value": "emperature & Humidity Sensor",
+      "count": 1
+    },
+    {
+      "value": "Gateway -- Generic IoT",
+      "count": 1
+    },
+    {
+      "value": "Temperature & Humidity Sensor",
+      "count": 1
+    }
+  ],
+  "interfaces": [
+    {
+      "value": "LoRaWAN",
+      "count": 205
+    },
+    {
+      "value": "LTE CAT 1",
+      "count": 168
+    },
+    {
+      "value": "NB-IoT",
+      "count": 135
+    },
+    {
+      "value": "LTE-M & NB-IoT",
+      "count": 131
+    },
+    {
+      "value": "LTE-M & NB-IoT, 10 years 500MB data",
+      "count": 128
+    },
+    {
+      "value": "NB-IoT, 10 years 500MB data",
+      "count": 128
+    },
+    {
+      "value": "Probe",
+      "count": 24
+    },
+    {
+      "value": "Cable",
+      "count": 10
+    },
+    {
+      "value": "RS485, For WSC2",
+      "count": 9
+    },
+    {
+      "value": "Antenna",
+      "count": 4
+    },
+    {
+      "value": "Battery",
+      "count": 4
+    },
+    {
+      "value": "For CS01",
+      "count": 3
+    },
+    {
+      "value": "For WSC2-Compact",
+      "count": 2
+    },
+    {
+      "value": "LoRa",
+      "count": 2
+    },
+    {
+      "value": "LTE CAT-1",
+      "count": 2
+    },
+    {
+      "value": "LTE-M & NB-IoT (NRF9151)",
+      "count": 2
+    },
+    {
+      "value": "LTE-M&NB-loT(NRF9151)",
+      "count": 2
+    },
+    {
+      "value": "Mesh Gateway",
+      "count": 2
+    },
+    {
+      "value": "Mesh Node",
+      "count": 2
+    },
+    {
+      "value": "NB-IoT & LTE-M",
+      "count": 2
+    },
+    {
+      "value": "BLE & LoRaWAN",
+      "count": 1
+    },
+    {
+      "value": "Enclosure",
+      "count": 1
+    },
+    {
+      "value": "Fixture For WSS-21 or DR-RG-6P",
+      "count": 1
+    },
+    {
+      "value": "Gateway",
+      "count": 1
+    },
+    {
+      "value": "NB-IoT&LTE-M",
+      "count": 1
+    },
+    {
+      "value": "Probe for AIS01",
+      "count": 1
+    },
+    {
+      "value": "pulse output , for WSC2-Compact",
+      "count": 1
+    },
+    {
+      "value": "Temperature Buffer",
+      "count": 1
+    }
+  ],
+  "families": [
+    {
+      "value": "SW3L",
+      "count": 80
+    },
+    {
+      "value": "PS",
+      "count": 76
+    },
+    {
+      "value": "DR",
+      "count": 32
+    },
+    {
+      "value": "S31B",
+      "count": 23
+    },
+    {
+      "value": "CPL03",
+      "count": 20
+    },
+    {
+      "value": "RS485",
+      "count": 20
+    },
+    {
+      "value": "SN50V3",
+      "count": 20
+    },
+    {
+      "value": "AIS01",
+      "count": 19
+    },
+    {
+      "value": "CS01",
+      "count": 19
+    },
+    {
+      "value": "D20",
+      "count": 19
+    },
+    {
+      "value": "D20S",
+      "count": 19
+    },
+    {
+      "value": "D22",
+      "count": 19
+    },
+    {
+      "value": "D23",
+      "count": 19
+    },
+    {
+      "value": "DDS04",
+      "count": 19
+    },
+    {
+      "value": "DDS20",
+      "count": 19
+    },
+    {
+      "value": "DDS45",
+      "count": 19
+    },
+    {
+      "value": "DDS75",
+      "count": 19
+    },
+    {
+      "value": "DS03A",
+      "count": 19
+    },
+    {
+      "value": "LDS12",
+      "count": 19
+    },
+    {
+      "value": "LDS25",
+      "count": 19
+    },
+    {
+      "value": "LDS40",
+      "count": 19
+    },
+    {
+      "value": "LMS01",
+      "count": 19
+    },
+    {
+      "value": "LTC1",
+      "count": 19
+    },
+    {
+      "value": "LTC2",
+      "count": 19
+    },
+    {
+      "value": "MDS120",
+      "count": 19
+    },
+    {
+      "value": "MDS200",
+      "count": 19
+    },
+    {
+      "value": "MR-03",
+      "count": 19
+    },
+    {
+      "value": "MR-12",
+      "count": 19
+    },
+    {
+      "value": "MR-25",
+      "count": 19
+    },
+    {
+      "value": "S31",
+      "count": 19
+    },
+    {
+      "value": "SDI-12",
+      "count": 19
+    },
+    {
+      "value": "SE01",
+      "count": 19
+    },
+    {
+      "value": "SE0X",
+      "count": 19
+    },
+    {
+      "value": "SPH01",
+      "count": 19
+    },
+    {
+      "value": "TS01",
+      "count": 19
+    },
+    {
+      "value": "WL03A",
+      "count": 19
+    },
+    {
+      "value": "WQS",
+      "count": 19
+    },
+    {
+      "value": "RS485W",
+      "count": 11
+    },
+    {
+      "value": "WSC2",
+      "count": 10
+    },
+    {
+      "value": "WSS",
+      "count": 9
+    },
+    {
+      "value": "LHT65N",
+      "count": 8
+    },
+    {
+      "value": "POM01",
+      "count": 7
+    },
+    {
+      "value": "DSG03",
+      "count": 5
+    },
+    {
+      "value": "LHT65S",
+      "count": 5
+    },
+    {
+      "value": "BH01",
+      "count": 3
+    },
+    {
+      "value": "TC01",
+      "count": 3
+    },
+    {
+      "value": "BLG",
+      "count": 2
+    },
+    {
+      "value": "CO2",
+      "count": 2
+    },
+    {
+      "value": "DLOS8N",
+      "count": 2
+    },
+    {
+      "value": "IM01V2",
+      "count": 2
+    },
+    {
+      "value": "LCC01",
+      "count": 2
+    },
+    {
+      "value": "LG01V2",
+      "count": 2
+    },
+    {
+      "value": "LG308N",
+      "count": 2
+    },
+    {
+      "value": "LORAWAN IOT KIT V3",
+      "count": 2
+    },
+    {
+      "value": "LPS8N",
+      "count": 2
+    },
+    {
+      "value": "LPS8V2",
+      "count": 2
+    },
+    {
+      "value": "MS48",
+      "count": 2
+    },
+    {
+      "value": "PG1302",
+      "count": 2
+    },
+    {
+      "value": "TC11",
+      "count": 2
+    },
+    {
+      "value": "TRACKERD",
+      "count": 2
+    },
+    {
+      "value": "UV254",
+      "count": 2
+    },
+    {
+      "value": "A01A",
+      "count": 1
+    },
+    {
+      "value": "A02",
+      "count": 1
+    },
+    {
+      "value": "A13",
+      "count": 1
+    },
+    {
+      "value": "A16",
+      "count": 1
+    },
+    {
+      "value": "AI01",
+      "count": 1
+    },
+    {
+      "value": "AIRFLOW",
+      "count": 1
+    },
+    {
+      "value": "AQS01",
+      "count": 1
+    },
+    {
+      "value": "AS",
+      "count": 1
+    },
+    {
+      "value": "AS01(E3)",
+      "count": 1
+    },
+    {
+      "value": "AUC",
+      "count": 1
+    },
+    {
+      "value": "BCN02",
+      "count": 1
+    },
+    {
+      "value": "DISHSENSE",
+      "count": 1
+    },
+    {
+      "value": "DMT01",
+      "count": 1
+    },
+    {
+      "value": "DS20L",
+      "count": 1
+    },
+    {
+      "value": "ER26500 + SPC1520",
+      "count": 1
+    },
+    {
+      "value": "ER34615 + SPC1520",
+      "count": 1
+    },
+    {
+      "value": "IBPV1",
+      "count": 1
+    },
+    {
+      "value": "IVS",
+      "count": 1
+    },
+    {
+      "value": "LA66",
+      "count": 1
+    },
+    {
+      "value": "LA66 SHIELD",
+      "count": 1
+    },
+    {
+      "value": "LA66 USB ADAPTER",
+      "count": 1
+    },
+    {
+      "value": "LA66 USB ADAPTER V2",
+      "count": 1
+    },
+    {
+      "value": "LC01",
+      "count": 1
+    },
+    {
+      "value": "LC03",
+      "count": 1
+    },
+    {
+      "value": "LC04",
+      "count": 1
+    },
+    {
+      "value": "LDS02",
+      "count": 1
+    },
+    {
+      "value": "LHT52",
+      "count": 1
+    },
+    {
+      "value": "LPT01",
+      "count": 1
+    },
+    {
+      "value": "LT",
+      "count": 1
+    },
+    {
+      "value": "LTS5",
+      "count": 1
+    },
+    {
+      "value": "LWL02",
+      "count": 1
+    },
+    {
+      "value": "LWL04",
+      "count": 1
+    },
+    {
+      "value": "MS20",
+      "count": 1
+    },
+    {
+      "value": "NE117",
+      "count": 1
+    },
+    {
+      "value": "PB01",
+      "count": 1
+    },
+    {
+      "value": "PB05",
+      "count": 1
+    },
+    {
+      "value": "PF52",
+      "count": 1
+    },
+    {
+      "value": "SCT013G",
+      "count": 1
+    },
+    {
+      "value": "SCT024",
+      "count": 1
+    },
+    {
+      "value": "SCT036",
+      "count": 1
+    },
+    {
+      "value": "SN50LS",
+      "count": 1
+    },
+    {
+      "value": "STI",
+      "count": 1
+    },
+    {
+      "value": "SVC01",
+      "count": 1
+    },
+    {
+      "value": "T68DL",
+      "count": 1
+    },
+    {
+      "value": "TEMPERATURE BUFFER",
+      "count": 1
+    },
+    {
+      "value": "THERMOSTAT",
+      "count": 1
+    },
+    {
+      "value": "TYPE N ENCLOSURE KIT",
+      "count": 1
+    },
+    {
+      "value": "WEIGHTSCALE",
+      "count": 1
+    },
+    {
+      "value": "WS",
+      "count": 1
+    }
+  ],
+  "searchTermCoverage": {
+    "water": 182,
+    "tank": 0,
+    "temperature": 250,
+    "humidity": 63,
+    "gateway": 15,
+    "tracker": 2,
+    "rs485": 48,
+    "modbus": 11,
+    "lorawan": 208,
+    "nb-iot": 527,
+    "agriculture": 97,
+    "level": 77,
+    "meter": 211,
+    "co2": 4
+  }
+}

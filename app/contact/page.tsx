@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { EnquiryBuilder } from "@/components/enquiry-builder";
+import { products } from "@/lib/catalogue";
+export const metadata: Metadata = { title: "Product Enquiries", description: "Prepare a product or pricing enquiry for LoRa Network South Africa.", alternates: { canonical: "/contact" } };
+export default async function ContactPage({ searchParams }: PageProps<"/contact">) { const query = await searchParams; const requestedSku = typeof query.sku === "string" ? query.sku : ""; const sku = products.find((product) => product.sku.toLocaleLowerCase("en-ZA") === requestedSku.toLocaleLowerCase("en-ZA"))?.sku ?? ""; return <><section className="page-hero"><div className="shell page-hero-grid"><div><p className="eyebrow">Contact</p><h1>Send an enquiry.</h1></div><div className="page-hero-aside"><p>Ask a general question or include an exact product SKU and quantity. Delivery is confirmed only after the server accepts the message.</p></div></div></section><section className="section shell"><EnquiryBuilder initialSku={sku} /></section></>; }

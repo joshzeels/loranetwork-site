@@ -1,0 +1,37 @@
+{
+  "name": "loranetwork-site-1",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "pricing:reconcile": "node --experimental-strip-types scripts/reconcile-pricing.ts",
+    "images:sync": "node --experimental-strip-types scripts/sync-dragino-images.ts",
+    "images:licence-audit": "node --experimental-strip-types scripts/audit-licensed-image-sources.ts",
+    "images:provenance": "node --experimental-strip-types scripts/normalize-image-provenance.ts",
+    "brand:audit": "node --experimental-strip-types scripts/audit-brand-copy.ts",
+    "content:audit": "node --experimental-strip-types scripts/audit-content-opportunities.ts",
+    "content:architecture-audit": "node --experimental-strip-types scripts/audit-content-architecture.ts",
+    "catalogue:import": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/import-dragino-catalogue.ps1"
+  },
+  "dependencies": {
+    "geist": "^1.7.2",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
