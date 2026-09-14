@@ -1,0 +1,3490 @@
+{
+  "generatedAt": "2026-09-14T12:26:32.417Z",
+  "totalAssets": 212,
+  "sheets": 14,
+  "assets": [
+    {
+      "number": 1,
+      "sheet": 1,
+      "localPath": "/images/products/_official/00461c163a269a1e.jpg",
+      "families": "DDS04",
+      "skuCount": 4,
+      "skus": [
+        "DDS04-NB-1T",
+        "DDS04-NB-GE",
+        "DDS04-NB2-1T",
+        "DDS04-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 2,
+      "sheet": 1,
+      "localPath": "/images/products/_official/00a96d73eeab9772.png",
+      "families": "LTC1",
+      "skuCount": 2,
+      "skus": [
+        "LTC1-NS-1T",
+        "LTC1-NS-GE"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 3,
+      "sheet": 1,
+      "localPath": "/images/products/_official/018cf6531d1c79c1.png",
+      "families": "LTC1, LTC2",
+      "skuCount": 20,
+      "skus": [
+        "LTC1-CB-1T",
+        "LTC1-CB-GE",
+        "LTC1-CB2-1T",
+        "LTC1-CB2-GE",
+        "LTC1-CS-1T",
+        "LTC1-CS-GE",
+        "LTC1-KN-1T",
+        "LTC1-KN-GE",
+        "LTC1-KS-1T",
+        "LTC1-KS-GE",
+        "LTC2-CB-1T",
+        "LTC2-CB-GE",
+        "LTC2-CB2-1T",
+        "LTC2-CB2-GE",
+        "LTC2-CS-1T",
+        "LTC2-CS-GE",
+        "LTC2-KN-1T",
+        "LTC2-KN-GE",
+        "LTC2-KS-1T",
+        "LTC2-KS-GE"
+      ],
+      "methods": [
+        "official-body+normalized-model-variant",
+        "official-repeated-shared-family-image",
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 4,
+      "sheet": 1,
+      "localPath": "/images/products/_official/0400d7d8106076dd.jpg",
+      "families": "PB01",
+      "skuCount": 1,
+      "skus": [
+        "PB01"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 5,
+      "sheet": 1,
+      "localPath": "/images/products/_official/0458a66d65f434c8.jpg",
+      "families": "SVC01",
+      "skuCount": 1,
+      "skus": [
+        "SVC01-LS2"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 6,
+      "sheet": 1,
+      "localPath": "/images/products/_official/04fc0027b12915d5.jpg",
+      "families": "MDS200",
+      "skuCount": 2,
+      "skus": [
+        "MDS200-LB",
+        "MDS200-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 7,
+      "sheet": 1,
+      "localPath": "/images/products/_official/050014ce6f122228.png",
+      "families": "PS",
+      "skuCount": 4,
+      "skus": [
+        "PS-NB-NA-1T",
+        "PS-NB-NA-GE",
+        "PS-NB2-NA-1T",
+        "PS-NB2-NA-GE"
+      ],
+      "methods": [
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 8,
+      "sheet": 1,
+      "localPath": "/images/products/_official/07741bfcb0239eb2.jpg",
+      "families": "CS01",
+      "skuCount": 8,
+      "skus": [
+        "CS01-LB",
+        "CS01-LB2",
+        "CS01-NB-1T",
+        "CS01-NB-GE",
+        "CS01-NB2-1T",
+        "CS01-NB2-GE",
+        "CS01-NS-1T",
+        "CS01-NS-GE"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 9,
+      "sheet": 1,
+      "localPath": "/images/products/_official/08feece030739f3a.png",
+      "families": "UV254",
+      "skuCount": 2,
+      "skus": [
+        "UV254-LB",
+        "UV254-LB2"
+      ],
+      "methods": [
+        "official-index-search+exact-sku",
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 10,
+      "sheet": 1,
+      "localPath": "/images/products/_official/0b5fd7046b9e1b7e.jpg",
+      "families": "LDS40",
+      "skuCount": 4,
+      "skus": [
+        "LDS40-NB-1T",
+        "LDS40-NB-GE",
+        "LDS40-NB2-1T",
+        "LDS40-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 11,
+      "sheet": 1,
+      "localPath": "/images/products/_official/0b8f3b71bc5cb514.png",
+      "families": "PS",
+      "skuCount": 8,
+      "skus": [
+        "PS-CB-NA-1T",
+        "PS-CB-NA-GE",
+        "PS-CB2-NA-1T",
+        "PS-CB2-NA-GE",
+        "PS-CS-NA-1T",
+        "PS-CS-NA-GE",
+        "PS-NS-NA-1T",
+        "PS-NS-NA-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-body+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 12,
+      "sheet": 1,
+      "localPath": "/images/products/_official/0c18bae596aae9ab.png",
+      "families": "DR",
+      "skuCount": 1,
+      "skus": [
+        "DR-SI"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 13,
+      "sheet": 1,
+      "localPath": "/images/products/_official/0d8871cf706d02f2.png",
+      "families": "CPL03",
+      "skuCount": 9,
+      "skus": [
+        "CPL03-CB-1T",
+        "CPL03-CB-GE",
+        "CPL03-CB2-1T",
+        "CPL03-CB2-GE",
+        "CPL03-CS-1T",
+        "CPL03-CS-GE",
+        "CPL03-MS",
+        "CPL03-NS-1T",
+        "CPL03-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 14,
+      "sheet": 1,
+      "localPath": "/images/products/_official/10720efa37d3f643.jpg",
+      "families": "D20",
+      "skuCount": 1,
+      "skus": [
+        "D20-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 15,
+      "sheet": 1,
+      "localPath": "/images/products/_official/11909fd1dfbf49e9.png",
+      "families": "SN50V3",
+      "skuCount": 3,
+      "skus": [
+        "SN50v3-LB",
+        "SN50v3-LB2",
+        "SN50v3-LS"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 16,
+      "sheet": 1,
+      "localPath": "/images/products/_official/12664f72d82c33d5.jpg",
+      "families": "WSS",
+      "skuCount": 1,
+      "skus": [
+        "WSS-09"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 17,
+      "sheet": 2,
+      "localPath": "/images/products/_official/13a2a4df3f9f9351.jpg",
+      "families": "MDS120",
+      "skuCount": 4,
+      "skus": [
+        "MDS120-NB-1T",
+        "MDS120-NB-GE",
+        "MDS120-NB2-1T",
+        "MDS120-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 18,
+      "sheet": 2,
+      "localPath": "/images/products/_official/1449d7a4c6e98239.png",
+      "families": "AIRFLOW",
+      "skuCount": 1,
+      "skus": [
+        "AirFlow-LN "
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 19,
+      "sheet": 2,
+      "localPath": "/images/products/_official/1465a0d9a8f0be35.jpg",
+      "families": "LG308N",
+      "skuCount": 1,
+      "skus": [
+        "LG308N"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 20,
+      "sheet": 2,
+      "localPath": "/images/products/_official/149ac87e1ef08558.jpg",
+      "families": "DDS20",
+      "skuCount": 1,
+      "skus": [
+        "DDS20-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 21,
+      "sheet": 2,
+      "localPath": "/images/products/_official/154c178acb945080.png",
+      "families": "DR",
+      "skuCount": 1,
+      "skus": [
+        "DR-RG-6P"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 22,
+      "sheet": 2,
+      "localPath": "/images/products/_official/163ba261b3cb24a9.png",
+      "families": "DR",
+      "skuCount": 1,
+      "skus": [
+        "DR-FT"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 23,
+      "sheet": 2,
+      "localPath": "/images/products/_official/1a5e1e3729311bda.jpg",
+      "families": "DR",
+      "skuCount": 1,
+      "skus": [
+        "DR-THP-6P"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 24,
+      "sheet": 2,
+      "localPath": "/images/products/_official/1c5d41d6ae484124.png",
+      "families": "SE0X",
+      "skuCount": 17,
+      "skus": [
+        "SE0X-CB-1T",
+        "SE0X-CB-GE",
+        "SE0X-CB2-1T",
+        "SE0X-CB2-GE",
+        "SE0X-CS-1T",
+        "SE0X-CS-GE",
+        "SE0X-KN-1T",
+        "SE0X-KN-GE",
+        "SE0X-KS-1T",
+        "SE0X-KS-GE",
+        "SE0X-LS",
+        "SE0X-NB-1T",
+        "SE0X-NB-GE",
+        "SE0X-NB2-1T",
+        "SE0X-NB2-GE",
+        "SE0X-NS-1T",
+        "SE0X-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 25,
+      "sheet": 2,
+      "localPath": "/images/products/_official/1c7b96fcab252f11.png",
+      "families": "D20, D20S, D22, D23",
+      "skuCount": 8,
+      "skus": [
+        "D20-KS-1T",
+        "D20-KS-GE",
+        "D20S-KS-1T",
+        "D20S-KS-GE",
+        "D22-KS-1T",
+        "D22-KS-GE",
+        "D23-KS-1T",
+        "D23-KS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 26,
+      "sheet": 2,
+      "localPath": "/images/products/_official/1d726117b044c0c6.png",
+      "families": "TS01",
+      "skuCount": 12,
+      "skus": [
+        "TS01-CB-1T",
+        "TS01-CB-GE",
+        "TS01-CB2-1T",
+        "TS01-CB2-GE",
+        "TS01-CS-1T",
+        "TS01-CS-GE",
+        "TS01-KN-1T",
+        "TS01-KN-GE",
+        "TS01-KS-1T",
+        "TS01-KS-GE",
+        "TS01-NS-1T",
+        "TS01-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-body+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 27,
+      "sheet": 2,
+      "localPath": "/images/products/_official/1ec10b8ef7ef79b1.jpg",
+      "families": "LMS01",
+      "skuCount": 2,
+      "skus": [
+        "LMS01-LB",
+        "LMS01-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 28,
+      "sheet": 2,
+      "localPath": "/images/products/_official/2360f50a0312e6df.png",
+      "families": "MDS120",
+      "skuCount": 12,
+      "skus": [
+        "MDS120-CB-1T",
+        "MDS120-CB-GE",
+        "MDS120-CB2-1T",
+        "MDS120-CB2-GE",
+        "MDS120-CS-1T",
+        "MDS120-CS-GE",
+        "MDS120-KN-1T",
+        "MDS120-KN-GE",
+        "MDS120-KS-1T",
+        "MDS120-KS-GE",
+        "MDS120-NS-1T",
+        "MDS120-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 29,
+      "sheet": 2,
+      "localPath": "/images/products/_official/251ed12af1b453ae.jpg",
+      "families": "LT",
+      "skuCount": 1,
+      "skus": [
+        "LT-22222-L"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 30,
+      "sheet": 2,
+      "localPath": "/images/products/_official/259b02cede583adc.png",
+      "families": "SDI-12",
+      "skuCount": 2,
+      "skus": [
+        "SDI-12-NS-1T",
+        "SDI-12-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 31,
+      "sheet": 2,
+      "localPath": "/images/products/_official/25bbba1a7ca69042.jpg",
+      "families": "S31",
+      "skuCount": 3,
+      "skus": [
+        "S31-LB",
+        "S31-LB2",
+        "S31-LS"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 32,
+      "sheet": 2,
+      "localPath": "/images/products/_official/28a0bf4bdf280333.jpg",
+      "families": "WSS",
+      "skuCount": 1,
+      "skus": [
+        "WSS-23"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 33,
+      "sheet": 3,
+      "localPath": "/images/products/_official/2aeee7b259910349.jpg",
+      "families": "IVS",
+      "skuCount": 1,
+      "skus": [
+        "IVS-LN"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 34,
+      "sheet": 3,
+      "localPath": "/images/products/_official/2b1d8601cc19a03c.png",
+      "families": "SW3L",
+      "skuCount": 48,
+      "skus": [
+        "SW3L-CB-1T-004",
+        "SW3L-CB-1T-006",
+        "SW3L-CB-1T-010",
+        "SW3L-CB-1T-020",
+        "SW3L-CB-GE-004",
+        "SW3L-CB-GE-006",
+        "SW3L-CB-GE-010",
+        "SW3L-CB-GE-020",
+        "SW3L-CB2-1T-004",
+        "SW3L-CB2-1T-006",
+        "SW3L-CB2-1T-010",
+        "SW3L-CB2-1T-020",
+        "SW3L-CB2-GE-004",
+        "SW3L-CB2-GE-006",
+        "SW3L-CB2-GE-010",
+        "SW3L-CB2-GE-020",
+        "SW3L-CS-1T-004",
+        "SW3L-CS-1T-006",
+        "SW3L-CS-1T-010",
+        "SW3L-CS-1T-020",
+        "SW3L-CS-GE-004",
+        "SW3L-CS-GE-006",
+        "SW3L-CS-GE-010",
+        "SW3L-CS-GE-020",
+        "SW3L-KN-1T-004",
+        "SW3L-KN-1T-006",
+        "SW3L-KN-1T-010",
+        "SW3L-KN-1T-020",
+        "SW3L-KN-GE-004",
+        "SW3L-KN-GE-006",
+        "SW3L-KN-GE-010",
+        "SW3L-KN-GE-020",
+        "SW3L-KS-1T-004",
+        "SW3L-KS-1T-006",
+        "SW3L-KS-1T-010",
+        "SW3L-KS-1T-020",
+        "SW3L-KS-GE-004",
+        "SW3L-KS-GE-006",
+        "SW3L-KS-GE-010",
+        "SW3L-KS-GE-020",
+        "SW3L-NS-1T-004",
+        "SW3L-NS-1T-006",
+        "SW3L-NS-1T-010",
+        "SW3L-NS-1T-020",
+        "SW3L-NS-GE-004",
+        "SW3L-NS-GE-006",
+        "SW3L-NS-GE-010",
+        "SW3L-NS-GE-020"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 35,
+      "sheet": 3,
+      "localPath": "/images/products/_official/2bff0f5811a7663a.jpg",
+      "families": "LDS12",
+      "skuCount": 4,
+      "skus": [
+        "LDS12-NB-1T",
+        "LDS12-NB-GE",
+        "LDS12-NB2-1T",
+        "LDS12-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 36,
+      "sheet": 3,
+      "localPath": "/images/products/_official/2f4ae4eb507ae5c8.jpg",
+      "families": "LTC2",
+      "skuCount": 2,
+      "skus": [
+        "LTC2-LB",
+        "LTC2-LB2"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 37,
+      "sheet": 3,
+      "localPath": "/images/products/_official/2f62ec3be80eacf9.jpg",
+      "families": "DS03A",
+      "skuCount": 4,
+      "skus": [
+        "DS03A-NB-1T",
+        "DS03A-NB-GE",
+        "DS03A-NB2-1T",
+        "DS03A-NB2-GE"
+      ],
+      "methods": [
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 38,
+      "sheet": 3,
+      "localPath": "/images/products/_official/31c7a872eceeb4fb.png",
+      "families": "SDI-12",
+      "skuCount": 2,
+      "skus": [
+        "SDI-12-CS-1T",
+        "SDI-12-CS-GE"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 39,
+      "sheet": 3,
+      "localPath": "/images/products/_official/34043a2ed40a55d8.jpg",
+      "families": "LDS12",
+      "skuCount": 2,
+      "skus": [
+        "LDS12-LB",
+        "LDS12-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 40,
+      "sheet": 3,
+      "localPath": "/images/products/_official/34178c6bdbbc0491.png",
+      "families": "WSC2",
+      "skuCount": 2,
+      "skus": [
+        "WSC2-N-1T",
+        "WSC2-N-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 41,
+      "sheet": 3,
+      "localPath": "/images/products/_official/34cc94bf1a8ed5ac.png",
+      "families": "WSC2",
+      "skuCount": 4,
+      "skus": [
+        "WSC2-Compact-CS-1T",
+        "WSC2-Compact-CS-GE",
+        "WSC2-Compact-NS-1T",
+        "WSC2-Compact-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 42,
+      "sheet": 3,
+      "localPath": "/images/products/_official/34cd0b0c8fb96168.jpg",
+      "families": "D20S",
+      "skuCount": 4,
+      "skus": [
+        "D20S-NB-1T",
+        "D20S-NB-GE",
+        "D20S-NB2-1T",
+        "D20S-NB2-GE"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 43,
+      "sheet": 3,
+      "localPath": "/images/products/_official/34d2cb37cd4b4a8b.jpg",
+      "families": "LHT65N",
+      "skuCount": 1,
+      "skus": [
+        "LHT65N-DS"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 44,
+      "sheet": 3,
+      "localPath": "/images/products/_official/350eb20cab39374e.jpg",
+      "families": "D22",
+      "skuCount": 3,
+      "skus": [
+        "D22-LB",
+        "D22-LB2",
+        "D22-LS"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 45,
+      "sheet": 3,
+      "localPath": "/images/products/_official/3563712d0c5bd2d6.jpg",
+      "families": "D22",
+      "skuCount": 4,
+      "skus": [
+        "D22-NB-1T",
+        "D22-NB-GE",
+        "D22-NB2-1T",
+        "D22-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 46,
+      "sheet": 3,
+      "localPath": "/images/products/_official/365a2ede9d45086c.jpg",
+      "families": "CPL03",
+      "skuCount": 4,
+      "skus": [
+        "CPL03-NB-1T",
+        "CPL03-NB-GE",
+        "CPL03-NB2-1T",
+        "CPL03-NB2-GE"
+      ],
+      "methods": [
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 47,
+      "sheet": 3,
+      "localPath": "/images/products/_official/36bbcff8ec5fa79a.jpg",
+      "families": "DDS04",
+      "skuCount": 2,
+      "skus": [
+        "DDS04-LB",
+        "DDS04-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 48,
+      "sheet": 3,
+      "localPath": "/images/products/_official/37c43ccaec9264e4.png",
+      "families": "LHT65S",
+      "skuCount": 1,
+      "skus": [
+        "LHT65S-E5"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 49,
+      "sheet": 4,
+      "localPath": "/images/products/_official/3b837427db47b873.png",
+      "families": "PS",
+      "skuCount": 4,
+      "skus": [
+        "PS-KN-NA-1T",
+        "PS-KN-NA-GE",
+        "PS-KS-NA-1T",
+        "PS-KS-NA-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-body+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 50,
+      "sheet": 4,
+      "localPath": "/images/products/_official/3e0796bf6fab5fd2.jpg",
+      "families": "SW3L",
+      "skuCount": 4,
+      "skus": [
+        "SW3L-LS-004",
+        "SW3L-LS-006",
+        "SW3L-LS-010",
+        "SW3L-LS-020"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 51,
+      "sheet": 4,
+      "localPath": "/images/products/_official/3e6e213e005fc7af.png",
+      "families": "LMS01",
+      "skuCount": 12,
+      "skus": [
+        "LMS01-CB-1T",
+        "LMS01-CB-GE",
+        "LMS01-CB2-1T",
+        "LMS01-CB2-GE",
+        "LMS01-CS-1T",
+        "LMS01-CS-GE",
+        "LMS01-KN-1T",
+        "LMS01-KN-GE",
+        "LMS01-KS-1T",
+        "LMS01-KS-GE",
+        "LMS01-NS-1T",
+        "LMS01-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 52,
+      "sheet": 4,
+      "localPath": "/images/products/_official/3ea060a9a77e0f80.jpg",
+      "families": "DDS75",
+      "skuCount": 2,
+      "skus": [
+        "DDS75-LB",
+        "DDS75-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 53,
+      "sheet": 4,
+      "localPath": "/images/products/_official/4052dd954beab021.png",
+      "families": "AS",
+      "skuCount": 1,
+      "skus": [
+        "AS-02"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 54,
+      "sheet": 4,
+      "localPath": "/images/products/_official/40801eab91e9e5a9.png",
+      "families": "DR",
+      "skuCount": 1,
+      "skus": [
+        "DR-FSA"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 55,
+      "sheet": 4,
+      "localPath": "/images/products/_official/41fd8ec5b46a4e7b.jpg",
+      "families": "LHT65N",
+      "skuCount": 1,
+      "skus": [
+        "LHT65N-PIR"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 56,
+      "sheet": 4,
+      "localPath": "/images/products/_official/45a9eba8220c0f92.jpg",
+      "families": "RS485",
+      "skuCount": 3,
+      "skus": [
+        "RS485-LB",
+        "RS485-LB2",
+        "RS485-LS"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 57,
+      "sheet": 4,
+      "localPath": "/images/products/_official/461e7f6e81178005.png",
+      "families": "WQS",
+      "skuCount": 4,
+      "skus": [
+        "WQS-NB-1T",
+        "WQS-NB-GE",
+        "WQS-NB2-1T",
+        "WQS-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 58,
+      "sheet": 4,
+      "localPath": "/images/products/_official/46290640b55391d1.jpg",
+      "families": "DS20L",
+      "skuCount": 1,
+      "skus": [
+        "DS20L"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 59,
+      "sheet": 4,
+      "localPath": "/images/products/_official/462fbf0df1fa3ffc.jpg",
+      "families": "T68DL",
+      "skuCount": 1,
+      "skus": [
+        "T68DL"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 60,
+      "sheet": 4,
+      "localPath": "/images/products/_official/46ad8843a21c7fe4.png",
+      "families": "CPL03",
+      "skuCount": 4,
+      "skus": [
+        "CPL03-KN-1T",
+        "CPL03-KN-GE",
+        "CPL03-KS-1T",
+        "CPL03-KS-GE"
+      ],
+      "methods": [
+        "official-body+normalized-model-variant",
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 61,
+      "sheet": 4,
+      "localPath": "/images/products/_official/47711e0811eeb6c9.jpg",
+      "families": "SW3L",
+      "skuCount": 8,
+      "skus": [
+        "SW3L-LB-004",
+        "SW3L-LB-006",
+        "SW3L-LB-010",
+        "SW3L-LB-020",
+        "SW3L-LB2-004",
+        "SW3L-LB2-006",
+        "SW3L-LB2-010",
+        "SW3L-LB2-020"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 62,
+      "sheet": 4,
+      "localPath": "/images/products/_official/49b72ed6817db1ff.jpg",
+      "families": "SPH01",
+      "skuCount": 1,
+      "skus": [
+        "SPH01-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 63,
+      "sheet": 4,
+      "localPath": "/images/products/_official/4b1669e29c6b1774.png",
+      "families": "LDS25",
+      "skuCount": 4,
+      "skus": [
+        "LDS25-CB-1T",
+        "LDS25-CB-GE",
+        "LDS25-CB2-1T",
+        "LDS25-CB2-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 64,
+      "sheet": 4,
+      "localPath": "/images/products/_official/4bfa8c13512e26b1.jpg",
+      "families": "LPT01",
+      "skuCount": 1,
+      "skus": [
+        "LPT01"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 65,
+      "sheet": 5,
+      "localPath": "/images/products/_official/4e38f7073599b06a.png",
+      "families": "PF52",
+      "skuCount": 1,
+      "skus": [
+        "PF52"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 66,
+      "sheet": 5,
+      "localPath": "/images/products/_official/5065de2449b921f1.jpg",
+      "families": "WSS",
+      "skuCount": 1,
+      "skus": [
+        "WSS-08"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 67,
+      "sheet": 5,
+      "localPath": "/images/products/_official/50cba0d85e1a40d7.png",
+      "families": "BH01",
+      "skuCount": 1,
+      "skus": [
+        "BH01-LB"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 68,
+      "sheet": 5,
+      "localPath": "/images/products/_official/526caec52e2114e2.jpg",
+      "families": "SE01",
+      "skuCount": 1,
+      "skus": [
+        "SE01-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 69,
+      "sheet": 5,
+      "localPath": "/images/products/_official/5675507b028f4a98.png",
+      "families": "D23",
+      "skuCount": 4,
+      "skus": [
+        "D23-NB-1T",
+        "D23-NB-GE",
+        "D23-NB2-1T",
+        "D23-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 70,
+      "sheet": 5,
+      "localPath": "/images/products/_official/57475dbdd7d2b0bb.png",
+      "families": "CO2",
+      "skuCount": 1,
+      "skus": [
+        " CO2-LE "
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 71,
+      "sheet": 5,
+      "localPath": "/images/products/_official/576563ce0d5dc3a9.png",
+      "families": "WSC2",
+      "skuCount": 1,
+      "skus": [
+        "WSC2-Compact-LS"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 72,
+      "sheet": 5,
+      "localPath": "/images/products/_official/586320ae4f9bc76b.jpg",
+      "families": "S31",
+      "skuCount": 8,
+      "skus": [
+        "S31-CB-1T",
+        "S31-CB-GE",
+        "S31-CB2-1T",
+        "S31-CB2-GE",
+        "S31-NB-1T",
+        "S31-NB-GE",
+        "S31-NB2-1T",
+        "S31-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 73,
+      "sheet": 5,
+      "localPath": "/images/products/_official/589ce8c04d13ed55.jpg",
+      "families": "D20S",
+      "skuCount": 2,
+      "skus": [
+        "D20S-LB",
+        "D20S-LB2"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 74,
+      "sheet": 5,
+      "localPath": "/images/products/_official/597e4a5b56831038.png",
+      "families": "LHT52",
+      "skuCount": 1,
+      "skus": [
+        "LHT52"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 75,
+      "sheet": 5,
+      "localPath": "/images/products/_official/5caa45b81658b12d.png",
+      "families": "POM01",
+      "skuCount": 2,
+      "skus": [
+        "POM01-C-1T",
+        "POM01-C-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 76,
+      "sheet": 5,
+      "localPath": "/images/products/_official/5dddfe60608e4402.jpg",
+      "families": "D20",
+      "skuCount": 4,
+      "skus": [
+        "D20-NB-1T",
+        "D20-NB-GE",
+        "D20-NB2-1T",
+        "D20-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 77,
+      "sheet": 5,
+      "localPath": "/images/products/_official/5e42151fcc8e8d55.jpg",
+      "families": "DDS75",
+      "skuCount": 1,
+      "skus": [
+        "DDS75-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 78,
+      "sheet": 5,
+      "localPath": "/images/products/_official/5ee83a23e6a32d0b.jpg",
+      "families": "LWL04",
+      "skuCount": 1,
+      "skus": [
+        "LWL04"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 79,
+      "sheet": 5,
+      "localPath": "/images/products/_official/5f0ee784e84b1916.png",
+      "families": "TEMPERATURE BUFFER",
+      "skuCount": 1,
+      "skus": [
+        "Temperature Buffer"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 80,
+      "sheet": 5,
+      "localPath": "/images/products/_official/603f1b0408b6a535.png",
+      "families": "LHT65N",
+      "skuCount": 1,
+      "skus": [
+        "LHT65N"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 81,
+      "sheet": 6,
+      "localPath": "/images/products/_official/61103802af10c5cf.png",
+      "families": "S31, S31B",
+      "skuCount": 18,
+      "skus": [
+        "S31-CS-1T",
+        "S31-CS-GE",
+        "S31-NS-1T",
+        "S31-NS-GE",
+        "S31B-CB-1T",
+        "S31B-CB-GE",
+        "S31B-CB2-1T",
+        "S31B-CB2-GE",
+        "S31B-CS-1T",
+        "S31B-CS-GE",
+        "S31B-KN-1T",
+        "S31B-KN-GE",
+        "S31B-NB-1T",
+        "S31B-NB-GE",
+        "S31B-NB2-1T",
+        "S31B-NB2-GE",
+        "S31B-NS-1T",
+        "S31B-NS-GE"
+      ],
+      "methods": [
+        "official-repeated-shared-family-image",
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 82,
+      "sheet": 6,
+      "localPath": "/images/products/_official/615b142bc8a06943.jpg",
+      "families": "LDS40",
+      "skuCount": 2,
+      "skus": [
+        "LDS40-LB",
+        "LDS40-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 83,
+      "sheet": 6,
+      "localPath": "/images/products/_official/6192255fb14aa7e3.png",
+      "families": "LORAWAN IOT KIT V3",
+      "skuCount": 1,
+      "skus": [
+        "LoRaWAN IoT Kit v3"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 84,
+      "sheet": 6,
+      "localPath": "/images/products/_official/63c8dfc7f3e953c0.jpg",
+      "families": "DDS20",
+      "skuCount": 4,
+      "skus": [
+        "DDS20-NB-1T",
+        "DDS20-NB-GE",
+        "DDS20-NB2-1T",
+        "DDS20-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 85,
+      "sheet": 6,
+      "localPath": "/images/products/_official/63f018b60ffa74e2.png",
+      "families": "POM01",
+      "skuCount": 2,
+      "skus": [
+        "POM01-N-1T",
+        "POM01-N-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 86,
+      "sheet": 6,
+      "localPath": "/images/products/_official/643e35cbd3babecb.jpg",
+      "families": "DMT01",
+      "skuCount": 1,
+      "skus": [
+        "DMT01"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 87,
+      "sheet": 6,
+      "localPath": "/images/products/_official/647bd6b3c429e336.jpg",
+      "families": "DR",
+      "skuCount": 1,
+      "skus": [
+        "DR-IL-6P"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 88,
+      "sheet": 6,
+      "localPath": "/images/products/_official/6648c65c4033bdac.jpg",
+      "families": "PS",
+      "skuCount": 1,
+      "skus": [
+        "PS-LS-NA"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 89,
+      "sheet": 6,
+      "localPath": "/images/products/_official/67163455f2115f1d.jpg",
+      "families": "WSS",
+      "skuCount": 1,
+      "skus": [
+        "WSS-26"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 90,
+      "sheet": 6,
+      "localPath": "/images/products/_official/671f9e76eba0b17a.png",
+      "families": "LTC1",
+      "skuCount": 1,
+      "skus": [
+        "LTC1-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 91,
+      "sheet": 6,
+      "localPath": "/images/products/_official/6727cdb7d42b85de.jpg",
+      "families": "WSS",
+      "skuCount": 1,
+      "skus": [
+        "WSS-24"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 92,
+      "sheet": 6,
+      "localPath": "/images/products/_official/678274576ef89466.jpg",
+      "families": "DDS04",
+      "skuCount": 1,
+      "skus": [
+        "DDS04-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 93,
+      "sheet": 6,
+      "localPath": "/images/products/_official/696a7c59fa0f59d8.jpg",
+      "families": "DDS75",
+      "skuCount": 4,
+      "skus": [
+        "DDS75-NB-1T",
+        "DDS75-NB-GE",
+        "DDS75-NB2-1T",
+        "DDS75-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 94,
+      "sheet": 6,
+      "localPath": "/images/products/_official/69d260395fb08ee6.png",
+      "families": "POM01",
+      "skuCount": 1,
+      "skus": [
+        "POM01-L"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 95,
+      "sheet": 6,
+      "localPath": "/images/products/_official/6fcbceed722925ef.png",
+      "families": "LDS12",
+      "skuCount": 12,
+      "skus": [
+        "LDS12-CB-1T",
+        "LDS12-CB-GE",
+        "LDS12-CB2-1T",
+        "LDS12-CB2-GE",
+        "LDS12-CS-1T",
+        "LDS12-CS-GE",
+        "LDS12-KN-1T",
+        "LDS12-KN-GE",
+        "LDS12-KS-1T",
+        "LDS12-KS-GE",
+        "LDS12-NS-1T",
+        "LDS12-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 96,
+      "sheet": 6,
+      "localPath": "/images/products/_official/702886d04a472625.png",
+      "families": "BH01",
+      "skuCount": 2,
+      "skus": [
+        "BH01-LB2",
+        "BH01-LS"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 97,
+      "sheet": 7,
+      "localPath": "/images/products/_official/71eba7e3cfbc62f4.jpg",
+      "families": "D20, D20S, D22, D23",
+      "skuCount": 40,
+      "skus": [
+        "D20-CB-1T",
+        "D20-CB-GE",
+        "D20-CB2-1T",
+        "D20-CB2-GE",
+        "D20-CS-1T",
+        "D20-CS-GE",
+        "D20-KN-1T",
+        "D20-KN-GE",
+        "D20-NS-1T",
+        "D20-NS-GE",
+        "D20S-CB-1T",
+        "D20S-CB-GE",
+        "D20S-CB2-1T",
+        "D20S-CB2-GE",
+        "D20S-CS-1T",
+        "D20S-CS-GE",
+        "D20S-KN-1T",
+        "D20S-KN-GE",
+        "D20S-NS-1T",
+        "D20S-NS-GE",
+        "D22-CB-1T",
+        "D22-CB-GE",
+        "D22-CB2-1T",
+        "D22-CB2-GE",
+        "D22-CS-1T",
+        "D22-CS-GE",
+        "D22-KN-1T",
+        "D22-KN-GE",
+        "D22-NS-1T",
+        "D22-NS-GE",
+        "D23-CB-1T",
+        "D23-CB-GE",
+        "D23-CB2-1T",
+        "D23-CB2-GE",
+        "D23-CS-1T",
+        "D23-CS-GE",
+        "D23-KN-1T",
+        "D23-KN-GE",
+        "D23-NS-1T",
+        "D23-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image",
+        "official-repeated-shared-family-image-quality-fallback"
+      ]
+    },
+    {
+      "number": 98,
+      "sheet": 7,
+      "localPath": "/images/products/_official/7325b799ee7639b3.png",
+      "families": "SPH01",
+      "skuCount": 12,
+      "skus": [
+        "SPH01-CB-1T",
+        "SPH01-CB-GE",
+        "SPH01-CB2-1T",
+        "SPH01-CB2-GE",
+        "SPH01-CS-1T",
+        "SPH01-CS-GE",
+        "SPH01-KN-1T",
+        "SPH01-KN-GE",
+        "SPH01-KS-1T",
+        "SPH01-KS-GE",
+        "SPH01-NS-1T",
+        "SPH01-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 99,
+      "sheet": 7,
+      "localPath": "/images/products/_official/759b1dbf5322df64.jpg",
+      "families": "LDS25",
+      "skuCount": 4,
+      "skus": [
+        "LDS25-NB-1T",
+        "LDS25-NB-GE",
+        "LDS25-NB2-1T",
+        "LDS25-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 100,
+      "sheet": 7,
+      "localPath": "/images/products/_official/78c9839ab6d9f8c6.jpg",
+      "families": "SPH01",
+      "skuCount": 2,
+      "skus": [
+        "SPH01-LB",
+        "SPH01-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 101,
+      "sheet": 7,
+      "localPath": "/images/products/_official/7931c0010367772e.jpg",
+      "families": "MDS120",
+      "skuCount": 1,
+      "skus": [
+        "MDS120-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 102,
+      "sheet": 7,
+      "localPath": "/images/products/_official/79c91a50932868b5.jpg",
+      "families": "LCC01",
+      "skuCount": 2,
+      "skus": [
+        "LCC01-LB",
+        "LCC01-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 103,
+      "sheet": 7,
+      "localPath": "/images/products/_official/7a156bc9738c0a26.jpg",
+      "families": "DDS45",
+      "skuCount": 4,
+      "skus": [
+        "DDS45-NB-1T",
+        "DDS45-NB-GE",
+        "DDS45-NB2-1T",
+        "DDS45-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 104,
+      "sheet": 7,
+      "localPath": "/images/products/_official/7aed3189cad84730.jpg",
+      "families": "LC03",
+      "skuCount": 1,
+      "skus": [
+        "LC03"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 105,
+      "sheet": 7,
+      "localPath": "/images/products/_official/7c1d49030a016f6c.png",
+      "families": "DDS04",
+      "skuCount": 12,
+      "skus": [
+        "DDS04-CB-1T",
+        "DDS04-CB-GE",
+        "DDS04-CB2-1T",
+        "DDS04-CB2-GE",
+        "DDS04-CS-1T",
+        "DDS04-CS-GE",
+        "DDS04-KN-1T",
+        "DDS04-KN-GE",
+        "DDS04-KS-1T",
+        "DDS04-KS-GE",
+        "DDS04-NS-1T",
+        "DDS04-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 106,
+      "sheet": 7,
+      "localPath": "/images/products/_official/7c5787da9bade54d.png",
+      "families": "DDS20",
+      "skuCount": 12,
+      "skus": [
+        "DDS20-CB-1T",
+        "DDS20-CB-GE",
+        "DDS20-CB2-1T",
+        "DDS20-CB2-GE",
+        "DDS20-CS-1T",
+        "DDS20-CS-GE",
+        "DDS20-KN-1T",
+        "DDS20-KN-GE",
+        "DDS20-KS-1T",
+        "DDS20-KS-GE",
+        "DDS20-NS-1T",
+        "DDS20-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 107,
+      "sheet": 7,
+      "localPath": "/images/products/_official/7cd235a684bfd7d6.png",
+      "families": "RS485",
+      "skuCount": 2,
+      "skus": [
+        "RS485-NS-1T",
+        "RS485-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 108,
+      "sheet": 7,
+      "localPath": "/images/products/_official/7ede27e3ea03fd9f.jpg",
+      "families": "AIS01",
+      "skuCount": 2,
+      "skus": [
+        "AIS01-LB",
+        "AIS01-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 109,
+      "sheet": 7,
+      "localPath": "/images/products/_official/7f1c360b161ddde5.jpg",
+      "families": "LHT65N",
+      "skuCount": 1,
+      "skus": [
+        "LHT65N-VIB"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 110,
+      "sheet": 7,
+      "localPath": "/images/products/_official/804d134dafb2564f.png",
+      "families": "LDS40",
+      "skuCount": 12,
+      "skus": [
+        "LDS40-CB-1T",
+        "LDS40-CB-GE",
+        "LDS40-CB2-1T",
+        "LDS40-CB2-GE",
+        "LDS40-CS-1T",
+        "LDS40-CS-GE",
+        "LDS40-KN-1T",
+        "LDS40-KN-GE",
+        "LDS40-KS-1T",
+        "LDS40-KS-GE",
+        "LDS40-NS-1T",
+        "LDS40-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 111,
+      "sheet": 7,
+      "localPath": "/images/products/_official/808ec2f8bc908888.jpg",
+      "families": "LA66",
+      "skuCount": 1,
+      "skus": [
+        "LA66"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 112,
+      "sheet": 7,
+      "localPath": "/images/products/_official/80d26d79e67d986a.jpg",
+      "families": "SE01",
+      "skuCount": 4,
+      "skus": [
+        "SE01-NB-1T",
+        "SE01-NB-GE",
+        "SE01-NB2-1T",
+        "SE01-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 113,
+      "sheet": 8,
+      "localPath": "/images/products/_official/8192a9e19a6815ea.jpg",
+      "families": "DS03A",
+      "skuCount": 2,
+      "skus": [
+        "DS03A-LB",
+        "DS03A-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 114,
+      "sheet": 8,
+      "localPath": "/images/products/_official/8562b6dd18eb07f1.png",
+      "families": "WSC2",
+      "skuCount": 2,
+      "skus": [
+        "WSC2-C-1T",
+        "WSC2-C-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 115,
+      "sheet": 8,
+      "localPath": "/images/products/_official/867a7fb03d7f1e8f.png",
+      "families": "PS",
+      "skuCount": 44,
+      "skus": [
+        "PS-CB-Dxx-1T",
+        "PS-CB-Dxx-GE",
+        "PS-CB-Fxx-1T",
+        "PS-CB-Fxx-GE",
+        "PS-CB-Txx/Ixx-1T",
+        "PS-CB-Txx/Ixx-GE",
+        "PS-CB2-Dxx-1T",
+        "PS-CB2-Dxx-GE",
+        "PS-CB2-Fxx-1T",
+        "PS-CB2-Fxx-GE",
+        "PS-CB2-Txx-1T",
+        "PS-CB2-Txx-GE",
+        "PS-CS-Dxx-1T",
+        "PS-CS-Dxx-GE",
+        "PS-CS-Fxx-1T",
+        "PS-CS-Fxx/Ixx-GE",
+        "PS-CS-Txx/Ixx-1T",
+        "PS-CS-Txx/Ixx-GE",
+        "PS-KN-Dxx-1T",
+        "PS-KN-Dxx-GE",
+        "PS-KN-Fxx-1T",
+        "PS-KN-Fxx-GE",
+        "PS-KN-Txx/Ixx-1T",
+        "PS-KN-Txx/Ixx-GE",
+        "PS-KS-Dxx-1T",
+        "PS-KS-Dxx-GE",
+        "PS-KS-Fxx-1T",
+        "PS-KS-Fxx-GE",
+        "PS-KS-Txx/Ixx-1T",
+        "PS-KS-Txx/Ixx-GE",
+        "PS-NB-Fxx",
+        "PS-NB-Fxx-1T",
+        "PS-NB-Txx/Ixx-1T",
+        "PS-NB-Txx/Ixx-GE",
+        "PS-NB2-Fxx-1T",
+        "PS-NB2-Fxx-GE",
+        "PS-NB2-Txx-1T",
+        "PS-NB2-Txx-GE",
+        "PS-NS-Dxx-1T",
+        "PS-NS-Dxx-GE",
+        "PS-NS-Fxx-1T",
+        "PS-NS-Fxx-GE",
+        "PS-NS-Txx/Ixx-1T",
+        "PS-NS-Txx/Ixx-GE"
+      ],
+      "methods": [
+        "official-body+normalized-model-variant",
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 116,
+      "sheet": 8,
+      "localPath": "/images/products/_official/86ffa6864b11a499.jpg",
+      "families": "S31B",
+      "skuCount": 3,
+      "skus": [
+        "S31B-LB",
+        "S31B-LB2",
+        "S31B-LS"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 117,
+      "sheet": 8,
+      "localPath": "/images/products/_official/8725be88c8251a78.jpg",
+      "families": "LTC2",
+      "skuCount": 1,
+      "skus": [
+        "LTC2-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 118,
+      "sheet": 8,
+      "localPath": "/images/products/_official/8a7fe9227761b659.jpg",
+      "families": "DLOS8N",
+      "skuCount": 1,
+      "skus": [
+        "DLOS8N"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 119,
+      "sheet": 8,
+      "localPath": "/images/products/_official/8abb9590f36af1e8.jpg",
+      "families": "LHT65S",
+      "skuCount": 1,
+      "skus": [
+        "LHT65S"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 120,
+      "sheet": 8,
+      "localPath": "/images/products/_official/8bd20f28e63e3ce4.jpg",
+      "families": "SW3L",
+      "skuCount": 16,
+      "skus": [
+        "SW3L-NB-1T-004",
+        "SW3L-NB-1T-006",
+        "SW3L-NB-1T-010",
+        "SW3L-NB-1T-020",
+        "SW3L-NB-GE-004",
+        "SW3L-NB-GE-006",
+        "SW3L-NB-GE-010",
+        "SW3L-NB-GE-020",
+        "SW3L-NB2-1T-004",
+        "SW3L-NB2-1T-006",
+        "SW3L-NB2-1T-010",
+        "SW3L-NB2-1T-020",
+        "SW3L-NB2-GE-004",
+        "SW3L-NB2-GE-006",
+        "SW3L-NB2-GE-010",
+        "SW3L-NB2-GE-020"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 121,
+      "sheet": 8,
+      "localPath": "/images/products/_official/8d01920985e38932.jpg",
+      "families": "TC11",
+      "skuCount": 1,
+      "skus": [
+        "TC11-LB"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 122,
+      "sheet": 8,
+      "localPath": "/images/products/_official/8dc70c87d51af9eb.png",
+      "families": "S31",
+      "skuCount": 2,
+      "skus": [
+        "S31-KN-1T",
+        "S31-KN-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 123,
+      "sheet": 8,
+      "localPath": "/images/products/_official/8eb0cf01abc519cd.png",
+      "families": "SCT024",
+      "skuCount": 1,
+      "skus": [
+        "SCT024-300"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 124,
+      "sheet": 8,
+      "localPath": "/images/products/_official/92248a9186887406.png",
+      "families": "SE01",
+      "skuCount": 12,
+      "skus": [
+        "SE01-CB-1T",
+        "SE01-CB-GE",
+        "SE01-CB2-1T",
+        "SE01-CB2-GE",
+        "SE01-CS-1T",
+        "SE01-CS-GE",
+        "SE01-KN-1T",
+        "SE01-KN-GE",
+        "SE01-KS-1T",
+        "SE01-KS-GE",
+        "SE01-NS-1T",
+        "SE01-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 125,
+      "sheet": 8,
+      "localPath": "/images/products/_official/94ed449a9ad26f8a.jpg",
+      "families": "S31B",
+      "skuCount": 1,
+      "skus": [
+        " S31B-LE"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 126,
+      "sheet": 8,
+      "localPath": "/images/products/_official/959ca2a89238426f.jpg",
+      "families": "LC01",
+      "skuCount": 1,
+      "skus": [
+        "LC01"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 127,
+      "sheet": 8,
+      "localPath": "/images/products/_official/9717b424a6043a74.jpg",
+      "families": "TRACKERD",
+      "skuCount": 1,
+      "skus": [
+        "TrackerD"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 128,
+      "sheet": 8,
+      "localPath": "/images/products/_official/971f799e7a073a30.jpg",
+      "families": "LHT65N",
+      "skuCount": 1,
+      "skus": [
+        "LHT65N-E31F"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 129,
+      "sheet": 9,
+      "localPath": "/images/products/_official/9951199cf0825b1d.jpg",
+      "families": "RS485",
+      "skuCount": 1,
+      "skus": [
+        "RS485-LN"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 130,
+      "sheet": 9,
+      "localPath": "/images/products/_official/9b1cbdc0bd7377f4.png",
+      "families": "WQS",
+      "skuCount": 4,
+      "skus": [
+        "WQS-CB-1T",
+        "WQS-CB-GE",
+        "WQS-CB2-1T",
+        "WQS-CB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 131,
+      "sheet": 9,
+      "localPath": "/images/products/_official/9b8aa8acc02bf8a8.jpg",
+      "families": "RS485",
+      "skuCount": 8,
+      "skus": [
+        "RS485-CB-1T",
+        "RS485-CB-GE",
+        "RS485-CB2-1T",
+        "RS485-CB2-GE",
+        "RS485-NB-1T",
+        "RS485-NB-GE",
+        "RS485-NB2-1T",
+        "RS485-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 132,
+      "sheet": 9,
+      "localPath": "/images/products/_official/9c2a0758e77de1a2.png",
+      "families": "BCN02",
+      "skuCount": 1,
+      "skus": [
+        "BCN02"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 133,
+      "sheet": 9,
+      "localPath": "/images/products/_official/9d5b73b8f9db7a87.jpg",
+      "families": "MDS120",
+      "skuCount": 2,
+      "skus": [
+        "MDS120-LB",
+        "MDS120-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 134,
+      "sheet": 9,
+      "localPath": "/images/products/_official/9f6359cd8df3dc16.png",
+      "families": "CS01",
+      "skuCount": 11,
+      "skus": [
+        "CS01-CB-1T",
+        "CS01-CB-GE",
+        "CS01-CB2-1T",
+        "CS01-CB2-GE",
+        "CS01-CS-1T",
+        "CS01-CS-GE",
+        "CS01-KN-1T",
+        "CS01-KN-GE",
+        "CS01-KS-1T",
+        "CS01-KS-GE",
+        "CS01-LS"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-body+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 135,
+      "sheet": 9,
+      "localPath": "/images/products/_official/a0100ce457f9886b.png",
+      "families": "RS485",
+      "skuCount": 6,
+      "skus": [
+        "RS485-CS-1T",
+        "RS485-CS-GE",
+        "RS485-KN-1T",
+        "RS485-KN-GE",
+        "RS485-KS-1T",
+        "RS485-KS-GE"
+      ],
+      "methods": [
+        "official-body+normalized-model-variant",
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 136,
+      "sheet": 9,
+      "localPath": "/images/products/_official/a22e4cbdf0ba938a.jpg",
+      "families": "SDI-12",
+      "skuCount": 3,
+      "skus": [
+        "SDI-12-LB",
+        "SDI-12-LB2",
+        "SDI-12-LS"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 137,
+      "sheet": 9,
+      "localPath": "/images/products/_official/a49c9b266299cd5a.jpg",
+      "families": "PG1302",
+      "skuCount": 1,
+      "skus": [
+        "PG1302"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 138,
+      "sheet": 9,
+      "localPath": "/images/products/_official/a5dba465c7fc8f35.jpg",
+      "families": "MDS200",
+      "skuCount": 1,
+      "skus": [
+        "MDS200-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 139,
+      "sheet": 9,
+      "localPath": "/images/products/_official/a63bf46aebae1d0d.png",
+      "families": "WEIGHTSCALE",
+      "skuCount": 1,
+      "skus": [
+        "WeightScale-LB"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 140,
+      "sheet": 9,
+      "localPath": "/images/products/_official/a80658e62b7cdd9f.png",
+      "families": "SCT036",
+      "skuCount": 1,
+      "skus": [
+        "SCT036-600"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 141,
+      "sheet": 9,
+      "localPath": "/images/products/_official/a83b657c60f46f8c.jpg",
+      "families": "DDS20",
+      "skuCount": 2,
+      "skus": [
+        "DDS20-LB",
+        "DDS20-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 142,
+      "sheet": 9,
+      "localPath": "/images/products/_official/a95932d2bc8e60a8.jpg",
+      "families": "WSS",
+      "skuCount": 1,
+      "skus": [
+        "WSS-22"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 143,
+      "sheet": 9,
+      "localPath": "/images/products/_official/a9bba386e2577f4f.png",
+      "families": "S31B",
+      "skuCount": 1,
+      "skus": [
+        "S31B-FE-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 144,
+      "sheet": 9,
+      "localPath": "/images/products/_official/ad1dade435d83f62.jpg",
+      "families": "MS48",
+      "skuCount": 1,
+      "skus": [
+        "MS48-LR"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 145,
+      "sheet": 10,
+      "localPath": "/images/products/_official/adc5714d64b4c701.jpg",
+      "families": "LMS01",
+      "skuCount": 4,
+      "skus": [
+        "LMS01-NB-1T",
+        "LMS01-NB-GE",
+        "LMS01-NB2-1T",
+        "LMS01-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 146,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b13631bbfa9ef1c1.jpg",
+      "families": "WSS",
+      "skuCount": 1,
+      "skus": [
+        "WSS-27"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 147,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b19a3801a74eb6ad.png",
+      "families": "PS",
+      "skuCount": 3,
+      "skus": [
+        "PS-LB-Dxx",
+        "PS-LB2-Dxx",
+        "PS-LS-Dxx"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 148,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b1bc5c417109abf0.png",
+      "families": "MDS200",
+      "skuCount": 12,
+      "skus": [
+        "MDS200-CB-1T",
+        "MDS200-CB-GE",
+        "MDS200-CB2-1T",
+        "MDS200-CB2-GE",
+        "MDS200-CS-1T",
+        "MDS200-CS-GE",
+        "MDS200-KN-1T",
+        "MDS200-KN-GE",
+        "MDS200-KS-1T",
+        "MDS200-KS-GE",
+        "MDS200-NS-1T",
+        "MDS200-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 149,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b2337a1393d173c4.jpg",
+      "families": "CPL03",
+      "skuCount": 2,
+      "skus": [
+        "CPL03-LB",
+        "CPL03-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 150,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b3beed7e6edd0cc6.jpg",
+      "families": "LDS25",
+      "skuCount": 2,
+      "skus": [
+        "LDS25-LB",
+        "LDS25-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 151,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b40299dda03d6b11.jpg",
+      "families": "D20",
+      "skuCount": 2,
+      "skus": [
+        "D20-LB",
+        "D20-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 152,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b5004e4d166c6353.jpg",
+      "families": "DS03A",
+      "skuCount": 1,
+      "skus": [
+        "DS03A-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 153,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b56935ab86658a24.jpg",
+      "families": "TRACKERD",
+      "skuCount": 1,
+      "skus": [
+        "TrackerD-LS"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 154,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b5abf0b039d74f03.jpg",
+      "families": "LDS40",
+      "skuCount": 1,
+      "skus": [
+        "LDS40-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 155,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b5e870d45cf7d7b3.jpg",
+      "families": "SW3L",
+      "skuCount": 4,
+      "skus": [
+        "SW3L-004",
+        "SW3L-006",
+        "SW3L-010",
+        "SW3L-020"
+      ],
+      "methods": [
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 156,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b8c038322bbe9c4a.jpg",
+      "families": "LHT65N, NE117",
+      "skuCount": 2,
+      "skus": [
+        "LHT65N-NE117",
+        "NE117"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 157,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b98a340ba8beb980.png",
+      "families": "DR",
+      "skuCount": 1,
+      "skus": [
+        "DR-LT"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 158,
+      "sheet": 10,
+      "localPath": "/images/products/_official/b9bf4ea82426f08d.png",
+      "families": "S31B",
+      "skuCount": 2,
+      "skus": [
+        " S31B-FB-GE",
+        " S31B-FB2-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 159,
+      "sheet": 10,
+      "localPath": "/images/products/_official/bd724181d83a56ab.jpg",
+      "families": "WL03A",
+      "skuCount": 2,
+      "skus": [
+        "WL03A-LB",
+        "WL03A-LB2"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 160,
+      "sheet": 10,
+      "localPath": "/images/products/_official/c00dfbe1b486c725.png",
+      "families": "SDI-12",
+      "skuCount": 12,
+      "skus": [
+        "SDI-12-CB-1T",
+        "SDI-12-CB-GE",
+        "SDI-12-CB2-1T",
+        "SDI-12-CB2-GE",
+        "SDI-12-KN-1T",
+        "SDI-12-KN-GE",
+        "SDI-12-KS-1T",
+        "SDI-12-KS-GE",
+        "SDI-12-NB-1T",
+        "SDI-12-NB-GE",
+        "SDI-12-NB2-1T",
+        "SDI-12-NB2-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-body+normalized-model-variant",
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 161,
+      "sheet": 11,
+      "localPath": "/images/products/_official/c2a556ff116fed62.jpg",
+      "families": "SN50V3",
+      "skuCount": 13,
+      "skus": [
+        " SN50v3-MS",
+        "SN50v3-CB-1T",
+        "SN50v3-CB-GE",
+        "SN50v3-CB2-1T",
+        "SN50v3-CB2-GE",
+        "SN50v3-CS-1T",
+        "SN50v3-CS-GE",
+        "SN50v3-KN-1T",
+        "SN50v3-KN-GE",
+        "SN50v3-KS-1T",
+        "SN50v3-KS-GE",
+        "SN50v3-NS-1T",
+        "SN50v3-NS-GE"
+      ],
+      "methods": [
+        "official-repeated-shared-family-image",
+        "official-title+normalized-model-variant",
+        "official-body+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 162,
+      "sheet": 11,
+      "localPath": "/images/products/_official/c462daec433bc2e3.jpg",
+      "families": "BLG",
+      "skuCount": 1,
+      "skus": [
+        "BLG-AN-040 or BLG-AN-040-R"
+      ],
+      "methods": [
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 163,
+      "sheet": 11,
+      "localPath": "/images/products/_official/c4c17b57cc2c6371.jpg",
+      "families": "LMS01",
+      "skuCount": 1,
+      "skus": [
+        "LMS01-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 164,
+      "sheet": 11,
+      "localPath": "/images/products/_official/c4ddcca78d322997.jpg",
+      "families": "LDS02",
+      "skuCount": 1,
+      "skus": [
+        "LDS02"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 165,
+      "sheet": 11,
+      "localPath": "/images/products/_official/c7147a75b5f0b3a2.jpg",
+      "families": "MDS200",
+      "skuCount": 4,
+      "skus": [
+        "MDS200-NB-1T",
+        "MDS200-NB-GE",
+        "MDS200-NB2-1T",
+        "MDS200-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 166,
+      "sheet": 11,
+      "localPath": "/images/products/_official/c73209a63a74ede1.jpg",
+      "families": "WSS",
+      "skuCount": 1,
+      "skus": [
+        "WSS-21"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 167,
+      "sheet": 11,
+      "localPath": "/images/products/_official/c7f6a3d57817f8ae.png",
+      "families": "DDS45",
+      "skuCount": 12,
+      "skus": [
+        "DDS45-CB-1T",
+        "DDS45-CB-GE",
+        "DDS45-CB2-1T",
+        "DDS45-CB2-GE",
+        "DDS45-CS-1T",
+        "DDS45-CS-GE",
+        "DDS45-KN-1T",
+        "DDS45-KN-GE",
+        "DDS45-KS-1T",
+        "DDS45-KS-GE",
+        "DDS45-NS-1T",
+        "DDS45-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 168,
+      "sheet": 11,
+      "localPath": "/images/products/_official/c9ffa394cf4e0f73.png",
+      "families": "LDS25",
+      "skuCount": 1,
+      "skus": [
+        "LDS25-LS"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 169,
+      "sheet": 11,
+      "localPath": "/images/products/_official/cc8d512deca2f623.jpg",
+      "families": "LTC2",
+      "skuCount": 4,
+      "skus": [
+        "LTC2-NB-1T",
+        "LTC2-NB-GE",
+        "LTC2-NB2-1T",
+        "LTC2-NB2-GE"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 170,
+      "sheet": 11,
+      "localPath": "/images/products/_official/ccaaa3871c44f255.jpg",
+      "families": "LTS5",
+      "skuCount": 1,
+      "skus": [
+        "LTS5"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 171,
+      "sheet": 11,
+      "localPath": "/images/products/_official/ccb1f20ee059faef.png",
+      "families": "AIS01",
+      "skuCount": 17,
+      "skus": [
+        "AIS01-CB-1T",
+        "AIS01-CB-GE",
+        "AIS01-CB2-1T",
+        "AIS01-CB2-GE",
+        "AIS01-CS-1T",
+        "AIS01-CS-GE",
+        "AIS01-KN-1T",
+        "AIS01-KN-GE",
+        "AIS01-KS-1T",
+        "AIS01-KS-GE",
+        "AIS01-LS",
+        "AIS01-NB-1T",
+        "AIS01-NB-GE",
+        "AIS01-NB2-1T",
+        "AIS01-NB2-GE",
+        "AIS01-NS-1T",
+        "AIS01-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 172,
+      "sheet": 11,
+      "localPath": "/images/products/_official/cd87215953e4061c.jpg",
+      "families": "SN50V3",
+      "skuCount": 4,
+      "skus": [
+        "SN50v3-NB-1T",
+        "SN50v3-NB-GE",
+        "SN50v3-NB2-1T",
+        "SN50v3-NB2-GE"
+      ],
+      "methods": [
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 173,
+      "sheet": 11,
+      "localPath": "/images/products/_official/d00a8642b0b12be9.jpg",
+      "families": "LG01V2",
+      "skuCount": 1,
+      "skus": [
+        "LG01v2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 174,
+      "sheet": 11,
+      "localPath": "/images/products/_official/d0ae9890c2102290.jpg",
+      "families": "LPS8N, LPS8V2",
+      "skuCount": 2,
+      "skus": [
+        "LPS8N",
+        "LPS8v2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 175,
+      "sheet": 11,
+      "localPath": "/images/products/_official/d0e5cf277b041669.png",
+      "families": "DS03A",
+      "skuCount": 12,
+      "skus": [
+        "DS03A-CB-1T",
+        "DS03A-CB-GE",
+        "DS03A-CB2-1T",
+        "DS03A-CB2-GE",
+        "DS03A-CS-1T",
+        "DS03A-CS-GE",
+        "DS03A-KN-1T",
+        "DS03A-KN-GE",
+        "DS03A-KS-1T",
+        "DS03A-KS-GE",
+        "DS03A-NS-1T",
+        "DS03A-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 176,
+      "sheet": 11,
+      "localPath": "/images/products/_official/d14aa05cf4e1a561.jpg",
+      "families": "LDS12",
+      "skuCount": 1,
+      "skus": [
+        "LDS12-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 177,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d17cdf1f5af6acd7.jpg",
+      "families": "CPL03",
+      "skuCount": 1,
+      "skus": [
+        "CPL03-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 178,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d2cc229ba9bf07a6.jpg",
+      "families": "WL03A",
+      "skuCount": 4,
+      "skus": [
+        "WL03A-NB-1T",
+        "WL03A-NB-GE",
+        "WL03A-NB2-1T",
+        "WL03A-NB2-GE"
+      ],
+      "methods": [
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 179,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d2cd2d106f82144f.jpg",
+      "families": "WSS",
+      "skuCount": 1,
+      "skus": [
+        "WSS-25"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 180,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d43c0d21eea89276.png",
+      "families": "DR",
+      "skuCount": 1,
+      "skus": [
+        "DR-HT"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 181,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d54a582b4487a2f6.png",
+      "families": "IBPV1",
+      "skuCount": 1,
+      "skus": [
+        "IBPv1"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 182,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d6bfec8ef977cc6e.jpg",
+      "families": "WQS",
+      "skuCount": 2,
+      "skus": [
+        "WQS-LB",
+        "WQS-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 183,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d7416fdec5398f46.jpg",
+      "families": "AQS01",
+      "skuCount": 1,
+      "skus": [
+        "AQS01-L"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 184,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d78daae22716843b.jpg",
+      "families": "LTC2",
+      "skuCount": 2,
+      "skus": [
+        "LTC2-NS-1T",
+        "LTC2-NS-GE"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 185,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d807b1da734ec078.png",
+      "families": "PS",
+      "skuCount": 4,
+      "skus": [
+        "PS-NB-Dxx-1T",
+        "PS-NB-Dxx-GE",
+        "PS-NB2-Dxx-1T",
+        "PS-NB2-Dxx-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 186,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d864ebcfcf3a26e6.png",
+      "families": "THERMOSTAT",
+      "skuCount": 1,
+      "skus": [
+        "Thermostat"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 187,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d8cd210ae7b11cfb.png",
+      "families": "LTC1",
+      "skuCount": 4,
+      "skus": [
+        "LTC1-NB-1T",
+        "LTC1-NB-GE",
+        "LTC1-NB2-1T",
+        "LTC1-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 188,
+      "sheet": 12,
+      "localPath": "/images/products/_official/d956ffe7c18038c1.jpg",
+      "families": "LC04",
+      "skuCount": 1,
+      "skus": [
+        "LC04"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 189,
+      "sheet": 12,
+      "localPath": "/images/products/_official/dae34731ffe78691.jpg",
+      "families": "DISHSENSE",
+      "skuCount": 1,
+      "skus": [
+        "Dishsense"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 190,
+      "sheet": 12,
+      "localPath": "/images/products/_official/dc16df8e919fba8d.jpg",
+      "families": "D20S",
+      "skuCount": 1,
+      "skus": [
+        "D20S-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 191,
+      "sheet": 12,
+      "localPath": "/images/products/_official/dc53e2562632ca21.jpg",
+      "families": "PB05",
+      "skuCount": 1,
+      "skus": [
+        "PB05-L"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 192,
+      "sheet": 12,
+      "localPath": "/images/products/_official/dd2e0ae9c1f9fe60.jpg",
+      "families": "DDS45",
+      "skuCount": 1,
+      "skus": [
+        "DDS45-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 193,
+      "sheet": 13,
+      "localPath": "/images/products/_official/dfc4ae5ba4d56824.png",
+      "families": "LTC1",
+      "skuCount": 2,
+      "skus": [
+        "LTC1-LB",
+        "LTC1-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 194,
+      "sheet": 13,
+      "localPath": "/images/products/_official/e1b007909aad7320.png",
+      "families": "LHT65S",
+      "skuCount": 1,
+      "skus": [
+        "LHT65S-NE117"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 195,
+      "sheet": 13,
+      "localPath": "/images/products/_official/e823e155e53778e6.jpg",
+      "families": "WSC2",
+      "skuCount": 1,
+      "skus": [
+        "WSC2-L"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 196,
+      "sheet": 13,
+      "localPath": "/images/products/_official/ea0774730612a5a4.jpg",
+      "families": "SCT013G",
+      "skuCount": 1,
+      "skus": [
+        "SCT013G-D-100"
+      ],
+      "methods": [
+        "official-index-search+exact-sku"
+      ]
+    },
+    {
+      "number": 197,
+      "sheet": 13,
+      "localPath": "/images/products/_official/eaaace276efaaf1b.png",
+      "families": "S31, S31B",
+      "skuCount": 4,
+      "skus": [
+        "S31-KS-1T",
+        "S31-KS-GE",
+        "S31B-KS-1T",
+        "S31B-KS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 198,
+      "sheet": 13,
+      "localPath": "/images/products/_official/eb5c33aa35ae3a9c.jpg",
+      "families": "LWL02",
+      "skuCount": 1,
+      "skus": [
+        "LWL02"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 199,
+      "sheet": 13,
+      "localPath": "/images/products/_official/ec5babb0f75299d2.jpg",
+      "families": "D23",
+      "skuCount": 3,
+      "skus": [
+        "D23-LB",
+        "D23-LB2",
+        "D23-LS"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 200,
+      "sheet": 13,
+      "localPath": "/images/products/_official/ecde7d5b2c3bac71.png",
+      "families": "PS",
+      "skuCount": 6,
+      "skus": [
+        "PS-LB-Fxx",
+        "PS-LB-Txx or PS-LB-Ixx",
+        "PS-LB2-Fxx",
+        "PS-LB2-Txx",
+        "PS-LS-Fxx",
+        "PS-LS-Txxor PS-LS-Ixx"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 201,
+      "sheet": 13,
+      "localPath": "/images/products/_official/ee5fdc7362d27e09.png",
+      "families": "DDS75",
+      "skuCount": 12,
+      "skus": [
+        "DDS75-CB-1T",
+        "DDS75-CB-GE",
+        "DDS75-CB2-1T",
+        "DDS75-CB2-GE",
+        "DDS75-CS-1T",
+        "DDS75-CS-GE",
+        "DDS75-KN-1T",
+        "DDS75-KN-GE",
+        "DDS75-KS-1T",
+        "DDS75-KS-GE",
+        "DDS75-NS-1T",
+        "DDS75-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 202,
+      "sheet": 13,
+      "localPath": "/images/products/_official/f09edf45daf07a85.jpg",
+      "families": "WL03A",
+      "skuCount": 1,
+      "skus": [
+        "WL03A-LS"
+      ],
+      "methods": [
+        "reviewed-official-gallery+exact-visual-variant"
+      ]
+    },
+    {
+      "number": 203,
+      "sheet": 13,
+      "localPath": "/images/products/_official/f27a2e065a3e5281.png",
+      "families": "TC01, TC11",
+      "skuCount": 3,
+      "skus": [
+        "TC01-LB",
+        "TC01-LB2",
+        "TC11-LB2"
+      ],
+      "methods": [
+        "official-index-search+exact-sku",
+        "official-title+normalized-model-variant"
+      ]
+    },
+    {
+      "number": 204,
+      "sheet": 13,
+      "localPath": "/images/products/_official/f2941786f4f0f86d.jpg",
+      "families": "LHT65N",
+      "skuCount": 1,
+      "skus": [
+        "LHT65N-DC"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    },
+    {
+      "number": 205,
+      "sheet": 13,
+      "localPath": "/images/products/_official/f300a70104ee1e60.png",
+      "families": "PS",
+      "skuCount": 2,
+      "skus": [
+        "PS-LB-NA",
+        "PS-LB2-NA"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 206,
+      "sheet": 13,
+      "localPath": "/images/products/_official/f722f7cd80e81688.jpg",
+      "families": "SE01",
+      "skuCount": 2,
+      "skus": [
+        "SE01-LB",
+        "SE01-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 207,
+      "sheet": 13,
+      "localPath": "/images/products/_official/f9bba41e4f628aed.png",
+      "families": "WL03A",
+      "skuCount": 12,
+      "skus": [
+        "WL03A-CB-1T",
+        "WL03A-CB-GE",
+        "WL03A-CB2-1T",
+        "WL03A-CB2-GE",
+        "WL03A-CS-1T",
+        "WL03A-CS-GE",
+        "WL03A-KN-1T",
+        "WL03A-KN-GE",
+        "WL03A-KS-1T",
+        "WL03A-KS-GE",
+        "WL03A-NS-1T",
+        "WL03A-NS-GE"
+      ],
+      "methods": [
+        "official-title+normalized-model-variant",
+        "official-repeated-shared-family-image"
+      ]
+    },
+    {
+      "number": 208,
+      "sheet": 13,
+      "localPath": "/images/products/_official/fa9513d18a21f834.jpg",
+      "families": "DDS45",
+      "skuCount": 2,
+      "skus": [
+        "DDS45-LB",
+        "DDS45-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 209,
+      "sheet": 14,
+      "localPath": "/images/products/_official/faa74a1ea9a9c3cb.jpg",
+      "families": "SE0X",
+      "skuCount": 2,
+      "skus": [
+        "SE0X-LB",
+        "SE0X-LB2"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 210,
+      "sheet": 14,
+      "localPath": "/images/products/_official/fc4eebc225dc9475.jpg",
+      "families": "TS01",
+      "skuCount": 7,
+      "skus": [
+        "TS01-LB",
+        "TS01-LB2",
+        "TS01-LS",
+        "TS01-NB-1T",
+        "TS01-NB-GE",
+        "TS01-NB2-1T",
+        "TS01-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+exact-sku",
+        "catalogue-sibling+same-visual-variant",
+        "workbook-url+official-family-page"
+      ]
+    },
+    {
+      "number": 211,
+      "sheet": 14,
+      "localPath": "/images/products/_official/ff75c2a5e70eb661.jpg",
+      "families": "SPH01",
+      "skuCount": 4,
+      "skus": [
+        "SPH01-NB-1T",
+        "SPH01-NB-GE",
+        "SPH01-NB2-1T",
+        "SPH01-NB2-GE"
+      ],
+      "methods": [
+        "workbook-url+official-family-page",
+        "catalogue-sibling+same-visual-variant"
+      ]
+    },
+    {
+      "number": 212,
+      "sheet": 14,
+      "localPath": "/images/products/_official/fff560b7e9aefbbc.jpg",
+      "families": "LHT65N",
+      "skuCount": 1,
+      "skus": [
+        "LHT65N-E5"
+      ],
+      "methods": [
+        "workbook-url+exact-sku"
+      ]
+    }
+  ]
+}

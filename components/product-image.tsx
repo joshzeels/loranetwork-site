@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { NoImageIcon } from "@/components/icons";
 
 type ProductImageProps = {
   sku: string;
@@ -9,14 +10,13 @@ type ProductImageProps = {
 };
 
 export function ProductImage({ sku, application, imagePath, priority = false, sizes = "(max-width: 700px) 100vw, 33vw" }: ProductImageProps) {
-  if (!imagePath) {
-    return (
-      <div className="product-placeholder" role="img" aria-label={`No official product image available for ${sku}`}>
-        <span className="placeholder-mark" aria-hidden="true"><i /><i /><i /></span>
-        <span>No official image available</span>
-      </div>
-    );
-  }
+  if (!imagePath) return (
+    <div className="product-no-image" role="img" aria-label={`No product image available for ${sku}`}>
+      <NoImageIcon className="no-image-icon" />
+      <strong>{sku}</strong>
+      <span>Image unavailable</span>
+    </div>
+  );
 
   return (
     <Image

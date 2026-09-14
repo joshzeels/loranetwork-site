@@ -9,8 +9,37 @@ export type PublicDraginoProduct = {
   imagePath: string;
 };
 
+const exactDisplayCorrections = new Map<string, string>([
+  ["emperature & humidity sensor", "Temperature & Humidity Sensor"],
+  ["uvc radation sensor", "UVC Radiation Sensor"],
+  ["lte cat-1", "LTE CAT 1"],
+  ["nb-iot & lte-m", "LTE-M & NB-IoT"],
+  ["nb-iot&lte-m", "LTE-M & NB-IoT"],
+  ["lte-m&nb-lot(nrf9151)", "LTE-M & NB-IoT (NRF9151)"],
+]);
+
 export function displayValue(value: string) {
-  return value.replace(/\s+/g, " ").trim();
+  const cleaned = value
+    .replace(/Â(?=\u00a0|\s|$)/g, "")
+    .replace(/\u00a0/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return exactDisplayCorrections.get(cleaned.toLocaleLowerCase("en-ZA")) ?? cleaned;
+}
+
+export function productDisplayName(sku: string) {
+  return displayValue(sku);
+}
+
+export function productSummary(product: Pick<PublicDraginoProduct, "sku" | "application" | "iotInterface">) {
+  const name = productDisplayName(product.sku);
+  const application = displayValue(product.application);
+  const iotInterface = displayValue(product.iotInterface);
+  if (application && iotInterface) return `${name} is a Dragino product listed for ${application}. Its catalogue interface is ${iotInterface}.`;
+  if (application) return `${name} is a Dragino product listed for ${application}.`;
+  if (iotInterface) return `${name} is a Dragino product with ${iotInterface} recorded as its catalogue interface.`;
+  return `${name} is a Dragino IoT product.`;
 }
 
 export function facetValue(value: string) {

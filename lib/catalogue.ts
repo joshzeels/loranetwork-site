@@ -59,9 +59,9 @@ export const publicProducts: PublicDraginoProduct[] = products.map((product) => 
     sourceRow: product.sourceRow,
     slug: product.slug,
     sku: product.sku,
-    application: product.application,
-    specification: product.specification,
-    iotInterface: product.iotInterface,
+    application: displayValue(product.application),
+    specification: displayValue(product.specification),
+    iotInterface: displayValue(product.iotInterface),
     formattedPriceZar: publicPrice.formatted,
     imagePath: imageBySku.get(product.sku)?.localPath ?? "",
   };

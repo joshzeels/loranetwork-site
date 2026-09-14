@@ -11,7 +11,14 @@ export type PublicPrice = Readonly<{
   amountZar: number | null;
   formatted: string;
   schemaAmount: string | null;
+  vatNotice: string;
 }>;
+
+export function getVatDisplayNotice() {
+  if (VAT_DISPLAY_MODE === "inclusive") return "VAT included.";
+  if (VAT_DISPLAY_MODE === "exclusive") return "VAT excluded.";
+  return "VAT treatment will be confirmed on quotation.";
+}
 
 function parseSupplierPrice(value: string | number | null | undefined): number | null {
   if (value === null || value === undefined || value === "") return null;
@@ -38,6 +45,25 @@ function validateConfiguration(configuration: PricingConfiguration) {
   }
 }
 
+type DecimalFraction = { numerator: bigint; denominator: bigint };
+const BIG_ONE = BigInt(1);
+const BIG_TWO = BigInt(2);
+const BIG_TEN = BigInt(10);
+const BIG_TWO_HUNDRED = BigInt(200);
+
+function decimalFraction(value: string | number): DecimalFraction {
+  const match = String(value).match(/^([+-]?)(?:(\d+)(?:\.(\d*))?|\.(\d+))(?:e([+-]?\d+))?$/i);
+  if (!match) throw new InvalidPricingInputError(`Invalid decimal value: ${JSON.stringify(value)}`);
+  const sign = match[1] === "-" ? -BIG_ONE : BIG_ONE;
+  const whole = match[2] ?? "0";
+  const fraction = match[3] ?? match[4] ?? "";
+  const exponent = Number(match[5] ?? 0);
+  const digits = BigInt(`${whole}${fraction}` || "0") * sign;
+  const scale = fraction.length - exponent;
+  if (scale >= 0) return { numerator: digits, denominator: BIG_TEN ** BigInt(scale) };
+  return { numerator: digits * BIG_TEN ** BigInt(-scale), denominator: BIG_ONE };
+}
+
 export function calculateSellingPriceZar(
   supplierPriceUsd: string | number | null | undefined,
   configuration: PricingConfiguration = PRICING_CONFIG,
@@ -46,8 +72,13 @@ export function calculateSellingPriceZar(
   const supplierPrice = parseSupplierPrice(supplierPriceUsd);
   if (supplierPrice === null) return null;
 
-  const completeCalculation = supplierPrice * configuration.usdZarRate * (1 + configuration.markupRate);
-  return Math.round((completeCalculation + Number.EPSILON) * 100) / 100;
+  const supplier = decimalFraction(typeof supplierPriceUsd === "string" ? supplierPriceUsd : supplierPrice);
+  const exchangeRate = decimalFraction(configuration.usdZarRate);
+  const markup = decimalFraction(configuration.markupRate);
+  const numerator = supplier.numerator * exchangeRate.numerator * (markup.denominator + markup.numerator);
+  const denominator = supplier.denominator * exchangeRate.denominator * markup.denominator;
+  const roundedCents = (numerator * BIG_TWO_HUNDRED + denominator) / (denominator * BIG_TWO);
+  return Number(roundedCents) / 100;
 }
 
 export function formatSellingPriceZar(amountZar: number): string {
@@ -74,6 +105,7 @@ export function getPublicPrice(
       amountZar: null,
       formatted: "Contact for pricing",
       schemaAmount: null,
+      vatNotice: getVatDisplayNotice(),
     };
   }
 
@@ -82,5 +114,6 @@ export function getPublicPrice(
     amountZar,
     formatted: `${formatSellingPriceZar(amountZar)}${vatLabel}`,
     schemaAmount: amountZar.toFixed(2),
+    vatNotice: getVatDisplayNotice(),
   };
 }

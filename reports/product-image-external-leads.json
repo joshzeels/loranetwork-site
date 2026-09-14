@@ -1,0 +1,24 @@
+{
+  "reviewedAt": "2026-09-14",
+  "policy": "Third-party retail images are not published without an explicit commercial reuse grant or confirmation that the same asset is supplied by Dragino for reseller use.",
+  "leads": [
+    {
+      "sku": "RS485W-LB",
+      "sourcePage": "https://eu.robotshop.com/products/dragino-rs485w-lb-lorawan-rs485w-iot-converter-8500mah-li-socl2-eu868-m12-ip68-hole",
+      "identityEvidence": "The listing identifies manufacturer number RS485W-LB-EU868-12.",
+      "qualityEvidence": "RobotShop's marketplace policy requires product-only gallery images with a minimum 900 x 900 pixel resolution.",
+      "licenceClassification": "RIGHTS_UNCLEAR",
+      "decision": "REJECTED_PENDING_PERMISSION",
+      "notes": "The listing is a strong exact-product lead, but no downstream commercial reuse licence was found. The public catalogue retains its placeholder."
+    },
+    {
+      "sku": "RS485W-LB2",
+      "sourcePage": "https://eu.robotshop.com/products/dragino-rs485w-lb-lorawan-rs485w-iot-converter-8500mah-li-socl2-eu868-m12-ip68-hole",
+      "identityEvidence": "The listing is for RS485W-LB, not RS485W-LB2.",
+      "qualityEvidence": "Not applicable to this distinct battery variant.",
+      "licenceClassification": "RIGHTS_UNCLEAR",
+      "decision": "REJECTED_PRODUCT_MISMATCH",
+      "notes": "The image cannot be carried across to RS485W-LB2 without exact or confirmed-family visual evidence."
+    }
+  ]
+}

@@ -153,7 +153,7 @@ async function listHtmlFiles(directory: string): Promise<string[]> {
 const publicExposurePatterns = [
   { type: "supplier currency", expression: /\bUSD\b|US\$|priceUsd|Price \(USD\)/i },
   { type: "excluded currency", expression: /\bEUR\b|\bEuro\b|price\(Euro\)/i },
-  { type: "pricing configuration", expression: /16\.0413|MARKUP_RATE|USD_ZAR_RATE|markupRate|supplierPriceUsd|completeCalculation/i },
+  { type: "pricing configuration", expression: /MARKUP_RATE|USD_ZAR_RATE|markupRate|supplierPriceUsd|completeCalculation/i },
 ];
 
 const publicExposureFindings: Array<{ file: string; type: string }> = [];

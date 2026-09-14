@@ -11,6 +11,7 @@ type ProductCatalogueProps = {
   products: PublicDraginoProduct[];
   applications: FacetOption[];
   interfaces: FacetOption[];
+  priceNotice: string;
 };
 
 const PAGE_SIZE = 24;
@@ -20,7 +21,7 @@ function normaliseSearchText(value: string) {
   return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("en-ZA").replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
 }
 
-export function ProductCatalogue({ products, applications, interfaces }: ProductCatalogueProps) {
+export function ProductCatalogue({ products, applications, interfaces, priceNotice }: ProductCatalogueProps) {
   const [query, setQuery] = useState("");
   const [application, setApplication] = useState("");
   const [iotInterface, setIotInterface] = useState("");
@@ -124,7 +125,7 @@ export function ProductCatalogue({ products, applications, interfaces }: Product
             Clear all filters <CloseIcon />
           </button>
         ) : (
-          <p>Prices shown in South African rand</p>
+          <p>Prices shown in South African rand. {priceNotice}</p>
         )}
       </div>
 
@@ -150,9 +151,8 @@ export function ProductCatalogue({ products, applications, interfaces }: Product
         </>
       ) : (
         <div className="empty-state">
-          <p className="eyebrow">No matches</p>
           <h2>Try a broader search</h2>
-          <p>No product in the supplied catalogue matches those filters.</p>
+          <p>No products match those filters.</p>
           <button type="button" className="button button-dark" onClick={clearFilters}>Reset filters</button>
         </div>
       )}

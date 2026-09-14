@@ -1,62 +1,42 @@
 {
-  "performedAt": "2026-09-10",
-  "method": "Visual inspection of downloaded assets plus official Dragino page-title and model evidence checks.",
-  "exact": {
-    "result": "PASS",
-    "skus": [
-      "SN50v3-LB",
-      "LT-22222-L",
-      "RS485-LN",
-      "IVS-LN",
-      "LHT65N-VIB",
-      "AirFlow-LN ",
-      " CO2-LE ",
-      "Dishsense",
-      "LG01v2",
-      "AIS01-LB"
-    ],
-    "notes": "Official titles or selected image filenames identify the exact model. Images show complete devices or supplied sensor assemblies. IVS-LN uses the only product image explicitly exposed by its official page and remains lower resolution."
+  "performedAt": "2026-09-14",
+  "result": "PASS",
+  "scope": "Exhaustive catalogue image reconciliation",
+  "method": [
+    "Reviewed all 212 distinct local product assets on 14 labelled contact sheets.",
+    "Evaluated every one of the 981 catalogue SKUs against its official-page evidence.",
+    "Fetched all 425 distinct indexed Dragino product pages and inspected all 8,183 image references found in their HTML galleries and linked image elements.",
+    "Compared unresolved products against 5,518 distinct official Dragino image assets.",
+    "Classified 15 official PDF links for catalogue relevance; the only current exact catalogue match, RS485-LN, was already supported by its official product-page image."
+  ],
+  "catalogue": {
+    "totalProducts": 981,
+    "verifiedMappedProducts": 833,
+    "placeholdersWithoutReliableOfficialCandidate": 148,
+    "unresolvedMappedReviews": 0
   },
-  "familyConfirmed": {
-    "result": "PASS",
-    "skus": [
-      "SN50v3-NB-GE",
-      "RS485-CB-1T",
-      "D20S-NB-GE",
-      "LTC1-LS",
-      "SDI-12-NB-GE",
-      "DDS45-NB-1T",
-      "PS-NB-NA-GE",
-      "DS03A-NB-GE",
-      "SW3L-LB-004",
-      "WQS-CB-GE"
-    ],
-    "notes": "Each official title identifies the relevant base model or compressed series, and each selected image is the primary image published on that family page. Catalogue SKUs remain unchanged."
+  "visualReview": {
+    "distinctLocalAssetsReviewed": 212,
+    "contactSheetsReviewed": 14,
+    "correctedSkuMappings": 44,
+    "newDistinctAssetsIndividuallyReviewed": 29,
+    "belowQualityThreshold": 0,
+    "result": "PASS"
   },
-  "ambiguousRejected": {
-    "result": "PASS",
-    "skus": [
-      "Â SN50v3-MS",
-      "RS485-LB2",
-      "CO2-FE",
-      "D20S-LB2",
-      "S31-LB2",
-      "DDS75-LB2",
-      "SW3L-LB2-004",
-      "WQS-LS",
-      "LG01v2-EC25",
-      "LPS8N-EC25"
-    ],
-    "notes": "The official candidate pages do not contain the exact catalogue SKU and do not establish that the primary image applies to the differing modem, battery, connectivity, probe, or gateway variant. Placeholders were retained."
+  "evidenceDecisions": {
+    "EXACT_VERIFIED": 132,
+    "MODEL_EVIDENCE_VERIFIED": 357,
+    "OFFICIAL_SHARED_HERO_VERIFIED": 208,
+    "WORKBOOK_SOURCE_VERIFIED": 93,
+    "MANUALLY_VERIFIED_GROUPED_VARIANT": 43,
+    "NO_RELIABLE_OFFICIAL_CANDIDATE": 148
   },
-  "coverageReviewed": [
-    "gateways",
-    "sensors",
-    "nodes",
-    "water-related products",
-    "environmental products",
-    "accessories",
-    "NB-IoT variants",
-    "LoRaWAN variants"
-  ]
+  "notes": [
+    "Shared family images were retained only where the official Dragino page or grouped product imagery supports the represented model family or option.",
+    "The 148 placeholders are intentional: no reliable official product image was identified after the full indexed-page and asset search.",
+    "No catalogue SKU, workbook value, product specification, compatibility claim, certification, application, or supplier price was changed."
+  ],
+  "evidenceReport": "reports/dragino-image-evidence-audit.json",
+  "contactSheetIndex": "reports/image-qa/contact-sheets/index.json",
+  "qualityReport": "reports/product-image-quality-audit.json"
 }

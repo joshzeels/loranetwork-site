@@ -16,7 +16,7 @@ export function SiteFooter() {
             </span>
           </Link>
           <p className="footer-summary">
-            A searchable South African catalogue of LoRaWAN and IoT hardware, built from supplied product data.
+            A searchable South African catalogue of LoRaWAN and IoT hardware.
           </p>
         </div>
         <div>
@@ -41,7 +41,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="shell footer-base">
-        <p>Product fields are reproduced from {catalogue.source.file}. Blank source values remain blank.</p>
+        <p>LoRaWAN and IoT hardware for South African projects.</p>
         <p>© {new Date().getFullYear()} LoRa Network South Africa</p>
       </div>
     </footer>

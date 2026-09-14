@@ -40,3 +40,15 @@ export function MenuIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function NoImageIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" {...props}>
+      <rect x="8" y="11" width="48" height="42" rx="9" stroke="currentColor" strokeWidth="2.4" />
+      <circle cx="22" cy="25" r="4" stroke="currentColor" strokeWidth="2.4" />
+      <path d="m15 45 11-11 8 8 6-6 9 9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="m13 8 38 48" stroke="white" strokeWidth="7" strokeLinecap="round" />
+      <path d="m13 8 38 48" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+    </svg>
+  );
+}

@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     locale: "en_ZA",
     siteName: "LoRa Network South Africa",
     title: "LoRaWAN & IoT solutions for South Africa",
-    description: "Search the supplied product catalogue by SKU, application and IoT interface.",
+    description: "Search LoRaWAN and IoT products by SKU, application and IoT interface.",
     url: "/",
   },
   twitter: {
     card: "summary",
     title: "LoRaWAN & IoT solutions for South Africa",
-    description: "A source-grounded catalogue for South African IoT projects.",
+    description: "LoRaWAN and IoT hardware for South African projects.",
   },
   robots: { index: true, follow: true },
 };

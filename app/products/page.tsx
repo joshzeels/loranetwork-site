@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ProductCatalogue } from "@/components/product-catalogue";
 import { StructuredData } from "@/components/structured-data";
 import { applicationOptions, catalogue, getSiteUrl, interfaceOptions, products, publicProducts } from "@/lib/catalogue";
+import { getVatDisplayNotice } from "@/lib/pricing";
+import { productDisplayName } from "@/lib/product-presentation";
 
 export const metadata: Metadata = {
   title: "LoRaWAN & IoT Product Catalogue",
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/products" },
   openGraph: {
     title: "LoRaWAN & IoT Product Catalogue",
-    description: "Search IoT hardware for South African projects using the supplied catalogue data.",
+    description: "Search IoT hardware for South African projects by SKU, application, specification and interface.",
     url: "/products",
   },
 };
@@ -23,7 +25,7 @@ export default function ProductsPage() {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         name: "LoRaWAN & IoT Product Catalogue",
-        description: "Products listed from the supplied product workbook.",
+        description: "LoRaWAN and IoT products available from LoRa Network South Africa.",
         url: `${siteUrl}/products`,
         mainEntity: {
           "@type": "ItemList",
@@ -31,7 +33,7 @@ export default function ProductsPage() {
           itemListElement: products.slice(0, 50).map((product, index) => ({
             "@type": "ListItem",
             position: index + 1,
-            name: product.sku,
+            name: productDisplayName(product.sku),
             url: `${siteUrl}/products/${product.slug}`,
           })),
         },
@@ -40,11 +42,10 @@ export default function ProductsPage() {
       <section className="page-hero catalogue-hero">
         <div className="shell page-hero-grid">
           <div>
-            <p className="eyebrow"><span /> Product catalogue</p>
-            <h1>Find the right<br /><em>starting point.</em></h1>
+            <h1>IoT product catalogue</h1>
           </div>
           <div className="page-hero-aside">
-            <p>Search exact source data across SKU, application, specification and IoT interface.</p>
+            <p>Search by SKU, application, specification or IoT interface.</p>
             <dl>
               <div><dt>Products</dt><dd>{products.length}</dd></div>
               <div><dt>Currency</dt><dd>ZAR</dd></div>
@@ -58,6 +59,7 @@ export default function ProductsPage() {
           products={publicProducts}
           applications={applicationOptions}
           interfaces={interfaceOptions}
+          priceNotice={getVatDisplayNotice()}
         />
       </section>
     </>

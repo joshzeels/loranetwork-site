@@ -7,15 +7,16 @@ A source-grounded South African catalogue for Dragino IoT products. The applicat
 Copy `.env.example` to an ignored local environment file or configure these values in Vercel. `NEXT_PUBLIC_SITE_URL` is the only public value; pricing and enquiry values remain server/build-side.
 
 - `NEXT_PUBLIC_SITE_URL`: production origin used by metadata, canonicals, structured data, robots and sitemap.
-- `USD_ZAR_RATE`: optional positive override for the existing rate. A change requires a new build/deployment because catalogue prices are statically generated.
-- `PRICING_RATE_UPDATED_AT`: optional private audit date; never displayed publicly.
-- `VAT_DISPLAY_MODE`: `none` (default), `inclusive`, or `exclusive`; changes only the label and never adds VAT.
+- `USD_ZAR_RATE`: optional override for the centrally approved R16.75/USD buffered rate. A change requires a new build/deployment because catalogue prices are statically generated.
+- `PRICING_RATE_UPDATED_AT`: required launch audit date in `YYYY-MM-DD` format; it remains private and must be no more than 14 days old when the audit runs.
+- `VAT_DISPLAY_MODE`: `inclusive` or `exclusive` for launch (`none` remains a safe local-development fallback); this changes only the label and never adds VAT.
 - `CONTACT_RECIPIENT_EMAIL`: private enquiry recipient.
 - `EMAIL_PROVIDER`: currently `resend` when delivery is activated.
 - `EMAIL_API_KEY`: private provider credential.
 - `EMAIL_FROM_ADDRESS`: provider-verified sender.
 - `ANALYTICS_ID`: reserved for a future selected integration; no analytics currently loads.
 - `BUSINESS_EMAIL`, `BUSINESS_PHONE`, `BUSINESS_ADDRESS`: optional confirmed public details, omitted when blank.
+- `LEGAL_CONTENT_APPROVED`: set to `true` only after the operating business has approved the privacy notice and website terms.
 
 The enquiry endpoint validates submissions server-side and uses a honeypot, minimum submission time and best-effort in-memory rate limiting. Because Vercel instances do not share memory, distributed rate limiting is the recommended later hardening step if abuse appears.
 
@@ -93,10 +94,11 @@ npm test
 npm run lint
 npm run build
 npm run pricing:reconcile
+npm run launch:audit
 ```
 
 The pricing reconciliation reads all generated product HTML and verifies source totals, public ZAR prices, contact states, Product Offer values, public supplier-price exposure, duplicate SKUs, and missing pages. Its detailed result is written to `reports/pricing-reconciliation.json`.
 
 ## Commercial inputs still required
 
-The repository does not contain authoritative decisions for VAT display/inclusion, shipping and landed costs, stock, lead times, business contact details, quote handling, payment processing, or fulfilment. These features should only be added when their business rules and data are supplied.
+The site operates as an enquiry catalogue, so stock, lead times, delivery and quote validity remain subject to confirmation rather than being invented. Before deployment, configure the public origin, an approved current exchange rate and date, VAT display treatment, enquiry delivery, at least one public fallback contact method, and legal-content approval. `npm run launch:audit` enforces those launch inputs without printing private values.

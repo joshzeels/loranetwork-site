@@ -11,11 +11,15 @@
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "pricing:reconcile": "node --experimental-strip-types scripts/reconcile-pricing.ts",
     "images:sync": "node --experimental-strip-types scripts/sync-dragino-images.ts",
+    "images:quality-audit": "node --experimental-strip-types scripts/audit-product-image-quality.ts",
+    "images:contact-sheets": "node --experimental-strip-types scripts/generate-product-image-contact-sheets.ts",
+    "images:evidence-audit": "node --experimental-strip-types scripts/audit-dragino-image-evidence.ts",
     "images:licence-audit": "node --experimental-strip-types scripts/audit-licensed-image-sources.ts",
     "images:provenance": "node --experimental-strip-types scripts/normalize-image-provenance.ts",
     "brand:audit": "node --experimental-strip-types scripts/audit-brand-copy.ts",
     "content:audit": "node --experimental-strip-types scripts/audit-content-opportunities.ts",
     "content:architecture-audit": "node --experimental-strip-types scripts/audit-content-architecture.ts",
+    "launch:audit": "node --experimental-strip-types scripts/audit-launch-readiness.ts",
     "catalogue:import": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/import-dragino-catalogue.ps1"
   },
   "dependencies": {

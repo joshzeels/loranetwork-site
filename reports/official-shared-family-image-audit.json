@@ -1,0 +1,6 @@
+{
+  "generatedAt": "2026-09-14T08:09:40.320Z",
+  "rule": "Candidate assets are byte-address-equivalent official image paths published on at least two distinct Dragino model-documentation paths for the same catalogue family.",
+  "candidateFamilies": 0,
+  "candidates": []
+}

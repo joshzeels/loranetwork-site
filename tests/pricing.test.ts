@@ -8,16 +8,16 @@ import {
 } from "../lib/pricing.ts";
 
 test("calculates the configured price completely before rounding", () => {
-  assert.equal(calculateSellingPriceZar("100.00"), 2245.78);
+  assert.equal(calculateSellingPriceZar("100.00"), 2345);
 });
 
 test("calculates decimal supplier prices", () => {
-  assert.equal(calculateSellingPriceZar("55.5"), 1246.41);
+  assert.equal(calculateSellingPriceZar("55.5"), 1301.48);
 });
 
 test("calculates very low prices without prematurely rounding the conversion", () => {
-  assert.equal(calculateSellingPriceZar("0.01"), 0.22);
-  assert.equal(calculateSellingPriceZar("0.37"), 8.31);
+  assert.equal(calculateSellingPriceZar("0.01"), 0.23);
+  assert.equal(calculateSellingPriceZar("0.37"), 8.68);
 });
 
 test("returns no price for genuinely missing source values", () => {
@@ -28,6 +28,7 @@ test("returns no price for genuinely missing source values", () => {
     amountZar: null,
     formatted: "Contact for pricing",
     schemaAmount: null,
+    vatNotice: "VAT treatment will be confirmed on quotation.",
   });
 });
 
@@ -68,8 +69,9 @@ test("rejects invalid pricing configuration", () => {
 test("formats public prices with the South African ZAR locale", () => {
   assert.equal(formatSellingPriceZar(1299), "R\u00a01\u00a0299,00");
   assert.deepEqual(getPublicPrice("100.00"), {
-    amountZar: 2245.78,
-    formatted: "R\u00a02\u00a0245,78",
-    schemaAmount: "2245.78",
+    amountZar: 2345,
+    formatted: "R\u00a02\u00a0345,00",
+    schemaAmount: "2345.00",
+    vatNotice: "VAT treatment will be confirmed on quotation.",
   });
 });

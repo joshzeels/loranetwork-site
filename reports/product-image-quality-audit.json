@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-09-14T12:32:42.049Z",
+  "thresholds": {
+    "minimumShortEdge": 180,
+    "minimumArea": 90000,
+    "extremeAspectRatio": 2.35
+  },
+  "summary": {
+    "distinctLocalImageFiles": 212,
+    "belowThreshold": 0,
+    "extremeAspectRatios": 4
+  },
+  "belowThreshold": [],
+  "extremeAspectRatios": [
+    {
+      "file": "71eba7e3cfbc62f4.jpg",
+      "width": 1545,
+      "height": 384,
+      "area": 593280,
+      "aspectRatio": 4.02
+    },
+    {
+      "file": "1c7b96fcab252f11.png",
+      "width": 1400,
+      "height": 420,
+      "area": 588000,
+      "aspectRatio": 3.33
+    },
+    {
+      "file": "31c7a872eceeb4fb.png",
+      "width": 360,
+      "height": 876,
+      "area": 315360,
+      "aspectRatio": 2.43
+    },
+    {
+      "file": "050014ce6f122228.png",
+      "width": 368,
+      "height": 867,
+      "area": 319056,
+      "aspectRatio": 2.36
+    }
+  ]
+}

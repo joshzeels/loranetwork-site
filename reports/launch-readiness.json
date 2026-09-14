@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-09-14T13:19:06.200Z",
+  "ready": false,
+  "checks": [
+    {
+      "name": "Production site URL",
+      "passed": false,
+      "detail": "Set NEXT_PUBLIC_SITE_URL to the final public HTTPS origin."
+    },
+    {
+      "name": "Approved USD/ZAR rate",
+      "passed": true,
+      "detail": "The central approved rate must be a positive number."
+    },
+    {
+      "name": "Pricing rate date",
+      "passed": true,
+      "detail": "Configured rate is 0 day(s) old; launch requires 14 days or less."
+    },
+    {
+      "name": "VAT treatment",
+      "passed": false,
+      "detail": "Set VAT_DISPLAY_MODE to inclusive or exclusive after confirming the business treatment."
+    },
+    {
+      "name": "Enquiry delivery",
+      "passed": false,
+      "detail": "Configure the documented Resend recipient, provider, API key and verified sender values."
+    },
+    {
+      "name": "Public contact route",
+      "passed": false,
+      "detail": "Set at least BUSINESS_EMAIL or BUSINESS_PHONE so customers have a fallback contact route."
+    },
+    {
+      "name": "Legal-content approval",
+      "passed": false,
+      "detail": "Set LEGAL_CONTENT_APPROVED=true only after the privacy notice and website terms have been reviewed for the operating business."
+    },
+    {
+      "name": "Catalogue integrity",
+      "passed": true,
+      "detail": "981 products; 981 unique source SKUs."
+    },
+    {
+      "name": "Public catalogue presentation",
+      "passed": true,
+      "detail": "Confirmed source encoding and taxonomy artefacts are cleaned only at presentation time."
+    },
+    {
+      "name": "Pricing reconciliation",
+      "passed": true,
+      "detail": "All price, privacy and schema checks pass."
+    },
+    {
+      "name": "Product image evidence",
+      "passed": true,
+      "detail": "833 verified mappings, 148 deliberate no-image states, 0 unresolved reviews."
+    },
+    {
+      "name": "Product image quality",
+      "passed": true,
+      "detail": "212 distinct assets; 0 below the quality threshold."
+    }
+  ],
+  "blockers": [
+    "Production site URL",
+    "VAT treatment",
+    "Enquiry delivery",
+    "Public contact route",
+    "Legal-content approval"
+  ]
+}
