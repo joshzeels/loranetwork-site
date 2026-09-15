@@ -29,39 +29,39 @@
   ],
   "applicationGuidance": {
     "Distance Sensor": {
-      "directAnswer": "This catalogue lists {count} products for distance sensing. Use the supplied specification to identify the measurement details stated for each SKU, then compare connectivity and public ZAR price.",
+      "directAnswer": "Explore {count} products for distance sensing. Start with the measurement details shown for each SKU, then compare connectivity and public ZAR price.",
       "hardwareSummary": "The range contains several distinct model groups and connectivity variants. Product names alone do not establish range, mounting method or compatibility, so use the exact specification and technical source where available.",
       "considerations": ["Check whether the required measurement detail is stated in the specification.", "Choose a connectivity option available at the deployment location.", "Compare exact SKUs because similarly named variants can have different specifications.", "Confirm any requirement not stated in the catalogue against linked technical documentation."],
       "selectionPath": "Start with the required distance-measurement specification. Remove models that do not explicitly state the needed detail, then compare their listed connectivity and ZAR prices."
     },
     "Temperature Sensor": {
-      "directAnswer": "This catalogue lists {count} products classified for temperature sensing. Compare the measurement details stated in each specification, the connectivity option and the exact SKU.",
+      "directAnswer": "Explore {count} products for temperature sensing. Compare the measurement details shown for each SKU, the connectivity option and the exact model.",
       "hardwareSummary": "The catalogue contains temperature-product model groups and connectivity variants. Accuracy, probe type and operating range should only be relied on when they are stated in the product specification or linked technical documentation.",
       "considerations": ["Confirm whether the project needs temperature only or a separately classified temperature-and-humidity product.", "Check the supplied specification for probe, range or accuracy details when present.", "Compare the listed connectivity options.", "Use the exact SKU when requesting confirmation or a quotation."],
       "selectionPath": "Choose the measurement category first. Next compare only the technical details stated for each SKU, followed by connectivity and ZAR price."
     },
     "Smart Agriculture": {
-      "directAnswer": "This catalogue lists {count} products in the Smart Agriculture application group. The supported measurement or function must be established from each product's supplied specification.",
-      "hardwareSummary": "Products in this group cover different recorded specifications and connectivity options. The Smart Agriculture label is a catalogue category and does not by itself establish a particular crop, installation or sensor capability.",
+      "directAnswer": "Explore {count} products for Smart Agriculture projects. Check each product specification to establish the measurement or function it supports.",
+      "hardwareSummary": "Products in this group cover different specifications and connectivity options. The Smart Agriculture label alone does not establish a particular crop, installation or sensor capability.",
       "considerations": ["Identify the measurement or function explicitly stated in the specification.", "Do not infer a capability from the application label alone.", "Compare connectivity against the network available for the project.", "Confirm unstated environmental and installation requirements from technical documentation."],
       "selectionPath": "Define the measurement or control function first. Keep only products whose specification explicitly supports that function, then compare connectivity and exact model details."
     },
     "Water Flow Sensor": {
-      "directAnswer": "This catalogue lists {count} products for water-flow monitoring, including verified SW3L family variants. Compare exact specifications, connectivity and public ZAR prices before choosing a model.",
+      "directAnswer": "Explore {count} products for water-flow monitoring, including SW3L family variants. Compare exact specifications, connectivity and public ZAR prices before choosing a model.",
       "hardwareSummary": "The page includes SW3L variants and other products classified for water-flow sensing. Size, pulse, interface or metering details should only be used when the individual specification states them.",
       "considerations": ["Check the exact flow or meter detail stated for the SKU.", "Compare SW3L variants through the verified family table where relevant.", "Choose among the connectivity options represented in the catalogue.", "Confirm installation and meter compatibility when those details are not supplied."],
       "selectionPath": "Start with the stated meter or flow requirement, then compare matching specifications. Use connectivity and ZAR price to narrow the remaining exact SKUs."
     },
     "Pressure Sensor": {
-      "directAnswer": "This catalogue lists {count} products for pressure sensing. Compare the range, output or other measurement details only where they are explicitly stated, followed by connectivity and exact SKU.",
+      "directAnswer": "Explore {count} products for pressure sensing. Compare the range, output or other measurement details shown for each model, followed by connectivity and exact SKU.",
       "hardwareSummary": "The category contains multiple model and connectivity variants. A shared pressure-sensor label does not establish identical range, output or installation requirements.",
       "considerations": ["Check whether the required pressure range is explicitly stated.", "Compare any stated output or interface details.", "Choose connectivity that can be supported at the deployment location.", "Confirm missing accuracy, media and installation requirements from technical documentation."],
       "selectionPath": "Filter first by explicit pressure specification. Then compare connectivity, model-level details and public ZAR price without assuming unstated compatibility."
     },
     "Temperature & Humidity Sensor": {
-      "directAnswer": "This catalogue lists {count} products classified for combined temperature and humidity sensing. Compare the measurement details stated in each specification, the connectivity option and the exact SKU, including whether the model belongs to the verified S31B family.",
-      "hardwareSummary": "This group includes the verified S31B family alongside other listed temperature-and-humidity models. Reported accuracy, range or housing rating should only be relied on when the specification or linked technical documentation states it.",
-      "considerations": ["Confirm the project needs a combined temperature-and-humidity reading rather than temperature alone.", "Check whether the model belongs to the verified S31B family or a different listed model.", "Compare the listed connectivity options.", "Confirm accuracy, range and housing rating from the specification or linked technical documentation before ordering."],
+      "directAnswer": "Explore {count} products for combined temperature and humidity sensing. Compare the measurement details shown for each SKU, the connectivity option and whether the model belongs to the S31B family.",
+      "hardwareSummary": "This group includes the S31B family alongside other temperature-and-humidity models. Rely on accuracy, range or housing-rating details only when they appear in the product specification.",
+      "considerations": ["Confirm the project needs a combined temperature-and-humidity reading rather than temperature alone.", "Check whether the model belongs to the S31B family or a different model.", "Compare the connectivity options shown for each product.", "Check the product specification for accuracy, range and housing-rating details before ordering."],
       "selectionPath": "Confirm the project needs both readings from one device. Then check whether an S31B family model fits, compare connectivity, and confirm any unstated technical detail before ordering."
     },
     "Smart Weather Station": {
@@ -69,6 +69,12 @@
       "hardwareSummary": "The range includes WSC2 models for compatible weather sensors, WSS sensors covering measurements such as rain, wind, temperature, humidity, air pressure, illumination, radiation, PAR, CO2 and particulates, and related weather hardware. Measurements and interfaces vary by model, so use the individual product details when choosing.",
       "considerations": ["Start with the weather measurements required, such as rain, wind, temperature, humidity, air pressure, illumination, radiation, PAR, CO2 or particulates.", "Decide whether the project needs a WSC2 controller with compatible sensors or a specific WSS sensor for the required measurement.", "Check how the selected sensor connects, including RS485 interfaces used with WSC2 products.", "Choose the connectivity option shown for the selected model, such as LoRaWAN, NB-IoT or LTE-M & NB-IoT.", "Check the selected model's stated range, humidity conditions, power, mounting and sensor compatibility before ordering."],
       "selectionPath": "Start with the weather variable to measure. Then decide whether a WSC2 model with compatible sensors or a specific WSS sensor fits the project, compare the interface and connectivity, and check any model-specific environmental or power requirement before ordering."
+    },
+    "Water Quality Measurement": {
+      "directAnswer": "Water quality monitoring can involve different measurements, so start with the parameters you need to track. This group includes {count} products, including WQS main units and individual probes.",
+      "hardwareSummary": "Nineteen products belong to the WQS family. Product specifications for these WQS models describe support for EC, pH, dissolved oxygen, ORP and TS-type probes. Individual WQS product specifications note one to three probes. The remaining products are individual probes for EC, chlorine, pH, ORP, dissolved oxygen or turbidity measurement.",
+      "considerations": ["Start with the water-quality parameters the project needs to measure, such as EC, pH, ORP, dissolved oxygen, turbidity or chlorine.", "Decide whether the project needs a WQS main unit with probes or a specific individual probe.", "For a WQS model, check the product specification for the supported probe types and the number of probes required.", "Compare the connectivity shown for the selected main unit.", "Check the selected product specification for any installation, calibration, environmental or compatibility requirement before ordering."],
+      "selectionPath": "Choose the parameters to measure first. Then decide between a WQS main unit and an individual probe, compare the relevant specification and connectivity, and confirm the requirements of the selected model before ordering."
     }
   },
   "connectivityGuidance": {

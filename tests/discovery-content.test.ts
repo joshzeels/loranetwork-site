@@ -7,13 +7,15 @@ import { summariseFamilyOverlap } from "../lib/product-presentation.ts";
 // "server-only" and cannot be imported by the plain node test runner.
 const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json", import.meta.url), "utf8")) as {
   indexableApplications: string[];
+  indexableInterfaces: string[];
   applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string }>;
-  guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[] }>;
+  guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; applicationValues: string[]; relatedFamilySlugs: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[] }>;
   families: Array<{ slug: string }>;
 };
 
 const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; slug: string; application: string }> };
 const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string }> };
+const facetDetail = readFileSync(new URL("../components/facet-detail.tsx", import.meta.url), "utf8");
 
 test("every application-guidance entry resolves to a real indexed application facet", () => {
   for (const value of Object.keys(content.applicationGuidance)) {
@@ -36,6 +38,45 @@ test("the highest-count application facets have complete, non-empty guidance", (
 test("application guidance is not one copy-pasted template across pages", () => {
   const answers = Object.values(content.applicationGuidance).map((guidance) => guidance.directAnswer);
   assert.equal(new Set(answers).size, answers.length, "two application facets share an identical directAnswer");
+});
+
+test("Water Quality Measurement guidance supports safe buyer selection", () => {
+  const guidance = content.applicationGuidance["Water Quality Measurement"];
+  assert.ok(guidance);
+  assert.match(guidance.directAnswer, /\{count\}/);
+  assert.ok(guidance.considerations.length >= 5);
+  const waterQualityProducts = catalogue.products.filter((product) => product.application.trim() === "Water Quality Measurement");
+  const statuses = waterQualityProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
+  assert.equal(waterQualityProducts.length, 29);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 5);
+  assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 10);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 14);
+  assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
+  assert.equal(waterQualityProducts.filter((product) => product.sku.trim().startsWith("WQS-")).length, 19);
+  assert.ok(content.families.some((family) => family.slug === "wqs"));
+  const guide = content.guides.find((item) => item.slug === "choose-water-monitoring-device");
+  assert.ok(guide);
+  assert.ok(guide.applicationValues.includes("Water Quality Measurement"));
+  assert.ok(guide.relatedFamilySlugs.includes("wqs"));
+  for (const connectivity of ["LoRaWAN", "NB-IoT", "NB-IoT, 10 years 500MB data", "LTE-M & NB-IoT", "LTE-M & NB-IoT, 10 years 500MB data", "LTE CAT 1"]) {
+    assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
+  }
+  const copy = [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath].join(" ");
+  assert.match(copy, /EC|pH|dissolved oxygen|ORP|turbidity|chlorine/i);
+  assert.match(copy, /Individual WQS product specifications note one to three probes/);
+  assert.doesNotMatch(copy, /each WQS model|all WQS|every WQS/i);
+  assert.doesNotMatch(copy, /all (?:water quality )?products|every (?:water quality )?product|manufacturer|official|verified|source|documentation|according to|Dragino|datasheet|manual/i);
+  assert.doesNotMatch(copy, /dragino\.com|â€”|(?<!-)--(?!-)/);
+});
+
+test("application guidance avoids import-led public wording", () => {
+  const copy = Object.values(content.applicationGuidance).flatMap((guidance) => [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath]).join(" ");
+  assert.doesNotMatch(copy, /This catalogue (lists|includes)|\blisted (?:for|as)\b|catalogue products|catalogue entries/i);
+});
+
+test("guided application family overlap uses customer-friendly punctuation", () => {
+  assert.match(facetDetail, /<\/Link>, \{entry\.matched\}/);
+  assert.doesNotMatch(facetDetail, /<\/Link> — \{entry\.matched\}/);
 });
 
 test("gateway guide provides verified decision support without supplier language", () => {
