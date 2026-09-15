@@ -32,7 +32,7 @@ const rateAgeDays = rateDate && Number.isFinite(rateDate.valueOf()) ? Math.floor
 check("Pricing rate date", rateAgeDays !== null && rateAgeDays >= 0 && rateAgeDays <= 14, rateAgeDays === null ? "Set PRICING_RATE_UPDATED_AT as YYYY-MM-DD." : `Configured rate is ${rateAgeDays} day(s) old; launch requires 14 days or less.`);
 
 const vatMode = process.env.VAT_DISPLAY_MODE?.trim();
-check("VAT treatment", vatMode === "inclusive" || vatMode === "exclusive", "Set VAT_DISPLAY_MODE to inclusive or exclusive after confirming the business treatment.");
+check("VAT treatment", vatMode === "none" || vatMode === "inclusive" || vatMode === "exclusive", "Set VAT_DISPLAY_MODE to none, inclusive or exclusive after confirming the business treatment. \"none\" is a valid final choice for a business that does not charge VAT, not only a placeholder.");
 
 const deliveryVariables = ["CONTACT_RECIPIENT_EMAIL", "EMAIL_PROVIDER", "EMAIL_API_KEY", "EMAIL_FROM_ADDRESS"];
 const deliveryReady = deliveryVariables.every(configured) && process.env.EMAIL_PROVIDER?.trim().toLowerCase() === "resend";

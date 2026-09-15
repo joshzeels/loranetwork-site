@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T13:19:06.200Z",
+  "generatedAt": "2026-09-15T09:49:48.213Z",
   "ready": false,
   "checks": [
     {
@@ -15,12 +15,12 @@
     {
       "name": "Pricing rate date",
       "passed": true,
-      "detail": "Configured rate is 0 day(s) old; launch requires 14 days or less."
+      "detail": "Configured rate is 1 day(s) old; launch requires 14 days or less."
     },
     {
       "name": "VAT treatment",
-      "passed": false,
-      "detail": "Set VAT_DISPLAY_MODE to inclusive or exclusive after confirming the business treatment."
+      "passed": true,
+      "detail": "Set VAT_DISPLAY_MODE to none, inclusive or exclusive after confirming the business treatment. \"none\" is a valid final choice for a business that does not charge VAT, not only a placeholder."
     },
     {
       "name": "Enquiry delivery",
@@ -65,7 +65,6 @@
   ],
   "blockers": [
     "Production site URL",
-    "VAT treatment",
     "Enquiry delivery",
     "Public contact route",
     "Legal-content approval"

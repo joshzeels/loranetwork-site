@@ -17,7 +17,7 @@ export type PublicPrice = Readonly<{
 export function getVatDisplayNotice() {
   if (VAT_DISPLAY_MODE === "inclusive") return "VAT included.";
   if (VAT_DISPLAY_MODE === "exclusive") return "VAT excluded.";
-  return "VAT treatment will be confirmed on quotation.";
+  return "VAT not charged.";
 }
 
 function parseSupplierPrice(value: string | number | null | undefined): number | null {

@@ -28,7 +28,7 @@ test("returns no price for genuinely missing source values", () => {
     amountZar: null,
     formatted: "Contact for pricing",
     schemaAmount: null,
-    vatNotice: "VAT treatment will be confirmed on quotation.",
+    vatNotice: "VAT not charged.",
   });
 });
 
@@ -72,6 +72,6 @@ test("formats public prices with the South African ZAR locale", () => {
     amountZar: 2345,
     formatted: "R\u00a02\u00a0345,00",
     schemaAmount: "2345.00",
-    vatNotice: "VAT treatment will be confirmed on quotation.",
+    vatNotice: "VAT not charged.",
   });
 });
