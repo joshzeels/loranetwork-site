@@ -160,6 +160,24 @@ test("Dry Contact / Counting / Interrupt guidance supports a practical, bounded 
   assert.doesNotMatch(copy, /dragino\.com|â€”|Ã¢â‚¬â€|(?<!-)--(?!-)/);
 });
 
+test("Angle Sensor / Tilting guidance supports a practical, bounded selection", () => {
+  const guidance = content.applicationGuidance["Angle Sensor / Tilting"];
+  assert.ok(guidance);
+  assert.ok(guidance.considerations.length >= 5);
+  const products = catalogue.products.filter((product) => product.application.trim() === "Angle Sensor / Tilting");
+  const statuses = products.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
+  assert.equal(products.length, 19);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 4);
+  assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 0);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 15);
+  assert.ok(products.some((product) => product.sku === "TS01-LB" && /Detect pitch and roll angle.*Angle Alarm/i.test(product.specification)));
+  assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Angle Sensor / Tilting")), false);
+  assert.equal(content.families.some((family) => /ts01|angle/i.test(family.slug)), false);
+  const copy = [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath].join(" ");
+  assert.match(copy, /Some TS01 product specifications state pitch and roll detection with an angle alarm/);
+  assert.doesNotMatch(copy, /all TS01|every TS01|manufacturer|official|verified|source|documentation|according to|Dragino|dragino\.com|â€”|Ã¢â‚¬â€|(?<!-)--(?!-)/i);
+});
+
 test("application guidance avoids import-led public wording", () => {
   const copy = Object.values(content.applicationGuidance).flatMap((guidance) => [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath]).join(" ");
   assert.doesNotMatch(copy, /This catalogue (lists|includes)|\blisted (?:for|as)\b|catalogue products|catalogue entries/i);
