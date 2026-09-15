@@ -13,7 +13,7 @@ const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json"
   families: Array<{ slug: string }>;
 };
 
-const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; slug: string; application: string }> };
+const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; slug: string; application: string; iotInterface: string; specification: string }> };
 const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string }> };
 const facetDetail = readFileSync(new URL("../components/facet-detail.tsx", import.meta.url), "utf8");
 
@@ -67,6 +67,37 @@ test("Water Quality Measurement guidance supports safe buyer selection", () => {
   assert.doesNotMatch(copy, /each WQS model|all WQS|every WQS/i);
   assert.doesNotMatch(copy, /all (?:water quality )?products|every (?:water quality )?product|manufacturer|official|verified|source|documentation|according to|Dragino|datasheet|manual/i);
   assert.doesNotMatch(copy, /dragino\.com|â€”|(?<!-)--(?!-)/);
+});
+
+test("Energy Control / Monitoring guidance supports a practical, bounded selection", () => {
+  const guidance = content.applicationGuidance["Energy Control / Monitoring"];
+  assert.ok(guidance);
+  assert.match(guidance.directAnswer, /\{count\}/);
+  assert.ok(guidance.considerations.length >= 5);
+
+  const energyProducts = catalogue.products.filter((product) => product.application.trim() === "Energy Control / Monitoring");
+  const statuses = energyProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
+  assert.equal(energyProducts.length, 26);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 8);
+  assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 0);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 18);
+  assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
+  assert.ok(energyProducts.some((product) => product.sku === "CS01-LB"));
+  assert.ok(energyProducts.some((product) => product.sku === "SCT013G-D-100" && product.iotInterface === "For CS01"));
+  assert.ok(energyProducts.some((product) => product.sku === "LC01"));
+  assert.ok(energyProducts.some((product) => product.sku === "LC03"));
+  assert.ok(energyProducts.some((product) => product.sku === "Thermostat"));
+  assert.equal(content.indexableInterfaces.includes("For CS01"), false);
+  assert.equal(content.families.some((family) => family.slug === "cs01"), false);
+  assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Energy Control / Monitoring")), false);
+  for (const connectivity of ["LoRaWAN", "LTE CAT 1", "NB-IoT", "LTE-M & NB-IoT", "LTE-M & NB-IoT, 10 years 500MB data", "NB-IoT, 10 years 500MB data"]) {
+    assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
+  }
+
+  const copy = [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath].join(" ");
+  assert.match(copy, /current monitoring|electrical control|thermostat/i);
+  assert.doesNotMatch(copy, /all (?:energy )?products|every (?:energy )?product|manufacturer|official|verified|source|documentation|according to|Dragino|datasheet|manual/i);
+  assert.doesNotMatch(copy, /dragino\.com|â€”|Ã¢â‚¬â€|(?<!-)--(?!-)/);
 });
 
 test("application guidance avoids import-led public wording", () => {
