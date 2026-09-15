@@ -179,6 +179,14 @@ test("Angle Sensor / Tilting guidance supports a practical, bounded selection", 
 });
 
 test("application guidance avoids import-led public wording", () => {
+  const analog = content.applicationGuidance["Generic Node / Analog"];
+  assert.ok(analog);
+  const analogProducts = catalogue.products.filter((product) => product.application.trim() === "Generic Node / Analog");
+  assert.equal(analogProducts.length, 19);
+  assert.ok(analogProducts.some((product) => product.sku === "PS-LB-NA" && /0~20mA input.*0~30v input.*5v and 12v power output/i.test(product.specification)));
+  const analogCopy = [analog.directAnswer, analog.hardwareSummary, ...analog.considerations, analog.selectionPath].join(" ");
+  assert.match(analogCopy, /Some PS product specifications state one 0 to 20 mA input/);
+  assert.doesNotMatch(analogCopy, /all PS|every PS|manufacturer|official|verified|source|documentation|according to|Dragino|dragino\.com|â€”|Ã¢â‚¬â€|(?<!-)--(?!-)/i);
   const copy = Object.values(content.applicationGuidance).flatMap((guidance) => [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath]).join(" ");
   assert.doesNotMatch(copy, /This catalogue (lists|includes)|\blisted (?:for|as)\b|catalogue products|catalogue entries/i);
 });

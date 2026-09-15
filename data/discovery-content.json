@@ -99,6 +99,12 @@
       "hardwareSummary": "Some TS01 product specifications state pitch and roll detection with an angle alarm. Product details vary by model, so check the selected specification for the measurement, alarm and installation requirements that matter to the project.",
       "considerations": ["Define the pitch, roll or tilt condition the project needs to monitor.", "Choose an individual TS01 model only after checking its stated angle-detection and alarm details.", "Compare the connectivity option shown for the selected model and confirm that the deployment can support it.", "Check the selected product specification for stated power and installation requirements.", "Use the exact SKU and public ZAR price to choose between the remaining suitable models."],
       "selectionPath": "Start with the movement condition to monitor. Then shortlist models with the required stated angle and alarm details, compare connectivity and installation requirements, and use public ZAR price to select the exact model."
+    },
+    "Generic Node / Analog": {
+      "directAnswer": "These products connect analogue signals to an IoT deployment. Start with the signal the project needs to read, then compare the exact model, connectivity and public ZAR price.",
+      "hardwareSummary": "Some PS product specifications state one 0 to 20 mA input, one 0 to 30 V input, and 5 V and 12 V power outputs. Check the selected model's stated inputs and outputs before choosing, because the application label alone does not define the required wiring or signal arrangement.",
+      "considerations": ["Identify the analogue signal and input range the project needs to read.", "Choose an individual PS model only after checking its stated input and power-output details.", "Check the selected model's stated wiring, power and installation requirements.", "Choose the connectivity option shown for the selected model and confirm that the deployment can support it.", "Use the exact SKU and public ZAR price to choose between suitable models."],
+      "selectionPath": "Start with the signal to read. Then shortlist models with the required stated input and output details, compare wiring and connectivity requirements, and use public ZAR price to select the exact model."
     }
   },
   "connectivityGuidance": {
