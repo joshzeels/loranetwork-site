@@ -63,6 +63,12 @@
       "hardwareSummary": "This group includes the verified S31B family alongside other listed temperature-and-humidity models. Reported accuracy, range or housing rating should only be relied on when the specification or linked technical documentation states it.",
       "considerations": ["Confirm the project needs a combined temperature-and-humidity reading rather than temperature alone.", "Check whether the model belongs to the verified S31B family or a different listed model.", "Compare the listed connectivity options.", "Confirm accuracy, range and housing rating from the specification or linked technical documentation before ordering."],
       "selectionPath": "Confirm the project needs both readings from one device. Then check whether an S31B family model fits, compare connectivity, and confirm any unstated technical detail before ordering."
+    },
+    "Smart Weather Station": {
+      "directAnswer": "This group contains {count} products for smart weather monitoring. It brings together WSC2 weather-station models, WSS weather sensors and related hardware. Start with the measurements and sensor connection you need, then compare each model's connectivity and stated technical details.",
+      "hardwareSummary": "The range includes WSC2 models for compatible weather sensors, WSS sensors covering measurements such as rain, wind, temperature, humidity, air pressure, illumination, radiation, PAR, CO2 and particulates, and related weather hardware. Measurements and interfaces vary by model, so use the individual product details when choosing.",
+      "considerations": ["Start with the weather measurements required, such as rain, wind, temperature, humidity, air pressure, illumination, radiation, PAR, CO2 or particulates.", "Decide whether the project needs a WSC2 controller with compatible sensors or a specific WSS sensor for the required measurement.", "Check how the selected sensor connects, including RS485 interfaces used with WSC2 products.", "Choose the connectivity option shown for the selected model, such as LoRaWAN, NB-IoT or LTE-M & NB-IoT.", "Check the selected model's stated range, humidity conditions, power, mounting and sensor compatibility before ordering."],
+      "selectionPath": "Start with the weather variable to measure. Then decide whether a WSC2 model with compatible sensors or a specific WSS sensor fits the project, compare the interface and connectivity, and check any model-specific environmental or power requirement before ordering."
     }
   },
   "connectivityGuidance": {

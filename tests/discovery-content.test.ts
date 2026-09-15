@@ -9,6 +9,7 @@ const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json"
   indexableApplications: string[];
   applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string }>;
   guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[] }>;
+  families: Array<{ slug: string }>;
 };
 
 const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; slug: string; application: string }> };
@@ -51,6 +52,21 @@ test("gateway guide provides verified decision support without supplier language
   assert.doesNotMatch(copy, /coverage|throughput|number of devices|cloud compatibility|redundancy/i);
   assert.doesNotMatch(copy, /dragino\.com|docs\.dragino\.com/i);
   for (const slug of guide.comparisonProductSlugs) assert.ok(catalogue.products.some((product) => product.slug === slug), slug);
+});
+
+test("Smart Weather Station guidance provides evidence-based selection support", () => {
+  const guidance = content.applicationGuidance["Smart Weather Station"];
+  assert.ok(guidance);
+  assert.match(guidance.directAnswer, /\{count\}/);
+  assert.ok(guidance.hardwareSummary.length > 40);
+  assert.ok(guidance.considerations.length >= 5);
+  assert.ok(guidance.selectionPath.length > 40);
+  assert.match(guidance.hardwareSummary, /WSC2|WSS/);
+  const copy = [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath].join(" ");
+  assert.doesNotMatch(copy, /every|all .*products|manufacturer|official|verified|source|documentation|according to|Dragino|datasheet|manual/i);
+  assert.doesNotMatch(copy, /—|(?<!-)--(?!-)/);
+  assert.ok(content.indexableApplications.includes("Smart Weather Station"));
+  assert.ok(content.families.some((family) => family.slug === "wsc2"));
 });
 
 test("DDS comparison guide contains only exact-source DDS products", () => {
