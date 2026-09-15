@@ -9,6 +9,7 @@ import { getDocumentationForProduct, getImageForProduct, getProductBySlug, getSi
 import { getFamilyComparisonSummary, getFamilyProducts, getIndexableApplicationFacet, getIndexableInterfaceFacet, getProductFamily, getRelevantGuides } from "@/lib/discovery";
 import { getPublicPrice } from "@/lib/pricing";
 import { displayValue, facetValue, productDefinition, productDisplayName, sentenceAwareDescription, specificationItems } from "@/lib/product-presentation";
+import { buildProductManufacturer, buildProductOffer } from "@/lib/structured-data";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return products.map((product) => ({ slug: product.slug })); }
@@ -50,8 +51,8 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   const comparisonProducts = [product, ...familyProducts.filter((item) => item.sku !== product.sku)].slice(0, 4);
   const compareHref = comparisonProducts.length > 1 ? `/compare?products=${comparisonProducts.map((item) => item.slug).join(",")}` : "";
   const packageFields = [{ label: "Package dimensions (mm)", value: product.packageDimensionMm }, { label: "Package weight (g)", value: product.packageWeightG }].filter((field) => displayValue(field.value));
-  const productSchema: Record<string, unknown> = { "@context": "https://schema.org", "@type": "Product", name, sku: product.sku, description: specification || summary, brand: { "@type": "Brand", name: "Dragino" }, manufacturer: { "@type": "Organization", name: "Dragino" }, category: application || undefined, url: `${siteUrl}/products/${product.slug}`, image: image ? `${siteUrl}${image.localPath}` : undefined, additionalProperty: [{ "@type": "PropertyValue", name: "Application", value: application || undefined }, { "@type": "PropertyValue", name: "IoT interface", value: iotInterface || undefined }, { "@type": "PropertyValue", name: "Package dimensions (mm)", value: displayValue(product.packageDimensionMm) || undefined }, { "@type": "PropertyValue", name: "Package weight (g)", value: displayValue(product.packageWeightG) || undefined }].filter((property) => property.value) };
-  if (publicPrice.schemaAmount !== null) productSchema.offers = { "@type": "Offer", priceCurrency: "ZAR", price: publicPrice.schemaAmount, url: `${siteUrl}/products/${product.slug}` };
+  const productSchema: Record<string, unknown> = { "@context": "https://schema.org", "@type": "Product", name, sku: product.sku, description: specification || summary, ...buildProductManufacturer(), category: application || undefined, url: `${siteUrl}/products/${product.slug}`, image: image ? `${siteUrl}${image.localPath}` : undefined, additionalProperty: [{ "@type": "PropertyValue", name: "Application", value: application || undefined }, { "@type": "PropertyValue", name: "IoT interface", value: iotInterface || undefined }, { "@type": "PropertyValue", name: "Package dimensions (mm)", value: displayValue(product.packageDimensionMm) || undefined }, { "@type": "PropertyValue", name: "Package weight (g)", value: displayValue(product.packageWeightG) || undefined }].filter((property) => property.value) };
+  if (publicPrice.schemaAmount !== null) productSchema.offers = buildProductOffer(siteUrl, `${siteUrl}/products/${product.slug}`, publicPrice.schemaAmount);
   const questionItems = [
     { question: `What is ${name}?`, answer: summary },
     application ? { question: `What is ${name} used for?`, answer: `The application shown for ${name} is ${application}.` } : null,

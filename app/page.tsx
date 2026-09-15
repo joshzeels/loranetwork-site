@@ -5,6 +5,7 @@ import { HomeCable, WhySensorCable } from "@/components/home-cable";
 import { ProductCard } from "@/components/product-card";
 import { StructuredData } from "@/components/structured-data";
 import { applicationFacets, catalogue, getSiteUrl, interfaceFacets, publicProducts } from "@/lib/catalogue";
+import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-data";
 
 const featuredApplications = applicationFacets.slice(0, 6);
 const featuredInterfaces = interfaceFacets.slice(0, 6);
@@ -12,10 +13,15 @@ const representativeProducts = publicProducts.filter((product) => product.imageP
 
 export default function Home() {
   const siteUrl = getSiteUrl();
+  // The single site-level Organization node is declared here, in full, once. Every other page
+  // that needs to identify LoRa Network as seller/publisher references its @id instead of
+  // redeclaring these fields, so there is one entity, not several conflicting ones.
+  const organization = buildOrganizationSchema(siteUrl);
+  const website = buildWebsiteSchema(siteUrl);
 
   return (
     <>
-      <StructuredData data={{ "@context": "https://schema.org", "@type": "WebSite", name: "LoRa Network South Africa", url: siteUrl, inLanguage: "en-ZA", description: "LoRaWAN and IoT hardware for South African projects. Compare products and prices in rand." }} />
+      <StructuredData data={{ "@context": "https://schema.org", "@graph": [organization, website] }} />
       <div className="home-page">
       <HomeCable />
       <section className="hero"><div className="shell hero-inner">

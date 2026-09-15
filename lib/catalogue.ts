@@ -4,6 +4,7 @@ import documentationJson from "@/data/product-documentation.json";
 import imageManifestJson from "@/data/product-images.json";
 import { getPublicPrice } from "@/lib/pricing";
 import { displayValue, facetSlug, facetValue, type PublicDraginoProduct } from "@/lib/product-presentation";
+import { organizationId } from "@/lib/structured-data";
 import { BUSINESS_CONFIG } from "@/config/business";
 
 export type DraginoProduct = {
@@ -143,4 +144,11 @@ export function getImageForProduct(sku: string) {
 
 export function getSiteUrl() {
   return BUSINESS_CONFIG.site.url;
+}
+
+// Stable @id for the single site-level Organization node (declared in full on the homepage).
+// Other pages reference this id instead of redeclaring Organization fields, so there is only
+// ever one Organization entity for search engines to reconcile.
+export function getOrganizationId() {
+  return organizationId(getSiteUrl());
 }
