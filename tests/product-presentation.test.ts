@@ -5,7 +5,8 @@ import { displayValue, facetValue, productDefinition, productDisplayName, produc
 
 const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<Record<string, string>> };
 const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string }> };
-const guidance = JSON.parse(readFileSync(new URL("../data/product-guidance.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; definition?: string; suitability?: string; buyerChecks?: string[]; evidenceLevel: string }> };
+const guidance = JSON.parse(readFileSync(new URL("../data/product-guidance.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; definition?: string; uses?: string; suitability?: string; buyerChecks?: string[]; sourceUrl?: string; evidenceLevel: string }> };
+const productPage = readFileSync(new URL("../app/products/[slug]/page.tsx", import.meta.url), "utf8");
 
 test("cleans presentation artefacts without changing stored source values", () => {
   const sourceSku = "Â\u00a0SN50v3-MS";
@@ -38,6 +39,32 @@ test("provides verified DDS75-LB guidance without changing catalogue data", () =
   assert.ok(record.buyerChecks?.some((check) => check.includes("280–7500 mm")));
   assert.equal(product?.packageDimensionMm, "145*105*50");
   assert.equal(product?.packageWeightG, "270");
+});
+
+test("provides exact-source guidance for the selected representative products", () => {
+  const selected = ["SW3L-004", "S31-LB", "D20S-LB", "SDI-12-LB", "PS-LB-Dxx", "RS485-LN", "WQS-LB", "LPS8N"];
+  for (const sku of selected) {
+    const record = guidance.products.find((item) => item.sku === sku);
+    assert.ok(record, sku);
+    assert.equal(record.evidenceLevel, "EXACT_PRODUCT_SOURCE", sku);
+    assert.ok(record.definition, sku);
+    assert.ok(record.suitability, sku);
+    assert.ok(record.buyerChecks && record.buyerChecks.length >= 3, sku);
+    assert.match(record.sourceUrl ?? "", /^https:\/\/www\.dragino\.com\//, sku);
+  }
+  assert.equal(guidance.products.length, selected.length + 1);
+});
+
+test("keeps supplier provenance language out of public guidance fields", () => {
+  const publicFields = guidance.products.flatMap((record) => [record.definition, record.uses, record.suitability, ...(record.buyerChecks ?? [])]).filter(Boolean).join(" ");
+  assert.doesNotMatch(publicFields, /source|documentation|manufacturer|according to|verified|official|datasheet|manual/i);
+});
+
+test("keeps Dragino source URLs out of the public product page", () => {
+  assert.doesNotMatch(productPage, /dragino\.com|docs\.dragino\.com/i);
+  assert.doesNotMatch(productPage, /documentation\.sourceUrl/);
+  assert.match(productPage, /Manufacturer<\/dt><dd>Dragino/);
+  assert.match(productPage, /href={`\/contact\?sku=/);
 });
 
 test("keeps representative weak-evidence products on conservative fallback", () => {

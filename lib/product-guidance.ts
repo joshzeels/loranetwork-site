@@ -1,3 +1,4 @@
+import "server-only";
 import guidanceJson from "@/data/product-guidance.json";
 
 export type ProductGuidance = {

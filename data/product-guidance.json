@@ -4,15 +4,127 @@
       "sku": "DDS75-LB",
       "definition": "DDS75-LB is a LoRaWAN ultrasonic distance detection sensor designed to measure the distance between the sensor and a flat object.",
       "uses": "DDS75-LB can be used for distance measurement, liquid-level measurement, parking or proximity detection, and bin-level monitoring.",
-      "suitability": "DDS75-LB is suited to projects that need ultrasonic distance measurement of a flat target and can use LoRaWAN connectivity. Manufacturer-listed applications include liquid-level monitoring, parking or proximity detection, and bin-level monitoring.",
+      "suitability": "DDS75-LB is suited to projects that need ultrasonic distance measurement of a flat target and can use LoRaWAN connectivity. It can be used for applications such as liquid-level monitoring, parking or proximity detection, and bin-level monitoring.",
       "buyerChecks": [
         "Confirm that the required measurement distance fits the stated 280–7500 mm flat-object range.",
         "Confirm that the target and measurement arrangement are appropriate for flat-object ultrasonic sensing.",
         "Select the LoRaWAN regional frequency variant required for the deployment.",
         "Confirm that the 40° measurement angle is appropriate for the installation.",
-        "Check any project-specific installation or environmental requirement against the technical documentation."
+        "Check any project-specific installation or environmental requirement before ordering."
       ],
       "sourceUrl": "https://www.dragino.com/products/distance-level-sensor/item/271-dds75-lb-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "SW3L-004",
+      "definition": "SW3L-004 is a LoRaWAN water-flow sensor record using a DW-004 flow sensor with a G1/2 / DN15 connection.",
+      "uses": "SW3L-004 can be used for flow sensing, water control, toilet flow sensing, and wastewater monitoring.",
+      "suitability": "SW3L-004 is suited to projects that need water-flow monitoring through LoRaWAN and can use a DW-004 G1/2 / DN15 sensor arrangement.",
+      "buyerChecks": [
+        "Confirm that the installation matches the DW-004 G1/2 / DN15 flow-sensor connection.",
+        "Confirm that the 450 pulses per litre measurement relationship fits the metering requirement.",
+        "Confirm the required LoRaWAN regional frequency band and reporting interval.",
+        "Check the installation environment and flow conditions before ordering."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/water-meter-flow-sensor/item/222-sw3l.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "S31-LB",
+      "definition": "S31-LB is a LoRaWAN temperature and humidity sensor with an external 3-metre SHT31 probe.",
+      "uses": "S31-LB can be used for temperature and humidity measurement in building automation, industrial monitoring, automated meter reading, security systems, and irrigation applications.",
+      "suitability": "S31-LB is suited to projects that need combined temperature and relative-humidity measurement from a 3-metre external probe using LoRaWAN.",
+      "buyerChecks": [
+        "Confirm that both temperature and relative humidity are required.",
+        "Confirm that the 3-metre external SHT31 probe suits the installation.",
+        "Check the stated -40 C to 80 C measurement range and IP66 enclosure against the environment.",
+        "Select the required LoRaWAN regional frequency variant and confirm the battery configuration."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/temperature-humidity-sensor/item/264-s31-lb-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "D20S-LB",
+      "definition": "D20S-LB is a LoRaWAN outdoor temperature sensor using a 2-metre DS18B20 temperature probe.",
+      "uses": "D20S-LB is used to measure temperature and send the reading to an IoT platform through LoRaWAN.",
+      "suitability": "D20S-LB is suited to projects that need outdoor temperature monitoring with the listed 2-metre probe and LoRaWAN connectivity.",
+      "buyerChecks": [
+        "Confirm that the 2-metre DS18B20 probe and buried-type arrangement suit the installation.",
+        "Check the stated -55 C to 125 C measurement range and accuracy information for the requirement.",
+        "Confirm that the IP66 enclosure and selected battery configuration fit the environment.",
+        "Select the required LoRaWAN regional frequency variant."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/temperature-humidity-sensor/item/259-d20-d20s-lb-d20-d20s-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "SDI-12-LB",
+      "definition": "SDI-12-LB is a LoRaWAN converter that connects SDI-12 sensors and sends their environmental readings over LoRaWAN.",
+      "uses": "SDI-12-LB can be used in smart agriculture and weather-station sensor deployments.",
+      "suitability": "SDI-12-LB is suited to projects that need to connect an SDI-12 sensor, provide its supported power output, and send the sensor data through LoRaWAN.",
+      "buyerChecks": [
+        "Confirm that the external sensor uses the SDI-12 protocol.",
+        "Confirm whether the sensor requires the controllable 5 V or 12 V output.",
+        "Select the LoRaWAN regional frequency variant and the required LB battery configuration.",
+        "Check the sensor wiring, power demand, and data requirements before ordering."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/agriculture-weather-station/item/252-sdi-12-lb-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "PS-LB-Dxx",
+      "definition": "PS-LB-Dxx is a LoRaWAN differential pressure sensor that measures the pressure difference between two inputs.",
+      "uses": "PS-LB-Dxx can be used for indoor air control and filter-clogging detection.",
+      "suitability": "PS-LB-Dxx is suited to projects that need differential-pressure monitoring over LoRaWAN and can select the pressure range required by the installation.",
+      "buyerChecks": [
+        "Confirm that the project needs differential pressure between two inputs rather than absolute pressure.",
+        "Confirm the exact pressure range required for the selected configuration before ordering.",
+        "Check that the two pressure-input arrangement suits the measurement points, such as before and after a valve.",
+        "Select the required LoRaWAN regional frequency variant and confirm the installation environment."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/distance-level-sensor/item/319-ps-lb-ls-d.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "RS485-LN",
+      "definition": "RS485-LN is an RS485 and Modbus to LoRaWAN converter for sending data from RS485 devices to a LoRaWAN server.",
+      "uses": "RS485-LN can be used for monitoring and control in irrigation, smart metering, building automation, smart cities, and industrial or factory systems.",
+      "suitability": "RS485-LN is suited to projects that need to monitor or control RS485 or Modbus devices through LoRaWAN and can provide the external 7-24 V DC input.",
+      "buyerChecks": [
+        "Confirm that the equipment uses the required RS485 interface and supported Modbus or command structure.",
+        "Confirm the polling, uplink, and downlink commands required by the connected devices.",
+        "Check the external 7-24 V DC power requirement and the required LoRaWAN frequency band.",
+        "Confirm whether the deployment needs Class C downlink behavior."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/lora-lorawan-end-node/item/154-rs485-ln.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "WQS-LB",
+      "definition": "WQS-LB is a LoRaWAN water-quality sensor converter main unit that supports one to three water-quality probes.",
+      "uses": "WQS-LB is used to monitor water-quality parameters from supported EC, pH, DO, ORP, TS, CL, or COD probes and upload the readings through LoRaWAN.",
+      "suitability": "WQS-LB is suited to water-quality projects that need a LoRaWAN main unit and can select compatible probes for tap water, industrial water, environmental water, or wastewater monitoring.",
+      "buyerChecks": [
+        "Confirm which supported water-quality parameters the project needs to measure.",
+        "Select compatible probes and confirm whether one, two, or three probes are required.",
+        "Confirm the LoRaWAN regional frequency variant and the probe installation arrangement.",
+        "Check probe wiring, calibration, and environmental requirements before ordering."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/water-air-quality-sensor/item/345-wqs-lb.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "LPS8N",
+      "definition": "LPS8N is an indoor LoRaWAN gateway that bridges LoRa wireless networks to an IP network through WiFi or Ethernet.",
+      "uses": "LPS8N can be used as an indoor LoRaWAN gateway in smart buildings, logistics, metering, agriculture, smart cities, and industrial or factory deployments.",
+      "suitability": "LPS8N is suited to indoor projects that need a LoRaWAN gateway and can provide the required WiFi or Ethernet IP backhaul.",
+      "buyerChecks": [
+        "Confirm that an indoor gateway meets the deployment requirement.",
+        "Confirm whether WiFi or Ethernet provides the required IP backhaul.",
+        "Select the LoRaWAN frequency band configured for the deployment region.",
+        "Check the required gateway capacity and network management, and confirm whether the optional cellular version is required."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/lora-lorawan-gateway/item/200-lps8n.html",
       "evidenceLevel": "EXACT_PRODUCT_SOURCE"
     }
   ]

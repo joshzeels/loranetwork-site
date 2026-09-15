@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowIcon, ExternalIcon } from "@/components/icons";
+import { ArrowIcon } from "@/components/icons";
 import { ProductCard } from "@/components/product-card";
 import { ProductImage } from "@/components/product-image";
 import { StructuredData } from "@/components/structured-data";
-import { getDocumentationForProduct, getImageForProduct, getProductBySlug, getSiteUrl, products, publicProducts } from "@/lib/catalogue";
+import { getImageForProduct, getProductBySlug, getSiteUrl, products, publicProducts } from "@/lib/catalogue";
 import { getFamilyComparisonSummary, getFamilyProducts, getIndexableApplicationFacet, getIndexableInterfaceFacet, getProductFamily, getRelevantGuides } from "@/lib/discovery";
 import { getPublicPrice } from "@/lib/pricing";
 import { getProductGuidance } from "@/lib/product-guidance";
@@ -34,7 +34,6 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   const siteUrl = getSiteUrl();
   const publicPrice = getPublicPrice(product.priceUsd);
   const image = getImageForProduct(product.sku);
-  const documentation = getDocumentationForProduct(product.sku);
   const name = productDisplayName(product.sku);
   const guidance = getProductGuidance(product.sku);
   const application = displayValue(product.application);
@@ -70,7 +69,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
     <StructuredData data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/products` }, { "@type": "ListItem", position: 3, name, item: `${siteUrl}/products/${product.slug}` }] }} />
     <section className="product-detail-hero"><div className="shell"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>{name}</span></nav><div className="product-buy-grid">
       <div className="product-detail-media"><ProductImage sku={name} application={application} imagePath={image?.localPath ?? ""} priority sizes="(max-width: 800px) 100vw, 50vw" /></div>
-      <div className="product-buy-copy"><h1>{name}</h1><p className="product-detail-summary">{summary}</p><dl className="quick-facts">{application ? <div><dt>Application</dt><dd>{application}</dd></div> : null}{iotInterface ? <div><dt>Connectivity</dt><dd>{iotInterface}</dd></div> : null}</dl><aside className="price-panel"><span>Price</span><strong>{publicPrice.formatted}</strong><small>South African rand. {publicPrice.vatNotice}</small></aside><div className="buy-actions"><Link href={`/contact?sku=${encodeURIComponent(product.sku)}`} className="button button-primary">Ask about {name} <ArrowIcon /></Link>{documentation ? <a href={documentation.sourceUrl} target="_blank" rel="noreferrer" className="button button-secondary">{documentation.status === "FAMILY_SOURCE" ? "Family technical details" : "Technical details"} <ExternalIcon /></a> : null}</div></div>
+      <div className="product-buy-copy"><h1>{name}</h1><p className="product-detail-summary">{summary}</p><dl className="quick-facts">{application ? <div><dt>Application</dt><dd>{application}</dd></div> : null}{iotInterface ? <div><dt>Connectivity</dt><dd>{iotInterface}</dd></div> : null}</dl><aside className="price-panel"><span>Price</span><strong>{publicPrice.formatted}</strong><small>South African rand. {publicPrice.vatNotice}</small></aside><div className="buy-actions"><Link href={`/contact?sku=${encodeURIComponent(product.sku)}`} className="button button-primary">Ask about {name} <ArrowIcon /></Link></div></div>
     </div></div></section>
     <section className="section shell product-content-grid"><aside className="product-section-nav"><span>On this page</span><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#suitability">Where it fits</a>{packageFields.length ? <a href="#package">Package</a> : null}<a href="#questions">Questions</a>{family || guides.length || compareHref ? <a href="#related-guidance">Related guidance</a> : null}</aside><div className="product-sections">
       <section id="overview"><h2>Product overview</h2><dl className="source-facts"><div><dt>SKU</dt><dd>{name}</dd></div><div><dt>Manufacturer</dt><dd>Dragino</dd></div><div><dt>Reseller</dt><dd>LoRa Network</dd></div>{application ? <div><dt>Application</dt><dd>{applicationFacet ? <Link href={`/applications/${applicationFacet.slug}`}>{application}</Link> : application}</dd></div> : null}{iotInterface ? <div><dt>Connectivity</dt><dd>{interfaceFacet ? <Link href={`/connectivity/${interfaceFacet.slug}`}>{iotInterface}</Link> : iotInterface}</dd></div> : null}</dl></section>
