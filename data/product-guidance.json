@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "sku": "DDS75-LB",
+      "definition": "DDS75-LB is a LoRaWAN ultrasonic distance detection sensor designed to measure the distance between the sensor and a flat object.",
+      "uses": "DDS75-LB can be used for distance measurement, liquid-level measurement, parking or proximity detection, and bin-level monitoring.",
+      "suitability": "DDS75-LB is suited to projects that need ultrasonic distance measurement of a flat target and can use LoRaWAN connectivity. Manufacturer-listed applications include liquid-level monitoring, parking or proximity detection, and bin-level monitoring.",
+      "buyerChecks": [
+        "Confirm that the required measurement distance fits the stated 280–7500 mm flat-object range.",
+        "Confirm that the target and measurement arrangement are appropriate for flat-object ultrasonic sensing.",
+        "Select the LoRaWAN regional frequency variant required for the deployment.",
+        "Confirm that the 40° measurement angle is appropriate for the installation.",
+        "Check any project-specific installation or environmental requirement against the technical documentation."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/distance-level-sensor/item/271-dds75-lb-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    }
+  ]
+}
