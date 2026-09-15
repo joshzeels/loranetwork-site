@@ -89,3 +89,19 @@ export function facetSlug(value: string) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 }
+
+export type FamilyOverlapSummary = { slug: string; name: string; matched: number; total: number };
+
+// How much of each product family actually falls inside one facet's product set (e.g. an
+// application page). Pure counting only — SKU-to-family matching stays in lib/discovery.ts;
+// this just summarises already-resolved member SKUs, so it can be unit-tested without importing
+// the server-only catalogue/discovery modules.
+export function summariseFamilyOverlap(families: { slug: string; name: string; memberSkus: string[] }[], facetSkus: Iterable<string>): FamilyOverlapSummary[] {
+  const facetSkuSet = facetSkus instanceof Set ? facetSkus : new Set(facetSkus);
+  return families.map((family) => ({
+    slug: family.slug,
+    name: family.name,
+    matched: family.memberSkus.filter((sku) => facetSkuSet.has(sku)).length,
+    total: family.memberSkus.length,
+  }));
+}

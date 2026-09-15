@@ -57,6 +57,12 @@
       "hardwareSummary": "The category contains multiple model and connectivity variants. A shared pressure-sensor label does not establish identical range, output or installation requirements.",
       "considerations": ["Check whether the required pressure range is explicitly stated.", "Compare any stated output or interface details.", "Choose connectivity that can be supported at the deployment location.", "Confirm missing accuracy, media and installation requirements from technical documentation."],
       "selectionPath": "Filter first by explicit pressure specification. Then compare connectivity, model-level details and public ZAR price without assuming unstated compatibility."
+    },
+    "Temperature & Humidity Sensor": {
+      "directAnswer": "This catalogue lists {count} products classified for combined temperature and humidity sensing. Compare the measurement details stated in each specification, the connectivity option and the exact SKU, including whether the model belongs to the verified S31B family.",
+      "hardwareSummary": "This group includes the verified S31B family alongside other listed temperature-and-humidity models. Reported accuracy, range or housing rating should only be relied on when the specification or linked technical documentation states it.",
+      "considerations": ["Confirm the project needs a combined temperature-and-humidity reading rather than temperature alone.", "Check whether the model belongs to the verified S31B family or a different listed model.", "Compare the listed connectivity options.", "Confirm accuracy, range and housing rating from the specification or linked technical documentation before ordering."],
+      "selectionPath": "Confirm the project needs both readings from one device. Then check whether an S31B family model fits, compare connectivity, and confirm any unstated technical detail before ordering."
     }
   },
   "connectivityGuidance": {
