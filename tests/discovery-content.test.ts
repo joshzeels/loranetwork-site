@@ -100,6 +100,36 @@ test("Energy Control / Monitoring guidance supports a practical, bounded selecti
   assert.doesNotMatch(copy, /dragino\.com|â€”|Ã¢â‚¬â€|(?<!-)--(?!-)/);
 });
 
+test("Door Sensor guidance supports a practical, bounded selection", () => {
+  const guidance = content.applicationGuidance["Door Sensor"];
+  assert.ok(guidance);
+  assert.match(guidance.directAnswer, /\{count\}/);
+  assert.ok(guidance.considerations.length >= 5);
+
+  const doorProducts = catalogue.products.filter((product) => product.application.trim() === "Door Sensor");
+  const statuses = doorProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
+  assert.equal(doorProducts.length, 22);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 7);
+  assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 0);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 15);
+  assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
+  assert.ok(doorProducts.some((product) => product.sku === "DS03A-LB" && /Datalog Feature, Open Alarm Feature/i.test(product.specification)));
+  assert.ok(doorProducts.some((product) => product.sku === "LDS02" && /Door Open\/Close detect/i.test(product.specification)));
+  assert.ok(doorProducts.some((product) => product.sku === "LHT65N-DS" && /1 meter metal Door Sensor/i.test(product.specification)));
+  assert.equal(content.families.some((family) => /door|ds03|lds02/i.test(family.slug)), false);
+  assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Door Sensor")), false);
+  for (const connectivity of ["LoRaWAN", "LTE CAT 1", "NB-IoT", "LTE-M & NB-IoT", "LTE-M & NB-IoT, 10 years 500MB data", "NB-IoT, 10 years 500MB data"]) {
+    assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
+  }
+
+  const copy = [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath].join(" ");
+  assert.match(copy, /open or closed|open\/close|open-alarm/i);
+  assert.match(copy, /Some DS03A product specifications state datalog and open-alarm features/);
+  assert.doesNotMatch(copy, /all DS03A|every DS03A/i);
+  assert.doesNotMatch(copy, /all (?:door sensor )?products|every (?:door sensor )?product|manufacturer|official|verified|source|documentation|according to|Dragino|datasheet|manual/i);
+  assert.doesNotMatch(copy, /dragino\.com|â€”|Ã¢â‚¬â€|(?<!-)--(?!-)/);
+});
+
 test("application guidance avoids import-led public wording", () => {
   const copy = Object.values(content.applicationGuidance).flatMap((guidance) => [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath]).join(" ");
   assert.doesNotMatch(copy, /This catalogue (lists|includes)|\blisted (?:for|as)\b|catalogue products|catalogue entries/i);
