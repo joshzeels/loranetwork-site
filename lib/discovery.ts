@@ -2,6 +2,7 @@ import "server-only";
 import discoveryJson from "@/data/discovery-content.json";
 import {
   applicationFacets,
+  getDocumentationForProduct,
   interfaceFacets,
   products,
   type CatalogueFacet,
@@ -28,6 +29,8 @@ export type BuyingGuide = {
   differenceSummary: string;
   decisionPath: string[];
   relatedFamilySlugs: string[];
+  verifiedDocumentationOnly?: boolean;
+  comparisonProductSlugs?: string[];
 };
 
 export type ApplicationGuidance = {
@@ -120,6 +123,7 @@ export function getFamilyComparisonSummary(family: ProductFamily, currentProduct
 export function getGuideProducts(guide: BuyingGuide) {
   const applicationValues = new Set(guide.applicationValues.map(facetValue));
   return products.filter((product) => {
+    if (guide.verifiedDocumentationOnly && getDocumentationForProduct(product.sku)?.status !== "EXACT_PRODUCT_SOURCE") return false;
     if (applicationValues.has(facetValue(product.application))) return true;
     if (!guide.searchTerms.length) return false;
     const searchable = normaliseSearchText([product.sku, product.application, product.specification, product.iotInterface].join(" "));

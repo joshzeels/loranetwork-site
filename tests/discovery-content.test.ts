@@ -8,7 +8,11 @@ import { summariseFamilyOverlap } from "../lib/product-presentation.ts";
 const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json", import.meta.url), "utf8")) as {
   indexableApplications: string[];
   applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string }>;
+  guides: Array<{ slug: string; question: string; searchTerms: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[] }>;
 };
+
+const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; slug: string; application: string }> };
+const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string }> };
 
 test("every application-guidance entry resolves to a real indexed application facet", () => {
   for (const value of Object.keys(content.applicationGuidance)) {
@@ -31,6 +35,32 @@ test("the highest-count application facets have complete, non-empty guidance", (
 test("application guidance is not one copy-pasted template across pages", () => {
   const answers = Object.values(content.applicationGuidance).map((guidance) => guidance.directAnswer);
   assert.equal(new Set(answers).size, answers.length, "two application facets share an identical directAnswer");
+});
+
+test("DDS comparison guide contains only exact-source DDS products", () => {
+  const guide = content.guides.find((item) => item.slug === "compare-dds-distance-sensors");
+  assert.ok(guide);
+  assert.equal(guide.verifiedDocumentationOnly, true);
+  assert.deepEqual(guide.comparisonProductSlugs, ["dds20-lb", "dds45-lb", "dds75-lb"]);
+  assert.ok(content.indexableApplications.includes("Distance Sensor"));
+  assert.ok(guide.comparisonProductSlugs.every((slug) => catalogue.products.some((product) => product.slug === slug)));
+  assert.ok(guide.considerations.length >= 4);
+  assert.ok(guide.decisionPath.length >= 3);
+
+  const ddsProducts = catalogue.products.filter((product) => /^(?:DDS20|DDS45|DDS75)-/i.test(product.sku));
+  const exactDdsSkus = new Set(documentation.products.filter((record) => /^(?:DDS20|DDS45|DDS75)-/i.test(record.sku) && record.status === "EXACT_PRODUCT_SOURCE").map((record) => record.sku));
+  assert.ok(ddsProducts.length > exactDdsSkus.size);
+  assert.ok(exactDdsSkus.size >= 3);
+  assert.ok([...exactDdsSkus].every((sku) => ddsProducts.some((product) => product.sku === sku)));
+  assert.ok(guide.searchTerms.every((term) => /^DDS(?:20|45|75)$/.test(term)));
+});
+
+test("DDS comparison copy avoids supplier provenance language", () => {
+  const guide = content.guides.find((item) => item.slug === "compare-dds-distance-sensors");
+  assert.ok(guide);
+  const copy = [guide.question, ...guide.considerations, ...guide.decisionPath].join(" ");
+  assert.doesNotMatch(copy, /manufacturer|official|verified|source|documentation|according to|Dragino/i);
+  assert.doesNotMatch(copy, /dragino\.com/i);
 });
 
 test("summariseFamilyOverlap counts only members actually present in the facet", () => {

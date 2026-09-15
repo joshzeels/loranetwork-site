@@ -226,6 +226,30 @@
       "differenceSummary": "The two TrackerD records can be compared by exact SKU, supplied specification, connectivity and public ZAR price. Only differences visible in those fields are established here.",
       "decisionPath": ["Compare the two specification rows.", "Confirm which listed connectivity fits the project.", "Use the exact SKU when requesting any missing technical detail."],
       "relatedFamilySlugs": ["trackerd"]
+    },
+    {
+      "slug": "compare-dds-distance-sensors",
+      "title": "Compare DDS20, DDS45 and DDS75 Distance Sensors",
+      "question": "How do DDS20, DDS45 and DDS75 distance sensors differ?",
+      "answerTemplate": "DDS20, DDS45 and DDS75 are ultrasonic distance-sensing product lines. DDS20 is for non-contact liquid-level measurement through a container over 20mm to 2000mm. DDS45 and DDS75 measure distance to a flat object, with catalogue ranges of 30mm to 4500mm and 280mm to 7500mm respectively.",
+      "applicationValues": [],
+      "searchTerms": ["DDS20", "DDS45", "DDS75"],
+      "considerations": [
+        "Choose DDS20 when the measurement is liquid level through a container without contacting the liquid.",
+        "Choose between DDS45 and DDS75 by the flat-object range and measurement angle required: 30mm to 4500mm at 60° for DDS45, or 280mm to 7500mm at 40° for DDS75.",
+        "Compare the exact SKU connectivity shown in the catalogue, including LoRaWAN, NB-IoT, LTE-M & NB-IoT, and LTE CAT 1 variants.",
+        "For LB and LS variants, compare the exact power entry: 8500mAh for LB or solar panel plus 3000mAh Li-ion battery for LS.",
+        "Confirm the target or container arrangement, required range, regional connectivity variant, and exact SKU before ordering."
+      ],
+      "differenceSummary": "DDS20 measures liquid level through a container without contacting the liquid. DDS45 and DDS75 measure distance to a flat object. DDS45 covers the shorter 30mm to 4500mm catalogue range with a 60° angle, while DDS75 covers 280mm to 7500mm with a 40° angle. Connectivity and power options vary by exact SKU.",
+      "decisionPath": [
+        "Identify whether the project measures liquid level through a container or distance to a flat object.",
+        "For flat-object measurement, compare the required range and angle against DDS45 and DDS75 catalogue values.",
+        "Select the exact connectivity and power variant, then confirm the full catalogue row before ordering."
+      ],
+      "relatedFamilySlugs": [],
+      "verifiedDocumentationOnly": true,
+      "comparisonProductSlugs": ["dds20-lb", "dds45-lb", "dds75-lb"]
     }
   ]
 }
