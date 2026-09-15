@@ -1,0 +1,491 @@
+{
+  "report": {
+    "title": "LoRa Network comprehensive Answer Engine Optimisation audit",
+    "auditDate": "2026-09-15",
+    "scope": "Repository, production build output, generated HTML, structured data, robots.txt, sitemap.xml, catalogue architecture, representative answer extraction, and current official crawler guidance.",
+    "mode": "AUDIT_ONLY",
+    "changesMade": [
+      "Created this report only. No routes, catalogue data, prices, page content, structured data, crawler rules, or application code were changed."
+    ],
+    "limitations": [
+      "The audit assessed the production build locally. The live production hostname and deployment environment were not available, so production environment variables, edge/WAF rules, Search Console data, Bing Webmaster data, logs, and real index coverage could not be verified.",
+      "The in-app visual browser could not attach because its sandbox bootstrap failed. Rendered production HTML was inspected directly and dynamic comparison output was fetched from a local production server instead.",
+      "No external keyword-volume or competitor-audit tools were used, as requested."
+    ]
+  },
+  "executiveAeoScore": {
+    "overall": 66,
+    "scale": 100,
+    "verdict": "Sound technical catalogue foundation, but not yet a strong independent answer source. The site is readily crawlable and commercially consistent; its biggest constraints are generic product explanations, thin application and buying-guide content, incomplete entity/trust information, and a current build configured with localhost canonical URLs.",
+    "dimensions": {
+      "contentClarity": { "score": 72, "preventsHigherScore": "Core facts are clearly labelled, but descriptions frequently repeat a generic application/interface sentence and raw comma-separated specifications instead of explaining the product in plain language." },
+      "entityClarity": { "score": 58, "preventsHigherScore": "LoRa Network is visibly the reseller brand and Dragino is labelled as the brand, but there is no Organization entity, no explicit reseller/manufacturer relationship statement, and the current build contains no configured business contact identity." },
+      "productPageUsefulness": { "score": 68, "preventsHigherScore": "SKU, application, interface, price and source specifications are present, but suitability, variant differences, structured specification rows, and model-specific guidance are often absent." },
+      "questionAnswerCoverage": { "score": 62, "preventsHigherScore": "The catalogue answers availability questions well, but direct comparisons, suitability questions, technology trade-offs and selection questions are weak or missing." },
+      "structuredData": { "score": 74, "preventsHigherScore": "All 981 product JSON-LD blocks parse and price integrity is excellent, but Organization is absent, facet breadcrumbs are not marked up, Article entities are minimal, and 981 largely repetitive FAQPage blocks add little search value." },
+      "internalLinking": { "score": 67, "preventsHigherScore": "Products connect to valid applications, connectivity pages and related products, but only seven families and five broad guides provide comparison/guidance links; many obvious model ranges therefore have no family or comparison path." },
+      "crawlability": { "score": 82, "preventsHigherScore": "Core facts are server-rendered, all product routes build statically, and wildcard robots access is open. The score is capped by unverified production WAF behaviour, client-side catalogue filtering, and the localhost URL fallback in the audited build." },
+      "indexationArchitecture": { "score": 70, "preventsHigherScore": "The 1,027-URL sitemap is disciplined and compare is noindex, but every product page is indexable despite substantial template similarity, and the audited sitemap/canonicals point to localhost until production configuration is supplied." },
+      "topicalAuthority": { "score": 52, "preventsHigherScore": "Catalogue breadth is high, yet educational depth is low: five short guides and six sourced connectivity explanations are not enough to establish strong authority across 981 industrial IoT products." },
+      "productComparisonUsefulness": { "score": 76, "preventsHigherScore": "Tables are semantic and show useful factual fields and ZAR prices, but they reproduce raw specifications and do not synthesize the decisive differences or best-fit use cases." },
+      "southAfricanCommercialRelevance": { "score": 75, "preventsHigherScore": "ZAR pricing, en-ZA metadata and South African positioning are clear, but fulfilment, VAT status, delivery, warranty, support and legal-business details remain deliberately unclaimed or unconfigured." },
+      "technicalAccessibility": { "score": 78, "preventsHigherScore": "The site has a skip link, headings, definition lists and semantic tables. Nested main elements on legal pages, unlabeled breadcrumb navigation, and some mojibake reduce semantic and editorial quality." },
+      "sourceCredibility": { "score": 58, "preventsHigherScore": "Connectivity claims cite LoRa Alliance or GSMA and the workbook is authoritative internally, but only 212 of 981 catalogue rows expose a manufacturer technical URL and most product claims have no visible provenance." },
+      "answerEngineExtractability": { "score": 79, "preventsHigherScore": "H1, summary, SKU, price, application, connectivity, specifications, breadcrumbs and links are present in initial HTML. Extractability is reduced by vague summaries, raw specification strings and facts that require comparison rather than a direct answer." }
+    }
+  },
+  "coverage": {
+    "productPagesReviewed": [
+      "SN50v3-LB", "RS485W-LB", "SW3L-004", "S31B-LB", "DDS75-LB", "DDS45-LB", "DDS20-LB", "WQS-LB", "WSC2-L", "TrackerD", "D23-LB", "D22-LB", "CS01-LB", "SE01-LB", "WL03A-LB", "CPL03-LB", "AIS01-LS", "LG308N", "LPS8N", "POM01-L"
+    ],
+    "applicationPagesReviewed": [
+      { "name": "Distance Sensor", "count": 233, "score": 58 },
+      { "name": "Temperature Sensor", "count": 129, "score": 59 },
+      { "name": "Smart Agriculture", "count": 97, "score": 55 },
+      { "name": "Water Flow Sensor", "count": 80, "score": 61 },
+      { "name": "Pressure Sensor", "count": 57, "score": 55 },
+      { "name": "Temperature & Humidity Sensor", "count": 52, "score": 58 },
+      { "name": "Generic Node / RS485", "count": 31, "score": 60 },
+      { "name": "Water Quality Measurement", "count": 29, "score": 60 },
+      { "name": "Energy Control / Monitoring", "count": 26, "score": 54 },
+      { "name": "Water Leak Detect", "count": 24, "score": 58 },
+      { "name": "Smart Weather Station", "count": 23, "score": 55 },
+      { "name": "Door Sensor", "count": 22, "score": 54 },
+      { "name": "Dry Contact / Counting / Interrupt", "count": 22, "score": 55 },
+      { "name": "Generic Node", "count": 21, "score": 51 },
+      { "name": "Angle Sensor / Tilting", "count": 19, "score": 54 },
+      { "name": "Generic Node / Analog", "count": 19, "score": 53 },
+      { "name": "Gateway -- LoRaWAN", "count": 10, "score": 64 },
+      { "name": "Power Outage Monitoring Sensor", "count": 7, "score": 55 }
+    ],
+    "applicationPageCommonFinding": "All 18 pages are useful crawlable catalogues with comparisons and contextual links, but the shared answer is essentially 'browse N products' and the pages do not define the application, explain the buyer problem, distinguish product types, or provide source-grounded selection criteria.",
+    "connectivityPagesReviewed": [
+      { "name": "LoRaWAN", "count": 203, "score": 82, "source": "LoRa Alliance" },
+      { "name": "LTE CAT 1", "count": 168, "score": 76, "source": "GSMA" },
+      { "name": "NB-IoT", "count": 135, "score": 81, "source": "GSMA" },
+      { "name": "LTE-M & NB-IoT", "count": 131, "score": 78, "source": "GSMA" },
+      { "name": "LTE-M & NB-IoT, 10 years 500MB data", "count": 128, "score": 73, "source": "GSMA" },
+      { "name": "NB-IoT, 10 years 500MB data", "count": 128, "score": 74, "source": "GSMA" }
+    ],
+    "connectivityPageCommonFinding": "All six pages give an early definition, deployment fit, advantage, limitation, products, applications and a primary source. Combined data-bundle pages carefully avoid claiming coverage. They remain descriptive rather than comparative and do not answer LoRaWAN-versus-cellular selection directly.",
+    "familyPagesReviewed": [
+      { "name": "SW3L", "models": 80, "score": 70, "finding": "Strong factual comparison depth, but no synthesized diameter/connectivity decision guidance." },
+      { "name": "S31B", "models": 23, "score": 67, "finding": "Clear variant inventory; purpose copy repeats comparison fields rather than explaining variant suitability." },
+      { "name": "SN50v3", "models": 19, "score": 67, "finding": "Clear variant inventory and interfaces; no plain-language model-selection explanation." },
+      { "name": "RS485", "models": 20, "score": 68, "finding": "Useful comparison and related guide, but raw specifications do not explain protocol/model differences." },
+      { "name": "WQS", "models": 19, "score": 68, "finding": "Useful water-quality family table, but no measurement/use-case explanation." },
+      { "name": "WSC2", "models": 10, "score": 65, "finding": "Useful inventory; thin narrative and no stated best-fit differences." },
+      { "name": "TrackerD", "models": 2, "score": 61, "finding": "The comparison is valid but the page is very thin and does not explain who should choose each variant." }
+    ],
+    "guidesReviewed": [
+      { "slug": "choose-lorawan-gateway", "scoreOutOf10": 6.5, "finding": "Matches purchase intent and compares 10 products, but the decision criteria are generic and there is no South Africa-specific network/deployment explanation." },
+      { "slug": "choose-water-monitoring-device", "scoreOutOf10": 6.0, "finding": "Combines useful water categories, but does not distinguish flow, quality and leak-detection jobs deeply enough to guide a choice." },
+      { "slug": "choose-temperature-sensor", "scoreOutOf10": 6.0, "finding": "Clear scope and comparison, but source-derived ranges, probe types and environmental trade-offs are not summarized." },
+      { "slug": "rs485-modbus-iot-devices", "scoreOutOf10": 6.5, "finding": "Good catalogue discovery for RS485/Modbus terms; does not explain the RS485-versus-Modbus distinction or compatibility boundaries." },
+      { "slug": "choose-iot-tracker", "scoreOutOf10": 5.5, "finding": "Accurate two-product comparison but only a very short generic decision framework." }
+    ],
+    "corePagesReviewed": {
+      "homepage": "Clear South African IoT catalogue proposition and useful entry points; WebSite schema only and limited evidence of business identity or topical expertise.",
+      "productsIndex": "Searchable/filterable catalogue with server-rendered first 24 cards and 50 ItemList entities; the remaining interactive list requires JavaScript, while all product URLs remain independently static and sitemap-discoverable.",
+      "compare": "Correctly noindex,follow; server-rendered query output supports up to four products in a semantic table and exposes the selected SKUs without client interaction.",
+      "about": "Clear reseller purpose and enquiry journey, but lacks authoritative legal/business identity, contact details and an explicit LoRa Network-to-Dragino relationship statement. No Organization JSON-LD is present."
+    }
+  },
+  "pageTypeScores": {
+    "productPage": 68,
+    "applicationPage": 56,
+    "connectivityPage": 78,
+    "buyingGuide": 61,
+    "structuredData": 74,
+    "internalLinking": 67,
+    "entityClarity": 58,
+    "technicalCrawlability": 82,
+    "answerExtractability": 79
+  },
+  "productPageAudit": {
+    "sampleSize": 20,
+    "consistentStrengths": [
+      "One exact-SKU H1 per sampled page.",
+      "SKU, application, connectivity and price appear near the top of initial HTML.",
+      "Product overview uses a definition list; comparisons use a table with a caption and scoped row headers.",
+      "All priced samples had identical visible and Offer values; the unpriced AIS01-LS sample displayed Contact for pricing and emitted no Offer.",
+      "Canonical, Product, BreadcrumbList and visible Q&A were present on every sampled product page."
+    ],
+    "consistentWeaknesses": [
+      "The introductory pattern '[SKU] is a Dragino product for [Application]. It uses [Interface].' rarely explains the physical product or its principal measurement/function.",
+      "Manufacturer is not explicitly labelled as manufacturer; the visible field and JSON-LD use Brand: Dragino.",
+      "Specifications are one comma-separated paragraph rather than individually named values, which makes model-to-model extraction harder.",
+      "Suitability is generally absent. The workbook application label is repeated instead of explaining who should choose the item.",
+      "Variant differences are only available indirectly through family comparison tables. In the sample, 12 of 20 pages had no family/compare link and 9 of 20 had no buying-guide link.",
+      "Meta descriptions are unique through source values but can be mechanically truncated mid-specification at 155 characters."
+    ],
+    "answerConfidence": {
+      "whatIsSku": "PARTIAL - exact identity and broad application/interface are present, but the summary often does not define the device itself.",
+      "usedFor": "PARTIAL - the authoritative application label is available, but generic labels such as Generic Node do not explain a real buyer use case.",
+      "connectivity": "PASS when populated - interface is early, labelled and linked. Eight catalogue products have a blank source interface and correctly preserve that blank.",
+      "manufacturer": "PARTIAL/PASS - Dragino is clearly visible as Brand and in Product JSON-LD, but the role is not explicitly labelled manufacturer.",
+      "southAfricanPrice": "PASS - ZAR price and VAT notice are prominent; unpriced products are explicit.",
+      "differenceBetweenVariants": "PARTIAL for the seven mapped families and FAIL for most other ranges - tables expose fields but do not synthesize differences, and most products lack a family comparison path."
+    }
+  },
+  "answerFirstContentAudit": [
+    { "pages": "All 18 application detail pages", "heading": "Which products are available for [application]?", "grade": "PARTIAL", "evidence": "The immediate answer gives the count and says to compare fields, but does not define the application or answer how to select a product." },
+    { "pages": "All 6 connectivity detail pages", "heading": "What is [technology]?", "grade": "PASS", "evidence": "A direct definition, deployment fit, advantage and limitation appear before the product grid and cite LoRa Alliance or GSMA." },
+    { "pages": "All 7 family pages", "heading": "Which [family] models are available?", "grade": "PARTIAL", "evidence": "The immediate answer gives the model count; the adjacent text repeats the comparison fields instead of explaining family purpose or variant selection." },
+    { "pages": "All 5 guides", "heading": "Guide-specific buyer question", "grade": "PARTIAL", "evidence": "Each starts with a concise count-and-compare answer, but supporting criteria remain generic and do not synthesize source specifications." },
+    { "pages": "All product pages", "heading": "What is [SKU]?", "grade": "PARTIAL", "evidence": "The answer is immediate and factual but normally restates only manufacturer brand, application and interface." }
+  ],
+  "questionOpportunities": [
+    { "question": "What is the difference between LoRaWAN, NB-IoT, LTE-M and LTE Cat 1 for an IoT deployment?", "value": "HIGH VALUE", "why": "The site has six sourced technology pages and hundreds of affected products, but no direct cross-technology decision answer." },
+    { "question": "Which Dragino distance-sensor family should I choose, including DDS20, DDS45 and DDS75?", "value": "HIGH VALUE", "why": "Distance Sensor is the largest category at 233 products and repeated model bases provide strong source-data evidence for comparison." },
+    { "question": "How do DDS20, DDS45 and DDS75 variants differ?", "value": "HIGH VALUE", "why": "The catalogue can compare their source specifications and prices, but no family relationship or synthesized answer exists." },
+    { "question": "Which temperature sensor fits the required probe, range and connectivity?", "value": "HIGH VALUE", "why": "There are 129 temperature products plus 52 temperature-and-humidity products; the current guide does not surface the decisive model-level fields." },
+    { "question": "Which pressure sensor should I choose?", "value": "HIGH VALUE", "why": "The 57-product application page is a grid without a source-grounded selection explanation." },
+    { "question": "Which products are RS485 converters, and which merely mention Modbus or RS485 in their specifications?", "value": "HIGH VALUE", "why": "The existing guide finds products by text but does not distinguish physical interface from protocol or establish compatibility." },
+    { "question": "What does the listed 10-year 500MB data configuration mean and what must be confirmed?", "value": "HIGH VALUE", "why": "Two 128-product connectivity categories use this label. Existing text is cautious but does not explain commercial/provider boundaries." },
+    { "question": "Which water-flow device fits the required pipe/meter configuration and connectivity?", "value": "MEDIUM VALUE", "why": "Eighty products and SW3L comparisons support a useful answer, but key differences are not summarized." },
+    { "question": "Which water-quality measurements are available in the WQS range?", "value": "MEDIUM VALUE", "why": "Twenty-nine products and a 19-model family support comparison, but measurement capabilities remain buried in raw specifications." },
+    { "question": "Which South African LoRaWAN gateway fits indoor, outdoor or cellular-backhaul requirements?", "value": "MEDIUM VALUE", "why": "Ten gateway products exist and the guide is relevant, but the catalogue does not yet provide supported use-case distinctions." },
+    { "question": "Which agriculture sensors measure the variable I need?", "value": "MEDIUM VALUE", "why": "The 97-product category is commercially useful but too broad to answer as a single undifferentiated grid." },
+    { "question": "Which TrackerD variant should I choose?", "value": "LOW VALUE", "why": "Only two products exist and a comparison is already present; a better explanation belongs on the existing family/guide, not a new page." }
+  ],
+  "entityClarity": {
+    "intendedRelationshipAssessment": "Mostly understandable to a human: LoRa Network is the visible site/reseller brand, Dragino is a product brand, SKUs are products, applications are browse categories and connectivity labels are technologies. Machines lack an explicit Organization entity and explicit reseller/manufacturer relationship.",
+    "misrepresentationRisk": "LOW to MEDIUM. No page reviewed calls LoRa Network the manufacturer or claims the site is Dragino's official corporate site. However, Product JSON-LD has Brand rather than manufacturer, and the site does not explicitly state the reseller relationship in machine-readable form.",
+    "draginoReferenceAudit": {
+      "renderedTextCounts": "Representative extracted HTML contained about four Dragino mentions per product page, two on the homepage, one on the products index and three on About; LoRa Network appeared at least as often in the same samples.",
+      "marketingStyleReferences": "Homepage/about/footer use short phrases such as Dragino hardware or Dragino LoRaWAN and IoT hardware. These are mild catalogue positioning statements, not official-manufacturer claims.",
+      "legitimateManufacturerReferences": "Product summary, visible Brand field, source technical link context and Product JSON-LD brand are legitimate identifiers.",
+      "structuredDataReferences": "Every Product entity uses Brand name Dragino. No Organization or manufacturer entity is emitted.",
+      "unnecessaryRepetition": "The generic product sentence plus visible Brand plus footer repeats Dragino on every product page. This is not severe stuffing, but it adds less value than a richer model-specific definition."
+    }
+  },
+  "structuredDataAudit": {
+    "corpusValidation": {
+      "productHtmlFiles": 981,
+      "jsonLdParseErrors": 0,
+      "productEntities": 981,
+      "offerEntities": 969,
+      "productPagesWithoutOffer": 12,
+      "faqPageEntities": 981,
+      "breadcrumbEntities": 981,
+      "productEntitiesWithImage": 833,
+      "visibleSchemaPriceMismatches": 0,
+      "localCanonicalOccurrencesInProductBuild": 981
+    },
+    "types": {
+      "Product": { "status": "VALID AND APPROPRIATE", "notes": "Only used on individual product pages. SKU, brand, category, URL, image when available and source-backed additional properties are emitted." },
+      "Offer": { "status": "VALID WITH COMMERCIAL LIMITATIONS", "notes": "Only 969 priced products emit an Offer; priceCurrency is ZAR and price matches visible output. No fake availability, condition, shipping or stock is claimed. Because this is enquiry-led rather than direct checkout, product-snippet rather than full merchant-listing expectations are the safer interpretation." },
+      "BreadcrumbList": { "status": "VALID WHERE USED", "notes": "Present on all products, families and guides. Application and connectivity detail pages render visual breadcrumbs but omit BreadcrumbList JSON-LD." },
+      "CollectionPage": { "status": "GENERALLY APPROPRIATE", "notes": "Used for catalogue, facets and families. Facet/catalogue ItemLists intentionally cap itemListElement at 50 while declaring the full numberOfItems; this is incomplete rather than a parse error." },
+      "ItemList": { "status": "VALID BUT PARTIAL ON LARGE COLLECTIONS", "notes": "ListItem positions and URLs are coherent. The products index initially renders 24 cards while JSON-LD lists 50, creating a modest visible-content alignment concern." },
+      "Article": { "status": "APPROPRIATE BUT MINIMAL", "notes": "Only the five genuine buying guides use Article. Headline, description and mainEntityOfPage are present; author, publisher, dates and image are absent rather than fabricated." },
+      "Organization": { "status": "NOT IMPLEMENTED", "notes": "This is a material entity/trust gap. It should only be added when legal name, URL, logo and supplied contact/business facts can be stated accurately." },
+      "WebSite": { "status": "VALID AND PRESENT ON HOMEPAGE", "notes": "Names LoRa Network South Africa and uses the configured site URL. It does not substitute for an Organization entity." },
+      "FAQPage": { "status": "VALID JSON-LD, LOW EXPECTED SEARCH VALUE", "notes": "The questions and answers are visible, but the same template is emitted on 981 commercial product pages. Google limits FAQ rich results largely to authoritative government and health sites; no recommendation is made to add more FAQPage markup merely for AEO." }
+    },
+    "unsupportedClaimsCheck": "No fake availability, ratings, reviews, authors, certifications or merchant policies were found in structured data.",
+    "duplicateOrConflictingEntities": "No conflicting Product prices or duplicate Product entities were found in the audited product corpus. WebSite and page-level entities are separate and coherent."
+  },
+  "priceIntegrity": {
+    "expectedCommercialState": { "totalProducts": 981, "priced": 969, "unpriced": 12, "markupArchitecture": "40% configured server-side", "publicCurrency": "ZAR" },
+    "reconciliation": { "pricingCalculationErrors": 0, "schemaVisiblePriceMismatches": 0, "duplicateSkus": 0, "missingProducts": 0 },
+    "surfaceAssessment": "Cards, product detail, related products, application/connectivity collections, family/guide comparisons and the dynamic compare table all use the central public price presentation. Product Offer values use the same central calculation.",
+    "supplierPriceExposure": {
+      "status": "NO PUBLIC LEAKAGE FOUND",
+      "html": "No source-price field names were found in audited public output; reconciliation independently reports zero USD and zero EUR prices publicly exposed.",
+      "jsonAndApi": "No public catalogue JSON endpoint exists. The enquiry API does not expose catalogue data. The source catalogue JSON is repository/server data, not under public.",
+      "clientBundles": "No priceUsd, usdZarRate, markupRate, supplierPrice, MARKUP_RATE or USD_ZAR_RATE identifiers were found in .next/static.",
+      "staticFiles": "No workbook or source catalogue JSON exists under public.",
+      "sourceMaps": "No client-side source maps were present under .next/static. Server build source maps are server artifacts, not public assets.",
+      "metadataAndStructuredData": "Only public ZAR prices are emitted. The 12 unpriced products emit no Offer."
+    }
+  },
+  "internalLinkGraph": {
+    "strengths": [
+      "Indexable product pages are all in the sitemap and linked through catalogue collections.",
+      "Products link to the appropriate indexable application and connectivity facets when those facets exist.",
+      "Application pages link to relevant products, connectivity pages and overlapping guides.",
+      "Connectivity pages link to relevant products, applications, guides and authoritative technical sources.",
+      "Family and guide comparisons use specific product URLs; compare links encode at most four valid slugs and the destination is noindex,follow.",
+      "No parameterized search/filter URL crawl trap was found because product catalogue filters are client state, not crawlable URL combinations."
+    ],
+    "gaps": [
+      "Only seven family definitions exist, leaving many repeated SKU ranges without a family or comparison link.",
+      "Only five guides exist; in the 20-product sample, nine products had no guide link.",
+      "In the 20-product sample, 12 pages had no family/compare link, including DDS20/45/75, D22/D23, CS01, AIS01 and RS485W examples.",
+      "Products whose source application/interface is outside the curated indexable facet lists display the value without a contextual facet link; this is deliberate index-quality control but creates weaker topical paths for those items.",
+      "Repeated anchors such as Technical details, Compare related models and Read the guide are understandable but less descriptive out of context than model/topic-specific anchors.",
+      "No broken internal links were observed in source/build route mapping; a full deployed crawler was outside scope because no production URL was provided."
+    ],
+    "orphanRisk": "LOW for products because of sitemap and catalogue inclusion; MEDIUM for topical understanding because many products have only broad application-related links rather than family/guide context.",
+    "overlinkingRisk": "MEDIUM on very large application/connectivity pages, which render every matching product plus large comparison and related-link sections. The pages are useful but can become link-dense without adding decision hierarchy."
+  },
+  "familyArchitecture": {
+    "implemented": ["SW3L", "S31B", "SN50v3", "RS485", "WQS", "WSC2", "TrackerD"],
+    "answers": {
+      "whatModelsExist": "PASS",
+      "whatDiffers": "PARTIAL - raw table cells expose differences but no concise synthesis is provided.",
+      "connectivityOptions": "PASS through comparison rows and related connectivity links.",
+      "whichSuitsWhichUseCase": "FAIL/PARTIAL - application labels exist, but variant suitability is not explained.",
+      "priceComparison": "PASS with consistent ZAR values."
+    },
+    "missingCandidatesRequiringValidationBeforeImplementation": [
+      { "candidate": "DDS distance families (DDS20, DDS45, DDS75 and related DDS models)", "evidence": "Repeated base names and roughly 19 variants per base in source catalogue; high commercial relevance within 233 distance-sensor products.", "caution": "Confirm official family boundaries and physical/functional differences before creating or merging any family page." },
+      { "candidate": "D20/D20S/D22/D23 temperature ranges", "evidence": "Repeated 19-variant patterns and shared temperature applications in source data.", "caution": "Do not infer probe compatibility or consolidate distinct product families without primary manufacturer evidence." },
+      { "candidate": "AIS01 and CS01 ranges", "evidence": "Repeated model bases with 19 catalogue variants each.", "caution": "Family pages are justified only after exact purpose and variant relationships are verified from authoritative sources." },
+      { "candidate": "RS485W", "evidence": "Eleven repeated RS485W variants exist and sampled pages lack a family comparison path.", "caution": "Keep it distinct from the existing RS485 family unless manufacturer documentation supports grouping." }
+    ],
+    "antiProgrammaticSeoPosition": "Do not create dozens of family pages from prefixes alone. Add only validated families that materially improve human model selection."
+  },
+  "sourceAndCitationQuality": {
+    "authoritativeSources": [
+      { "topic": "LoRaWAN", "source": "LoRa Alliance - What is LoRaWAN?", "url": "https://lora-alliance.org/resource_hub/what-is-lorawan/" },
+      { "topic": "LTE Cat 1", "source": "GSMA - Mobile IoT in a 5G Future", "url": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/wp-content/uploads/2024/10/Mobile-IoT-in-a-5G-Future-Final.pdf" },
+      { "topic": "NB-IoT and LTE-M", "source": "GSMA - Mobile IoT Deployment Guide", "url": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/" }
+    ],
+    "catalogueProvenance": "The supplied workbook is authoritative internally and no unsupported fields are manufactured. However, only 212 of 981 products have a nonblank productUrl, leaving 769 product pages without a visible technical-details source link.",
+    "weakSourceFindings": "No technical claims based on forums, marketplaces or third-party resellers were found in visible site content. Image provenance records include manufacturer/third-party licensing detail internally, but image sourcing is not presented as technical evidence.",
+    "unsourcedAiClaims": "No clearly invented AI-style compatibility or certification claims were found. Generic guide advice is cautious but usually uncited.",
+    "provenanceRecommendation": "Maintain workbook row provenance and attach official manufacturer documentation to products/families when verified; visibly distinguish source facts from reseller guidance. Do not cite secondary resellers when a primary source exists."
+  },
+  "southAfricanCommercialRelevance": {
+    "strengths": ["Public prices use South African rand.", "The root language is en-ZA and Open Graph locale is en_ZA.", "Homepage, About, product price questions and metadata naturally identify the South African market.", "The enquiry process avoids unsupported stock, delivery and availability claims."],
+    "gaps": ["VAT treatment is deferred to quotation rather than established site-wide.", "No configured public address, phone or email appeared in the audited build.", "Guides rarely add South African network, deployment or procurement context.", "No supplied shipping, delivery, warranty, returns or local-support facts are available, so the site cannot answer those purchase questions."],
+    "overuseAssessment": "South Africa wording is present in global metadata and repeated template chrome but is not visibly keyword-stuffed.",
+    "unsupportedClaimAssessment": "No unsupported stock, delivery, warranty, certification or local-support promises were found."
+  },
+  "searchIntentCoverage": [
+    { "intent": "LoRaWAN sensors South Africa", "coverage": "STRONG COVERAGE", "reason": "203 LoRaWAN products, ZAR prices, a sourced technology page and many application links; selection guidance remains a secondary weakness." },
+    { "intent": "LoRaWAN gateway South Africa", "coverage": "PARTIAL COVERAGE", "reason": "Ten gateway products and a buying guide exist, but model-selection and local deployment guidance are thin." },
+    { "intent": "NB-IoT sensors South Africa", "coverage": "STRONG COVERAGE", "reason": "135 direct NB-IoT products plus combined variants, clear ZAR prices and a GSMA-sourced definition." },
+    { "intent": "IoT water monitoring South Africa", "coverage": "PARTIAL COVERAGE", "reason": "Flow, quality and leak categories plus a guide provide breadth, but no deep problem-to-product decision path." },
+    { "intent": "LoRaWAN water meter", "coverage": "STRONG COVERAGE", "reason": "The SW3L family has 80 models with pricing and comparison; synthesis of meter/size differences is missing." },
+    { "intent": "RS485 LoRaWAN gateway", "coverage": "WEAK COVERAGE", "reason": "Many RS485 converters/nodes exist, but the term gateway may not match the product role and the site does not clarify that distinction." },
+    { "intent": "Modbus LoRaWAN device", "coverage": "PARTIAL COVERAGE", "reason": "The RS485/Modbus guide discovers relevant products, but it does not explain protocol compatibility or boundaries." },
+    { "intent": "temperature sensor LoRaWAN", "coverage": "STRONG COVERAGE", "reason": "Large temperature catalogue and a guide are present; model-level measurement and probe decisions need clearer extraction." },
+    { "intent": "water quality IoT sensors", "coverage": "PARTIAL COVERAGE", "reason": "Twenty-nine application products and a WQS family exist, but measurement capabilities are buried." },
+    { "intent": "industrial IoT sensors South Africa", "coverage": "PARTIAL COVERAGE", "reason": "The catalogue is broad and commercially localized, but there is no strong industrial solution narrative or authoritative topic hub." }
+  ],
+  "contentDuplication": {
+    "productPages": "High template repetition is expected for a catalogue, but the unique content often consists only of SKU, application, interface, a raw specification string and price. The repeated 'What is' FAQ answer adds little unique interpretation across 981 pages.",
+    "applicationPages": "All 18 use the same count/compare structure and differ mainly by label, products and links. This is useful faceting but weak standalone decision content.",
+    "connectivityPages": "Acceptable templating with materially distinct sourced definitions, fits, advantages and limitations. The two data-bundle variants necessarily overlap with their parent technologies and should remain carefully differentiated.",
+    "familyPages": "Purpose and answer text often repeat 'compare specification, connectivity, package information and price'; the tables are unique, but narrative value is thin.",
+    "guides": "All five repeat four generic comparison criteria and a product table. Their different scopes are legitimate, but editorial differentiation is insufficient.",
+    "riskConclusion": "MEDIUM. This is not a doorway-page scheme, but 981 indexable templates with low explanatory uniqueness may struggle to earn citations or strong indexing independently."
+  },
+  "indexation": {
+    "importantContentIndexable": "YES, subject to correct production hostname configuration.",
+    "sitemapUrlCount": 1027,
+    "sitemapComposition": { "core": 10, "applications": 18, "connectivity": 6, "families": 7, "guides": 5, "products": 981 },
+    "compare": "noindex,follow and omitted from sitemap - correct.",
+    "filterAndSearchUrls": "No crawlable parameter combinations are generated for catalogue filtering/search - no crawl trap detected.",
+    "apiRoutes": "The enquiry API is not in the sitemap and is not an HTML content route.",
+    "canonicalRisk": "HIGH before deployment configuration: the audited build emitted http://localhost:3000 in all 981 product canonicals, robots sitemap reference, sitemap URLs and JSON-LD URLs because NEXT_PUBLIC_SITE_URL was unset.",
+    "indexBloatRisk": "MEDIUM from indexing all 981 largely templated product pages. Do not blanket-noindex them; first improve unique usefulness and use index-performance evidence to decide if any genuinely non-useful records should be excluded.",
+    "lastModified": "All sitemap entries share the fixed catalogue date 2026-09-07, even editorial/legal pages. This is consistent but not a true per-page modification signal."
+  },
+  "aiCrawlerStatus": {
+    "robotsRule": "User-agent: * / Allow: /",
+    "statusMeaning": "All standards-compliant crawlers below are allowed through the wildcard rule, but none is explicitly configured. Actual production access can still be affected by WAF/CDN rules that were not available in the repository.",
+    "crawlers": [
+      { "crawler": "Googlebot", "access": "ALLOWED", "explicitConfiguration": "NOT EXPLICITLY CONFIGURED", "implication": "Google Search and Google AI features can crawl under the wildcard rule; Google documents Googlebot controls as applying to AI features in Search." },
+      { "crawler": "Bingbot", "access": "ALLOWED", "explicitConfiguration": "NOT EXPLICITLY CONFIGURED", "implication": "Bing/Microsoft crawl access is not blocked by robots.txt; actual indexing and Copilot citation are not guaranteed." },
+      { "crawler": "GPTBot", "access": "ALLOWED", "explicitConfiguration": "NOT EXPLICITLY CONFIGURED", "implication": "OpenAI documents GPTBot as a model-training crawler, separate from OAI-SearchBot. This policy should be a deliberate business choice rather than assumed necessary for search visibility." },
+      { "crawler": "OAI-SearchBot", "access": "ALLOWED", "explicitConfiguration": "NOT EXPLICITLY CONFIGURED", "implication": "OpenAI documents it as the crawler used to surface sites in ChatGPT search; wildcard access permits it." },
+      { "crawler": "PerplexityBot", "access": "ALLOWED", "explicitConfiguration": "NOT EXPLICITLY CONFIGURED", "implication": "Perplexity documents it as the search-results crawler; wildcard access permits it." },
+      { "crawler": "ClaudeBot", "access": "ALLOWED", "explicitConfiguration": "NOT EXPLICITLY CONFIGURED", "implication": "Anthropic identifies this as its model-development crawler; allowing it is distinct from search visibility." },
+      { "crawler": "Claude-SearchBot", "access": "ALLOWED", "explicitConfiguration": "NOT EXPLICITLY CONFIGURED", "implication": "Anthropic identifies this as its search-quality crawler; wildcard access permits it." },
+      { "crawler": "Claude-User", "access": "ALLOWED", "explicitConfiguration": "NOT EXPLICITLY CONFIGURED", "implication": "Anthropic identifies this as user-directed retrieval; wildcard access does not block it." }
+    ],
+    "recommendationBoundary": "Do not automatically add explicit allow rules for every crawler. Document the desired search-versus-training policy first, then align robots.txt and WAF rules deliberately."
+  },
+  "llmsTxt": {
+    "status": "ABSENT",
+    "assessment": "llms.txt is an emerging, non-standard convention and not a guaranteed ranking or citation factor. Its absence is not a crawl blocker.",
+    "possibleUsefulContents": ["Canonical site and reseller identity", "Short catalogue scope", "Links to products, application, connectivity, family and guide indexes", "Public contact/enquiry URL", "Clear statement that prices are public ZAR selling prices and that stock/availability are confirmed by enquiry", "Links to primary technical-source policies or provenance explanations"],
+    "mustNotInclude": ["Supplier USD/EUR costs", "Exchange rate", "Markup percentage or formula", "Private contact/provider configuration", "Unsupported compatibility, certification, stock, warranty or delivery claims", "Hidden keyword lists or content that contradicts visible pages"]
+  },
+  "technicalExtraction": {
+    "serverGenerated": ["H1", "introductory summary", "SKU", "public ZAR price or Contact for pricing", "application", "connectivity when supplied", "specification", "breadcrumbs", "Q&A", "related products", "family/guide/comparison links", "JSON-LD"],
+    "clientDependent": ["Interactive filtering and search on /products", "Progressive reveal beyond the first 24 product cards on /products"],
+    "mitigationAlreadyPresent": "Each product is a static route and appears in the sitemap; CollectionPage/ItemList JSON-LD provides the first 50 catalogue URLs.",
+    "interactionDependencyFinding": "Core product facts do not require JavaScript or expanding details. Collapsed Q&A remains present in server HTML."
+  },
+  "headingsAndSemantics": {
+    "h1": "One clear H1 was found on all inspected page types.",
+    "hierarchy": "Product, family, guide, application and connectivity pages generally use logical H2 sections. Card titles use H2 within grids, which can make large collection heading outlines noisy but still understandable.",
+    "tables": "Comparison components use a caption, th elements and row scope, supporting extraction and accessibility.",
+    "definitionLists": "Product overview, quick facts and package information use dl/dt/dd appropriately.",
+    "landmarks": "The root layout provides header, one main wrapper and footer plus a skip link. Privacy and Terms components also return main elements, causing nested main landmarks.",
+    "articles": "Guide cards and guide detail content use article semantics appropriately; product content is correctly not presented as editorial Article markup.",
+    "breadcrumbs": "Visible breadcrumb navigation exists on product/family/guide/facet pages, but nav elements lack an aria-label and application/connectivity facets lack BreadcrumbList JSON-LD."
+  },
+  "metadata": {
+    "strengths": ["Page-level canonicals exist for core, product, application, connectivity, family and guide routes.", "Product titles are SKU-specific; facet/family/guide titles are unique by label.", "Global metadata uses en-ZA/South African positioning and LoRa Network as the public brand.", "Compare is explicitly noindex,follow."],
+    "weakExamples": [
+      { "type": "Product description", "example": "SN50v3-LB is a Dragino product for Generic Node. It uses LoRaWAN. +5v controllable output,3 x Interrupt...", "issue": "Mechanically joins a generic summary to raw comma-separated specifications and may truncate mid-clause." },
+      { "type": "Application description", "example": "Browse 233 products for Distance Sensor.", "issue": "Unique but too thin to communicate buyer value or South African context." },
+      { "type": "Connectivity description", "example": "Browse 203 products with LoRaWAN.", "issue": "Does not use the page's stronger sourced definition or decision value." },
+      { "type": "Encoding", "example": "Em-dashes, apostrophes and the copyright sign appear as mojibake in source/build text (for example â€”, modelâ€™s and Â©).", "issue": "Reduces snippet quality, professionalism and machine-readable text cleanliness." }
+    ],
+    "canonicalConfiguration": "All relative canonicals resolve through metadataBase, but the audited environment defaulted metadataBase to http://localhost:3000."
+  },
+  "trustSignals": {
+    "present": ["About page", "Contact/enquiry flow", "Privacy page", "Terms page", "Visible product brand", "Cautious availability and VAT language", "Primary citations on connectivity explanations", "No fake reviews, ratings, authors or credentials"],
+    "missingPendingAuthoritativeBusinessInput": ["Legal or registered business name", "Company/registration identifier where appropriate", "Public business address", "Public phone and email", "Clear reseller relationship wording", "Returns/warranty policy", "Delivery and geographic service information", "Support scope", "VAT registration/treatment statement if applicable", "Named editorial responsibility or reviewed-by process for guides, only if real"],
+    "assessment": "The site is transparent about enquiry limitations but not yet sufficiently identifiable as a commercial entity for high-confidence citation or purchase trust. Only supplied, verifiable business facts should fill these gaps."
+  },
+  "answerExtractionTests": {
+    "totals": { "pass": 14, "partial": 8, "fail": 2, "total": 24 },
+    "tests": [
+      { "question": "What is SN50v3-LB?", "grade": "PARTIAL", "reason": "It is identified as a Dragino Generic Node using LoRaWAN, but the summary does not explain what the hardware actually does." },
+      { "question": "Who manufactures SN50v3-LB?", "grade": "PASS", "reason": "Dragino is visible as Brand and in Product JSON-LD; the exact manufacturer role is implicit rather than explicitly labelled." },
+      { "question": "What does SN50v3-LB cost in South Africa?", "grade": "PASS", "reason": "A prominent ZAR price and VAT notice match the Offer exactly." },
+      { "question": "What is SN50v3-LB used for?", "grade": "PARTIAL", "reason": "Generic Node is stated, but that broad category does not describe a concrete use case." },
+      { "question": "What connectivity does SN50v3-LB use?", "grade": "PASS", "reason": "LoRaWAN appears in the quick facts, overview, Q&A and schema." },
+      { "question": "What is the difference between SN50v3-LB and SN50v3-LB2?", "grade": "PARTIAL", "reason": "The family/compare table exposes source specifications and prices, but no direct narrative states the decisive difference." },
+      { "question": "What is RS485W-LB?", "grade": "PARTIAL", "reason": "Application, interface and raw RS485/Modbus specification are present, but the introductory answer remains generic." },
+      { "question": "What connectivity does RS485W-LB use?", "grade": "PASS", "reason": "LoRaWAN is directly labelled and linked." },
+      { "question": "Which products support LoRaWAN?", "grade": "PASS", "reason": "The LoRaWAN page identifies 203 products and renders the relevant catalogue list." },
+      { "question": "Which products support NB-IoT?", "grade": "PASS", "reason": "A dedicated sourced page identifies 135 direct NB-IoT products; combined technology categories are separately available." },
+      { "question": "Which products are relevant to water monitoring?", "grade": "PASS", "reason": "A water-monitoring guide combines flow, quality and leak-detection products and links the relevant applications." },
+      { "question": "Which products use RS485?", "grade": "PASS", "reason": "The Generic Node / RS485 application, RS485 family and RS485/Modbus guide provide discoverable product lists." },
+      { "question": "Which products work with Modbus?", "grade": "PARTIAL", "reason": "The guide finds products whose fields mention Modbus, but it cannot establish detailed protocol compatibility from the supplied content." },
+      { "question": "Which products are suitable for agriculture?", "grade": "PASS", "reason": "The Smart Agriculture page lists 97 source-categorized products." },
+      { "question": "Which devices monitor temperature and humidity?", "grade": "PASS", "reason": "A dedicated 52-product application page and a temperature guide make the set extractable." },
+      { "question": "Which LoRaWAN gateways are available?", "grade": "PASS", "reason": "The gateway application and buying guide identify and compare 10 catalogue products." },
+      { "question": "Which products can monitor pressure?", "grade": "PASS", "reason": "The Pressure Sensor page lists 57 products with comparisons and prices." },
+      { "question": "Which devices are suitable for water-quality monitoring?", "grade": "PASS", "reason": "The application page and WQS family expose relevant products and specifications." },
+      { "question": "Which TrackerD variants exist?", "grade": "PASS", "reason": "The TrackerD family and tracker guide identify the two variants and compare them." },
+      { "question": "What is the difference between LoRaWAN and NB-IoT devices?", "grade": "FAIL", "reason": "Separate definitions exist, but no page provides a direct, sourced comparison or selection framework." },
+      { "question": "What is the difference between DDS75-LB and DDS45-LB?", "grade": "PARTIAL", "reason": "Both appear in the distance catalogue, but they lack a family comparison path and there is no synthesized difference answer." },
+      { "question": "Who is DDS75-LB suitable for?", "grade": "FAIL", "reason": "Distance Sensor is the only use label; no source-grounded suitability statement is present." },
+      { "question": "Is VAT included in the shown price?", "grade": "PASS", "reason": "The site explicitly says VAT treatment is confirmed on quotation, so it answers the current commercial state without guessing." },
+      { "question": "How much does AIS01-LS cost?", "grade": "PARTIAL", "reason": "It correctly answers Contact for pricing and emits no Offer, but cannot provide a numeric price because the authoritative source is blank." }
+    ]
+  },
+  "competitiveAnswerQuality": {
+    "citationAdvantages": ["Public ZAR selling prices", "Unified discovery across 981 products", "Application and connectivity categorisation", "Semantic side-by-side comparison", "South African enquiry context", "Careful preservation of unknown values", "No fabricated stock, ratings or compatibility"],
+    "citationDisadvantages": ["Most product definitions add little beyond manufacturer fields", "Only five short buying guides", "Application pages are predominantly filtered grids", "Missing explicit business/entity details", "Limited visible primary-source provenance", "No direct technology or variant-difference synthesis"],
+    "likelyCitationOutcome": "An answer engine has a credible reason to cite LoRa Network for current ZAR price, catalogue availability and side-by-side factual comparison. It has less reason to cite the site for technical education, suitability or compatibility, where a manufacturer or standards body is more authoritative."
+  },
+  "findings": [
+    { "id": "AEO-001", "severity": "P1 HIGH", "pagesOrFiles": ["config/business.ts", "app/layout.tsx", "app/sitemap.ts", "app/robots.ts", "all generated pages"], "evidence": "With NEXT_PUBLIC_SITE_URL unset, the production build emitted http://localhost:3000 in all 981 sampled-corpus product canonicals, JSON-LD URLs, the 1,027 sitemap URLs and robots.txt Sitemap directive.", "whyItMatters": "If deployed this way, canonical and discovery signals point crawlers away from the public hostname and create a severe indexation/citation problem.", "recommendedFix": "Set and validate NEXT_PUBLIC_SITE_URL in every production build/deploy environment and add a deployment check that rejects localhost canonicals/sitemap URLs.", "expectedImpact": "HIGH" },
+    { "id": "AEO-002", "severity": "P1 HIGH", "pagesOrFiles": ["app/products/[slug]/page.tsx", "lib/product-presentation.ts", "981 product pages"], "evidence": "The recurring answer pattern states only that a SKU is a Dragino product for an application and uses an interface; source specifications remain a comma-separated paragraph.", "whyItMatters": "Answer engines can extract identity and price but often cannot confidently explain what the hardware is, its key function, suitability or differences.", "recommendedFix": "Using only verified source fields and primary documentation, produce a concise model-specific definition and structured specification labels; preserve unknowns and avoid inferred compatibility.", "expectedImpact": "HIGH" },
+    { "id": "AEO-003", "severity": "P1 HIGH", "pagesOrFiles": ["components/facet-detail.tsx", "18 application detail routes"], "evidence": "Every application page uses the same count/compare answer and then renders a comparison plus product grid; no application-specific definition, buyer problem or selection criteria are present.", "whyItMatters": "These URLs are useful filters but weak standalone answers, reducing their chance of ranking or being cited for application-level buyer questions.", "recommendedFix": "Enrich only the existing high-value application pages with short source-grounded definitions, product-type breakdowns and selection criteria. Do not create additional doorway pages.", "expectedImpact": "HIGH" },
+    { "id": "AEO-004", "severity": "P1 HIGH", "pagesOrFiles": ["app/about/page.tsx", "components/site-footer.tsx", "config/business.ts", "structured data"], "evidence": "No Organization JSON-LD exists, the audited build has no configured public email/phone/address, and no explicit statement defines LoRa Network as reseller and Dragino as manufacturer/brand.", "whyItMatters": "Weak commercial identity and entity relationships reduce trust and make attribution/citation less confident.", "recommendedFix": "Once authoritative business details are supplied, add accurate visible identity/contact information and consistent Organization/reseller relationship markup. Do not invent legal or credential data.", "expectedImpact": "HIGH" },
+    { "id": "AEO-005", "severity": "P1 HIGH", "pagesOrFiles": ["data/dragino-products.json", "product Technical details links"], "evidence": "769 of 981 catalogue products have a blank productUrl; only 212 expose a manufacturer technical-details link.", "whyItMatters": "Most technical statements lack visible primary-source provenance, weakening trust and making the reseller page less defensible as a citation.", "recommendedFix": "Reconcile official manufacturer documentation at exact SKU or validated family level and expose verified sources without replacing the workbook as the catalogue authority.", "expectedImpact": "HIGH" },
+    { "id": "AEO-006", "severity": "P2 MEDIUM", "pagesOrFiles": ["app/guides/[slug]/page.tsx", "data/discovery-content.json", "5 guide routes"], "evidence": "Guides range from roughly 216 to 848 extracted words including navigation/table text and repeat generic four-step criteria; Article schema contains only headline, description and mainEntityOfPage.", "whyItMatters": "The guides identify products but only modestly help a buyer make a decision or establish editorial authority.", "recommendedFix": "Deepen existing guides with verified decision dimensions, limitations and South African context; add author/publisher/date schema only when genuine data and editorial process exist.", "expectedImpact": "HIGH" },
+    { "id": "AEO-007", "severity": "P2 MEDIUM", "pagesOrFiles": ["data/discovery-content.json", "app/families/[slug]/page.tsx", "product pages outside seven families"], "evidence": "Only seven families are modeled. Repeated high-volume source patterns such as DDS20/45/75, D20/D22/D23, AIS01, CS01 and RS485W lack family paths; 12 of 20 sampled products had no compare link.", "whyItMatters": "Variant relationships and differences are difficult to extract, despite sufficient catalogue patterns to investigate several high-value families.", "recommendedFix": "Validate a small prioritized set against official documentation, then improve existing architecture only where a real family and useful comparison can be proven.", "expectedImpact": "HIGH" },
+    { "id": "AEO-008", "severity": "P2 MEDIUM", "pagesOrFiles": ["7 family routes", "data/discovery-content.json"], "evidence": "Family purpose text frequently says to compare specification, connectivity, package information and price; tables expose data but do not summarize what differs or which use case fits each option.", "whyItMatters": "Machines and buyers still have to infer the decisive difference from raw cells.", "recommendedFix": "Add verified family-purpose, variant-difference and selection summaries to the existing family pages, without inventing compatibility.", "expectedImpact": "HIGH" },
+    { "id": "AEO-009", "severity": "P2 MEDIUM", "pagesOrFiles": ["app/products/[slug]/page.tsx", "981 FAQPage entities"], "evidence": "Every product emits a largely templated FAQPage; Google documents that FAQ rich results are generally limited to authoritative government and health sites.", "whyItMatters": "The markup adds maintenance and duplication without a likely Google rich-result benefit; repetitive answers do not establish authority.", "recommendedFix": "Keep visible buyer questions where useful, but evaluate structured FAQPage markup on its semantic merits and avoid adding more repetitive FAQs for AEO alone.", "expectedImpact": "MEDIUM" },
+    { "id": "AEO-010", "severity": "P2 MEDIUM", "pagesOrFiles": ["components/facet-detail.tsx", "18 application routes", "6 connectivity routes"], "evidence": "Visible breadcrumbs exist but BreadcrumbList JSON-LD is absent on all facet detail pages; product/family/guide breadcrumbs do have markup.", "whyItMatters": "The hierarchy is visible but not consistently machine-described.", "recommendedFix": "Add consistent BreadcrumbList only to existing pages, matching visible navigation and canonical URLs.", "expectedImpact": "MEDIUM" },
+    { "id": "AEO-011", "severity": "P2 MEDIUM", "pagesOrFiles": ["app/products/page.tsx", "components/facet-detail.tsx"], "evidence": "Collection ItemLists cap itemListElement at 50 while numberOfItems reports the full set; /products initially renders 24 cards but its JSON-LD lists 50.", "whyItMatters": "Large collection entities are incomplete and the initial visible list does not perfectly align with structured items.", "recommendedFix": "Align visible and marked-up collection subsets or use a more explicit crawlable pagination/collection strategy if future evidence justifies it; do not expose all 981 in one oversized JSON-LD block merely for AEO.", "expectedImpact": "MEDIUM" },
+    { "id": "AEO-012", "severity": "P2 MEDIUM", "pagesOrFiles": ["app/products/[slug]/page.tsx", "app/connectivity/[slug]/page.tsx", "app/applications/[slug]/page.tsx"], "evidence": "Product descriptions concatenate generic summaries and raw specs then slice at 155 characters; facet descriptions are minimal count templates.", "whyItMatters": "Search snippets and answer previews may be unclear, truncated or indistinguishable across variants.", "recommendedFix": "Generate concise, human-readable, source-backed descriptions around SKU, function, interface and public ZAR availability, without keyword stuffing.", "expectedImpact": "MEDIUM" },
+    { "id": "AEO-013", "severity": "P2 MEDIUM", "pagesOrFiles": ["data/discovery-content.json", "components/site-footer.tsx", "app/products/[slug]/page.tsx"], "evidence": "Rendered/source text contains mojibake such as â€”, modelâ€™s and Â©.", "whyItMatters": "Encoding artifacts damage professionalism, snippet quality and exact answer text.", "recommendedFix": "Normalize affected source files to UTF-8 and verify rendered text in a production build.", "expectedImpact": "MEDIUM" },
+    { "id": "AEO-014", "severity": "P2 MEDIUM", "pagesOrFiles": ["app/privacy/page.tsx", "app/terms/page.tsx", "app/layout.tsx"], "evidence": "RootLayout wraps every route in main, while Privacy and Terms return another main element.", "whyItMatters": "Nested main landmarks are invalid semantics and can confuse assistive technology and structural extraction.", "recommendedFix": "Use section/div inside the root main while preserving the same visible layout.", "expectedImpact": "LOW" },
+    { "id": "AEO-015", "severity": "P2 MEDIUM", "pagesOrFiles": ["connectivity pages", "guides"], "evidence": "LoRaWAN, NB-IoT, LTE-M and LTE Cat 1 are explained separately, but no existing page directly compares their deployment trade-offs.", "whyItMatters": "A high-value buyer question fails manual extraction despite the site already possessing credible primary-source material.", "recommendedFix": "Add a sourced comparison section to the most appropriate existing guide/index rather than creating multiple keyword pages.", "expectedImpact": "HIGH" },
+    { "id": "AEO-016", "severity": "P3 LOW", "pagesOrFiles": ["app/robots.ts"], "evidence": "All bots use a wildcard allow; Googlebot, Bingbot, GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot and Claude-SearchBot are not named explicitly.", "whyItMatters": "Access is currently open, but search and training policies are not documented separately and production WAF behaviour remains unknown.", "recommendedFix": "Make a deliberate business policy decision before adding bot-specific rules; confirm CDN/WAF access and monitor logs.", "expectedImpact": "LOW" },
+    { "id": "AEO-017", "severity": "P3 LOW", "pagesOrFiles": ["public/llms.txt"], "evidence": "No /llms.txt or llms-full.txt file exists.", "whyItMatters": "This does not block indexing; llms.txt remains an emerging, non-standard discovery convention.", "recommendedFix": "Optionally add a concise public-content map only after core entity/content gaps are resolved; never include supplier pricing or hidden AI-only copy.", "expectedImpact": "LOW" },
+    { "id": "AEO-018", "severity": "P3 LOW", "pagesOrFiles": ["app/sitemap.ts"], "evidence": "Every sitemap URL uses the same fixed 2026-09-07 lastModified value, including About, Privacy, Terms and guides.", "whyItMatters": "The signal does not represent actual per-page editorial updates and may become stale.", "recommendedFix": "Use truthful source-specific dates when available or omit lastModified where it cannot be maintained accurately.", "expectedImpact": "LOW" }
+  ],
+  "severitySummary": {
+    "p0Critical": [],
+    "p1High": ["AEO-001", "AEO-002", "AEO-003", "AEO-004", "AEO-005"],
+    "p2Medium": ["AEO-006", "AEO-007", "AEO-008", "AEO-009", "AEO-010", "AEO-011", "AEO-012", "AEO-013", "AEO-014", "AEO-015"],
+    "p3Low": ["AEO-016", "AEO-017", "AEO-018"]
+  },
+  "indexationRisks": [
+    "Localhost canonical/sitemap/JSON-LD URLs if NEXT_PUBLIC_SITE_URL is not set during production build.",
+    "Medium quality/index-bloat risk from 981 indexable product pages with substantial boilerplate and limited model-specific explanations.",
+    "Very large application/connectivity pages are link-dense and lack crawlable pagination, although product URLs remain sitemap-discoverable.",
+    "Sitemap lastModified dates are not page-specific.",
+    "No parameter/filter crawl trap was found; compare is correctly noindex,follow."
+  ],
+  "structuredDataRisks": [
+    "Organization entity absent.",
+    "Current audited URLs resolve to localhost without production configuration.",
+    "FAQPage is repeated on all 981 products with low likely Google rich-result value.",
+    "Facet breadcrumbs are visible but not represented by BreadcrumbList.",
+    "Article entities are accurate but minimal.",
+    "Collection ItemLists are partial on large lists and not perfectly aligned with initially rendered cards.",
+    "No fake offers, availability, ratings, reviews or authors were found."
+  ],
+  "contentGaps": [
+    "Plain-language product definitions", "Model suitability", "Synthesized variant differences", "Application definitions and buyer problems", "Source-backed selection criteria", "Cross-connectivity comparison", "South African deployment/procurement context", "Verified manufacturer documentation for 769 products", "Commercial policy answers when authoritative details become available"
+  ],
+  "topicalAuthorityGaps": [
+    "Only five short buying guides for a 981-product catalogue.",
+    "Application pages mostly function as filters rather than expert topic resources.",
+    "No explicit editorial responsibility/review process.",
+    "Limited primary citations outside connectivity pages.",
+    "No synthesized technical comparisons across connectivity or major unmodeled families.",
+    "No verified South African network/operator or deployment guidance, which is preferable to inventing it but leaves a local authority gap."
+  ],
+  "topStrengths": [
+    "All 981 product pages are statically generated with answer-critical facts in initial HTML.",
+    "Public pricing is centralized, ZAR-only and perfectly reconciled across visible/schema surfaces.",
+    "Twelve products with blank source prices correctly show Contact for pricing and emit no Offer.",
+    "All 981 Product JSON-LD blocks parse; no fake availability, ratings or reviews were found.",
+    "Exact SKU values are preserved and clear in H1, overview and structured data.",
+    "Application, connectivity, family, guide and related-product pathways form a useful base graph.",
+    "All six connectivity pages use cautious, primary-source-backed explanations.",
+    "Comparison tables are semantic and expose useful source facts and ZAR prices.",
+    "The sitemap is selective, filters do not create crawl traps and compare is correctly noindex,follow.",
+    "LoRa Network remains the visible public brand while Dragino is presented as a product brand, with no official-site claim."
+  ],
+  "topWeaknesses": [
+    "The audited build emits localhost canonicals, sitemap URLs and JSON-LD URLs without deployment configuration.",
+    "Product 'what is' answers are generic and seldom define the actual device.",
+    "Specifications are raw comma-separated strings rather than extractable labelled facts.",
+    "All 18 application pages are thin filtered catalogues with little decision value.",
+    "Business/entity identity is incomplete and Organization structured data is absent.",
+    "Only 212 of 981 products provide a visible manufacturer technical-source URL.",
+    "Five buying guides are too generic to establish broad topical authority.",
+    "Only seven family pages exist; many obvious variant ranges have no comparison path.",
+    "Variant difference and suitability answers are usually implicit or absent.",
+    "Mojibake, templated metadata and repeated FAQ answers reduce editorial quality."
+  ],
+  "antiOverOptimisation": [
+    "Reject keyword stuffing and repeated location phrases.",
+    "Reject hundreds of prefix-generated family/category pages without verified buyer value.",
+    "Reject repetitive FAQ expansion and FAQPage markup added only for rich-result hopes.",
+    "Reject fake reviews, ratings, authors, credentials or editorial dates.",
+    "Reject unsupported stock, delivery, warranty, compatibility, certification and network-coverage claims.",
+    "Reject South African location doorway pages.",
+    "Reject manufacturer-name stuffing or wording that implies LoRa Network is Dragino's official corporate site.",
+    "Reject hidden AI-targeted text or llms.txt claims that differ from visible pages.",
+    "Reject duplicate category pages for keyword variants.",
+    "Every AEO improvement should make a real buyer's decision easier."
+  ],
+  "recommendedNextActions": [
+    { "priority": 1, "action": "Set the production public site URL and add a deployment assertion that fails on localhost canonical, sitemap, robots or JSON-LD URLs.", "impact": "HIGH", "effort": "LOW" },
+    { "priority": 2, "action": "Add accurate visible business identity and contact details, then implement a consistent Organization/reseller relationship only from supplied authoritative facts.", "impact": "HIGH", "effort": "MEDIUM" },
+    { "priority": 3, "action": "Create a source-governed product-answer model that turns verified workbook/manufacturer facts into a concise definition and labelled specifications without inferring compatibility.", "impact": "HIGH", "effort": "HIGH" },
+    { "priority": 4, "action": "Prioritize the highest-value existing application pages (distance, temperature, water flow, smart agriculture, pressure) for definitions, buyer problems, product types and verified selection criteria.", "impact": "HIGH", "effort": "HIGH" },
+    { "priority": 5, "action": "Reconcile primary manufacturer documentation for products currently lacking technical source links, starting with high-traffic/high-value families.", "impact": "HIGH", "effort": "HIGH" },
+    { "priority": 6, "action": "Deepen the five existing guides with sourced decision dimensions, limitations, comparison interpretation and legitimate South African context.", "impact": "HIGH", "effort": "HIGH" },
+    { "priority": 7, "action": "Validate and add only a small number of obvious high-value missing families, beginning with DDS distance ranges and temperature ranges; do not generate pages from prefixes alone.", "impact": "HIGH", "effort": "MEDIUM" },
+    { "priority": 8, "action": "Add concise, verified variant-difference and suitability summaries to the seven existing family pages and relevant product pages.", "impact": "HIGH", "effort": "MEDIUM" },
+    { "priority": 9, "action": "Resolve UTF-8 mojibake, improve programmatic metadata quality, remove nested main landmarks and align visible breadcrumbs/ItemLists with structured data.", "impact": "MEDIUM", "effort": "MEDIUM" },
+    { "priority": 10, "action": "Document a deliberate AI search-versus-training crawler policy, verify CDN/WAF access, and only then consider explicit robots entries or a minimal llms.txt content map.", "impact": "LOW", "effort": "LOW" }
+  ],
+  "validation": {
+    "lint": { "command": "npm run lint", "status": "PASS", "details": "ESLint completed with no errors." },
+    "tests": { "command": "npm test", "status": "PASS", "details": "15 tests passed; 0 failed, skipped or cancelled." },
+    "build": { "command": "npm run build", "status": "PASS", "details": "Next.js 16.3.4 production build compiled and generated 1,035 static pages successfully; dynamic /compare, /contact and /api/enquiries routes were also listed." },
+    "generatedRouteCount": 1035,
+    "pricingReconciliation": { "command": "npm run pricing:reconcile", "status": "PASS", "details": "981 total, 969 priced, 12 contact-for-price, 0 public USD/EUR prices, 0 calculation errors, 0 schema/visible mismatches, 0 duplicate SKUs, 0 missing products." }
+  },
+  "referenceStandards": [
+    { "title": "Google Search Central - Product structured data", "url": "https://developers.google.com/search/docs/appearance/structured-data/product", "use": "Product/Offer suitability and merchant-policy context." },
+    { "title": "Google Search Central - Product snippet structured data", "url": "https://developers.google.com/search/docs/appearance/structured-data/product-snippet", "use": "Single-product page and initial-HTML guidance." },
+    { "title": "Google Search Central - FAQ/HowTo rich-result changes", "url": "https://developers.google.com/search/blog/2023/08/howto-faq-changes", "use": "FAQPage search-result expectations." },
+    { "title": "Google Search Central - AI features and your website", "url": "https://developers.google.com/search/docs/appearance/ai-features", "use": "Googlebot and AI-search preview controls." },
+    { "title": "OpenAI - Overview of OpenAI Crawlers", "url": "https://developers.openai.com/api/docs/bots", "use": "OAI-SearchBot, GPTBot and ChatGPT-User roles." },
+    { "title": "Perplexity - Perplexity Crawlers", "url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers", "use": "PerplexityBot and Perplexity-User roles." },
+    { "title": "Anthropic - Web crawler controls", "url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler", "use": "ClaudeBot, Claude-SearchBot and Claude-User roles." }
+  ]
+}

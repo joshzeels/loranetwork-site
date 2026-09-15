@@ -19,6 +19,8 @@
     "brand:audit": "node --experimental-strip-types scripts/audit-brand-copy.ts",
     "content:audit": "node --experimental-strip-types scripts/audit-content-opportunities.ts",
     "content:architecture-audit": "node --experimental-strip-types scripts/audit-content-architecture.ts",
+    "documentation:audit": "node --experimental-strip-types scripts/audit-product-documentation.ts",
+    "mojibake:audit": "node --experimental-strip-types scripts/audit-mojibake.ts",
     "launch:audit": "node --experimental-strip-types scripts/audit-launch-readiness.ts",
     "catalogue:import": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/import-dragino-catalogue.ps1"
   },

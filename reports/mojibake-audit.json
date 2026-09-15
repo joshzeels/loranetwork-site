@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-09-15T09:06:29.166Z",
+  "status": "PASS",
+  "scannedFiles": 47,
+  "likelyMojibakeIssues": 0,
+  "correctedSourceFields": [],
+  "note": "No authoritative catalogue fields were altered. The earlier audit examples were not reproduced when files were read as UTF-8.",
+  "issues": []
+}
