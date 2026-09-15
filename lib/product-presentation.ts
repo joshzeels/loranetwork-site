@@ -20,7 +20,7 @@ const exactDisplayCorrections = new Map<string, string>([
 
 export function displayValue(value: string) {
   const cleaned = value
-    .replace(/Â(?=\u00a0|\s|$)/g, "")
+    .replace(/\u00c2(?=\u00a0|\s|$)/g, "")
     .replace(/\u00a0/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -32,14 +32,48 @@ export function productDisplayName(sku: string) {
   return displayValue(sku);
 }
 
-export function productSummary(product: Pick<PublicDraginoProduct, "sku" | "application" | "iotInterface">) {
+export function productDefinition(product: Pick<PublicDraginoProduct, "sku" | "application" | "iotInterface">) {
   const name = productDisplayName(product.sku);
   const application = displayValue(product.application);
   const iotInterface = displayValue(product.iotInterface);
-  if (application && iotInterface) return `${name} is a Dragino product listed for ${application}. Its catalogue interface is ${iotInterface}.`;
-  if (application) return `${name} is a Dragino product listed for ${application}.`;
-  if (iotInterface) return `${name} is a Dragino product with ${iotInterface} recorded as its catalogue interface.`;
-  return `${name} is a Dragino IoT product.`;
+
+  const connection = iotInterface ? ` It uses ${iotInterface} connectivity.` : "";
+  if (/gateway/i.test(application)) return `${name} is listed as a LoRaWAN gateway.${connection}`;
+  if (/tracker/i.test(application)) return `${name} is listed as an IoT tracker.${connection}`;
+  if (/sensor/i.test(application)) {
+    const deviceType = application.toLocaleLowerCase("en-ZA");
+    const article = /^[aeiou]/.test(deviceType) ? "an" : "a";
+    return `${name} is listed as ${article} ${deviceType}.${connection}`;
+  }
+  if (/generic node|rs485/i.test(application)) return `${name} is an IoT device in the catalogue's ${application} group.${connection}`;
+  if (application) return `${name} is listed for ${application}.${connection}`;
+  if (iotInterface) return `${name} is an IoT product with ${iotInterface} listed as its connectivity.`;
+  return `${name} is an IoT product in the catalogue.`;
+}
+
+export function productSummary(product: Pick<PublicDraginoProduct, "sku" | "application" | "iotInterface">) {
+  return productDefinition(product);
+}
+
+export function specificationItems(value: string) {
+  const specification = displayValue(value);
+  if (!specification.includes(",")) return [];
+
+  const items = specification.split(",").map(displayValue).filter(Boolean);
+  if (items.length < 2 || items.some((item) => item.length < 2)) return [];
+  return items;
+}
+
+export function sentenceAwareDescription(parts: string[], maximumLength = 155) {
+  const value = parts.map(displayValue).filter(Boolean).join(" ");
+  if (value.length <= maximumLength) return value;
+
+  const available = value.slice(0, maximumLength - 1);
+  const sentenceEnd = Math.max(available.lastIndexOf(". "), available.lastIndexOf("; "));
+  if (sentenceEnd >= Math.floor(maximumLength * 0.55)) return `${available.slice(0, sentenceEnd + 1).trim()}`;
+
+  const wordEnd = available.lastIndexOf(" ");
+  return `${available.slice(0, wordEnd > 0 ? wordEnd : available.length).replace(/[,:;]$/, "").trim()}.`;
 }
 
 export function facetValue(value: string) {

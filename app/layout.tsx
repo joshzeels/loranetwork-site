@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | LoRa Network South Africa",
   },
   description:
-    "Browse LoRaWAN and IoT products for South African projects by SKU, application and IoT interface, with public prices in South African rand.",
+    "Browse LoRaWAN and IoT hardware for South African projects by SKU, application and connectivity, with prices in rand.",
   applicationName: "LoRa Network South Africa",
   keywords: ["LoRaWAN South Africa", "IoT sensors", "IoT gateways", "NB-IoT", "LTE-M"],
   alternates: { canonical: "/" },

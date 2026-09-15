@@ -1,5 +1,6 @@
 import "server-only";
 import catalogueJson from "@/data/dragino-products.json";
+import documentationJson from "@/data/product-documentation.json";
 import imageManifestJson from "@/data/product-images.json";
 import { getPublicPrice } from "@/lib/pricing";
 import { displayValue, facetSlug, facetValue, type PublicDraginoProduct } from "@/lib/product-presentation";
@@ -29,6 +30,24 @@ type Catalogue = {
 
 export const catalogue = catalogueJson as Catalogue;
 export const products = catalogue.products;
+
+export type ProductDocumentation = {
+  sku: string;
+  slug: string;
+  status: "EXACT_PRODUCT_SOURCE" | "FAMILY_SOURCE" | "NO_VERIFIED_SOURCE" | "AMBIGUOUS";
+  sourceUrl: string;
+  matchedFamily: string;
+  evidence: string;
+  presentInOfficialPageIndex: boolean;
+};
+
+const documentationRecords = (documentationJson as { products: ProductDocumentation[] }).products;
+const documentationBySku = new Map(documentationRecords.map((record) => [record.sku, record]));
+
+export function getDocumentationForProduct(sku: string) {
+  const record = documentationBySku.get(sku);
+  return record && (record.status === "EXACT_PRODUCT_SOURCE" || record.status === "FAMILY_SOURCE") ? record : undefined;
+}
 
 type ProductImageRecord = {
   sku: string;

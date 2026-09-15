@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { catalogue } from "@/lib/catalogue";
 import { LogoMark } from "@/components/logo-mark";
 import { BUSINESS_CONFIG } from "@/config/business";
 
@@ -16,32 +15,30 @@ export function SiteFooter() {
             </span>
           </Link>
           <p className="footer-summary">
-            A searchable South African catalogue of LoRaWAN and IoT hardware.
+            LoRaWAN and IoT hardware for South African projects.
           </p>
         </div>
         <div>
-          <h2>Catalogue</h2>
-          <Link href="/products">All products</Link>
-          <Link href="/applications">Applications</Link>
-          <Link href="/connectivity">Connectivity</Link>
-          <Link href="/families">Product families</Link>
-          <Link href="/guides">Buying guides</Link>
+          <h2>Shop</h2>
+          <Link href="/products">Products</Link>
+          <Link href="/applications">Shop by application</Link>
+          <Link href="/connectivity">Shop by connectivity</Link>
+          <Link href="/families">Compare models</Link>
+          <Link href="/guides">Buying advice</Link>
         </div>
         <div>
-          <h2>Information</h2>
-          <Link href="/about">About this catalogue</Link>
-          <Link href="/contact">Prepare an enquiry</Link>
+          <h2>Help</h2>
+          <Link href="/about">About us</Link>
+          <Link href="/contact">Contact us</Link>
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
           {BUSINESS_CONFIG.profile.email ? <a href={`mailto:${BUSINESS_CONFIG.profile.email}`}>{BUSINESS_CONFIG.profile.email}</a> : null}
           {BUSINESS_CONFIG.profile.phone ? <a href={`tel:${BUSINESS_CONFIG.profile.phone}`}>{BUSINESS_CONFIG.profile.phone}</a> : null}
           {BUSINESS_CONFIG.profile.address ? <p>{BUSINESS_CONFIG.profile.address}</p> : null}
-          <p>{catalogue.source.productCount.toLocaleString("en-ZA")} products indexed</p>
-          <p>Public pricing: South African rand</p>
         </div>
       </div>
       <div className="shell footer-base">
-        <p>LoRaWAN and IoT hardware for South African projects.</p>
+        <p>Browse, compare and enquire online.</p>
         <p>© {new Date().getFullYear()} LoRa Network South Africa</p>
       </div>
     </footer>

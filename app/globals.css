@@ -270,6 +270,7 @@ img { display: block; max-width: 100%; }
 .source-facts div { display: grid; grid-template-columns: 210px 1fr; gap: 2rem; padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
 .source-facts dt { color: var(--muted); font: .62rem/1.5 var(--font-mono); text-transform: uppercase; }
 .source-facts dd { margin: 0; line-height: 1.6; overflow-wrap: anywhere; }
+.specification-list { display: grid; gap: .7rem; margin: 1.5rem 0 0; padding-left: 1.25rem; line-height: 1.6; }
 .faq-list details { border-top: 1px solid var(--line); }
 .faq-list details:last-child { border-bottom: 1px solid var(--line); }
 .faq-list summary { position: relative; display: grid; grid-template-columns: 1fr 20px; gap: 1rem; padding: 1.25rem 0; font-weight: 680; list-style: none; }

@@ -27,20 +27,52 @@
     "LTE-M & NB-IoT, 10 years 500MB data",
     "NB-IoT, 10 years 500MB data"
   ],
+  "applicationGuidance": {
+    "Distance Sensor": {
+      "directAnswer": "This catalogue lists {count} products for distance sensing. Use the supplied specification to identify the measurement details stated for each SKU, then compare connectivity and public ZAR price.",
+      "hardwareSummary": "The range contains several distinct model groups and connectivity variants. Product names alone do not establish range, mounting method or compatibility, so use the exact specification and technical source where available.",
+      "considerations": ["Check whether the required measurement detail is stated in the specification.", "Choose a connectivity option available at the deployment location.", "Compare exact SKUs because similarly named variants can have different specifications.", "Confirm any requirement not stated in the catalogue against linked technical documentation."],
+      "selectionPath": "Start with the required distance-measurement specification. Remove models that do not explicitly state the needed detail, then compare their listed connectivity and ZAR prices."
+    },
+    "Temperature Sensor": {
+      "directAnswer": "This catalogue lists {count} products classified for temperature sensing. Compare the measurement details stated in each specification, the connectivity option and the exact SKU.",
+      "hardwareSummary": "The catalogue contains temperature-product model groups and connectivity variants. Accuracy, probe type and operating range should only be relied on when they are stated in the product specification or linked technical documentation.",
+      "considerations": ["Confirm whether the project needs temperature only or a separately classified temperature-and-humidity product.", "Check the supplied specification for probe, range or accuracy details when present.", "Compare the listed connectivity options.", "Use the exact SKU when requesting confirmation or a quotation."],
+      "selectionPath": "Choose the measurement category first. Next compare only the technical details stated for each SKU, followed by connectivity and ZAR price."
+    },
+    "Smart Agriculture": {
+      "directAnswer": "This catalogue lists {count} products in the Smart Agriculture application group. The supported measurement or function must be established from each product's supplied specification.",
+      "hardwareSummary": "Products in this group cover different recorded specifications and connectivity options. The Smart Agriculture label is a catalogue category and does not by itself establish a particular crop, installation or sensor capability.",
+      "considerations": ["Identify the measurement or function explicitly stated in the specification.", "Do not infer a capability from the application label alone.", "Compare connectivity against the network available for the project.", "Confirm unstated environmental and installation requirements from technical documentation."],
+      "selectionPath": "Define the measurement or control function first. Keep only products whose specification explicitly supports that function, then compare connectivity and exact model details."
+    },
+    "Water Flow Sensor": {
+      "directAnswer": "This catalogue lists {count} products for water-flow monitoring, including verified SW3L family variants. Compare exact specifications, connectivity and public ZAR prices before choosing a model.",
+      "hardwareSummary": "The page includes SW3L variants and other products classified for water-flow sensing. Size, pulse, interface or metering details should only be used when the individual specification states them.",
+      "considerations": ["Check the exact flow or meter detail stated for the SKU.", "Compare SW3L variants through the verified family table where relevant.", "Choose among the connectivity options represented in the catalogue.", "Confirm installation and meter compatibility when those details are not supplied."],
+      "selectionPath": "Start with the stated meter or flow requirement, then compare matching specifications. Use connectivity and ZAR price to narrow the remaining exact SKUs."
+    },
+    "Pressure Sensor": {
+      "directAnswer": "This catalogue lists {count} products for pressure sensing. Compare the range, output or other measurement details only where they are explicitly stated, followed by connectivity and exact SKU.",
+      "hardwareSummary": "The category contains multiple model and connectivity variants. A shared pressure-sensor label does not establish identical range, output or installation requirements.",
+      "considerations": ["Check whether the required pressure range is explicitly stated.", "Compare any stated output or interface details.", "Choose connectivity that can be supported at the deployment location.", "Confirm missing accuracy, media and installation requirements from technical documentation."],
+      "selectionPath": "Filter first by explicit pressure specification. Then compare connectivity, model-level details and public ZAR price without assuming unstated compatibility."
+    }
+  },
   "connectivityGuidance": {
     "LoRaWAN": {
       "definition": "LoRaWAN is a low-power wide-area networking protocol designed to connect battery-operated devices to the internet through public, private or community networks.",
       "deploymentFit": "It is intended for IoT deployments that exchange relatively small amounts of data and need wide-area or difficult indoor coverage.",
       "advantage": "The standard is designed around range, device power use, network capacity and deployment cost.",
-      "limitation": "A deployment still needs a suitable LoRaWAN network and the correct regional configuration; the catalogue label alone does not confirm those project details.",
+      "limitation": "Confirm that a suitable LoRaWAN network and the correct regional configuration are available for your project.",
       "sourceLabel": "LoRa Alliance — What is LoRaWAN?",
       "sourceUrl": "https://lora-alliance.org/resource_hub/what-is-lorawan/"
     },
     "LTE CAT 1": {
       "definition": "LTE Cat 1 is a 4G LTE device category first defined in 3GPP Release 8 and used by some IoT products.",
       "deploymentFit": "It suits projects evaluating LTE cellular connectivity rather than the LPWA categories LTE-M or NB-IoT.",
-      "advantage": "It provides an LTE option for IoT products represented in this catalogue.",
-      "limitation": "LTE Cat 1 is not interchangeable with LTE-M or NB-IoT; buyers must confirm operator service and model requirements separately.",
+      "advantage": "It provides an LTE connectivity option for IoT devices.",
+      "limitation": "LTE Cat 1 is not interchangeable with LTE-M or NB-IoT. Confirm local operator service and model requirements before ordering.",
       "sourceLabel": "GSMA — Mobile IoT in a 5G Future",
       "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/wp-content/uploads/2024/10/Mobile-IoT-in-a-5G-Future-Final.pdf"
     },
@@ -55,22 +87,22 @@
     "LTE-M & NB-IoT": {
       "definition": "LTE-M and NB-IoT are complementary cellular low-power wide-area radio technologies specified by 3GPP.",
       "deploymentFit": "They address IoT deployments needing licensed-spectrum wide-area connectivity, with the appropriate choice depending on device and network requirements.",
-      "advantage": "Products listing both technologies give buyers two cellular LPWA options to evaluate against local network support.",
-      "limitation": "The catalogue field does not establish which modes, features or roaming arrangements are active on a specific operator network.",
+      "advantage": "Products listing both technologies provide two cellular LPWA options to evaluate against local network support.",
+      "limitation": "Confirm supported modes, features and roaming arrangements with the mobile operator for your deployment.",
       "sourceLabel": "GSMA — Mobile IoT Deployment Guide",
       "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
     },
     "LTE-M & NB-IoT, 10 years 500MB data": {
       "definition": "LTE-M and NB-IoT are complementary cellular low-power wide-area radio technologies specified by 3GPP.",
-      "deploymentFit": "This exact catalogue group combines those interface labels with a supplied data-bundle description; product records should be compared individually.",
-      "advantage": "Products in this group expose both cellular LPWA names in their source interface value.",
+      "deploymentFit": "Consider these models when you need LTE-M or NB-IoT connectivity with the listed data bundle.",
+      "advantage": "These products provide both cellular LPWA options in the listed configuration.",
       "limitation": "The label does not establish operator coverage, enabled features or fitness for a particular deployment.",
       "sourceLabel": "GSMA — Mobile IoT Deployment Guide",
       "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
     },
     "NB-IoT, 10 years 500MB data": {
       "definition": "NB-IoT is a 3GPP-standardised cellular low-power wide-area technology that operates in licensed spectrum.",
-      "deploymentFit": "This exact catalogue group combines NB-IoT with a supplied data-bundle description; buyers should compare each source record.",
+      "deploymentFit": "Consider these models when you need NB-IoT connectivity with the listed data bundle.",
       "advantage": "NB-IoT is designed for low-throughput, low-complexity IoT devices and extended coverage scenarios.",
       "limitation": "The label does not establish operator coverage, enabled features or fitness for a particular deployment.",
       "sourceLabel": "GSMA — Mobile IoT Deployment Guide",
@@ -82,49 +114,49 @@
       "slug": "sw3l",
       "name": "SW3L",
       "skuPrefix": "SW3L",
-      "purpose": "Compare SW3L catalogue variants by interface, supplied specification, package information and ZAR price.",
+      "purpose": "Compare SW3L models by connectivity, specification, package information and price.",
       "evidence": "Shared SW3L SKU base and manufacturer family naming recorded by the existing product-image audit."
     },
     {
       "slug": "s31b",
       "name": "S31B",
       "skuPrefix": "S31B",
-      "purpose": "Compare S31B temperature and humidity sensor variants using only their supplied catalogue fields.",
+      "purpose": "Compare S31B temperature and humidity sensor models by specification, connectivity and price.",
       "evidence": "Shared S31B SKU base and manufacturer family naming recorded by the existing product-image audit."
     },
     {
       "slug": "sn50v3",
       "name": "SN50v3",
       "skuPrefix": "SN50V3",
-      "purpose": "Compare SN50v3 generic-node variants and their listed connectivity options.",
+      "purpose": "Compare SN50v3 generic-node variants and their connectivity options.",
       "evidence": "Shared SN50v3 SKU base and common official family pages recorded by the existing product-image audit."
     },
     {
       "slug": "rs485",
       "name": "RS485",
       "skuPrefix": "RS485",
-      "purpose": "Compare RS485 family variants by their exact interface, specification and public ZAR price.",
+      "purpose": "Compare RS485 models by connectivity, specification and price.",
       "evidence": "Shared RS485 SKU base and family naming in the catalogue."
     },
     {
       "slug": "wqs",
       "name": "WQS",
       "skuPrefix": "WQS",
-      "purpose": "Compare WQS water-quality catalogue variants without inferring unsupported sensor capabilities.",
+      "purpose": "Compare WQS water-quality models by specification, connectivity and price.",
       "evidence": "Shared WQS SKU base and manufacturer family naming recorded by the existing product-image audit."
     },
     {
       "slug": "wsc2",
       "name": "WSC2",
       "skuPrefix": "WSC2",
-      "purpose": "Compare WSC2 weather-station catalogue variants and listed interfaces.",
+      "purpose": "Compare WSC2 weather-station models and connectivity options.",
       "evidence": "Shared WSC2 SKU base and manufacturer family naming recorded by the existing product-image audit."
     },
     {
       "slug": "trackerd",
       "name": "TrackerD",
       "skuPrefix": "TRACKERD",
-      "purpose": "Compare the two TrackerD catalogue variants side by side.",
+      "purpose": "Compare the two TrackerD models side by side.",
       "evidence": "Two exact TrackerD SKU variants with distinct official product pages in the catalogue."
     }
   ],
@@ -133,46 +165,61 @@
       "slug": "choose-lorawan-gateway",
       "title": "How to Choose a LoRaWAN Gateway",
       "question": "Which LoRaWAN gateway should I choose?",
-      "answerTemplate": "Start with the {count} products explicitly classified as Gateway -- LoRaWAN in this catalogue. Compare their supplied specifications, IoT interface, package information and ZAR prices, then use the linked official product page for requirements not present in the workbook.",
+      "answerTemplate": "Choose from {count} LoRaWAN gateways. Compare the specification, connectivity, package information and price, then check the technical details for any project-specific requirements.",
       "applicationValues": ["Gateway -- LoRaWAN"],
       "searchTerms": [],
-      "considerations": ["Confirm the exact gateway SKU.", "Compare the supplied specification and IoT interface.", "Check package information where the workbook provides it.", "Use the official product link for technical details absent from the catalogue."]
+      "considerations": ["Confirm that the product is classified as Gateway -- LoRaWAN.", "Compare the exact functions and interfaces stated in the specification.", "Check package information where it is supplied.", "Confirm power, backhaul and deployment requirements in linked technical documentation when they are not stated."],
+      "differenceSummary": "Gateway models differ in their exact supplied specifications, listed interfaces, package information and public ZAR prices. The catalogue does not treat an unstated feature as supported.",
+      "decisionPath": ["Start with the gateway functions and interfaces the project requires.", "Shortlist only models whose supplied specification states those requirements.", "Use the technical source to confirm any missing deployment detail before enquiring with the exact SKU."],
+      "relatedFamilySlugs": []
     },
     {
       "slug": "choose-water-monitoring-device",
       "title": "How to Choose an IoT Water Monitoring Device",
       "question": "Which products can monitor water-related applications?",
-      "answerTemplate": "LoRa Network lists {count} products across the exact Water Flow Sensor, Water Quality Measurement and Water Leak Detect application groups. Choose the application first, then compare interface, supplied specification and ZAR price.",
+      "answerTemplate": "Choose from {count} products for water flow, water quality and leak detection. Start with the application, then compare connectivity, specification and price.",
       "applicationValues": ["Water Flow Sensor", "Water Quality Measurement", "Water Leak Detect"],
       "searchTerms": [],
-      "considerations": ["Choose the exact water application represented in the catalogue.", "Compare the listed IoT interface.", "Use the supplied specification to distinguish models.", "Do not infer measurement ranges or compatibility from a similar product name."]
+      "considerations": ["Choose between water flow, water quality and water leak detection first.", "Compare only the measurement or interface details explicitly stated for each SKU.", "Check the listed connectivity against the deployment network.", "Confirm unstated ranges and compatibility in linked technical documentation."],
+      "differenceSummary": "Water-flow, water-quality and water-leak products perform different catalogue applications. Within each application, models can differ by specification, connectivity and price.",
+      "decisionPath": ["Select the water-related application that matches the task.", "Compare the source specification within that application.", "Choose a supported connectivity option and confirm any unstated installation requirement."],
+      "relatedFamilySlugs": ["sw3l", "wqs"]
     },
     {
       "slug": "choose-temperature-sensor",
       "title": "How to Choose an IoT Temperature Sensor",
       "question": "Which temperature sensor should I choose?",
-      "answerTemplate": "This guide compares {count} products whose exact application value is Temperature Sensor or Temperature & Humidity Sensor. Decide whether the catalogue calls for temperature alone or temperature and humidity, then compare the listed interface, specification and price.",
+      "answerTemplate": "Compare {count} temperature and temperature-and-humidity products. Decide which measurements you need, then compare connectivity, specification and price.",
       "applicationValues": ["Temperature Sensor", "Temperature & Humidity Sensor"],
       "searchTerms": [],
-      "considerations": ["Choose between the two exact application groups.", "Compare connectivity using the IoT Interface field.", "Check the supplied specification for model-level differences.", "Confirm any required accuracy or operating range on the official product page when it is not in the workbook."]
+      "considerations": ["Choose between temperature-only and temperature-and-humidity catalogue groups.", "Check the source specification for probe, range or accuracy details when present.", "Compare the listed connectivity options.", "Confirm any missing operating requirement in linked technical documentation."],
+      "differenceSummary": "Products differ first by recorded application: temperature only or temperature and humidity. Exact specifications, connectivity and public ZAR prices can also differ by SKU.",
+      "decisionPath": ["Choose the required measurement category.", "Shortlist models that explicitly state the needed technical detail.", "Compare connectivity and verify any requirement absent from the catalogue."],
+      "relatedFamilySlugs": ["s31b"]
     },
     {
       "slug": "rs485-modbus-iot-devices",
       "title": "Choosing RS485 or Modbus IoT Devices",
-      "question": "Which catalogue products mention RS485 or Modbus?",
-      "answerTemplate": "LoRa Network lists {count} products whose SKU, application, specification or IoT interface explicitly mentions RS485 or Modbus. Compare the exact wording for each model; this catalogue does not infer protocol support where it is not stated.",
+      "question": "Which products use RS485 or Modbus?",
+      "answerTemplate": "Compare {count} products that list RS485 or Modbus in their product details. Check each model’s specification and connectivity before choosing.",
       "applicationValues": [],
       "searchTerms": ["rs485", "modbus"],
-      "considerations": ["Confirm that RS485 or Modbus is explicitly present in the product record.", "Compare application and IoT interface fields.", "Keep blank specification and package fields blank.", "Verify detailed wiring and protocol requirements on the linked official documentation."]
+      "considerations": ["Confirm that RS485 or Modbus appears explicitly in the product record.", "Distinguish the device's listed IoT connectivity from its wired sensor or equipment interface.", "Compare exact specification and package information where supplied.", "Verify wiring, protocol and register requirements in technical documentation."],
+      "differenceSummary": "RS485 is a physical communication interface, while Modbus is a protocol that can use an RS485 link. A catalogue mention of one does not prove every implementation detail of the other.",
+      "decisionPath": ["Confirm whether the project requires RS485, Modbus or both.", "Keep only products whose record explicitly states the required term.", "Compare their IoT connectivity and verify wiring and protocol details from the technical source."],
+      "relatedFamilySlugs": ["rs485", "sn50v3"]
     },
     {
       "slug": "choose-iot-tracker",
       "title": "Choosing an IoT Tracker",
-      "question": "Which trackers are available in this catalogue?",
-      "answerTemplate": "The catalogue contains {count} products with the exact Tracker application value. Compare their exact SKUs, supplied specifications, listed interfaces and ZAR prices side by side.",
+      "question": "Which IoT trackers are available?",
+      "answerTemplate": "Compare {count} IoT trackers by model, specification, connectivity and price.",
       "applicationValues": ["Tracker"],
       "searchTerms": [],
-      "considerations": ["Compare the exact tracker SKU.", "Review the supplied specification without assuming unstated features.", "Compare the listed IoT interface.", "Follow the official product link for details absent from the workbook."]
+      "considerations": ["Compare the two exact TrackerD SKUs.", "Review each supplied specification without assuming unstated tracking features.", "Compare the listed connectivity.", "Check the linked technical details for requirements absent from the catalogue."],
+      "differenceSummary": "The two TrackerD records can be compared by exact SKU, supplied specification, connectivity and public ZAR price. Only differences visible in those fields are established here.",
+      "decisionPath": ["Compare the two specification rows.", "Confirm which listed connectivity fits the project.", "Use the exact SKU when requesting any missing technical detail."],
+      "relatedFamilySlugs": ["trackerd"]
     }
   ]
 }

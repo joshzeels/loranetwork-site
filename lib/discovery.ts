@@ -25,6 +25,16 @@ export type BuyingGuide = {
   applicationValues: string[];
   searchTerms: string[];
   considerations: string[];
+  differenceSummary: string;
+  decisionPath: string[];
+  relatedFamilySlugs: string[];
+};
+
+export type ApplicationGuidance = {
+  directAnswer: string;
+  hardwareSummary: string;
+  considerations: string[];
+  selectionPath: string;
 };
 
 export type ConnectivityGuidance = {
@@ -39,6 +49,7 @@ export type ConnectivityGuidance = {
 type DiscoveryContent = {
   indexableApplications: string[];
   indexableInterfaces: string[];
+  applicationGuidance: Record<string, ApplicationGuidance>;
   connectivityGuidance: Record<string, ConnectivityGuidance>;
   families: ProductFamily[];
   guides: BuyingGuide[];
@@ -55,6 +66,10 @@ export const buyingGuides = content.guides;
 
 export function getConnectivityGuidance(value: string) {
   return content.connectivityGuidance[value];
+}
+
+export function getApplicationGuidance(value: string) {
+  return content.applicationGuidance[value];
 }
 
 function cleanSku(value: string) {
@@ -85,6 +100,21 @@ export function getFamilyBySlug(slug: string) {
 
 export function getProductFamily(product: DraginoProduct) {
   return productFamilies.find((family) => getFamilyProducts(family).some((member) => member.sku === product.sku));
+}
+
+export function getFamilyComparisonSummary(family: ProductFamily, currentProduct?: DraginoProduct) {
+  const members = getFamilyProducts(family);
+  const interfaces = [...new Set(members.map((product) => displayValue(product.iotInterface)).filter(Boolean))];
+  const specifications = new Set(members.map((product) => displayValue(product.specification)).filter(Boolean));
+  const publicPrices = new Set(members.map((product) => product.priceUsd).filter(Boolean));
+  const familySummary = `${family.name} has ${members.length} catalogue models across ${interfaces.length} listed connectivity ${interfaces.length === 1 ? "option" : "options"}${interfaces.length ? `: ${interfaces.join(", ")}` : ""}. The family contains ${specifications.size} distinct supplied specification ${specifications.size === 1 ? "record" : "records"}${publicPrices.size > 1 ? ", and public ZAR prices vary by model" : ""}.`;
+
+  if (!currentProduct) return familySummary;
+  const currentInterface = displayValue(currentProduct.iotInterface);
+  const sameInterfaceCount = members.filter((product) => displayValue(product.iotInterface) === currentInterface).length;
+  const alternatives = interfaces.filter((value) => value !== currentInterface);
+  const specificationMatches = members.filter((product) => product.sku !== currentProduct.sku && displayValue(product.specification) === displayValue(currentProduct.specification)).length;
+  return `${currentProduct.sku} is one of ${sameInterfaceCount} ${family.name} ${sameInterfaceCount === 1 ? "model" : "models"} with ${currentInterface || "no connectivity value"} listed.${alternatives.length ? ` Related models also list ${alternatives.join(", ")}.` : ""} Its supplied specification ${specificationMatches ? `is shared by ${specificationMatches} other family ${specificationMatches === 1 ? "model" : "models"}` : "differs from the other family records"}. Compare the exact rows for model and price differences.`;
 }
 
 export function getGuideProducts(guide: BuyingGuide) {

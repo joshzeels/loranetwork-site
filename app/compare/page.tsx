@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ProductComparison } from "@/components/product-comparison";
 import { products } from "@/lib/catalogue";
 
-export const metadata: Metadata = { title: "Compare Products", description: "Compare selected products by specification, IoT interface, package information and public ZAR price.", robots: { index: false, follow: true }, alternates: { canonical: "/compare" } };
+export const metadata: Metadata = { title: "Compare Products", description: "Compare selected products by specification, connectivity, package information and price in rand.", robots: { index: false, follow: true }, alternates: { canonical: "/compare" } };
 
 export default async function ComparePage({ searchParams }: { searchParams: Promise<{ products?: string | string[] }> }) {
   const query = await searchParams; const value = Array.isArray(query.products) ? query.products[0] : query.products ?? "";

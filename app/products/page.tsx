@@ -7,7 +7,7 @@ import { productDisplayName } from "@/lib/product-presentation";
 
 export const metadata: Metadata = {
   title: "LoRaWAN & IoT Product Catalogue",
-  description: `Search ${catalogue.source.productCount} products by SKU, application, specification and IoT interface, with public pricing in South African rand.`,
+  description: `Search ${catalogue.source.productCount} LoRaWAN and IoT products by SKU, application, specification and connectivity, with prices in South African rand.`,
   alternates: { canonical: "/products" },
   openGraph: {
     title: "LoRaWAN & IoT Product Catalogue",
@@ -29,8 +29,9 @@ export default function ProductsPage() {
         url: `${siteUrl}/products`,
         mainEntity: {
           "@type": "ItemList",
-          numberOfItems: products.length,
-          itemListElement: products.slice(0, 50).map((product, index) => ({
+          name: "Products visible when the catalogue first loads",
+          numberOfItems: 24,
+          itemListElement: products.slice(0, 24).map((product, index) => ({
             "@type": "ListItem",
             position: index + 1,
             name: productDisplayName(product.sku),
@@ -42,7 +43,7 @@ export default function ProductsPage() {
       <section className="page-hero catalogue-hero">
         <div className="shell page-hero-grid">
           <div>
-            <h1>IoT product catalogue</h1>
+            <h1>IoT products</h1>
           </div>
           <div className="page-hero-aside">
             <p>Search by SKU, application, specification or IoT interface.</p>

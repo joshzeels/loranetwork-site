@@ -33,5 +33,5 @@ export function EnquiryBuilder({ initialSku }: { initialSku: string }) {
     <p className="privacy-notice">We use the details you submit only to respond to this enquiry. See the <Link href="/privacy">Privacy Notice</Link>.</p>
     <button className="button button-primary" type="submit" disabled={pending}>{pending ? "Sending…" : "Send enquiry"}</button>
     <div className={`form-status ${result?.ok ? "is-success" : "is-error"}`} role="status" aria-live="polite">{result?.message}</div>
-  </form><aside className="enquiry-summary"><h2>Before submitting</h2><p>Include the exact SKU and quantity where applicable. Submitting an enquiry does not confirm stock, availability, delivery dates or quote validity.</p><p>If delivery is not configured or fails, the form will state that your message was not sent.</p></aside></div>;
+  </form><aside className="enquiry-summary"><h2>What happens next?</h2><p>We’ll review your requirements and respond about the requested product. Include the SKU, quantity and any project details that will help us understand what you need.</p><p>Prices, stock and delivery are confirmed when we respond.</p></aside></div>;
 }
