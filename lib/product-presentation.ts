@@ -32,23 +32,61 @@ export function productDisplayName(sku: string) {
   return displayValue(sku);
 }
 
+export function productApplicationLabel(value: string) {
+  const application = displayValue(value);
+  if (/^gateway\s*--\s*lorawan$/i.test(application)) return "LoRaWAN gateway";
+  if (/^generic node\s*\/\s*rs485$/i.test(application)) return "Generic node and RS485";
+
+  return application
+    .replace(/\s*--\s*/g, ": ")
+    .replace(/\s*\/\s*/g, " and ")
+    .replace(/\bDetect\b/g, "Detection");
+}
+
+export function productConnectivityLabel(value: string) {
+  return displayValue(value)
+    .replace(/,\s*10 years 500MB data/i, ", 10 years / 500MB data")
+    .replace(/,\s*For\s+/i, " for ");
+}
+
+function withIndefiniteArticle(value: string) {
+  return `${/^[aeiou]/i.test(value) ? "an" : "a"} ${value}`;
+}
+
 export function productDefinition(product: Pick<PublicDraginoProduct, "sku" | "application" | "iotInterface">) {
   const name = productDisplayName(product.sku);
   const application = displayValue(product.application);
-  const iotInterface = displayValue(product.iotInterface);
+  const iotInterface = productConnectivityLabel(product.iotInterface);
+  const applicationLabel = productApplicationLabel(application);
 
-  const connection = iotInterface ? ` It uses ${iotInterface} connectivity.` : "";
-  if (/gateway/i.test(application)) return `${name} is listed as a LoRaWAN gateway.${connection}`;
-  if (/tracker/i.test(application)) return `${name} is listed as an IoT tracker.${connection}`;
+  const connection = iotInterface ? ` Connectivity is via ${iotInterface}.` : "";
+  if (/gateway/i.test(application)) return `${name} is ${/lorawan/i.test(application) ? "a LoRaWAN" : "a"} gateway.${connection}`;
+  if (/tracker/i.test(application)) return `${name} is an IoT tracker.${connection}`;
+  if (/\bsensor\s+(and|\/)\s*/i.test(applicationLabel)) return `${name} supports ${applicationLabel.toLocaleLowerCase("en-ZA")} projects.${connection}`;
   if (/sensor/i.test(application)) {
-    const deviceType = application.toLocaleLowerCase("en-ZA");
-    const article = /^[aeiou]/.test(deviceType) ? "an" : "a";
-    return `${name} is listed as ${article} ${deviceType}.${connection}`;
+    const deviceType = applicationLabel.toLocaleLowerCase("en-ZA");
+    return `${name} is ${withIndefiniteArticle(deviceType)}.${connection}`;
   }
-  if (/generic node|rs485/i.test(application)) return `${name} is an IoT device in the catalogue's ${application} group.${connection}`;
-  if (application) return `${name} is listed for ${application}.${connection}`;
-  if (iotInterface) return `${name} is an IoT product with ${iotInterface} listed as its connectivity.`;
-  return `${name} is an IoT product in the catalogue.`;
+  if (/generic node|rs485/i.test(application)) return `${name} is an IoT node for RS485 projects.${connection}`;
+  if (application) return `${name} supports ${applicationLabel.toLocaleLowerCase("en-ZA")} projects.${connection}`;
+  if (iotInterface) return `${name} is an IoT product using ${iotInterface} connectivity.`;
+  return `${name} is an IoT product.`;
+}
+
+export function productFit(product: Pick<PublicDraginoProduct, "sku" | "application" | "iotInterface">) {
+  const name = productDisplayName(product.sku);
+  const application = displayValue(product.application);
+  const iotInterface = productConnectivityLabel(product.iotInterface);
+  const applicationLabel = productApplicationLabel(application).toLocaleLowerCase("en-ZA");
+  let fit = `${name} is suited to projects that need an IoT product`;
+
+  if (/gateway/i.test(application)) fit = `${name} is suited to projects that need ${/lorawan/i.test(application) ? "a LoRaWAN" : "a"} gateway`;
+  else if (/tracker/i.test(application)) fit = `${name} is suited to projects that need IoT tracking`;
+  else if (/sensor/i.test(application)) fit = `${name} is suited to projects that need ${withIndefiniteArticle(applicationLabel)}`;
+  else if (/generic node|rs485/i.test(application)) fit = `${name} is suited to RS485 projects that need an IoT node`;
+  else if (application) fit = `${name} is suited to ${applicationLabel} projects`;
+
+  return `${fit}.${iotInterface ? ` Connectivity is via ${iotInterface}.` : ""} Before ordering, check the specification alongside your power, installation and compatibility requirements.`;
 }
 
 export function productSummary(product: Pick<PublicDraginoProduct, "sku" | "application" | "iotInterface">) {

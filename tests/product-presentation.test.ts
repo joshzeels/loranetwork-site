@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { displayValue, facetValue, productDefinition, productDisplayName, productSummary, sentenceAwareDescription, specificationItems } from "../lib/product-presentation.ts";
+import { displayValue, facetValue, productApplicationLabel, productConnectivityLabel, productDefinition, productDisplayName, productFit, productSummary, sentenceAwareDescription, specificationItems } from "../lib/product-presentation.ts";
 
 const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<Record<string, string>> };
 const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string }> };
@@ -23,8 +23,44 @@ test("normalises confirmed catalogue typos and equivalent facet labels", () => {
 });
 
 test("builds a factual summary only from supplied catalogue fields", () => {
-  assert.equal(productSummary({ sku: "AIS01-LB", application: "Angle Sensor / Tilting", iotInterface: "LoRaWAN" }), "AIS01-LB is listed as an angle sensor / tilting. It uses LoRaWAN connectivity.");
-  assert.equal(productDefinition({ sku: "RS485W-LB", application: "Generic Node / RS485", iotInterface: "LoRaWAN" }), "RS485W-LB is an IoT device in the catalogue's Generic Node / RS485 group. It uses LoRaWAN connectivity.");
+  assert.equal(productSummary({ sku: "AIS01-LB", application: "Angle Sensor / Tilting", iotInterface: "LoRaWAN" }), "AIS01-LB supports angle sensor and tilting projects. Connectivity is via LoRaWAN.");
+  assert.equal(productDefinition({ sku: "RS485W-LB", application: "Generic Node / RS485", iotInterface: "LoRaWAN" }), "RS485W-LB is an IoT node for RS485 projects. Connectivity is via LoRaWAN.");
+  assert.equal(productApplicationLabel("Gateway -- LoRaWAN"), "LoRaWAN gateway");
+  assert.equal(productApplicationLabel("Generic Node / RS485"), "Generic node and RS485");
+  assert.equal(productConnectivityLabel("LoRaWAN"), "LoRaWAN");
+  assert.equal(productConnectivityLabel("NB-IoT"), "NB-IoT");
+  assert.equal(productConnectivityLabel("LTE-M & NB-IoT"), "LTE-M & NB-IoT");
+  assert.equal(productConnectivityLabel("LTE-M & NB-IoT, 10 years 500MB data"), "LTE-M & NB-IoT, 10 years / 500MB data");
+  assert.equal(productConnectivityLabel("NB-IoT, 10 years 500MB data"), "NB-IoT, 10 years / 500MB data");
+  assert.equal(productConnectivityLabel("RS485, For WSC2"), "RS485 for WSC2");
+});
+
+test("writes natural conservative fallback copy across representative products", () => {
+  const samples = [
+    { sku: "WSC2-L", application: "Smart Weather Station", iotInterface: "LoRaWAN" },
+    { sku: "DLOS8N", application: "Gateway -- LoRaWAN", iotInterface: "LoRaWAN" },
+    { sku: "DDS75-LB2", application: "Distance Sensor", iotInterface: "LoRaWAN" },
+    { sku: "S31B-NB-GE", application: "Temperature & Humidity Sensor", iotInterface: "NB-IoT" },
+    { sku: "WQS-LB2", application: "Water Quality Measurement", iotInterface: "LoRaWAN" },
+    { sku: "RS485-KS-GE", application: "Generic Node / RS485", iotInterface: "LTE CAT 1" },
+    { sku: "WL03A-LB", application: "Water Leak Detect", iotInterface: "LoRaWAN" },
+    { sku: "CS01-LB", application: "Energy Control / Monitoring", iotInterface: "LoRaWAN" },
+    { sku: "PS-LB2-Txx", application: "Pressure Sensor", iotInterface: "LoRaWAN" },
+    { sku: "WSS-09", application: "Smart Weather Station", iotInterface: "RS485, For WSC2" },
+    { sku: "LPS8N-EC25", application: "Gateway -- LoRaWAN", iotInterface: "LoRaWAN" },
+    { sku: "DS03A-LB", application: "Door Sensor", iotInterface: "LoRaWAN" },
+  ];
+  for (const sample of samples) {
+    const catalogueProduct = catalogue.products.find((product) => product.sku === sample.sku);
+    assert.equal(displayValue(catalogueProduct?.application ?? ""), sample.application, `${sample.sku} application`);
+    assert.equal(displayValue(catalogueProduct?.iotInterface ?? ""), sample.iotInterface, `${sample.sku} connectivity`);
+    const copy = `${productDefinition(sample)} ${productFit(sample)}`;
+    assert.doesNotMatch(copy, /is listed for|listed as|Consider it where|available project connectivity option|Confirm any requirement that is not stated|manufacturer|official|verified|source|documentation|according to|Dragino|datasheet|manual/i, sample.sku);
+    assert.doesNotMatch(copy, /—|(?<!-)--(?!-)/, sample.sku);
+    assert.ok(copy.length > 30, sample.sku);
+  }
+  assert.match(productDefinition({ sku: "WQS-KS-GE", application: "Water Quality Measurement", iotInterface: "LTE-M & NB-IoT, 10 years 500MB data" }), /LTE-M & NB-IoT, 10 years \/ 500MB data/);
+  assert.match(productFit({ sku: "LPS8N-EC25", application: "Gateway -- LoRaWAN", iotInterface: "LTE-M & NB-IoT" }), /LoRaWAN gateway\. Connectivity is via LTE-M & NB-IoT/);
 });
 
 test("provides verified DDS75-LB guidance without changing catalogue data", () => {
@@ -65,6 +101,7 @@ test("keeps Dragino source URLs out of the public product page", () => {
   assert.doesNotMatch(productPage, /documentation\.sourceUrl/);
   assert.match(productPage, /Manufacturer<\/dt><dd>Dragino/);
   assert.match(productPage, /href={`\/contact\?sku=/);
+  assert.match(productPage, /guidance\?\.suitability \?\? productFit\(product\)/);
 });
 
 test("keeps representative weak-evidence products on conservative fallback", () => {
@@ -91,7 +128,7 @@ test("keeps representative weak-evidence products on conservative fallback", () 
     if (status === "NO_VERIFIED_SOURCE") assert.equal(guidance.products.find((item) => item.sku === sku), undefined, sku);
   }
   assert.equal(guidance.products.find((item) => item.sku === "DDS75-LB2"), undefined);
-  assert.equal(productDefinition({ sku: "PS-LB-Txx or PS-LB-Ixx", application: "Pressure Sensor", iotInterface: "LoRaWAN" }), "PS-LB-Txx or PS-LB-Ixx is listed as a pressure sensor. It uses LoRaWAN connectivity.");
+  assert.equal(productDefinition({ sku: "PS-LB-Txx or PS-LB-Ixx", application: "Pressure Sensor", iotInterface: "LoRaWAN" }), "PS-LB-Txx or PS-LB-Ixx is a pressure sensor. Connectivity is via LoRaWAN.");
 });
 
 test("structures only clearly separated specification fragments", () => {
