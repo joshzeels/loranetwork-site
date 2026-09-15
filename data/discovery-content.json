@@ -171,13 +171,25 @@
       "slug": "choose-lorawan-gateway",
       "title": "How to Choose a LoRaWAN Gateway",
       "question": "Which LoRaWAN gateway should I choose?",
-      "answerTemplate": "Choose from {count} LoRaWAN gateways. Compare the specification, connectivity, package information and price, then check the technical details for any project-specific requirements.",
+      "answerTemplate": "Choose from {count} LoRaWAN gateways. Start with the deployment setting and required backhaul: the catalogue includes indoor models such as LPS8N, LPS8v2, MS48-LR and LG308N, plus the outdoor DLOS8N. Then compare the exact gateway functions, interfaces, power details and ZAR price stated for the SKU.",
       "applicationValues": ["Gateway -- LoRaWAN"],
       "searchTerms": [],
-      "considerations": ["Confirm that the product is classified as Gateway -- LoRaWAN.", "Compare the exact functions and interfaces stated in the specification.", "Check package information where it is supplied.", "Confirm power, backhaul and deployment requirements in linked technical documentation when they are not stated."],
-      "differenceSummary": "Gateway models differ in their exact supplied specifications, listed interfaces, package information and public ZAR prices. The catalogue does not treat an unstated feature as supported.",
-      "decisionPath": ["Start with the gateway functions and interfaces the project requires.", "Shortlist only models whose supplied specification states those requirements.", "Use the technical source to confirm any missing deployment detail before enquiring with the exact SKU."],
-      "relatedFamilySlugs": []
+      "considerations": [
+        "Choose an indoor model when the deployment requires indoor gateway hardware; DLOS8N is the outdoor model in the exact product set.",
+        "Confirm the required IP backhaul. LPS8N, LPS8v2 and MS48-LR state Wi-Fi and Ethernet; LPS8N and LPS8v2 describe cellular as optional, while LG308N and DLOS8N state cellular connectivity in their product details.",
+        "Choose the function that matches the system: LPS8v2 includes local LoRaWAN and IoT server functions, while MS48-LR adds a Modbus gateway role and local server functions.",
+        "Check gateway management and deployment features where stated, including LPS8N web/SSH management, LPS8v2 remote management, and DLOS8N auto-provisioning and remote monitoring.",
+        "Confirm the regional LoRaWAN frequency configuration, supplied power requirement, package details and exact SKU before ordering."
+      ],
+      "differenceSummary": "The catalogue contains indoor and outdoor gateway options. LPS8N bridges LoRaWAN to IP through Wi-Fi or Ethernet, with an optional cellular version. LPS8v2 adds local LoRaWAN and IoT server functions and also describes optional 4G. MS48-LR combines gateway, local server and Modbus functions with optional 4G. LG308N lists Wi-Fi, Ethernet and cellular backhaul, while DLOS8N is the outdoor model and lists cellular failover as optional alongside outdoor deployment features. Other rows should be checked by their exact supplied specification.",
+      "decisionPath": [
+        "Decide whether the gateway must be indoor or outdoor, then shortlist the models whose product details match that setting.",
+        "Select the required backhaul: Wi-Fi or Ethernet, with optional cellular where the exact model supports it and the deployment requires it.",
+        "Choose any local server, Modbus, management or outdoor feature only when the exact SKU states it.",
+        "Confirm regional frequency, power, package information and price for the exact SKU before ordering."
+      ],
+      "relatedFamilySlugs": [],
+      "comparisonProductSlugs": ["lps8n", "lps8v2", "ms48-lr", "dlos8n"]
     },
     {
       "slug": "choose-water-monitoring-device",

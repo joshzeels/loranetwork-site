@@ -8,7 +8,7 @@ import { summariseFamilyOverlap } from "../lib/product-presentation.ts";
 const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json", import.meta.url), "utf8")) as {
   indexableApplications: string[];
   applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string }>;
-  guides: Array<{ slug: string; question: string; searchTerms: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[] }>;
+  guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[] }>;
 };
 
 const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; slug: string; application: string }> };
@@ -35,6 +35,22 @@ test("the highest-count application facets have complete, non-empty guidance", (
 test("application guidance is not one copy-pasted template across pages", () => {
   const answers = Object.values(content.applicationGuidance).map((guidance) => guidance.directAnswer);
   assert.equal(new Set(answers).size, answers.length, "two application facets share an identical directAnswer");
+});
+
+test("gateway guide provides verified decision support without supplier language", () => {
+  const guide = content.guides.find((item) => item.slug === "choose-lorawan-gateway");
+  assert.ok(guide);
+  assert.deepEqual(guide.comparisonProductSlugs, ["lps8n", "lps8v2", "ms48-lr", "dlos8n"]);
+  assert.ok(guide.considerations.length >= 5);
+  assert.ok(guide.decisionPath.length >= 4);
+  const copy = [guide.question, guide.answerTemplate, ...guide.considerations, guide.differenceSummary, ...guide.decisionPath].join(" ");
+  assert.match(copy, /indoor|outdoor/i);
+  assert.match(copy, /Wi-Fi|Ethernet/i);
+  assert.match(copy, /optional cellular|optional 4G/i);
+  assert.doesNotMatch(copy, /manufacturer|official|verified|source|documentation|according to|Dragino|datasheet|manual/i);
+  assert.doesNotMatch(copy, /coverage|throughput|number of devices|cloud compatibility|redundancy/i);
+  assert.doesNotMatch(copy, /dragino\.com|docs\.dragino\.com/i);
+  for (const slug of guide.comparisonProductSlugs) assert.ok(catalogue.products.some((product) => product.slug === slug), slug);
 });
 
 test("DDS comparison guide contains only exact-source DDS products", () => {
