@@ -130,6 +130,36 @@ test("Door Sensor guidance supports a practical, bounded selection", () => {
   assert.doesNotMatch(copy, /dragino\.com|â€”|Ã¢â‚¬â€|(?<!-)--(?!-)/);
 });
 
+test("Dry Contact / Counting / Interrupt guidance supports a practical, bounded selection", () => {
+  const guidance = content.applicationGuidance["Dry Contact / Counting / Interrupt"];
+  assert.ok(guidance);
+  assert.match(guidance.directAnswer, /\{count\}/);
+  assert.ok(guidance.considerations.length >= 5);
+
+  const dryContactProducts = catalogue.products.filter((product) => product.application.trim() === "Dry Contact / Counting / Interrupt");
+  const statuses = dryContactProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
+  assert.equal(dryContactProducts.length, 22);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 6);
+  assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 0);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 16);
+  assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
+  assert.ok(dryContactProducts.some((product) => product.sku === "CPL03-LB" && /Pulse Counting x 3,Interrupt Detect x 3 channel/i.test(product.specification)));
+  assert.ok(dryContactProducts.some((product) => product.sku === "LHT65N-DC" && /Support Open\/ Close uplink,Support pulse counting,3 wire/i.test(product.specification)));
+  assert.equal(content.families.some((family) => /cpl03|lht65/i.test(family.slug)), false);
+  assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Dry Contact / Counting / Interrupt")), false);
+  assert.equal(content.indexableInterfaces.includes("Mesh Node"), false);
+  for (const connectivity of ["LoRaWAN", "LTE CAT 1", "NB-IoT", "LTE-M & NB-IoT", "LTE-M & NB-IoT, 10 years 500MB data", "NB-IoT, 10 years 500MB data"]) {
+    assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
+  }
+
+  const copy = [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath].join(" ");
+  assert.match(copy, /pulse counting|interrupt detection|open\/close uplink/i);
+  assert.match(copy, /Some CPL03 product specifications state three pulse-counting and three interrupt-detection channels/);
+  assert.doesNotMatch(copy, /all CPL03|every CPL03/i);
+  assert.doesNotMatch(copy, /all (?:dry contact )?products|every (?:dry contact )?product|manufacturer|official|verified|source|documentation|according to|Dragino|datasheet|manual/i);
+  assert.doesNotMatch(copy, /dragino\.com|â€”|Ã¢â‚¬â€|(?<!-)--(?!-)/);
+});
+
 test("application guidance avoids import-led public wording", () => {
   const copy = Object.values(content.applicationGuidance).flatMap((guidance) => [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath]).join(" ");
   assert.doesNotMatch(copy, /This catalogue (lists|includes)|\blisted (?:for|as)\b|catalogue products|catalogue entries/i);
