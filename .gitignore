@@ -48,3 +48,6 @@ next-env.d.ts
 # private supplier source and regenerated commercial audit output
 /data/source/Dragino_Price_List_For_Import_20260907.xlsx
 /reports/pricing-reconciliation.json
+
+# unused local source assets kept for reference, not shipped to production
+/data/source/home-distance-sensor.png
