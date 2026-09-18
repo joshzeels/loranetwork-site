@@ -47,18 +47,18 @@ test("Water Quality Measurement guidance supports safe buyer selection", () => {
   assert.ok(guidance.considerations.length >= 5);
   const waterQualityProducts = catalogue.products.filter((product) => product.application.trim() === "Water Quality Measurement");
   const statuses = waterQualityProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
-  assert.equal(waterQualityProducts.length, 29);
-  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 5);
-  assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 10);
+  assert.equal(waterQualityProducts.length, 17);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 1);
+  assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 2);
   assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 14);
   assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
-  assert.equal(waterQualityProducts.filter((product) => product.sku.trim().startsWith("WQS-")).length, 19);
+  assert.equal(waterQualityProducts.filter((product) => product.sku.trim().startsWith("WQS-")).length, 7);
   assert.ok(content.families.some((family) => family.slug === "wqs"));
   const guide = content.guides.find((item) => item.slug === "choose-water-monitoring-device");
   assert.ok(guide);
   assert.ok(guide.applicationValues.includes("Water Quality Measurement"));
   assert.ok(guide.relatedFamilySlugs.includes("wqs"));
-  for (const connectivity of ["LoRaWAN", "NB-IoT", "NB-IoT, 10 years 500MB data", "LTE-M & NB-IoT", "LTE-M & NB-IoT, 10 years 500MB data", "LTE CAT 1"]) {
+  for (const connectivity of ["LoRaWAN", "LTE CAT 1"]) {
     assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
   }
   const copy = [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath].join(" ");
@@ -77,10 +77,10 @@ test("Energy Control / Monitoring guidance supports a practical, bounded selecti
 
   const energyProducts = catalogue.products.filter((product) => product.application.trim() === "Energy Control / Monitoring");
   const statuses = energyProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
-  assert.equal(energyProducts.length, 26);
-  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 8);
+  assert.equal(energyProducts.length, 14);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 4);
   assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 0);
-  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 18);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 10);
   assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
   assert.ok(energyProducts.some((product) => product.sku === "CS01-LB"));
   assert.ok(energyProducts.some((product) => product.sku === "SCT013G-D-100" && product.iotInterface === "For CS01"));
@@ -90,7 +90,7 @@ test("Energy Control / Monitoring guidance supports a practical, bounded selecti
   assert.equal(content.indexableInterfaces.includes("For CS01"), false);
   assert.equal(content.families.some((family) => family.slug === "cs01"), false);
   assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Energy Control / Monitoring")), false);
-  for (const connectivity of ["LoRaWAN", "LTE CAT 1", "NB-IoT", "LTE-M & NB-IoT", "LTE-M & NB-IoT, 10 years 500MB data", "NB-IoT, 10 years 500MB data"]) {
+  for (const connectivity of ["LoRaWAN", "LTE CAT 1"]) {
     assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
   }
 
@@ -108,17 +108,17 @@ test("Door Sensor guidance supports a practical, bounded selection", () => {
 
   const doorProducts = catalogue.products.filter((product) => product.application.trim() === "Door Sensor");
   const statuses = doorProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
-  assert.equal(doorProducts.length, 22);
-  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 7);
+  assert.equal(doorProducts.length, 10);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 5);
   assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 0);
-  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 15);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 5);
   assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
   assert.ok(doorProducts.some((product) => product.sku === "DS03A-LB" && /Datalog Feature, Open Alarm Feature/i.test(product.specification)));
   assert.ok(doorProducts.some((product) => product.sku === "LDS02" && /Door Open\/Close detect/i.test(product.specification)));
   assert.ok(doorProducts.some((product) => product.sku === "LHT65N-DS" && /1 meter metal Door Sensor/i.test(product.specification)));
   assert.equal(content.families.some((family) => /door|ds03|lds02/i.test(family.slug)), false);
   assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Door Sensor")), false);
-  for (const connectivity of ["LoRaWAN", "LTE CAT 1", "NB-IoT", "LTE-M & NB-IoT", "LTE-M & NB-IoT, 10 years 500MB data", "NB-IoT, 10 years 500MB data"]) {
+  for (const connectivity of ["LoRaWAN", "LTE CAT 1"]) {
     assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
   }
 
@@ -138,17 +138,17 @@ test("Dry Contact / Counting / Interrupt guidance supports a practical, bounded 
 
   const dryContactProducts = catalogue.products.filter((product) => product.application.trim() === "Dry Contact / Counting / Interrupt");
   const statuses = dryContactProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
-  assert.equal(dryContactProducts.length, 22);
-  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 6);
+  assert.equal(dryContactProducts.length, 9);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 4);
   assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 0);
-  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 16);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 5);
   assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
   assert.ok(dryContactProducts.some((product) => product.sku === "CPL03-LB" && /Pulse Counting x 3,Interrupt Detect x 3 channel/i.test(product.specification)));
   assert.ok(dryContactProducts.some((product) => product.sku === "LHT65N-DC" && /Support Open\/ Close uplink,Support pulse counting,3 wire/i.test(product.specification)));
   assert.equal(content.families.some((family) => /cpl03|lht65/i.test(family.slug)), false);
   assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Dry Contact / Counting / Interrupt")), false);
   assert.equal(content.indexableInterfaces.includes("Mesh Node"), false);
-  for (const connectivity of ["LoRaWAN", "LTE CAT 1", "NB-IoT", "LTE-M & NB-IoT", "LTE-M & NB-IoT, 10 years 500MB data", "NB-IoT, 10 years 500MB data"]) {
+  for (const connectivity of ["LoRaWAN", "LTE CAT 1"]) {
     assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
   }
 
@@ -166,10 +166,10 @@ test("Angle Sensor / Tilting guidance supports a practical, bounded selection", 
   assert.ok(guidance.considerations.length >= 5);
   const products = catalogue.products.filter((product) => product.application.trim() === "Angle Sensor / Tilting");
   const statuses = products.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
-  assert.equal(products.length, 19);
-  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 4);
+  assert.equal(products.length, 7);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 2);
   assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 0);
-  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 15);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 5);
   assert.ok(products.some((product) => product.sku === "TS01-LB" && /Detect pitch and roll angle.*Angle Alarm/i.test(product.specification)));
   assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Angle Sensor / Tilting")), false);
   assert.equal(content.families.some((family) => /ts01|angle/i.test(family.slug)), false);
@@ -182,7 +182,7 @@ test("application guidance avoids import-led public wording", () => {
   const analog = content.applicationGuidance["Generic Node / Analog"];
   assert.ok(analog);
   const analogProducts = catalogue.products.filter((product) => product.application.trim() === "Generic Node / Analog");
-  assert.equal(analogProducts.length, 19);
+  assert.equal(analogProducts.length, 7);
   assert.ok(analogProducts.some((product) => product.sku === "PS-LB-NA" && /0~20mA input.*0~30v input.*5v and 12v power output/i.test(product.specification)));
   const analogCopy = [analog.directAnswer, analog.hardwareSummary, ...analog.considerations, analog.selectionPath].join(" ");
   assert.match(analogCopy, /Some PS product specifications state one 0 to 20 mA input/);

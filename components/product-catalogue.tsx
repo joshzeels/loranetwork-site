@@ -15,7 +15,7 @@ type ProductCatalogueProps = {
 };
 
 const PAGE_SIZE = 24;
-const SEARCH_EXAMPLES = ["water", "temperature", "humidity", "gateway", "tracker", "RS485", "Modbus", "LoRaWAN", "NB-IoT", "agriculture", "level", "meter", "CO2"];
+const SEARCH_EXAMPLES = ["water", "temperature", "humidity", "gateway", "tracker", "RS485", "Modbus", "LoRaWAN", "LTE CAT 1", "agriculture", "level", "meter", "CO2"];
 
 function normaliseSearchText(value: string) {
   return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("en-ZA").replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();

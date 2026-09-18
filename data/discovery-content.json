@@ -21,11 +21,7 @@
   ],
   "indexableInterfaces": [
     "LoRaWAN",
-    "LTE CAT 1",
-    "NB-IoT",
-    "LTE-M & NB-IoT",
-    "LTE-M & NB-IoT, 10 years 500MB data",
-    "NB-IoT, 10 years 500MB data"
+    "LTE CAT 1"
   ],
   "applicationGuidance": {
     "Distance Sensor": {
@@ -67,7 +63,7 @@
     "Smart Weather Station": {
       "directAnswer": "This group contains {count} products for smart weather monitoring. It brings together WSC2 weather-station models, WSS weather sensors and related hardware. Start with the measurements and sensor connection you need, then compare each model's connectivity and stated technical details.",
       "hardwareSummary": "The range includes WSC2 models for compatible weather sensors, WSS sensors covering measurements such as rain, wind, temperature, humidity, air pressure, illumination, radiation, PAR, CO2 and particulates, and related weather hardware. Measurements and interfaces vary by model, so use the individual product details when choosing.",
-      "considerations": ["Start with the weather measurements required, such as rain, wind, temperature, humidity, air pressure, illumination, radiation, PAR, CO2 or particulates.", "Decide whether the project needs a WSC2 controller with compatible sensors or a specific WSS sensor for the required measurement.", "Check how the selected sensor connects, including RS485 interfaces used with WSC2 products.", "Choose the connectivity option shown for the selected model, such as LoRaWAN, NB-IoT or LTE-M & NB-IoT.", "Check the selected model's stated range, humidity conditions, power, mounting and sensor compatibility before ordering."],
+      "considerations": ["Start with the weather measurements required, such as rain, wind, temperature, humidity, air pressure, illumination, radiation, PAR, CO2 or particulates.", "Decide whether the project needs a WSC2 controller with compatible sensors or a specific WSS sensor for the required measurement.", "Check how the selected sensor connects, including RS485 interfaces used with WSC2 products.", "Choose the connectivity option shown for the selected model, such as LoRaWAN or LTE CAT 1.", "Check the selected model's stated range, humidity conditions, power, mounting and sensor compatibility before ordering."],
       "selectionPath": "Start with the weather variable to measure. Then decide whether a WSC2 model with compatible sensors or a specific WSS sensor fits the project, compare the interface and connectivity, and check any model-specific environmental or power requirement before ordering."
     },
     "Water Quality Measurement": {
@@ -118,43 +114,11 @@
     },
     "LTE CAT 1": {
       "definition": "LTE Cat 1 is a 4G LTE device category first defined in 3GPP Release 8 and used by some IoT products.",
-      "deploymentFit": "It suits projects evaluating LTE cellular connectivity rather than the LPWA categories LTE-M or NB-IoT.",
+      "deploymentFit": "It suits projects evaluating LTE cellular connectivity for IoT deployments.",
       "advantage": "It provides an LTE connectivity option for IoT devices.",
-      "limitation": "LTE Cat 1 is not interchangeable with LTE-M or NB-IoT. Confirm local operator service and model requirements before ordering.",
+      "limitation": "Confirm local operator service and model requirements before ordering.",
       "sourceLabel": "GSMA — Mobile IoT in a 5G Future",
       "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/wp-content/uploads/2024/10/Mobile-IoT-in-a-5G-Future-Final.pdf"
-    },
-    "NB-IoT": {
-      "definition": "NB-IoT is a 3GPP-standardised cellular low-power wide-area technology that operates in licensed spectrum.",
-      "deploymentFit": "It is intended for IoT devices with low-throughput requirements, including deployments seeking extended rural or indoor coverage.",
-      "advantage": "The technology is designed for low device complexity, power efficiency and large numbers of connected devices.",
-      "limitation": "Network availability and supported features vary by mobile operator and deployment, so they must be checked for the project location.",
-      "sourceLabel": "GSMA — Mobile IoT Deployment Guide",
-      "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
-    },
-    "LTE-M & NB-IoT": {
-      "definition": "LTE-M and NB-IoT are complementary cellular low-power wide-area radio technologies specified by 3GPP.",
-      "deploymentFit": "They address IoT deployments needing licensed-spectrum wide-area connectivity, with the appropriate choice depending on device and network requirements.",
-      "advantage": "Products listing both technologies provide two cellular LPWA options to evaluate against local network support.",
-      "limitation": "Confirm supported modes, features and roaming arrangements with the mobile operator for your deployment.",
-      "sourceLabel": "GSMA — Mobile IoT Deployment Guide",
-      "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
-    },
-    "LTE-M & NB-IoT, 10 years 500MB data": {
-      "definition": "LTE-M and NB-IoT are complementary cellular low-power wide-area radio technologies specified by 3GPP.",
-      "deploymentFit": "Consider these models when you need LTE-M or NB-IoT connectivity with the listed data bundle.",
-      "advantage": "These products provide both cellular LPWA options in the listed configuration.",
-      "limitation": "The label does not establish operator coverage, enabled features or fitness for a particular deployment.",
-      "sourceLabel": "GSMA — Mobile IoT Deployment Guide",
-      "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
-    },
-    "NB-IoT, 10 years 500MB data": {
-      "definition": "NB-IoT is a 3GPP-standardised cellular low-power wide-area technology that operates in licensed spectrum.",
-      "deploymentFit": "Consider these models when you need NB-IoT connectivity with the listed data bundle.",
-      "advantage": "NB-IoT is designed for low-throughput, low-complexity IoT devices and extended coverage scenarios.",
-      "limitation": "The label does not establish operator coverage, enabled features or fitness for a particular deployment.",
-      "sourceLabel": "GSMA — Mobile IoT Deployment Guide",
-      "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
     }
   },
   "families": [
@@ -291,7 +255,7 @@
       "considerations": [
         "Choose DDS20 when the measurement is liquid level through a container without contacting the liquid.",
         "Choose between DDS45 and DDS75 by the flat-object range and measurement angle required: 30mm to 4500mm at 60° for DDS45, or 280mm to 7500mm at 40° for DDS75.",
-        "Compare the exact SKU connectivity shown in the catalogue, including LoRaWAN, NB-IoT, LTE-M & NB-IoT, and LTE CAT 1 variants.",
+        "Compare the exact SKU connectivity shown in the catalogue, including LoRaWAN and LTE CAT 1 variants.",
         "For LB and LS variants, compare the exact power entry: 8500mAh for LB or solar panel plus 3000mAh Li-ion battery for LS.",
         "Confirm the target or container arrangement, required range, regional connectivity variant, and exact SKU before ordering."
       ],

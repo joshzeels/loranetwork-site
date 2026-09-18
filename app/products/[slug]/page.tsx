@@ -5,7 +5,7 @@ import { ArrowIcon } from "@/components/icons";
 import { ProductCard } from "@/components/product-card";
 import { ProductImage } from "@/components/product-image";
 import { StructuredData } from "@/components/structured-data";
-import { getImageForProduct, getProductBySlug, getSiteUrl, products, publicProducts } from "@/lib/catalogue";
+import { getDisplayImagePath, getImageForProduct, getProductBySlug, getSiteUrl, products, publicProducts } from "@/lib/catalogue";
 import { getFamilyComparisonSummary, getFamilyProducts, getIndexableApplicationFacet, getIndexableInterfaceFacet, getProductFamily, getRelevantGuides } from "@/lib/discovery";
 import { getPublicPrice } from "@/lib/pricing";
 import { getProductGuidance } from "@/lib/product-guidance";
@@ -24,7 +24,8 @@ export async function generateMetadata({ params }: PageProps<"/products/[slug]">
   const specification = specificationItems(product.specification).slice(0, 2).join("; ");
   const description = sentenceAwareDescription([definition, specification ? `Key catalogue details: ${specification}.` : "", "View public pricing in ZAR."]);
   const image = getImageForProduct(product.sku);
-  return { title: `${name}: ${productApplicationLabel(product.application)}`, description, alternates: { canonical: `/products/${product.slug}` }, openGraph: { type: "website", title: `${name} | LoRa Network`, description, url: `/products/${product.slug}`, images: image ? [{ url: image.localPath, alt: name }] : undefined } };
+  const displayImagePath = getDisplayImagePath(product, image ?? undefined);
+  return { title: `${name}: ${productApplicationLabel(product.application)}`, description, alternates: { canonical: `/products/${product.slug}` }, openGraph: { type: "website", title: `${name} | LoRa Network`, description, url: `/products/${product.slug}`, images: displayImagePath ? [{ url: displayImagePath, alt: name }] : undefined } };
 }
 
 export default async function ProductPage({ params }: PageProps<"/products/[slug]">) {
@@ -54,7 +55,8 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   const comparisonProducts = [product, ...familyProducts.filter((item) => item.sku !== product.sku)].slice(0, 4);
   const compareHref = comparisonProducts.length > 1 ? `/compare?products=${comparisonProducts.map((item) => item.slug).join(",")}` : "";
   const packageFields = [{ label: "Package dimensions (mm)", value: product.packageDimensionMm }, { label: "Package weight (g)", value: product.packageWeightG }].filter((field) => displayValue(field.value));
-  const productSchema: Record<string, unknown> = { "@context": "https://schema.org", "@type": "Product", name, sku: product.sku, description: specification || summary, ...buildProductManufacturer(), category: application || undefined, url: `${siteUrl}/products/${product.slug}`, image: image ? `${siteUrl}${image.localPath}` : undefined, additionalProperty: [{ "@type": "PropertyValue", name: "Application", value: application || undefined }, { "@type": "PropertyValue", name: "IoT interface", value: iotInterface || undefined }, { "@type": "PropertyValue", name: "Package dimensions (mm)", value: displayValue(product.packageDimensionMm) || undefined }, { "@type": "PropertyValue", name: "Package weight (g)", value: displayValue(product.packageWeightG) || undefined }].filter((property) => property.value) };
+  const displayImagePath = getDisplayImagePath(product, image ?? undefined);
+  const productSchema: Record<string, unknown> = { "@context": "https://schema.org", "@type": "Product", name, sku: product.sku, description: specification || summary, ...buildProductManufacturer(), category: application || undefined, url: `${siteUrl}/products/${product.slug}`, image: displayImagePath ? `${siteUrl}${displayImagePath}` : undefined, additionalProperty: [{ "@type": "PropertyValue", name: "Application", value: application || undefined }, { "@type": "PropertyValue", name: "IoT interface", value: iotInterface || undefined }, { "@type": "PropertyValue", name: "Package dimensions (mm)", value: displayValue(product.packageDimensionMm) || undefined }, { "@type": "PropertyValue", name: "Package weight (g)", value: displayValue(product.packageWeightG) || undefined }].filter((property) => property.value) };
   if (publicPrice.schemaAmount !== null) productSchema.offers = buildProductOffer(siteUrl, `${siteUrl}/products/${product.slug}`, publicPrice.schemaAmount);
   const questionItems = [
     { question: `What is ${name}?`, answer: summary },
@@ -70,7 +72,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
     <StructuredData data={productSchema} />
     <StructuredData data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/products` }, { "@type": "ListItem", position: 3, name, item: `${siteUrl}/products/${product.slug}` }] }} />
     <section className="product-detail-hero"><div className="shell"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>{name}</span></nav><div className="product-buy-grid">
-      <div className="product-detail-media"><ProductImage sku={name} application={application} imagePath={image?.localPath ?? ""} priority sizes="(max-width: 800px) 100vw, 50vw" /></div>
+      <div className="product-detail-media"><ProductImage sku={name} application={application} imagePath={getDisplayImagePath(product, image ?? undefined)} priority sizes="(max-width: 800px) 100vw, 50vw" /></div>
       <div className="product-buy-copy"><h1>{name}</h1><p className="product-detail-summary">{summary}</p><dl className="quick-facts">{application ? <div><dt>Application</dt><dd>{applicationLabel}</dd></div> : null}{iotInterface ? <div><dt>Connectivity</dt><dd>{iotInterfaceLabel}</dd></div> : null}</dl><aside className="price-panel"><span>Price</span><strong>{publicPrice.formatted}</strong><small>South African rand. {publicPrice.vatNotice}</small></aside><div className="buy-actions"><Link href={`/contact?sku=${encodeURIComponent(product.sku)}`} className="button button-primary">Ask about {name} <ArrowIcon /></Link></div></div>
     </div></div></section>
     <section className="section shell product-content-grid"><aside className="product-section-nav"><span>On this page</span><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#suitability">Where it fits</a>{packageFields.length ? <a href="#package">Package</a> : null}<a href="#questions">Questions</a>{family || guides.length || compareHref ? <a href="#related-guidance">Related guidance</a> : null}</aside><div className="product-sections">

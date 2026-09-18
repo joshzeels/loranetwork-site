@@ -72,6 +72,28 @@ type ProductImageRecord = {
 const imageRecords = (imageManifestJson as { images: ProductImageRecord[] }).images;
 const imageBySku = new Map(imageRecords.map((image) => [image.sku, image]));
 
+const montageImagePaths = new Set([
+  "/images/products/_official/71eba7e3cfbc62f4.jpg",
+  "/images/products/_official/1c7b96fcab252f11.png",
+  "/images/products/_official/9f6359cd8df3dc16.png",
+  "/images/products/_official/867a7fb03d7f1e8f.png",
+]);
+
+export function getDisplayImagePath(product: DraginoProduct, image?: ProductImageRecord) {
+  if (!image || !montageImagePaths.has(image.localPath)) return image?.localPath ?? "";
+  if (/^PS-(?:NB|NS)-I/i.test(product.sku)) return "/images/products/_official/ps-nb-immersion.png";
+  if (/^PS-(?:CB|CS|K[NS])-I/i.test(product.sku)) return "/images/products/_official/ps-cb-immersion.png";
+  if (/^PS-(?:NB|NS)-T/i.test(product.sku)) return "/images/products/_official/ps-nb-single.png";
+  if (/^PS-(?:CB|CS|K[NS])-T/i.test(product.sku)) return "/images/products/_official/ps-cb-single.png";
+  const solarVariant = /-(?:LS|CS|NS)(?:-|$)/i.test(product.sku);
+  if (/^D20S-/i.test(product.sku)) return solarVariant ? "/images/products/_official/dc16df8e919fba8d.jpg" : "/images/products/_official/34cd0b0c8fb96168.jpg";
+  if (/^D20-/i.test(product.sku)) return solarVariant ? "/images/products/_official/10720efa37d3f643.jpg" : "/images/products/_official/5dddfe60608e4402.jpg";
+  if (/^D22-/i.test(product.sku)) return solarVariant ? "/images/products/_official/350eb20cab39374e.jpg" : "/images/products/_official/3563712d0c5bd2d6.jpg";
+  if (/^D23-/i.test(product.sku)) return solarVariant ? "/images/products/_official/ec5babb0f75299d2.jpg" : "/images/products/_official/5675507b028f4a98.png";
+  if (/^CS01-/i.test(product.sku)) return "/images/products/_official/07741bfcb0239eb2.jpg";
+  return image.localPath;
+}
+
 export const publicProducts: PublicDraginoProduct[] = products.map((product) => {
   const publicPrice = getPublicPrice(product.priceUsd);
 
@@ -83,7 +105,7 @@ export const publicProducts: PublicDraginoProduct[] = products.map((product) => 
     specification: displayValue(product.specification),
     iotInterface: displayValue(product.iotInterface),
     formattedPriceZar: publicPrice.formatted,
-    imagePath: imageBySku.get(product.sku)?.localPath ?? "",
+    imagePath: getDisplayImagePath(product, imageBySku.get(product.sku)),
   };
 });
 

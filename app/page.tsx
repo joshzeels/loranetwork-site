@@ -50,7 +50,7 @@ export default function Home() {
       </section>
       <section className="why-section"><div className="shell why-grid">
         <div><h2>How do I choose the right IoT product?</h2></div>
-        <div className="why-list"><article><span>01</span><div><h3>Start with your application</h3><p>Browse products for temperature, water, agriculture, tracking and other monitoring needs.</p></div></article><article><span>02</span><div><h3>Compare connectivity</h3><p>Check whether each model uses LoRaWAN, NB-IoT, LTE-M or another connectivity option.</p></div></article><article><span>03</span><div><h3>Check the model and price</h3><p>Compare specifications and prices in rand, then enquire about availability and delivery.</p></div></article></div>
+        <div className="why-list"><article><span>01</span><div><h3>Start with your application</h3><p>Browse products for temperature, water, agriculture, tracking and other monitoring needs.</p></div></article><article><span>02</span><div><h3>Compare connectivity</h3><p>Check whether each model uses LoRaWAN or LTE CAT 1 connectivity.</p></div></article><article><span>03</span><div><h3>Check the model and price</h3><p>Compare specifications and prices in rand, then enquire about availability and delivery.</p></div></article></div>
       </div><WhySensorCable /></section>
       <section className="cta-band"><div className="shell cta-inner"><div><h2>Need help choosing?</h2></div><Link href="/contact" className="button button-light">Ask about a product <ArrowIcon /></Link></div></section>
       </div>

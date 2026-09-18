@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "Browse LoRaWAN and IoT hardware for South African projects by SKU, application and connectivity, with prices in rand.",
   applicationName: "LoRa Network South Africa",
-  keywords: ["LoRaWAN South Africa", "IoT sensors", "IoT gateways", "NB-IoT", "LTE-M"],
+  keywords: ["LoRaWAN South Africa", "IoT sensors", "IoT gateways", "LTE CAT 1"],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

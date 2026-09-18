@@ -1,0 +1,27 @@
+# REVIEW DRAFT ONLY: do not publish as /llms.txt
+# llms.txt is experimental and does not guarantee indexing, ranking or citation.
+
+# LoRa Network
+
+LoRa Network is a South African reseller website for IoT and LoRaWAN products. Product pages identify the manufacturer, exact SKU, supplied application, listed connectivity, public ZAR price and available technical details.
+
+Canonical site: {CONFIRMED_PRODUCTION_ORIGIN_REQUIRED}
+
+## Main sections
+
+- Product catalogue: {CONFIRMED_PRODUCTION_ORIGIN_REQUIRED}/products
+- Applications: {CONFIRMED_PRODUCTION_ORIGIN_REQUIRED}/applications
+- Connectivity: {CONFIRMED_PRODUCTION_ORIGIN_REQUIRED}/connectivity
+- Product families: {CONFIRMED_PRODUCTION_ORIGIN_REQUIRED}/families
+- Buying guides: {CONFIRMED_PRODUCTION_ORIGIN_REQUIRED}/guides
+- About LoRa Network: {CONFIRMED_PRODUCTION_ORIGIN_REQUIRED}/about
+- Product enquiries: {CONFIRMED_PRODUCTION_ORIGIN_REQUIRED}/contact
+
+## Catalogue notes
+
+- Public prices are displayed in South African rand.
+- Products without a public price are marked Contact for pricing.
+- Stock, delivery and project-specific technical requirements are confirmed through an enquiry.
+- Blank catalogue values remain blank.
+
+This review draft intentionally excludes supplier costs, pricing configuration, private configuration, unpublished data and unsupported product claims.
