@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { getPublicPrice } from "../lib/pricing.ts";
+import { getPublicPriceForProduct } from "../lib/pricing.ts";
 
 type SourceProduct = {
   sourceRow: number;
@@ -34,6 +34,9 @@ const projectRoot = path.resolve(scriptDirectory, "..");
 const cataloguePath = path.join(projectRoot, "data", "dragino-products.json");
 const staticAppPath = path.join(projectRoot, ".next", "server", "app");
 const reportPath = path.join(projectRoot, "reports", "pricing-reconciliation.json");
+const CURRENT_APPROVED_CATALOGUE_COUNT = 448;
+const EXPECTED_PRICED_SOURCE_PRODUCTS = 442;
+const EXPECTED_CONTACT_FOR_PRICING_PRODUCTS = 6;
 
 const catalogue = JSON.parse(await fs.readFile(cataloguePath, "utf8")) as CatalogueFile;
 const discrepancies: Discrepancy[] = [];
@@ -64,7 +67,7 @@ async function reconcileProduct(product: SourceProduct) {
   let publicPrice;
 
   try {
-    publicPrice = getPublicPrice(product.priceUsd);
+    publicPrice = getPublicPriceForProduct(product.sku, product.priceUsd);
     if (product.priceUsd === "") unpricedSourceProducts += 1;
     else pricedSourceProducts += 1;
   } catch (error) {
@@ -188,7 +191,7 @@ const representativeChecks = Object.fromEntries(
   await Promise.all(Object.entries(representativeProducts).map(async ([kind, product]) => {
     if (!product) return [kind, null];
     const pagePath = path.join(staticAppPath, "products", `${product.slug}.html`);
-    const publicPrice = getPublicPrice(product.priceUsd);
+    const publicPrice = getPublicPriceForProduct(product.sku, product.priceUsd);
     const html = await fs.readFile(pagePath, "utf8").catch(() => null);
     const schema = html ? getProductSchema(html) : null;
     const offers = schema?.offers as Record<string, unknown> | undefined;
@@ -205,7 +208,7 @@ const representativeChecks = Object.fromEntries(
 
 const report = {
   generatedAt: new Date().toISOString(),
-  expectedTotalProducts: 981,
+  expectedTotalProducts: CURRENT_APPROVED_CATALOGUE_COUNT,
   totalProducts: catalogue.products.length,
   pricedSourceProducts,
   unpricedSourceProducts,
@@ -227,8 +230,8 @@ await fs.mkdir(path.dirname(reportPath), { recursive: true });
 await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
 
 console.log(`TOTAL PRODUCTS: ${report.totalProducts} (${report.expectedTotalProducts} expected)`);
-console.log(`PRICED SOURCE PRODUCTS: ${report.pricedSourceProducts}`);
-console.log(`UNPRICED SOURCE PRODUCTS: ${report.unpricedSourceProducts} (12 expected)`);
+console.log(`PRICED SOURCE PRODUCTS: ${report.pricedSourceProducts} (${EXPECTED_PRICED_SOURCE_PRODUCTS} expected)`);
+console.log(`UNPRICED SOURCE PRODUCTS: ${report.unpricedSourceProducts} (${EXPECTED_CONTACT_FOR_PRICING_PRODUCTS} expected)`);
 console.log(`PRODUCTS WITH PUBLIC ZAR PRICES: ${report.productsWithPublicZarPrices}`);
 console.log(`PRODUCTS WITH CONTACT-FOR-PRICE STATE: ${report.productsWithContactForPriceState}`);
 console.log(`USD PRICES PUBLICLY EXPOSED: ${report.usdPricesPubliclyExposed}`);
@@ -240,7 +243,8 @@ console.log(`MISSING PRODUCTS: ${report.missingProducts}`);
 
 if (
   report.totalProducts !== report.expectedTotalProducts ||
-  report.unpricedSourceProducts !== 12 ||
+  report.pricedSourceProducts !== EXPECTED_PRICED_SOURCE_PRODUCTS ||
+  report.unpricedSourceProducts !== EXPECTED_CONTACT_FOR_PRICING_PRODUCTS ||
   report.publicExposureFindings.length > 0 ||
   report.pricingCalculationErrors > 0 ||
   report.schemaVisiblePriceMismatches > 0 ||

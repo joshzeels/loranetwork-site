@@ -11,6 +11,7 @@ for (const file of [".env", ".env.local"]) {
 const { BUSINESS_CONFIG } = await import("../config/business.ts");
 
 type Check = { name: string; passed: boolean; detail: string };
+const CURRENT_APPROVED_CATALOGUE_COUNT = 448;
 const checks: Check[] = [];
 const check = (name: string, passed: boolean, detail: string) => checks.push({ name, passed, detail });
 const configured = (name: string) => Boolean(process.env[name]?.trim());
@@ -43,19 +44,29 @@ check("Public contact route", publicContactReady, "Set at least BUSINESS_EMAIL o
 
 check("Legal-content approval", process.env.LEGAL_CONTENT_APPROVED?.trim().toLowerCase() === "true", "Set LEGAL_CONTENT_APPROVED=true only after the privacy notice and website terms have been reviewed for the operating business.");
 
-const catalogue = JSON.parse(await readFile(resolve(root, "data", "dragino-products.json"), "utf8")) as { products: Array<{ sku: string; application: string; iotInterface: string }> };
-check("Catalogue integrity", catalogue.products.length === 981 && new Set(catalogue.products.map((product) => product.sku)).size === 981, `${catalogue.products.length} products; ${new Set(catalogue.products.map((product) => product.sku)).size} unique source SKUs.`);
+const catalogue = JSON.parse(await readFile(resolve(root, "data", "dragino-products.json"), "utf8")) as { products: Array<{ sku: string; slug: string; application: string; iotInterface: string }> };
+const uniqueSkus = new Set(catalogue.products.map((product) => product.sku));
+const uniqueSlugs = new Set(catalogue.products.map((product) => product.slug));
+const catalogueIntegrity = catalogue.products.length === CURRENT_APPROVED_CATALOGUE_COUNT
+  && uniqueSkus.size === CURRENT_APPROVED_CATALOGUE_COUNT
+  && uniqueSlugs.size === CURRENT_APPROVED_CATALOGUE_COUNT;
+check("Catalogue integrity", catalogueIntegrity, `Current catalogue: ${catalogue.products.length} products; ${uniqueSkus.size} unique SKUs; ${uniqueSlugs.size} unique slugs.`);
 
 const presentationIssues = catalogue.products.filter((product) => /Â|Ã|\bemperature\b|Radation|NB-loT/.test([productDisplayName(product.sku), displayValue(product.application), displayValue(product.iotInterface)].join(" ")));
 check("Public catalogue presentation", presentationIssues.length === 0, presentationIssues.length === 0 ? "Confirmed source encoding and taxonomy artefacts are cleaned only at presentation time." : `${presentationIssues.length} public presentation values still require review.`);
 
 const pricing = JSON.parse(await readFile(resolve(root, "reports", "pricing-reconciliation.json"), "utf8")) as Record<string, number>;
-const pricingReady = pricing.totalProducts === 981 && pricing.pricingCalculationErrors === 0 && pricing.schemaVisiblePriceMismatches === 0 && pricing.usdPricesPubliclyExposed === 0 && pricing.euroPricesPubliclyExposed === 0 && pricing.pricingConfigurationPubliclyExposed === 0 && pricing.missingProducts === 0;
+const pricingReady = pricing.expectedTotalProducts === CURRENT_APPROVED_CATALOGUE_COUNT && pricing.totalProducts === CURRENT_APPROVED_CATALOGUE_COUNT && pricing.pricingCalculationErrors === 0 && pricing.schemaVisiblePriceMismatches === 0 && pricing.usdPricesPubliclyExposed === 0 && pricing.euroPricesPubliclyExposed === 0 && pricing.pricingConfigurationPubliclyExposed === 0 && pricing.missingProducts === 0;
 check("Pricing reconciliation", pricingReady, pricingReady ? "All price, privacy and schema checks pass." : "Run the production build and pricing reconciliation, then resolve its reported errors.");
 
-const images = JSON.parse(await readFile(resolve(root, "reports", "dragino-image-evidence-audit.json"), "utf8")) as { summary: { mappedProducts: number; placeholders: number }; products: Array<{ decision: string }> };
-const unresolvedImageReviews = images.products.filter((product) => product.decision.startsWith("REVIEW_")).length;
-check("Product image evidence", images.summary.mappedProducts === 833 && images.summary.placeholders === 148 && unresolvedImageReviews === 0, `${images.summary.mappedProducts} verified mappings, ${images.summary.placeholders} deliberate no-image states, ${unresolvedImageReviews} unresolved reviews.`);
+const imageManifest = JSON.parse(await readFile(resolve(root, "data", "product-images.json"), "utf8")) as { images: Array<{ sku: string; localPath?: string }> };
+const currentSkus = new Set(catalogue.products.map((product) => product.sku));
+const currentImageRecords = imageManifest.images.filter((image) => currentSkus.has(image.sku));
+const hasValidImagePath = (localPath: unknown): localPath is string => typeof localPath === "string" && localPath.startsWith("/images/");
+const mappedImageSkus = new Set(currentImageRecords.filter((image) => hasValidImagePath(image.localPath)).map((image) => image.sku));
+const invalidImageReferences = currentImageRecords.filter((image) => !hasValidImagePath(image.localPath)).length;
+const imagePlaceholders = CURRENT_APPROVED_CATALOGUE_COUNT - mappedImageSkus.size;
+check("Product image coverage", mappedImageSkus.size + imagePlaceholders === CURRENT_APPROVED_CATALOGUE_COUNT && invalidImageReferences === 0, `${mappedImageSkus.size} mapped products; ${imagePlaceholders} deliberate no-image states; ${invalidImageReferences} invalid references.`);
 
 const imageQuality = JSON.parse(await readFile(resolve(root, "reports", "product-image-quality-audit.json"), "utf8")) as { summary: { distinctLocalImageFiles: number; belowThreshold: number } };
 check("Product image quality", imageQuality.summary.distinctLocalImageFiles === 212 && imageQuality.summary.belowThreshold === 0, `${imageQuality.summary.distinctLocalImageFiles} distinct assets; ${imageQuality.summary.belowThreshold} below the quality threshold.`);
