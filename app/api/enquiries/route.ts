@@ -34,8 +34,7 @@ export async function POST(request: Request) {
   const enquiry = { ...validated.value, sku: product?.sku ?? "", pageUrl: referrer, submittedAt: new Date().toISOString() };
   const delivery = await deliverEnquiry(enquiry, product ? { name: product.sku, displayedPrice: getPublicPriceForProduct(product.sku, product.priceUsd).formatted } : null);
   if (!delivery.delivered) {
-    const developmentDetail = process.env.NODE_ENV === "development" && delivery.reason === "not-configured" ? " Enquiry delivery is not configured; set the documented private email environment variables." : "";
-    return json({ ok: false, message: `Enquiry delivery is currently unavailable. Your message was not sent.${developmentDetail}` }, 503);
+    return json({ ok: false, message: "Enquiry delivery is currently unavailable. Your message was not sent." }, 503);
   }
   return json({ ok: true, message: "Your enquiry was sent successfully." }, 200);
 }
