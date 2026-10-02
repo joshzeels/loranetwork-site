@@ -1,12 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-
-export default function ErrorPage({ error, retry }: { error: Error & { digest?: string }; retry: () => void }) {
-  useEffect(() => {
-    console.error(error);
-  }, [error]);
-
+export default function ErrorPage({ retry }: { retry: () => void }) {
   return (
     <section className="empty-page shell" role="alert">
       <h1>Something went wrong.</h1>
