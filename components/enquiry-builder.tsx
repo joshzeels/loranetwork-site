@@ -10,7 +10,9 @@ export function EnquiryBuilder({ initialSku }: { initialSku: string }) {
   const [pending, setPending] = useState(false);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault(); setPending(true); setResult(null);
+    event.preventDefault();
+    if (pending) return;
+    setPending(true); setResult(null);
     const form = event.currentTarget;
     const payload = Object.fromEntries(new FormData(form));
     try {
@@ -24,7 +26,7 @@ export function EnquiryBuilder({ initialSku }: { initialSku: string }) {
 
   const error = (field: string) => result?.errors?.[field] ? <span className="field-error" id={`${field}-error`}>{result.errors[field]}</span> : null;
   const a11y = (field: string) => ({ "aria-invalid": Boolean(result?.errors?.[field]), "aria-describedby": result?.errors?.[field] ? `${field}-error` : undefined });
-  return <div className="enquiry-builder"><form onSubmit={submit} onFocusCapture={() => { if (!startedAt.current) startedAt.current = Date.now(); }} className="enquiry-form" noValidate>
+  return <div className="enquiry-builder"><form onSubmit={submit} onFocusCapture={() => { if (!startedAt.current) startedAt.current = Date.now(); }} className="enquiry-form" noValidate aria-busy={pending}>
     <div className="form-row"><label htmlFor="name"><span className="field-label">Name <span aria-hidden="true">*</span></span><input id="name" name="name" required maxLength={100} autoComplete="name" {...a11y("name")} />{error("name")}</label><label htmlFor="company">Company<input id="company" name="company" maxLength={120} autoComplete="organization" {...a11y("company")} />{error("company")}</label></div>
     <div className="form-row"><label htmlFor="email"><span className="field-label">Email <span aria-hidden="true">*</span></span><input id="email" name="email" type="email" required maxLength={254} autoComplete="email" {...a11y("email")} />{error("email")}</label><label htmlFor="phone">Phone<input id="phone" name="phone" type="tel" maxLength={40} autoComplete="tel" {...a11y("phone")} />{error("phone")}</label></div>
     <div className="form-row"><label htmlFor="sku">Product / SKU<input id="sku" name="sku" defaultValue={initialSku} maxLength={100} {...a11y("sku")} />{error("sku")}</label><label htmlFor="quantity">Quantity<input id="quantity" name="quantity" type="number" inputMode="numeric" min={1} max={100000} step={1} {...a11y("quantity")} />{error("quantity")}</label></div>
@@ -32,6 +34,6 @@ export function EnquiryBuilder({ initialSku }: { initialSku: string }) {
     <div className="honeypot" aria-hidden="true"><label htmlFor="website">Website<input id="website" name="website" tabIndex={-1} autoComplete="off" /></label></div>
     <p className="privacy-notice">We use the details you submit only to respond to this enquiry. See the <Link href="/privacy">Privacy Notice</Link>.</p>
     <button className="button button-primary" type="submit" disabled={pending}>{pending ? "Sending…" : "Send enquiry"}</button>
-    <div className={`form-status ${result?.ok ? "is-success" : "is-error"}`} role="status" aria-live="polite">{result?.message}</div>
+    <div className={`form-status ${result?.ok ? "is-success" : "is-error"}`} role={result?.ok ? "status" : "alert"}>{result?.message}</div>
   </form><aside className="enquiry-summary"><h2>What happens next?</h2><p>We’ll review your requirements and respond about the requested product. Include the SKU, quantity and any project details that will help us understand what you need.</p><p>Prices, stock and delivery are confirmed when we respond.</p></aside></div>;
 }
