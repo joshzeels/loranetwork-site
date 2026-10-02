@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ApplicationIcon, ArrowIcon, SearchIcon, SignalIcon } from "@/components/icons";
-import { HomeCable, WhySensorCable } from "@/components/home-cable";
+import { WhySensorCable } from "@/components/home-cable";
+import { HomeCable } from "@/components/measured-home-cable";
 import { ProductCard } from "@/components/product-card";
 import { StructuredData } from "@/components/structured-data";
 import { applicationFacets, catalogue, getSiteUrl, interfaceFacets, publicProducts } from "@/lib/catalogue";
@@ -32,7 +33,9 @@ export default function Home() {
           <div className="hero-proof"><div><strong>{catalogue.source.productCount}</strong><span>Products</span></div><div><strong>{applicationFacets.length}</strong><span>Applications</span></div><div><strong>{interfaceFacets.length}</strong><span>Connectivity options</span></div></div>
         </div>
         <div className="hero-image-wrap">
-          <Image className="hero-image" src="/images/Header.png" alt="Dragino LoRa IoT sensor" width={358} height={815} priority sizes="(max-width: 820px) 70vw, 358px" />
+          <div className="hero-device-art">
+            <Image className="hero-image" src="/images/Header.png" alt="Dragino LoRa IoT sensor" width={358} height={815} priority sizes="(max-width: 820px) 70vw, 358px" />
+          </div>
         </div>
       </div></section>
       <section className="shell">

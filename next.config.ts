@@ -19,6 +19,9 @@ if (process.env.NODE_ENV === "production" && productionUrlProblem) {
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // The development site is intentionally viewed from another device on the LAN.
+  // Next 16 blocks its HMR connection until that origin is explicitly allowed.
+  allowedDevOrigins: ["192.168.100.32"],
   async headers() {
     return [{ source: "/:path*", headers: [
       { key: "X-Content-Type-Options", value: "nosniff" },
