@@ -17,7 +17,7 @@ export async function deliverEnquiry(enquiry: Enquiry, product: { name: string; 
   const text = fields.map(([label, value]) => `${label}: ${value}`).join("\n");
   const html = `<h2>Customer</h2><dl>${fields.slice(0, 4).map(([l, v]) => `<dt>${escapeHtml(l)}</dt><dd>${escapeHtml(v)}</dd>`).join("")}</dl><h2>Product</h2><dl>${fields.slice(4, 8).map(([l, v]) => `<dt>${escapeHtml(l)}</dt><dd>${escapeHtml(v)}</dd>`).join("")}</dl><h2>Message</h2><p>${escapeHtml(enquiry.message).replace(/\n/g, "<br>")}</p><p>Page URL: ${escapeHtml(enquiry.pageUrl)}<br>Submission timestamp: ${escapeHtml(enquiry.submittedAt)}</p>`;
   try {
-    const response = await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: `Bearer ${config.apiKey}`, "Content-Type": "application/json" }, body: JSON.stringify({ from: config.fromAddress, to: [config.recipientEmail], reply_to: enquiry.email, subject: `Website enquiry${enquiry.sku ? ` — ${enquiry.sku}` : ""}`, text, html }), signal: AbortSignal.timeout(10000) });
+    const response = await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: `Bearer ${config.apiKey}`, "Content-Type": "application/json" }, body: JSON.stringify({ from: config.fromAddress, to: [config.recipientEmail], reply_to: enquiry.email, subject: `Website enquiry${enquiry.sku ? `: ${enquiry.sku}` : ""}`, text, html }), signal: AbortSignal.timeout(10000) });
     if (!response.ok) return { delivered: false, reason: "provider-error" };
     const result = await response.json() as { id?: string };
     return { delivered: true, providerMessageId: result.id };

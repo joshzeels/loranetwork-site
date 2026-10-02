@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { displayValue, facetValue, productApplicationLabel, productConnectivityLabel, productDefinition, productDisplayName, productFit, productSummary, sentenceAwareDescription, specificationItems } from "../lib/product-presentation.ts";
+import { displayValue, facetValue, productApplicationLabel, productConnectivityLabel, productDefinition, productDisplayName, productFit, productFullName, productSummary, sentenceAwareDescription, specificationItems } from "../lib/product-presentation.ts";
 
 const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<Record<string, string>> };
 const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string }> };
@@ -15,10 +15,21 @@ test("cleans presentation artefacts without changing stored source values", () =
   assert.equal(productDisplayName("Type N Enclosure KitÂ\u00a0"), "Type N Enclosure Kit");
 });
 
+test("uses a full descriptive name for the SKUs on override, and the bare SKU otherwise", () => {
+  assert.equal(productDisplayName("RBwAPR-2nD&R11e-LR8"), "MikroTik wAP LR8 Kit");
+  assert.equal(productDisplayName("TOF-0809-7V-S1"), "MikroTik LoRa Antenna Kit");
+  assert.equal(productDisplayName("BLG-AN-020"), "BLG-AN-020");
+});
+
+test("gives the overridden SKUs a longer subtext name distinct from the short display name", () => {
+  assert.equal(productFullName("RBwAPR-2nD&R11e-LR8"), "MikroTik wAP LR8 Kit 2.4Ghz 2dBi LoraWAN Gateway");
+  assert.equal(productFullName("TOF-0809-7V-S1"), "MikroTik LoRa 6.5dBi Antenna Kit");
+  assert.equal(productFullName("BLG-AN-020"), productDisplayName("BLG-AN-020"));
+});
+
 test("normalises confirmed catalogue typos and equivalent facet labels", () => {
   assert.equal(displayValue("emperature & Humidity Sensor "), "Temperature & Humidity Sensor");
   assert.equal(displayValue("UVC Radation Sensor"), "UVC Radiation Sensor");
-  assert.equal(displayValue("LTE-M&NB-loT(NRF9151)"), "LTE-M & NB-IoT (NRF9151)");
   assert.equal(facetValue("LTE CAT-1"), facetValue("LTE CAT 1"));
 });
 
@@ -38,7 +49,7 @@ test("builds a factual summary only from supplied catalogue fields", () => {
 test("writes natural conservative fallback copy across representative products", () => {
   const samples = [
     { sku: "WSC2-L", application: "Smart Weather Station", iotInterface: "LoRaWAN" },
-    { sku: "DLOS8N", application: "Gateway -- LoRaWAN", iotInterface: "LoRaWAN" },
+    { sku: "DLOS8N", application: "Gateway: LoRaWAN", iotInterface: "LoRaWAN" },
     { sku: "DDS75-LB2", application: "Distance Sensor", iotInterface: "LoRaWAN" },
     { sku: "S31B-KS-GE", application: "Temperature & Humidity Sensor", iotInterface: "LTE CAT 1" },
     { sku: "WQS-LB2", application: "Water Quality Measurement", iotInterface: "LoRaWAN" },
@@ -47,7 +58,7 @@ test("writes natural conservative fallback copy across representative products",
     { sku: "CS01-LB", application: "Energy Control / Monitoring", iotInterface: "LoRaWAN" },
     { sku: "PS-LB2-Txx", application: "Pressure Sensor", iotInterface: "LoRaWAN" },
     { sku: "WSS-09", application: "Smart Weather Station", iotInterface: "RS485, For WSC2" },
-    { sku: "LPS8N-EC25", application: "Gateway -- LoRaWAN", iotInterface: "LoRaWAN" },
+    { sku: "LPS8N-EC25", application: "Gateway: LoRaWAN", iotInterface: "LoRaWAN" },
     { sku: "DS03A-LB", application: "Door Sensor", iotInterface: "LoRaWAN" },
   ];
   for (const sample of samples) {
@@ -60,7 +71,7 @@ test("writes natural conservative fallback copy across representative products",
     assert.ok(copy.length > 30, sample.sku);
   }
   assert.match(productDefinition({ sku: "WQS-KS-GE", application: "Water Quality Measurement", iotInterface: "LTE-M & NB-IoT, 10 years 500MB data" }), /LTE-M & NB-IoT, 10 years \/ 500MB data/);
-  assert.match(productFit({ sku: "LPS8N-EC25", application: "Gateway -- LoRaWAN", iotInterface: "LTE-M & NB-IoT" }), /LoRaWAN gateway\. Connectivity is via LTE-M & NB-IoT/);
+  assert.match(productFit({ sku: "LPS8N-EC25", application: "Gateway: LoRaWAN", iotInterface: "LTE-M & NB-IoT" }), /LoRaWAN gateway\. Connectivity is via LTE-M & NB-IoT/);
 });
 
 test("provides verified DDS75-LB guidance without changing catalogue data", () => {
@@ -99,7 +110,7 @@ test("keeps supplier provenance language out of public guidance fields", () => {
 test("keeps Dragino source URLs out of the public product page", () => {
   assert.doesNotMatch(productPage, /dragino\.com|docs\.dragino\.com/i);
   assert.doesNotMatch(productPage, /documentation\.sourceUrl/);
-  assert.match(productPage, /Manufacturer<\/dt><dd>Dragino/);
+  assert.match(productPage, /Manufacturer<\/dt><dd>{buildProductManufacturer\(product\.sku\)\.manufacturer\.name}/);
   assert.match(productPage, /href={`\/contact\?sku=/);
   assert.match(productPage, /guidance\?\.suitability \?\? productFit\(product\)/);
 });
@@ -115,8 +126,8 @@ test("keeps representative weak-evidence products on conservative fallback", () 
     ["RS485-KS-GE", "Generic Node / RS485", "NO_VERIFIED_SOURCE"],
     ["WQS-LB", "Water Quality Measurement", "EXACT_PRODUCT_SOURCE"],
     ["WQS-LB2", "Water Quality Measurement", "FAMILY_SOURCE"],
-    ["LPS8N", "Gateway -- LoRaWAN", "EXACT_PRODUCT_SOURCE"],
-    ["LPS8N-EC25", "Gateway -- LoRaWAN", "NO_VERIFIED_SOURCE"],
+    ["LPS8N", "Gateway: LoRaWAN", "EXACT_PRODUCT_SOURCE"],
+    ["LPS8N-EC25", "Gateway: LoRaWAN", "NO_VERIFIED_SOURCE"],
     ["DDS75-LB2", "Distance Sensor", "NO_VERIFIED_SOURCE"],
   ] as const;
   for (const [sku, application, status] of sample) {

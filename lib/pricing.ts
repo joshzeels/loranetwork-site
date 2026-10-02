@@ -94,6 +94,41 @@ export function formatSellingPriceZar(amountZar: number): string {
   }).format(amountZar);
 }
 
+// A pre-converted ZAR price passed straight through with no markup applied, e.g. a retail price
+// already sourced in rand. Kept distinct from getPublicPrice's USD+markup formula rather than
+// faking a USD value that would reintroduce the markup this is meant to skip.
+export function getPublicPriceFromZar(amountZarInput: string | number): PublicPrice {
+  const amountZar = typeof amountZarInput === "number" ? amountZarInput : Number(amountZarInput);
+  if (!Number.isFinite(amountZar) || amountZar <= 0) {
+    throw new InvalidPricingInputError(`A public ZAR price must be a finite number greater than zero: ${JSON.stringify(amountZarInput)}`);
+  }
+
+  return {
+    amountZar,
+    formatted: formatSellingPriceZar(amountZar),
+    schemaAmount: amountZar.toFixed(2),
+    vatNotice: getVatDisplayNotice(),
+  };
+}
+
+// SKUs priced directly in ZAR with no markup applied yet, e.g. a retail price sourced from a
+// reseller while a markup for that line hasn't been set. Checked before the USD+markup formula in
+// getPublicPriceForProduct.
+const zarOverrideBySku: Record<string, string> = {
+  "RBwAPR-2nD&R11e-LR8": "2695",
+  "TOF-0809-7V-S1": "995",
+};
+
+export function getPublicPriceForProduct(
+  sku: string,
+  supplierPriceUsd: string | number | null | undefined,
+  configuration: PricingConfiguration = PRICING_CONFIG,
+): PublicPrice {
+  const zarOverride = zarOverrideBySku[sku];
+  if (zarOverride) return getPublicPriceFromZar(zarOverride);
+  return getPublicPrice(supplierPriceUsd, configuration);
+}
+
 export function getPublicPrice(
   supplierPriceUsd: string | number | null | undefined,
   configuration: PricingConfiguration = PRICING_CONFIG,

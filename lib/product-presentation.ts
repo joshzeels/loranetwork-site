@@ -13,9 +13,6 @@ const exactDisplayCorrections = new Map<string, string>([
   ["emperature & humidity sensor", "Temperature & Humidity Sensor"],
   ["uvc radation sensor", "UVC Radiation Sensor"],
   ["lte cat-1", "LTE CAT 1"],
-  ["nb-iot & lte-m", "LTE-M & NB-IoT"],
-  ["nb-iot&lte-m", "LTE-M & NB-IoT"],
-  ["lte-m&nb-lot(nrf9151)", "LTE-M & NB-IoT (NRF9151)"],
 ]);
 
 export function displayValue(value: string) {
@@ -28,13 +25,32 @@ export function displayValue(value: string) {
   return exactDisplayCorrections.get(cleaned.toLocaleLowerCase("en-ZA")) ?? cleaned;
 }
 
+// Most catalogue items are shown by their bare SKU, but a few (currently the MikroTik
+// accessories) read better as a short descriptive name, with the full descriptive name held
+// separately for the subtext under it. Explicit lookup rather than inferred, so a new override is
+// always a deliberate addition.
+const skuDisplayNameOverrides = new Map<string, string>([
+  ["RBwAPR-2nD&R11e-LR8", "MikroTik wAP LR8 Kit"],
+  ["TOF-0809-7V-S1", "MikroTik LoRa Antenna Kit"],
+]);
+
+const skuFullNameOverrides = new Map<string, string>([
+  ["RBwAPR-2nD&R11e-LR8", "MikroTik wAP LR8 Kit 2.4Ghz 2dBi LoraWAN Gateway"],
+  ["TOF-0809-7V-S1", "MikroTik LoRa 6.5dBi Antenna Kit"],
+]);
+
 export function productDisplayName(sku: string) {
-  return displayValue(sku);
+  const cleaned = displayValue(sku);
+  return skuDisplayNameOverrides.get(sku) ?? cleaned;
+}
+
+export function productFullName(sku: string) {
+  return skuFullNameOverrides.get(sku) ?? productDisplayName(sku);
 }
 
 export function productApplicationLabel(value: string) {
   const application = displayValue(value);
-  if (/^gateway\s*--\s*lorawan$/i.test(application)) return "LoRaWAN gateway";
+  if (/^gateway\s*(?:--|:)\s*lorawan$/i.test(application)) return "LoRaWAN gateway";
   if (/^generic node\s*\/\s*rs485$/i.test(application)) return "Generic node and RS485";
 
   return application

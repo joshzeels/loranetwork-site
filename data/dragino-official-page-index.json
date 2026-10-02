@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T12:20:06.871Z",
+  "generatedAt": "2026-09-18T08:54:09.970Z",
   "pages": [
     {
       "url": "https://docs.dragino.com/docs/CAT-1/door-water-leak-contact-sensors/",
@@ -607,13 +607,13 @@
       "imageUrl": null
     },
     {
-      "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/lsn50lsn50-v2/",
+      "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/lsn50v2/",
       "title": "LSN50v2 | Dragino Documentation Center",
       "imageUrl": "https://docs.dragino.com/assets/images/image-20221123110338-1-3a086f7aa24daf54b94ab22cd637358f.jpeg"
     },
     {
-      "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/lsn50lsn50-v2/",
-      "title": "6.6 How to set up LSN50v2 to work with Single Channel Gateway such as LG01/LG02? ​",
+      "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/lsn50v2/",
+      "title": "6.6 How to set up LSN50 to work with Single Channel Gateway such as LG01/LG02 ​",
       "imageUrl": "https://docs.dragino.com/assets/images/image-20220627160542-11-61fef29b79e06f2806e3fa9d7332201c.png"
     },
     {
@@ -775,11 +775,6 @@
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/lora-modules-accessories/",
       "title": "LoRa Modules & Accessories | Dragino Documentation Center",
       "imageUrl": null
-    },
-    {
-      "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/lora-modules-accessories/dmt01/",
-      "title": "DMT01 | Dragino Documentation Center",
-      "imageUrl": "https://docs.dragino.com/assets/images/1753592237986-145-272404d0362ee2e9c5067d739598d29b.png"
     },
     {
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/lora-modules-accessories/la66-lorawan-shield/",
@@ -958,8 +953,13 @@
     },
     {
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/dishsense/",
-      "title": "DishSense Dishwasher Thermometer | Dragino Documentation Center",
+      "title": "DishSense -- Dishwasher Thermometer | Dragino Documentation Center",
       "imageUrl": "https://docs.dragino.com/assets/images/1765177742946-941-06c0b7b5f5fb939ae7e035ec4a6115dc.jpg"
+    },
+    {
+      "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/dmt01/",
+      "title": "DMT01 -- Wireless Meat Thermometer | Dragino Documentation Center",
+      "imageUrl": "https://docs.dragino.com/assets/images/1753592237986-145-272404d0362ee2e9c5067d739598d29b.png"
     },
     {
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/lht52/",
@@ -1043,7 +1043,7 @@
     },
     {
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/lpt01/",
-      "title": "LPT01 | Dragino Documentation Center",
+      "title": "LPT01 -- LoRaWAN Handheld Food Thermometer | Dragino Documentation Center",
       "imageUrl": "https://docs.dragino.com/assets/images/1756093949811-644-62e9c878ae1403866787a610107cc883.jpg"
     },
     {
@@ -1078,7 +1078,7 @@
     },
     {
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/ltc1-ltc2-lb/",
-      "title": "LTC1/LTC2-LB/LS | Dragino Documentation Center",
+      "title": "LTC1/LTC2-LB/LS (PT100 Converter) | Dragino Documentation Center",
       "imageUrl": "https://docs.dragino.com/assets/images/1756447178653-126-b09efe2f4b9c81e0d30fd679bcb45bfb.png"
     },
     {
@@ -1123,7 +1123,7 @@
     },
     {
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/ltc2/",
-      "title": "LTC2 | Dragino Documentation Center",
+      "title": "LTC2 (PT100 Converter) | Dragino Documentation Center",
       "imageUrl": "https://docs.dragino.com/assets/images/image-20220617163631-2-1db6d0e95a32e4b348233b759b913bd9.jpeg"
     },
     {
@@ -1178,7 +1178,7 @@
     },
     {
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31b-le/",
-      "title": "S31B-LE | Dragino Documentation Center",
+      "title": "S31B-LE (E-Ink Display) | Dragino Documentation Center",
       "imageUrl": "https://docs.dragino.com/assets/images/CAI_5329-67607fcc145f0da8f721205bc1a69bba.jpg"
     },
     {
@@ -1188,8 +1188,8 @@
     },
     {
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/tc01-lb/",
-      "title": "TC01-LB/TC11-LB | Dragino Documentation Center",
-      "imageUrl": "https://docs.dragino.com/assets/images/image-20240117163402-3-37c68706a7ed6605ba566dbab0bb8146.png"
+      "title": "TC01-LB (Thermocouple Converter) | Dragino Documentation Center",
+      "imageUrl": "https://docs.dragino.com/assets/images/TC01-LB-0ee2b3ea7012026455e7188635304a44.png"
     },
     {
       "url": "https://docs.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/tc01-lb/",
@@ -3203,11 +3203,6 @@
     },
     {
       "url": "https://docs.dragino.com/docs/NB-IoT/temperature-humidity-sensors/ltc1-ltc2-cb/",
-      "title": "LTC1/LTC2-CB/CS – NB-IoT/LTE-M Temperature Transmitter ​",
-      "imageUrl": "https://docs.dragino.com/assets/images/1756449001825-402-ed212a31b58ab066bc2070aae7741b39.png"
-    },
-    {
-      "url": "https://docs.dragino.com/docs/NB-IoT/temperature-humidity-sensors/ltc1-ltc2-cb/",
       "title": "2.1 Send data to IoT server via NB-IoT network ​",
       "imageUrl": "https://docs.dragino.com/assets/images/1756782088878-779-5362670644a570e6edcfa42cef537c3d.png"
     },
@@ -3270,6 +3265,11 @@
       "url": "https://docs.dragino.com/docs/NB-IoT/temperature-humidity-sensors/ltc1-ltc2-nb/",
       "title": "6.3 How do customers connect a two-wire PT100? ​",
       "imageUrl": "https://docs.dragino.com/assets/images/image-20250510102559-1-f6ac29208c1c623f81a01c55e01f4d33.png"
+    },
+    {
+      "url": "https://docs.dragino.com/docs/NB-IoT/temperature-humidity-sensors/ltc1/ltc2-fb/",
+      "title": "LTC1/LTC2-FB | Dragino Documentation Center",
+      "imageUrl": null
     },
     {
       "url": "https://docs.dragino.com/docs/NB-IoT/temperature-humidity-sensors/n95s31b/",
@@ -4052,13 +4052,13 @@
       "imageUrl": null
     },
     {
-      "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/lsn50lsn50-v2/",
+      "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/lsn50v2/",
       "title": "LSN50v2 | Dragino Documentation Center",
       "imageUrl": "https://wiki.dragino.com/assets/images/image-20221123110338-1-3a086f7aa24daf54b94ab22cd637358f.jpeg"
     },
     {
-      "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/lsn50lsn50-v2/",
-      "title": "6.6 How to set up LSN50v2 to work with Single Channel Gateway such as LG01/LG02? ​",
+      "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/lsn50v2/",
+      "title": "6.6 How to set up LSN50 to work with Single Channel Gateway such as LG01/LG02 ​",
       "imageUrl": "https://wiki.dragino.com/assets/images/image-20220627160542-11-61fef29b79e06f2806e3fa9d7332201c.png"
     },
     {
@@ -4220,11 +4220,6 @@
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/lora-modules-accessories/",
       "title": "LoRa Modules & Accessories | Dragino Documentation Center",
       "imageUrl": null
-    },
-    {
-      "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/lora-modules-accessories/dmt01/",
-      "title": "DMT01 | Dragino Documentation Center",
-      "imageUrl": "https://wiki.dragino.com/assets/images/1753592237986-145-272404d0362ee2e9c5067d739598d29b.png"
     },
     {
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/lora-modules-accessories/la66-lorawan-shield/",
@@ -4403,8 +4398,13 @@
     },
     {
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/dishsense/",
-      "title": "DishSense Dishwasher Thermometer | Dragino Documentation Center",
+      "title": "DishSense -- Dishwasher Thermometer | Dragino Documentation Center",
       "imageUrl": "https://wiki.dragino.com/assets/images/1765177742946-941-06c0b7b5f5fb939ae7e035ec4a6115dc.jpg"
+    },
+    {
+      "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/dmt01/",
+      "title": "DMT01 -- Wireless Meat Thermometer | Dragino Documentation Center",
+      "imageUrl": "https://wiki.dragino.com/assets/images/1753592237986-145-272404d0362ee2e9c5067d739598d29b.png"
     },
     {
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/lht52/",
@@ -4488,7 +4488,7 @@
     },
     {
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/lpt01/",
-      "title": "LPT01 | Dragino Documentation Center",
+      "title": "LPT01 -- LoRaWAN Handheld Food Thermometer | Dragino Documentation Center",
       "imageUrl": "https://wiki.dragino.com/assets/images/1756093949811-644-62e9c878ae1403866787a610107cc883.jpg"
     },
     {
@@ -4523,7 +4523,7 @@
     },
     {
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/ltc1-ltc2-lb/",
-      "title": "LTC1/LTC2-LB/LS | Dragino Documentation Center",
+      "title": "LTC1/LTC2-LB/LS (PT100 Converter) | Dragino Documentation Center",
       "imageUrl": "https://wiki.dragino.com/assets/images/1756447178653-126-b09efe2f4b9c81e0d30fd679bcb45bfb.png"
     },
     {
@@ -4568,7 +4568,7 @@
     },
     {
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/ltc2/",
-      "title": "LTC2 | Dragino Documentation Center",
+      "title": "LTC2 (PT100 Converter) | Dragino Documentation Center",
       "imageUrl": "https://wiki.dragino.com/assets/images/image-20220617163631-2-1db6d0e95a32e4b348233b759b913bd9.jpeg"
     },
     {
@@ -4623,7 +4623,7 @@
     },
     {
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/s31b-le/",
-      "title": "S31B-LE | Dragino Documentation Center",
+      "title": "S31B-LE (E-Ink Display) | Dragino Documentation Center",
       "imageUrl": "https://wiki.dragino.com/assets/images/CAI_5329-67607fcc145f0da8f721205bc1a69bba.jpg"
     },
     {
@@ -4633,8 +4633,8 @@
     },
     {
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/tc01-lb/",
-      "title": "TC01-LB/TC11-LB | Dragino Documentation Center",
-      "imageUrl": "https://wiki.dragino.com/assets/images/image-20240117163402-3-37c68706a7ed6605ba566dbab0bb8146.png"
+      "title": "TC01-LB (Thermocouple Converter) | Dragino Documentation Center",
+      "imageUrl": "https://wiki.dragino.com/assets/images/TC01-LB-0ee2b3ea7012026455e7188635304a44.png"
     },
     {
       "url": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/tc01-lb/",
@@ -6648,11 +6648,6 @@
     },
     {
       "url": "https://wiki.dragino.com/docs/NB-IoT/temperature-humidity-sensors/ltc1-ltc2-cb/",
-      "title": "LTC1/LTC2-CB/CS – NB-IoT/LTE-M Temperature Transmitter ​",
-      "imageUrl": "https://wiki.dragino.com/assets/images/1756449001825-402-ed212a31b58ab066bc2070aae7741b39.png"
-    },
-    {
-      "url": "https://wiki.dragino.com/docs/NB-IoT/temperature-humidity-sensors/ltc1-ltc2-cb/",
       "title": "2.1 Send data to IoT server via NB-IoT network ​",
       "imageUrl": "https://wiki.dragino.com/assets/images/1756782088878-779-5362670644a570e6edcfa42cef537c3d.png"
     },
@@ -6715,6 +6710,11 @@
       "url": "https://wiki.dragino.com/docs/NB-IoT/temperature-humidity-sensors/ltc1-ltc2-nb/",
       "title": "6.3 How do customers connect a two-wire PT100? ​",
       "imageUrl": "https://wiki.dragino.com/assets/images/image-20250510102559-1-f6ac29208c1c623f81a01c55e01f4d33.png"
+    },
+    {
+      "url": "https://wiki.dragino.com/docs/NB-IoT/temperature-humidity-sensors/ltc1/ltc2-fb/",
+      "title": "LTC1/LTC2-FB | Dragino Documentation Center",
+      "imageUrl": null
     },
     {
       "url": "https://wiki.dragino.com/docs/NB-IoT/temperature-humidity-sensors/n95s31b/",
@@ -7188,16 +7188,6 @@
     },
     {
       "url": "https://www.dragino.com/products/agriculture-weather-station/item/315-sdi-12-nb-ns.html",
-      "title": "SDI-12-NB/NS -- SDI-12 to NB-IoT Converter",
-      "imageUrl": "https://www.dragino.com/media/k2/galleries/315/SDI-12-NB_10.png"
-    },
-    {
-      "url": "https://www.dragino.com/products/agriculture-weather-station/item/315-sdi-12-nb.html",
-      "title": "SDI-12-NB/NS -- SDI-12 to NB-IoT Converter",
-      "imageUrl": "https://www.dragino.com/media/k2/galleries/315/SDI-12-NB_10.png"
-    },
-    {
-      "url": "https://www.dragino.com/products/agriculture-weather-station/item/315-sdi-12-nb.html",
       "title": "SDI-12-NB/NS -- SDI-12 to NB-IoT Converter",
       "imageUrl": "https://www.dragino.com/media/k2/galleries/315/SDI-12-NB_10.png"
     },
@@ -8723,12 +8713,12 @@
     },
     {
       "url": "https://www.dragino.com/products/water-air-quality-sensor/item/391-co2-le.html",
-      "title": "CO2-LE -- LoRaWAN CO₂, Temperature, Humidity &amp; Pressure Sensor (Coming Soon)",
+      "title": "CO2-LE -- LoRaWAN CO₂, Temperature, Humidity &amp; Pressure Sensor",
       "imageUrl": "https://www.dragino.com/media/k2/galleries/391/CO2-LE-1.png"
     },
     {
       "url": "https://www.dragino.com/products/water-air-quality-sensor/item/391-co2-le.html",
-      "title": "CO2-LE -- LoRaWAN CO₂, Temperature, Humidity & Pressure Sensor (Coming Soon)",
+      "title": "CO2-LE -- LoRaWAN CO₂, Temperature, Humidity & Pressure Sensor",
       "imageUrl": "https://www.dragino.com/media/k2/galleries/391/CO2-LE-1.png"
     },
     {

@@ -7,9 +7,9 @@ import { ProductImage } from "@/components/product-image";
 import { StructuredData } from "@/components/structured-data";
 import { getDisplayImagePath, getImageForProduct, getProductBySlug, getSiteUrl, products, publicProducts } from "@/lib/catalogue";
 import { getFamilyComparisonSummary, getFamilyProducts, getIndexableApplicationFacet, getIndexableInterfaceFacet, getProductFamily, getRelevantGuides } from "@/lib/discovery";
-import { getPublicPrice } from "@/lib/pricing";
+import { getPublicPriceForProduct } from "@/lib/pricing";
 import { getProductGuidance } from "@/lib/product-guidance";
-import { displayValue, facetValue, productApplicationLabel, productConnectivityLabel, productDefinition, productDisplayName, productFit, sentenceAwareDescription, specificationItems } from "@/lib/product-presentation";
+import { displayValue, facetValue, productApplicationLabel, productConnectivityLabel, productDefinition, productDisplayName, productFit, productFullName, sentenceAwareDescription, specificationItems } from "@/lib/product-presentation";
 import { buildProductManufacturer, buildProductOffer } from "@/lib/structured-data";
 
 export const dynamicParams = false;
@@ -33,9 +33,10 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   const product = getProductBySlug(slug);
   if (!product) notFound();
   const siteUrl = getSiteUrl();
-  const publicPrice = getPublicPrice(product.priceUsd);
+  const publicPrice = getPublicPriceForProduct(product.sku, product.priceUsd);
   const image = getImageForProduct(product.sku);
   const name = productDisplayName(product.sku);
+  const fullName = productFullName(product.sku);
   const guidance = getProductGuidance(product.sku);
   const application = displayValue(product.application);
   const iotInterface = displayValue(product.iotInterface);
@@ -56,7 +57,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   const compareHref = comparisonProducts.length > 1 ? `/compare?products=${comparisonProducts.map((item) => item.slug).join(",")}` : "";
   const packageFields = [{ label: "Package dimensions (mm)", value: product.packageDimensionMm }, { label: "Package weight (g)", value: product.packageWeightG }].filter((field) => displayValue(field.value));
   const displayImagePath = getDisplayImagePath(product, image ?? undefined);
-  const productSchema: Record<string, unknown> = { "@context": "https://schema.org", "@type": "Product", name, sku: product.sku, description: specification || summary, ...buildProductManufacturer(), category: application || undefined, url: `${siteUrl}/products/${product.slug}`, image: displayImagePath ? `${siteUrl}${displayImagePath}` : undefined, additionalProperty: [{ "@type": "PropertyValue", name: "Application", value: application || undefined }, { "@type": "PropertyValue", name: "IoT interface", value: iotInterface || undefined }, { "@type": "PropertyValue", name: "Package dimensions (mm)", value: displayValue(product.packageDimensionMm) || undefined }, { "@type": "PropertyValue", name: "Package weight (g)", value: displayValue(product.packageWeightG) || undefined }].filter((property) => property.value) };
+  const productSchema: Record<string, unknown> = { "@context": "https://schema.org", "@type": "Product", name, sku: product.sku, description: specification || summary, ...buildProductManufacturer(product.sku), category: application || undefined, url: `${siteUrl}/products/${product.slug}`, image: displayImagePath ? `${siteUrl}${displayImagePath}` : undefined, additionalProperty: [{ "@type": "PropertyValue", name: "Application", value: application || undefined }, { "@type": "PropertyValue", name: "IoT interface", value: iotInterface || undefined }, { "@type": "PropertyValue", name: "Package dimensions (mm)", value: displayValue(product.packageDimensionMm) || undefined }, { "@type": "PropertyValue", name: "Package weight (g)", value: displayValue(product.packageWeightG) || undefined }].filter((property) => property.value) };
   if (publicPrice.schemaAmount !== null) productSchema.offers = buildProductOffer(siteUrl, `${siteUrl}/products/${product.slug}`, publicPrice.schemaAmount);
   const questionItems = [
     { question: `What is ${name}?`, answer: summary },
@@ -73,10 +74,10 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
     <StructuredData data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/products` }, { "@type": "ListItem", position: 3, name, item: `${siteUrl}/products/${product.slug}` }] }} />
     <section className="product-detail-hero"><div className="shell"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>{name}</span></nav><div className="product-buy-grid">
       <div className="product-detail-media"><ProductImage sku={name} application={application} imagePath={getDisplayImagePath(product, image ?? undefined)} priority sizes="(max-width: 800px) 100vw, 50vw" /></div>
-      <div className="product-buy-copy"><h1>{name}</h1><p className="product-detail-summary">{summary}</p><dl className="quick-facts">{application ? <div><dt>Application</dt><dd>{applicationLabel}</dd></div> : null}{iotInterface ? <div><dt>Connectivity</dt><dd>{iotInterfaceLabel}</dd></div> : null}</dl><aside className="price-panel"><span>Price</span><strong>{publicPrice.formatted}</strong><small>South African rand. {publicPrice.vatNotice}</small></aside><div className="buy-actions"><Link href={`/contact?sku=${encodeURIComponent(product.sku)}`} className="button button-primary">Ask about {name} <ArrowIcon /></Link></div></div>
+      <div className="product-buy-copy"><h1>{name}</h1>{fullName !== name ? <p className="product-detail-subtext">{fullName}</p> : null}<p className="product-detail-summary">{summary}</p><dl className="quick-facts">{application ? <div><dt>Application</dt><dd>{applicationLabel}</dd></div> : null}{iotInterface ? <div><dt>Connectivity</dt><dd>{iotInterfaceLabel}</dd></div> : null}</dl><aside className="price-panel"><span>Price</span><strong>{publicPrice.formatted}</strong><small>South African rand. {publicPrice.vatNotice}</small></aside><div className="buy-actions"><Link href={`/contact?sku=${encodeURIComponent(product.sku)}`} className="button button-primary">Ask about {name} <ArrowIcon /></Link></div></div>
     </div></div></section>
     <section className="section shell product-content-grid"><aside className="product-section-nav"><span>On this page</span><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#suitability">Where it fits</a>{packageFields.length ? <a href="#package">Package</a> : null}<a href="#questions">Questions</a>{family || guides.length || compareHref ? <a href="#related-guidance">Related guidance</a> : null}</aside><div className="product-sections">
-      <section id="overview"><h2>Product overview</h2><dl className="source-facts"><div><dt>SKU</dt><dd>{name}</dd></div><div><dt>Manufacturer</dt><dd>Dragino</dd></div>{application ? <div><dt>Application</dt><dd>{applicationFacet ? <Link href={`/applications/${applicationFacet.slug}`}>{applicationLabel}</Link> : applicationLabel}</dd></div> : null}{iotInterface ? <div><dt>Connectivity</dt><dd>{interfaceFacet ? <Link href={`/connectivity/${interfaceFacet.slug}`}>{iotInterfaceLabel}</Link> : iotInterfaceLabel}</dd></div> : null}</dl></section>
+      <section id="overview"><h2>Product overview</h2><dl className="source-facts"><div><dt>SKU</dt><dd>{name}</dd></div><div><dt>Manufacturer</dt><dd>{buildProductManufacturer(product.sku).manufacturer.name}</dd></div>{application ? <div><dt>Application</dt><dd>{applicationFacet ? <Link href={`/applications/${applicationFacet.slug}`}>{applicationLabel}</Link> : applicationLabel}</dd></div> : null}{iotInterface ? <div><dt>Connectivity</dt><dd>{interfaceFacet ? <Link href={`/connectivity/${interfaceFacet.slug}`}>{iotInterfaceLabel}</Link> : iotInterfaceLabel}</dd></div> : null}</dl></section>
       {specification ? <section id="specifications"><h2>Specifications</h2>{structuredSpecifications.length ? <ul className="specification-list">{structuredSpecifications.map((item, index) => <li key={`${index}-${item}`}>{item}</li>)}</ul> : <p className="lead-copy">{specification}</p>}</section> : null}
       <section id="suitability"><h2>Where this product fits</h2><p>{guidance?.suitability ?? productFit(product)}</p></section>
       {guidance?.buyerChecks?.length ? <section id="buyer-checks"><h2>Before choosing this model</h2><ul className="check-list">{guidance.buyerChecks.map((check) => <li key={check}>{check}</li>)}</ul></section> : null}

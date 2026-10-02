@@ -9,8 +9,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "LoRaWAN & IoT Solutions | LoRa Network South Africa",
-    template: "%s | LoRa Network South Africa",
+    default: "LoRa Network",
+    template: "%s · LoRa Network",
   },
   description:
     "Browse LoRaWAN and IoT hardware for South African projects by SKU, application and connectivity, with prices in rand.",

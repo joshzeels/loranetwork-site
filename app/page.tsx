@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ApplicationIcon, ArrowIcon, SearchIcon } from "@/components/icons";
+import { ApplicationIcon, ArrowIcon, SearchIcon, SignalIcon } from "@/components/icons";
 import { HomeCable, WhySensorCable } from "@/components/home-cable";
 import { ProductCard } from "@/components/product-card";
 import { StructuredData } from "@/components/structured-data";
@@ -35,6 +35,19 @@ export default function Home() {
           <Image className="hero-image" src="/images/Header.png" alt="Dragino LoRa IoT sensor" width={358} height={815} priority sizes="(max-width: 820px) 70vw, 358px" />
         </div>
       </div></section>
+      <section className="shell">
+        <div className="gateway-notice">
+          <span className="gateway-notice-icon"><SignalIcon /></span>
+          <div className="gateway-notice-copy">
+            <h3>Heads up! You&rsquo;ll need a gateway in range</h3>
+            <p>Most sensors and end nodes on this site are LoRaWAN devices, and on their own they can&rsquo;t reach the internet. They need a compatible gateway nearby to pick up their signal and forward it online.</p>
+          </div>
+          <div className="gateway-notice-actions">
+            <Link href="/products/rbwapr-2nd-r11e-lr8" className="button button-light">Shop gateways <ArrowIcon /></Link>
+            <Link href="/products/tof-0809-7v-s1" className="gateway-notice-link">Shop antennas <ArrowIcon /></Link>
+          </div>
+        </div>
+      </section>
       <section className="section shell">
         <div className="section-heading"><h2>Browse by application</h2></div>
         <div className="browse-grid">{featuredApplications.map((item) => <Link href={`/applications/${item.slug}`} className="browse-card" key={item.slug}><div className="browse-card-top"><span className="application-symbol"><ApplicationIcon application={item.value} /></span><span className="browse-card-count">{item.count} products</span></div><h3>{item.value}</h3><ArrowIcon /></Link>)}</div>

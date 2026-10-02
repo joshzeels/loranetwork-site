@@ -2,7 +2,7 @@ import "server-only";
 import catalogueJson from "@/data/dragino-products.json";
 import documentationJson from "@/data/product-documentation.json";
 import imageManifestJson from "@/data/product-images.json";
-import { getPublicPrice } from "@/lib/pricing";
+import { getPublicPriceForProduct } from "@/lib/pricing";
 import { displayValue, facetSlug, facetValue, type PublicDraginoProduct } from "@/lib/product-presentation";
 import { organizationId } from "@/lib/structured-data";
 import { BUSINESS_CONFIG } from "@/config/business";
@@ -95,7 +95,7 @@ export function getDisplayImagePath(product: DraginoProduct, image?: ProductImag
 }
 
 export const publicProducts: PublicDraginoProduct[] = products.map((product) => {
-  const publicPrice = getPublicPrice(product.priceUsd);
+  const publicPrice = getPublicPriceForProduct(product.sku, product.priceUsd);
 
   return {
     sourceRow: product.sourceRow,

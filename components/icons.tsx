@@ -17,6 +17,16 @@ export function SearchIcon(props: IconProps) {
   );
 }
 
+export function SignalIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="M12 20v-6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+      <circle cx="12" cy="16" r="1.4" fill="currentColor" />
+      <path d="M8.5 11.2a5 5 0 0 1 7 0M5.6 8.3a9 9 0 0 1 12.8 0M2.8 5.4a13 13 0 0 1 18.4 0" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function CloseIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" {...props}>

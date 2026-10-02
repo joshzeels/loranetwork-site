@@ -29,7 +29,7 @@ export function ProductImage({ sku, application, imagePath, priority = false, si
   return (
     <Image
       src={imagePath}
-      alt={`${sku}${application ? ` — ${application}` : ""}`}
+      alt={`${sku}${application ? `, ${application}` : ""}`}
       fill
       priority={priority}
       sizes={sizes}

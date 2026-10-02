@@ -43,10 +43,16 @@ test("organizationId is stable and derived only from the configured site URL", (
   assert.equal(organizationId("https://other.example"), "https://other.example/#organization");
 });
 
-test("product manufacturer and brand remain Dragino", () => {
+test("product manufacturer and brand default to Dragino", () => {
   const manufacturer = buildProductManufacturer();
   assert.deepEqual(manufacturer.brand, { "@type": "Brand", name: "Dragino" });
   assert.deepEqual(manufacturer.manufacturer, { "@type": "Organization", name: "Dragino" });
+});
+
+test("product manufacturer and brand resolve to MikroTik for known MikroTik SKUs", () => {
+  const manufacturer = buildProductManufacturer("TOF-0809-7V-S1");
+  assert.deepEqual(manufacturer.brand, { "@type": "Brand", name: "MikroTik" });
+  assert.deepEqual(manufacturer.manufacturer, { "@type": "Organization", name: "MikroTik" });
 });
 
 test("a priced Offer's seller resolves to the LoRa Network Organization @id", () => {

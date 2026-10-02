@@ -16,8 +16,9 @@
     "Generic Node",
     "Angle Sensor / Tilting",
     "Generic Node / Analog",
-    "Gateway -- LoRaWAN",
-    "Power Outage Monitoring Sensor"
+    "Gateway: LoRaWAN",
+    "Power Outage Monitoring Sensor",
+    "Antenna"
   ],
   "indexableInterfaces": [
     "LoRaWAN",
@@ -109,7 +110,7 @@
       "deploymentFit": "It is intended for IoT deployments that exchange relatively small amounts of data and need wide-area or difficult indoor coverage.",
       "advantage": "The standard is designed around range, device power use, network capacity and deployment cost.",
       "limitation": "Confirm that a suitable LoRaWAN network and the correct regional configuration are available for your project.",
-      "sourceLabel": "LoRa Alliance — What is LoRaWAN?",
+      "sourceLabel": "LoRa Alliance: What is LoRaWAN?",
       "sourceUrl": "https://lora-alliance.org/resource_hub/what-is-lorawan/"
     },
     "LTE CAT 1": {
@@ -117,7 +118,7 @@
       "deploymentFit": "It suits projects evaluating LTE cellular connectivity for IoT deployments.",
       "advantage": "It provides an LTE connectivity option for IoT devices.",
       "limitation": "Confirm local operator service and model requirements before ordering.",
-      "sourceLabel": "GSMA — Mobile IoT in a 5G Future",
+      "sourceLabel": "GSMA: Mobile IoT in a 5G Future",
       "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/wp-content/uploads/2024/10/Mobile-IoT-in-a-5G-Future-Final.pdf"
     }
   },
@@ -178,7 +179,7 @@
       "title": "How to Choose a LoRaWAN Gateway",
       "question": "Which LoRaWAN gateway should I choose?",
       "answerTemplate": "Choose from {count} LoRaWAN gateways. Start with the deployment setting and required backhaul: the catalogue includes indoor models such as LPS8N, LPS8v2, MS48-LR and LG308N, plus the outdoor DLOS8N. Then compare the exact gateway functions, interfaces, power details and ZAR price stated for the SKU.",
-      "applicationValues": ["Gateway -- LoRaWAN"],
+      "applicationValues": ["Gateway: LoRaWAN"],
       "searchTerms": [],
       "considerations": [
         "Choose an indoor model when the deployment requires indoor gateway hardware; DLOS8N is the outdoor model in the exact product set.",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "About LoRa Network South Africa",
+  title: "About",
   description: "Learn how LoRa Network helps South African customers find and compare LoRaWAN and IoT hardware.",
   alternates: { canonical: "/about" },
 };

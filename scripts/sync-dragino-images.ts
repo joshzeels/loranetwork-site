@@ -20,6 +20,7 @@ const sharedRoot = join(publicRoot, "_official");
 const userAgent = "LoRaNetworkSA-OfficialImageReconciliation/2.0";
 const officialHosts = new Set(["dragino.com", "www.dragino.com", "wiki.dragino.com", "www.wiki.dragino.com", "docs.dragino.com", "www.docs.dragino.com"]);
 const commercialSuffixes = new Set(["GE", "1T"]);
+const cellularModuleSuffixes = new Set(["EC25"]);
 const visuallyEquivalentModelTokens = new Map([["LB2", "LB"], ["NB2", "NB"], ["CB2", "CB"], ["FB2", "FB"]]);
 const reviewedGalleryOverrides = new Map<string, string>([
   ["D20-LS", "https://www.dragino.com/media/k2/galleries/259/D20-LS_20.jpg"],
@@ -140,6 +141,7 @@ function sectionModelPages(html: string, pageUrl: string) {
 }
 function familyName(sku: string) { const clean = normal(sku); const parts = clean.split("-").filter(Boolean); if (parts.length > 1 && /^(?:SDI|MR)$/.test(parts[0]) && /^\d|XX$/.test(parts[1])) return `${parts[0]}-${parts[1]}`; return parts[0] || clean; }
 function commercialBase(sku: string) { const parts = normal(sku).split("-"); return commercialSuffixes.has(parts.at(-1) ?? "") ? parts.slice(0, -1).join("-") : ""; }
+function cellularModuleBase(sku: string) { const parts = normal(sku).split("-"); return cellularModuleSuffixes.has(parts.at(-1) ?? "") ? parts.slice(0, -1).join("-") : ""; }
 function visualVariantKey(sku: string) { return normal(sku).split("-").filter((part) => part && !commercialSuffixes.has(part)).map((part) => visuallyEquivalentModelTokens.get(part) ?? part).join("-"); }
 function officialModelAliases(sku: string) {
   const parts = normal(sku).split("-").filter((part) => part && !commercialSuffixes.has(part));
@@ -282,6 +284,18 @@ async function main() {
       const basePage = pages.find((page) => page.imageUrl && hasToken(page.title, base));
       const linkedSibling = basePage && products.find((candidate) => candidate.productUrl && commercialBase(candidate.sku) === base && sameUrl(candidate.productUrl, basePage.url));
       if (basePage && linkedSibling) { chosen = basePage; confidence = "FAMILY_CONFIRMED"; method = "official-title+catalogue-linked-commercial-family"; notes = `The official page title identifies base model ${base}, and another authoritative catalogue member of the same commercial family links to that page.`; }
+    }
+
+    const cellularBase = cellularModuleBase(sku);
+    if (!chosen && cellularBase) {
+      const baseProduct = products.find((candidate) => normal(candidate.sku) === cellularBase && candidate.productUrl.trim());
+      const basePage = baseProduct && pages.find((page) => page.imageUrl && sameUrl(page.url, baseProduct.productUrl) && hasToken(page.title, cellularBase));
+      if (baseProduct && basePage && hasToken(basePage.text, "EC25")) {
+        chosen = basePage;
+        confidence = "FAMILY_CONFIRMED";
+        method = "official-cellular-variant+base-model-page";
+        notes = `The official Dragino page for base model ${cellularBase} explicitly documents an EC25 4G-cellular module as an optional configuration of the same physical enclosure (part-numbering / cellular-option text on that page names EC25), so the base model's official product image applies to this EC25 variant of the identical hardware.`;
+      }
     }
 
     if (!chosen) {

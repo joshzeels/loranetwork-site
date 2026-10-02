@@ -1,7 +1,7 @@
 import { products } from "@/lib/catalogue";
 import { deliverEnquiry } from "@/lib/enquiries/delivery";
 import { validateEnquiry } from "@/lib/enquiries/validation";
-import { getPublicPrice } from "@/lib/pricing";
+import { getPublicPriceForProduct } from "@/lib/pricing";
 import { BUSINESS_CONFIG } from "@/config/business";
 
 export const runtime = "nodejs";
@@ -32,7 +32,7 @@ export async function POST(request: Request) {
   if (validated.value.sku && !product) return json({ ok: false, message: "Select a valid catalogue SKU.", errors: { sku: "This SKU is not in the catalogue." } }, 400);
   const referrer = request.headers.get("referer") ?? "";
   const enquiry = { ...validated.value, sku: product?.sku ?? "", pageUrl: referrer, submittedAt: new Date().toISOString() };
-  const delivery = await deliverEnquiry(enquiry, product ? { name: product.sku, displayedPrice: getPublicPrice(product.priceUsd).formatted } : null);
+  const delivery = await deliverEnquiry(enquiry, product ? { name: product.sku, displayedPrice: getPublicPriceForProduct(product.sku, product.priceUsd).formatted } : null);
   if (!delivery.delivered) {
     const developmentDetail = process.env.NODE_ENV === "development" && delivery.reason === "not-configured" ? " Enquiry delivery is not configured; set the documented private email environment variables." : "";
     return json({ ok: false, message: `Enquiry delivery is currently unavailable. Your message was not sent.${developmentDetail}` }, 503);

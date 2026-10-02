@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPublicPrice, getVatDisplayNotice } from "@/lib/pricing";
+import { getPublicPriceForProduct, getVatDisplayNotice } from "@/lib/pricing";
 import { displayValue, productDisplayName } from "@/lib/product-presentation";
 import type { DraginoProduct } from "@/lib/catalogue";
 
@@ -16,7 +16,7 @@ export function ProductComparison({ products, caption }: { products: DraginoProd
           <td>{displayValue(product.specification)}</td>
           <td>{displayValue(product.packageDimensionMm)}</td>
           <td>{displayValue(product.packageWeightG)}</td>
-          <td>{getPublicPrice(product.priceUsd).formatted}</td>
+          <td>{getPublicPriceForProduct(product.sku, product.priceUsd).formatted}</td>
         </tr>)}</tbody>
       </table>
     </div>

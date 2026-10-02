@@ -5,6 +5,7 @@ import {
   calculateSellingPriceZar,
   formatSellingPriceZar,
   getPublicPrice,
+  getPublicPriceForProduct,
 } from "../lib/pricing.ts";
 
 test("calculates the configured price completely before rounding", () => {
@@ -74,4 +75,20 @@ test("formats public prices with the South African ZAR locale", () => {
     schemaAmount: "2345.00",
     vatNotice: "VAT not charged.",
   });
+});
+
+test("uses the sourced ZAR retail price with no markup for SKUs on override, and the normal formula otherwise", () => {
+  assert.deepEqual(getPublicPriceForProduct("RBwAPR-2nD&R11e-LR8", "169"), {
+    amountZar: 2695,
+    formatted: "R\u00a02\u00a0695,00",
+    schemaAmount: "2695.00",
+    vatNotice: "VAT not charged.",
+  });
+  assert.deepEqual(getPublicPriceForProduct("TOF-0809-7V-S1", "49"), {
+    amountZar: 995,
+    formatted: "R\u00a0995,00",
+    schemaAmount: "995.00",
+    vatNotice: "VAT not charged.",
+  });
+  assert.deepEqual(getPublicPriceForProduct("BLG-AN-020", "15.5"), getPublicPrice("15.5"));
 });

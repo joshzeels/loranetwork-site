@@ -34,12 +34,22 @@ export function buildWebsiteSchema(siteUrl: string) {
   };
 }
 
-// The manufacturer identified for every catalogue product. Extracted as its own pure function so
-// this fact stays independently regression-tested without rendering a product page.
-export function buildProductManufacturer() {
+// Most of the catalogue is Dragino hardware, but a handful of SKUs (e.g. MikroTik LoRa
+// antennas/gateways) come from other manufacturers. Kept as an explicit lookup rather than
+// inferring from the SKU shape, so a new non-Dragino SKU must be added here deliberately.
+const manufacturerBySku: Record<string, string> = {
+  "TOF-0809-7V-S1": "MikroTik",
+  "RBwAPR-2nD&R11e-LR8": "MikroTik",
+};
+
+// The manufacturer identified for a catalogue product, defaulting to Dragino. Extracted as its
+// own pure function so this fact stays independently regression-tested without rendering a
+// product page.
+export function buildProductManufacturer(sku?: string) {
+  const name = (sku && manufacturerBySku[sku]) || "Dragino";
   return {
-    brand: { "@type": "Brand", name: "Dragino" },
-    manufacturer: { "@type": "Organization", name: "Dragino" },
+    brand: { "@type": "Brand", name },
+    manufacturer: { "@type": "Organization", name },
   };
 }
 
