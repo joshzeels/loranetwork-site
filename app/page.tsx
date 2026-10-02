@@ -6,6 +6,7 @@ import { HomeCable } from "@/components/measured-home-cable";
 import { ProductCard } from "@/components/product-card";
 import { StructuredData } from "@/components/structured-data";
 import { applicationFacets, catalogue, getSiteUrl, interfaceFacets, publicProducts } from "@/lib/catalogue";
+import { productApplicationLabel, productConnectivityLabel } from "@/lib/product-presentation";
 import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-data";
 
 const featuredApplications = applicationFacets.slice(0, 6);
@@ -53,12 +54,12 @@ export default function Home() {
       </section>
       <section className="section shell">
         <div className="section-heading"><h2>Browse by application</h2></div>
-        <div className="browse-grid">{featuredApplications.map((item) => <Link href={`/applications/${item.slug}`} className="browse-card" key={item.slug}><div className="browse-card-top"><span className="application-symbol"><ApplicationIcon application={item.value} /></span><span className="browse-card-count">{item.count} products</span></div><h3>{item.value}</h3><ArrowIcon /></Link>)}</div>
+        <div className="browse-grid">{featuredApplications.map((item) => <Link href={`/applications/${item.slug}`} className="browse-card" key={item.slug}><div className="browse-card-top"><span className="application-symbol"><ApplicationIcon application={item.value} /></span><span className="browse-card-count">{item.count} products</span></div><h3>{productApplicationLabel(item.value)}</h3><ArrowIcon /></Link>)}</div>
         <div className="section-action"><Link href="/applications" className="text-link">All applications <ArrowIcon /></Link></div>
       </section>
       <section className="section section-tint"><div className="shell">
         <div className="section-heading"><h2>Browse by connectivity</h2></div>
-        <div className="interface-grid">{featuredInterfaces.map((item) => <Link href={`/connectivity/${item.slug}`} className="interface-card" key={item.slug}><div><h3>{item.value}</h3><p>{item.count} products</p></div><ArrowIcon /></Link>)}</div>
+        <div className="interface-grid">{featuredInterfaces.map((item) => <Link href={`/connectivity/${item.slug}`} className="interface-card" key={item.slug}><div><h3>{productConnectivityLabel(item.value)}</h3><p>{item.count} products</p></div><ArrowIcon /></Link>)}</div>
       </div></section>
       <section className="section shell">
         <div className="section-heading"><h2>Featured products</h2></div>

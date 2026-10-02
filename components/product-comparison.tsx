@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getPublicPriceForProduct, getVatDisplayNotice } from "@/lib/pricing";
-import { displayValue, productDisplayName } from "@/lib/product-presentation";
+import { displayValue, productApplicationLabel, productConnectivityLabel, productDisplayName } from "@/lib/product-presentation";
 import type { DraginoProduct } from "@/lib/catalogue";
 
 export function ProductComparison({ products, caption }: { products: DraginoProduct[]; caption?: string }) {
@@ -13,8 +13,8 @@ export function ProductComparison({ products, caption }: { products: DraginoProd
         <thead><tr><th scope="col">SKU</th><th scope="col">Application</th><th scope="col">IoT interface</th><th scope="col">Specification</th><th scope="col">Package dimensions (mm)</th><th scope="col">Package weight (g)</th><th scope="col">Price in ZAR</th></tr></thead>
         <tbody>{products.map((product) => <tr key={product.sku}>
           <th scope="row"><Link href={`/products/${product.slug}`}>{productDisplayName(product.sku)}</Link></th>
-          <td>{displayValue(product.application)}</td>
-          <td>{displayValue(product.iotInterface)}</td>
+          <td>{productApplicationLabel(product.application)}</td>
+          <td>{productConnectivityLabel(product.iotInterface)}</td>
           <td>{displayValue(product.specification)}</td>
           <td>{displayValue(product.packageDimensionMm)}</td>
           <td>{displayValue(product.packageWeightG)}</td>

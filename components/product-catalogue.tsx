@@ -3,7 +3,7 @@
 import { useDeferredValue, useMemo, useState } from "react";
 import { CloseIcon, SearchIcon } from "@/components/icons";
 import { ProductCard } from "@/components/product-card";
-import { displayValue, facetValue, type PublicDraginoProduct } from "@/lib/product-presentation";
+import { facetValue, productApplicationLabel, productConnectivityLabel, type PublicDraginoProduct } from "@/lib/product-presentation";
 
 type FacetOption = { value: string; count: number };
 
@@ -85,7 +85,7 @@ export function ProductCatalogue({ products, applications, interfaces, priceNoti
             <option value="">All applications</option>
             {applications.map((option) => (
               <option key={facetValue(option.value)} value={facetValue(option.value)}>
-                {option.value} ({option.count})
+                {productApplicationLabel(option.value)} ({option.count})
               </option>
             ))}
           </select>
@@ -103,7 +103,7 @@ export function ProductCatalogue({ products, applications, interfaces, priceNoti
             <option value="">All interfaces</option>
             {interfaces.map((option) => (
               <option key={facetValue(option.value)} value={facetValue(option.value)}>
-                {displayValue(option.value)} ({option.count})
+                {productConnectivityLabel(option.value)} ({option.count})
               </option>
             ))}
           </select>

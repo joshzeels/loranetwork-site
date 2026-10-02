@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowIcon } from "@/components/icons";
 import { ProductImage } from "@/components/product-image";
-import { displayValue, productDisplayName, type PublicDraginoProduct } from "@/lib/product-presentation";
+import { displayValue, productApplicationLabel, productConnectivityLabel, productDisplayName, type PublicDraginoProduct } from "@/lib/product-presentation";
 
 export function ProductCard({ product }: { product: PublicDraginoProduct }) {
-  const application = displayValue(product.application);
-  const iotInterface = displayValue(product.iotInterface);
+  const application = productApplicationLabel(product.application);
+  const iotInterface = productConnectivityLabel(product.iotInterface);
   const name = productDisplayName(product.sku);
 
   return (

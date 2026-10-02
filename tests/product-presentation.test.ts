@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { displayValue, facetValue, productApplicationLabel, productConnectivityLabel, productDefinition, productDisplayName, productFit, productFullName, productSummary, sentenceAwareDescription, specificationItems } from "../lib/product-presentation.ts";
+import { displayValue, facetSlug, facetValue, productApplicationLabel, productConnectivityLabel, productDefinition, productDisplayName, productFit, productFullName, productSummary, sentenceAwareDescription, specificationItems } from "../lib/product-presentation.ts";
 
 const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<Record<string, string>> };
 const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string }> };
@@ -34,16 +34,42 @@ test("normalises confirmed catalogue typos and equivalent facet labels", () => {
 });
 
 test("builds a factual summary only from supplied catalogue fields", () => {
-  assert.equal(productSummary({ sku: "AIS01-LB", application: "Angle Sensor / Tilting", iotInterface: "LoRaWAN" }), "AIS01-LB supports angle sensor and tilting projects. Connectivity is via LoRaWAN.");
+  assert.equal(productSummary({ sku: "AIS01-LB", application: "Angle Sensor / Tilting", iotInterface: "LoRaWAN" }), "AIS01-LB supports angle and tilt monitoring projects. Connectivity is via LoRaWAN.");
   assert.equal(productDefinition({ sku: "RS485W-LB", application: "Generic Node / RS485", iotInterface: "LoRaWAN" }), "RS485W-LB is an IoT node for RS485 projects. Connectivity is via LoRaWAN.");
-  assert.equal(productApplicationLabel("Gateway -- LoRaWAN"), "LoRaWAN gateway");
-  assert.equal(productApplicationLabel("Generic Node / RS485"), "Generic node and RS485");
+  assert.equal(productApplicationLabel("Gateway -- LoRaWAN"), "LoRaWAN Gateway");
+  assert.equal(productApplicationLabel("Generic Node / RS485"), "RS485 IoT Node");
+  assert.equal(productApplicationLabel("Generic Node / Analog"), "Analogue IoT Node");
+  assert.equal(productApplicationLabel("Dry Contact / Counting / Interrupt"), "Dry Contact, Counting & Interrupt");
+  assert.equal(productApplicationLabel("Angle Sensor / Tilting"), "Angle Sensor & Tilt Detection");
   assert.equal(productConnectivityLabel("LoRaWAN"), "LoRaWAN");
   assert.equal(productConnectivityLabel("NB-IoT"), "NB-IoT");
   assert.equal(productConnectivityLabel("LTE-M & NB-IoT"), "LTE-M & NB-IoT");
-  assert.equal(productConnectivityLabel("LTE-M & NB-IoT, 10 years 500MB data"), "LTE-M & NB-IoT, 10 years / 500MB data");
-  assert.equal(productConnectivityLabel("NB-IoT, 10 years 500MB data"), "NB-IoT, 10 years / 500MB data");
+  assert.equal(productConnectivityLabel("LTE-M & NB-IoT, 10 years 500MB data"), "LTE-M & NB-IoT, 10-year / 500 MB data plan");
+  assert.equal(productConnectivityLabel("NB-IoT, 10 years 500MB data"), "NB-IoT, 10-year / 500 MB data plan");
   assert.equal(productConnectivityLabel("RS485, For WSC2"), "RS485 for WSC2");
+});
+
+test("uses presentation-only labels without changing stored values or route matching", () => {
+  const applications = ["Gateway -- LoRaWAN", "Generic Node / RS485", "Generic Node / Analog"];
+  const connectivity = ["LoRaWAN", "NB-IoT", "LTE-M & NB-IoT", "LTE-M & NB-IoT, 10 years 500MB data", "NB-IoT, 10 years 500MB data", "RS485, For WSC2"];
+
+  for (const value of applications) {
+    const label = productApplicationLabel(value);
+    assert.notEqual(label, "");
+    assert.doesNotMatch(label, /â€”|(?<!-)--(?!-)/);
+    assert.equal(facetValue(value), displayValue(value).toLocaleLowerCase("en-ZA"));
+    assert.equal(facetSlug(value), facetSlug(displayValue(value)));
+  }
+  for (const value of connectivity) {
+    const label = productConnectivityLabel(value);
+    assert.notEqual(label, "");
+    assert.doesNotMatch(label, /â€”|(?<!-)--(?!-)/);
+    assert.equal(facetValue(value), displayValue(value).toLocaleLowerCase("en-ZA"));
+    assert.equal(facetSlug(value), facetSlug(displayValue(value)));
+  }
+  assert.notEqual(productConnectivityLabel("LTE-M & NB-IoT"), productConnectivityLabel("NB-IoT"));
+  assert.equal("Gateway -- LoRaWAN", applications[0]);
+  assert.equal("RS485, For WSC2", connectivity[5]);
 });
 
 test("writes natural conservative fallback copy across representative products", () => {
@@ -70,7 +96,7 @@ test("writes natural conservative fallback copy across representative products",
     assert.doesNotMatch(copy, /—|(?<!-)--(?!-)/, sample.sku);
     assert.ok(copy.length > 30, sample.sku);
   }
-  assert.match(productDefinition({ sku: "WQS-KS-GE", application: "Water Quality Measurement", iotInterface: "LTE-M & NB-IoT, 10 years 500MB data" }), /LTE-M & NB-IoT, 10 years \/ 500MB data/);
+  assert.match(productDefinition({ sku: "WQS-KS-GE", application: "Water Quality Measurement", iotInterface: "LTE-M & NB-IoT, 10 years 500MB data" }), /LTE-M & NB-IoT, 10-year \/ 500 MB data plan/);
   assert.match(productFit({ sku: "LPS8N-EC25", application: "Gateway: LoRaWAN", iotInterface: "LTE-M & NB-IoT" }), /LoRaWAN gateway\. Connectivity is via LTE-M & NB-IoT/);
 });
 

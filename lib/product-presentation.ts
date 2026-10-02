@@ -50,8 +50,12 @@ export function productFullName(sku: string) {
 
 export function productApplicationLabel(value: string) {
   const application = displayValue(value);
-  if (/^gateway\s*(?:--|:)\s*lorawan$/i.test(application)) return "LoRaWAN gateway";
-  if (/^generic node\s*\/\s*rs485$/i.test(application)) return "Generic node and RS485";
+  if (/^gateway\s*(?:--|:)\s*lorawan$/i.test(application)) return "LoRaWAN Gateway";
+  if (/^generic node$/i.test(application)) return "Generic IoT Node";
+  if (/^generic node\s*\/\s*rs485$/i.test(application)) return "RS485 IoT Node";
+  if (/^generic node\s*\/\s*analog$/i.test(application)) return "Analogue IoT Node";
+  if (/^dry contact\s*\/\s*counting\s*\/\s*interrupt$/i.test(application)) return "Dry Contact, Counting & Interrupt";
+  if (/^angle sensor\s*\/\s*tilting$/i.test(application)) return "Angle Sensor & Tilt Detection";
 
   return application
     .replace(/\s*--\s*/g, ": ")
@@ -61,7 +65,7 @@ export function productApplicationLabel(value: string) {
 
 export function productConnectivityLabel(value: string) {
   return displayValue(value)
-    .replace(/,\s*10 years 500MB data/i, ", 10 years / 500MB data")
+    .replace(/,\s*10 years 500MB data/i, ", 10-year / 500 MB data plan")
     .replace(/,\s*For\s+/i, " for ");
 }
 
@@ -78,6 +82,7 @@ export function productDefinition(product: Pick<PublicDraginoProduct, "sku" | "a
   const connection = iotInterface ? ` Connectivity is via ${iotInterface}.` : "";
   if (/gateway/i.test(application)) return `${name} is ${/lorawan/i.test(application) ? "a LoRaWAN" : "a"} gateway.${connection}`;
   if (/tracker/i.test(application)) return `${name} is an IoT tracker.${connection}`;
+  if (/^angle sensor\s*\/\s*tilting$/i.test(application)) return `${name} supports angle and tilt monitoring projects.${connection}`;
   if (/\bsensor\s+(and|\/)\s*/i.test(applicationLabel)) return `${name} supports ${applicationLabel.toLocaleLowerCase("en-ZA")} projects.${connection}`;
   if (/sensor/i.test(application)) {
     const deviceType = applicationLabel.toLocaleLowerCase("en-ZA");
@@ -98,6 +103,7 @@ export function productFit(product: Pick<PublicDraginoProduct, "sku" | "applicat
 
   if (/gateway/i.test(application)) fit = `${name} is suited to projects that need ${/lorawan/i.test(application) ? "a LoRaWAN" : "a"} gateway`;
   else if (/tracker/i.test(application)) fit = `${name} is suited to projects that need IoT tracking`;
+  else if (/^angle sensor\s*\/\s*tilting$/i.test(application)) fit = `${name} is suited to angle and tilt monitoring projects`;
   else if (/sensor/i.test(application)) fit = `${name} is suited to projects that need ${withIndefiniteArticle(applicationLabel)}`;
   else if (/generic node|rs485/i.test(application)) fit = `${name} is suited to RS485 projects that need an IoT node`;
   else if (application) fit = `${name} is suited to ${applicationLabel} projects`;
