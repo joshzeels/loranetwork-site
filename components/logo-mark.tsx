@@ -1,9 +1,14 @@
+import Image from "next/image";
+
 export function LogoMark() {
   return (
-    <span className="logo-mark" aria-hidden="true">
-      <span />
-      <span />
-      <span />
-    </span>
+    <Image
+      className="logo-mark"
+      src="/images/logo.png"
+      alt=""
+      width={34}
+      height={34}
+      aria-hidden="true"
+    />
   );
 }
