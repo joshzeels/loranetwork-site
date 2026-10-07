@@ -305,6 +305,13 @@ img { display: block; max-width: 100%; }
 .enquiry-form input:focus, .enquiry-form textarea:focus { border-color: var(--blue-600); box-shadow: 0 0 0 3px var(--tint); }
 :where(a, button, input, select, textarea, summary):focus-visible { outline: 3px solid var(--blue-400); outline-offset: 3px; }
 .enquiry-form input[aria-invalid="true"], .enquiry-form textarea[aria-invalid="true"] { border-color: #a12626; }
+.product-combobox { position: relative; }
+.product-suggestions { position: absolute; z-index: 20; top: calc(100% + .3rem); right: 0; left: 0; max-height: 19rem; overflow-y: auto; border: 1px solid var(--line-strong); background: var(--white); box-shadow: 0 14px 30px color-mix(in srgb, var(--ink) 14%, transparent); }
+.product-suggestions [role="option"] { display: grid; gap: .2rem; padding: .75rem .85rem; cursor: pointer; }
+.product-suggestions [role="option"] + [role="option"] { border-top: 1px solid var(--line); }
+.product-suggestions [role="option"].is-active, .product-suggestions [role="option"]:hover { background: var(--tint); }
+.product-suggestions strong { color: var(--ink); font: .72rem/1.25 var(--font-mono); }
+.product-suggestions span { color: var(--muted); font-size: .7rem; line-height: 1.35; }
 .field-error { color: #8c1d1d; font-size: .68rem; }
 .privacy-notice { margin: 0; color: var(--muted); font-size: .72rem; line-height: 1.6; }
 .privacy-notice a { text-decoration: underline; text-underline-offset: 3px; }

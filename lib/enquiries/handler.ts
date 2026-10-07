@@ -1,11 +1,11 @@
 import type { DeliveryResult, Enquiry } from "./types.ts";
 import { validateEnquiry } from "./validation.ts";
 
-type Product = { sku: string; name: string; displayedPrice: string };
+type Product = { sku: string; name: string };
 type HandlerDependencies = {
   siteUrl: string;
   findProduct: (sku: string) => Product | undefined;
-  deliver: (enquiry: Enquiry, product: { name: string; displayedPrice: string } | null) => Promise<DeliveryResult>;
+  deliver: (enquiry: Enquiry) => Promise<DeliveryResult>;
   verifyRecaptcha: (token: string, expectedHostname: string) => Promise<boolean>;
   now?: () => number;
 };
@@ -67,20 +67,18 @@ export function createEnquiryHandler(dependencies: HandlerDependencies) {
     const validated = validateEnquiry(payload);
     if (!validated.ok) return json({ ok: false, message: "Please correct the highlighted fields.", errors: validated.errors }, 400);
 
-    const product = validated.value.sku ? dependencies.findProduct(validated.value.sku) : undefined;
-    if (validated.value.sku && !product) return json({ ok: false, message: "Select a valid catalogue SKU.", errors: { sku: "This SKU is not in the catalogue." } }, 400);
+    const product = dependencies.findProduct(validated.value.productSku);
+    if (!product) return json({ ok: false, message: "Select a valid catalogue SKU.", errors: { productSku: "This SKU is not in the catalogue." } }, 400);
 
     const recaptchaToken = typeof payload.recaptchaToken === "string" ? payload.recaptchaToken : "";
     if (!await dependencies.verifyRecaptcha(recaptchaToken, expectedHostname)) return json({ ok: false, message: GENERIC_FAILURE }, 403);
 
     const enquiry = {
       ...validated.value,
-      sku: product?.sku ?? "",
-      pageUrl: request.headers.get("referer") ?? "",
-      submittedAt: new Date(now()).toISOString(),
+      productSku: `${product.sku} | ${product.name}`,
     };
-    const delivery = await dependencies.deliver(enquiry, product ? { name: product.name, displayedPrice: product.displayedPrice } : null);
-    if (!delivery.delivered) return json({ ok: false, message: "Enquiry delivery is currently unavailable. Your message was not sent." }, 503);
+    const delivery = await dependencies.deliver(enquiry);
+    if (!delivery.delivered) return json({ ok: false, message: GENERIC_FAILURE }, 503);
     return json({ ok: true, message: "Your enquiry was sent successfully." }, 200);
   };
 }

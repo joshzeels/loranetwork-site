@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "pricing:reconcile": "node --experimental-strip-types scripts/reconcile-pricing.ts",
     "images:sync": "node --experimental-strip-types scripts/sync-dragino-images.ts",

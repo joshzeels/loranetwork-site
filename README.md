@@ -10,10 +10,9 @@ Copy `.env.example` to an ignored local environment file or configure these valu
 - `USD_ZAR_RATE`: optional override for the centrally approved R16.75/USD buffered rate. A change requires a new build/deployment because catalogue prices are statically generated.
 - `PRICING_RATE_UPDATED_AT`: required launch audit date in `YYYY-MM-DD` format; it remains private and must be no more than 14 days old when the audit runs.
 - `VAT_DISPLAY_MODE`: `inclusive` or `exclusive` for launch (`none` remains a safe local-development fallback); this changes only the label and never adds VAT.
-- `CONTACT_RECIPIENT_EMAIL`: private enquiry recipient.
-- `EMAIL_PROVIDER`: currently `resend` when delivery is activated.
-- `EMAIL_API_KEY`: private provider credential.
-- `EMAIL_FROM_ADDRESS`: provider-verified sender.
+- `MAUTIC_BASE_URL`: private Mautic origin, without the form path.
+- `MAUTIC_ENQUIRY_FORM_ID`: private Mautic enquiry form ID.
+- `MAUTIC_ENQUIRY_FORM_NAME`: private Mautic enquiry form name.
 - `ANALYTICS_ID`: reserved for a future selected integration; no analytics currently loads.
 - `BUSINESS_EMAIL`, `BUSINESS_PHONE`, `BUSINESS_ADDRESS`: optional confirmed public details, omitted when blank.
 - `LEGAL_CONTENT_APPROVED`: set to `true` only after the operating business has approved the privacy notice and website terms.

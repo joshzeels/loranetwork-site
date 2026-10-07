@@ -35,9 +35,9 @@ check("Pricing rate date", rateAgeDays !== null && rateAgeDays >= 0 && rateAgeDa
 const vatMode = process.env.VAT_DISPLAY_MODE?.trim();
 check("VAT treatment", vatMode === "none" || vatMode === "inclusive" || vatMode === "exclusive", "Set VAT_DISPLAY_MODE to none, inclusive or exclusive after confirming the business treatment. \"none\" is a valid final choice for a business that does not charge VAT, not only a placeholder.");
 
-const deliveryVariables = ["CONTACT_RECIPIENT_EMAIL", "EMAIL_PROVIDER", "EMAIL_API_KEY", "EMAIL_FROM_ADDRESS"];
-const deliveryReady = deliveryVariables.every(configured) && process.env.EMAIL_PROVIDER?.trim().toLowerCase() === "resend";
-check("Enquiry delivery", deliveryReady, "Configure the documented Resend recipient, provider, API key and verified sender values.");
+const deliveryVariables = ["MAUTIC_BASE_URL", "MAUTIC_ENQUIRY_FORM_ID", "MAUTIC_ENQUIRY_FORM_NAME"];
+const deliveryReady = deliveryVariables.every(configured);
+check("Enquiry delivery", deliveryReady, "Configure the documented server-only Mautic base URL, enquiry form ID and enquiry form name.");
 
 const publicContactReady = configured("BUSINESS_EMAIL") || configured("BUSINESS_PHONE");
 check("Public contact route", publicContactReady, "Set at least BUSINESS_EMAIL or BUSINESS_PHONE so customers have a fallback contact route.");

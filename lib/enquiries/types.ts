@@ -1,13 +1,10 @@
 export type Enquiry = {
-  name: string;
-  company: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
-  sku: string;
-  quantity: number | null;
+  productSku: string;
   message: string;
-  pageUrl: string;
-  submittedAt: string;
 };
 
-export type DeliveryResult = { delivered: true; providerMessageId?: string } | { delivered: false; reason: "not-configured" | "provider-error" };
+export type DeliveryResult = { delivered: true } | { delivered: false; reason: "not-configured" | "provider-error" };
