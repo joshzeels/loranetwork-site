@@ -8,7 +8,7 @@ import {
   type CatalogueFacet,
   type DraginoProduct,
 } from "@/lib/catalogue";
-import { displayValue, facetValue } from "@/lib/product-presentation";
+import { displayValue, facetValue, productConnectivityLabel } from "@/lib/product-presentation";
 
 export type ProductFamily = {
   slug: string;
@@ -107,17 +107,17 @@ export function getProductFamily(product: DraginoProduct) {
 
 export function getFamilyComparisonSummary(family: ProductFamily, currentProduct?: DraginoProduct) {
   const members = getFamilyProducts(family);
-  const interfaces = [...new Set(members.map((product) => displayValue(product.iotInterface)).filter(Boolean))];
+  const interfaces = [...new Set(members.map((product) => displayValue(product.iotInterface)).filter(Boolean))].map(productConnectivityLabel);
   const specifications = new Set(members.map((product) => displayValue(product.specification)).filter(Boolean));
   const publicPrices = new Set(members.map((product) => product.priceUsd).filter(Boolean));
-  const familySummary = `${family.name} has ${members.length} catalogue models across ${interfaces.length} listed connectivity ${interfaces.length === 1 ? "option" : "options"}${interfaces.length ? `: ${interfaces.join(", ")}` : ""}. The family contains ${specifications.size} distinct supplied specification ${specifications.size === 1 ? "record" : "records"}${publicPrices.size > 1 ? ", and public ZAR prices vary by model" : ""}.`;
+  const familySummary = `${family.name} includes ${members.length} models with ${interfaces.length} connectivity ${interfaces.length === 1 ? "option" : "options"}${interfaces.length ? `: ${interfaces.join(", ")}` : ""}. The models have ${specifications.size} distinct ${specifications.size === 1 ? "specification" : "specifications"}${publicPrices.size > 1 ? ", and public ZAR prices vary by model" : ""}.`;
 
   if (!currentProduct) return familySummary;
   const currentInterface = displayValue(currentProduct.iotInterface);
   const sameInterfaceCount = members.filter((product) => displayValue(product.iotInterface) === currentInterface).length;
   const alternatives = interfaces.filter((value) => value !== currentInterface);
   const specificationMatches = members.filter((product) => product.sku !== currentProduct.sku && displayValue(product.specification) === displayValue(currentProduct.specification)).length;
-  return `${currentProduct.sku} is one of ${sameInterfaceCount} ${family.name} ${sameInterfaceCount === 1 ? "model" : "models"} with ${currentInterface || "no connectivity value"} listed.${alternatives.length ? ` Related models also list ${alternatives.join(", ")}.` : ""} Its supplied specification ${specificationMatches ? `is shared by ${specificationMatches} other family ${specificationMatches === 1 ? "model" : "models"}` : "differs from the other family records"}. Compare the exact rows for model and price differences.`;
+  return `${currentProduct.sku} is one of ${sameInterfaceCount} ${family.name} ${sameInterfaceCount === 1 ? "model" : "models"}${currentInterface ? ` that use ${productConnectivityLabel(currentInterface)}` : " with no stated connectivity type"}.${alternatives.length ? ` Related models also use ${alternatives.join(", ")}.` : ""} Its specification ${specificationMatches ? `matches ${specificationMatches} other family ${specificationMatches === 1 ? "model" : "models"}` : "differs from the other model specifications"}. Compare product specifications and prices before choosing.`;
 }
 
 export function getGuideProducts(guide: BuyingGuide) {

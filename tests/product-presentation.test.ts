@@ -7,6 +7,8 @@ const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json
 const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string }> };
 const guidance = JSON.parse(readFileSync(new URL("../data/product-guidance.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; definition?: string; uses?: string; suitability?: string; buyerChecks?: string[]; sourceUrl?: string; evidenceLevel: string }> };
 const productPage = readFileSync(new URL("../app/products/[slug]/page.tsx", import.meta.url), "utf8");
+const familyPage = readFileSync(new URL("../app/families/[slug]/page.tsx", import.meta.url), "utf8");
+const facetDetail = readFileSync(new URL("../components/facet-detail.tsx", import.meta.url), "utf8");
 
 test("cleans presentation artefacts without changing stored source values", () => {
   const sourceSku = "Â\u00a0SN50v3-MS";
@@ -139,6 +141,9 @@ test("keeps Dragino source URLs out of the public product page", () => {
   assert.match(productPage, /Manufacturer<\/dt><dd>{buildProductManufacturer\(product\.sku\)\.manufacturer\.name}/);
   assert.match(productPage, /href={`\/contact\?sku=/);
   assert.match(productPage, /guidance\?\.suitability \?\? productFit\(product\)/);
+  assert.doesNotMatch(productPage, /Key catalogue details|Reseller<\/dt>/);
+  assert.doesNotMatch(familyPage, /source catalogue/);
+  assert.doesNotMatch(facetDetail, /verified product family/);
 });
 
 test("keeps representative weak-evidence products on conservative fallback", () => {

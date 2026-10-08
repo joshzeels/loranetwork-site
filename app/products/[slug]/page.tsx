@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps<"/products/[slug]">
   const name = productDisplayName(product.sku);
   const definition = getProductGuidance(product.sku)?.definition ?? productDefinition(product);
   const specification = specificationItems(product.specification).slice(0, 2).join("; ");
-  const description = sentenceAwareDescription([definition, specification ? `Key catalogue details: ${specification}.` : "", "View public pricing in ZAR."]);
+  const description = sentenceAwareDescription([definition, specification ? `Key details: ${specification}.` : "", "View public pricing in ZAR."]);
   const image = getImageForProduct(product.sku);
   const displayImagePath = getDisplayImagePath(product, image ?? undefined);
   return { title: `${name}: ${productApplicationLabel(product.application)}`, description, alternates: { canonical: `/products/${product.slug}` }, openGraph: { type: "website", title: `${name} | LoRa Network`, description, url: `/products/${product.slug}`, images: displayImagePath ? [{ url: displayImagePath, alt: name }] : undefined } };
