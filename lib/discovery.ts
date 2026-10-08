@@ -33,6 +33,7 @@ export type BuyingGuide = {
   comparisonProductSlugs?: string[];
   relatedGuideSlugs?: string[];
   decisionResource?: {
+    heading: string;
     sections: Array<{ title: string; paragraphs: string[] }>;
     table: { caption: string; headers: string[]; rows: string[][] };
     questions: Array<{ question: string; answer: string }>;

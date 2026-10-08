@@ -10,7 +10,7 @@ for (const name of [".env", ".env.local"]) {
 type Product = { sku: string; slug: string; application: string; iotInterface: string };
 type Facet = { slug: string; value: string };
 type Family = { slug: string; skuPrefix: string };
-type Guide = { slug: string; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[] };
+type Guide = { slug: string; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[]; decisionResource?: { relatedLinks: Array<{ href: string }> } };
 
 const catalogue = JSON.parse(readFileSync(resolve(root, "data", "dragino-products.json"), "utf8")) as { products: Product[] };
 const discovery = JSON.parse(readFileSync(resolve(root, "data", "discovery-content.json"), "utf8")) as { indexableApplications: string[]; indexableInterfaces: string[]; families: Family[]; guides: Guide[] };
@@ -69,6 +69,7 @@ for (const guide of discovery.guides) {
   check(guide.applicationValues.every((value) => catalogue.products.some((product) => normalise(product.application) === normalise(value))), `Guide ${guide.slug} references an unknown application.`);
   check(guide.relatedFamilySlugs.every((slug) => discovery.families.some((family) => family.slug === slug)), `Guide ${guide.slug} references an unknown family.`);
   check((guide.relatedGuideSlugs ?? []).every((slug) => discovery.guides.some((candidate) => candidate.slug === slug)), `Guide ${guide.slug} references an unknown guide.`);
+  check((guide.decisionResource?.relatedLinks ?? []).every((link) => knownRoutes.has(link.href)), `Guide ${guide.slug} references an unknown internal link.`);
 }
 
 for (const file of sourceFiles(resolve(root, "app")).concat(sourceFiles(resolve(root, "components")))) {

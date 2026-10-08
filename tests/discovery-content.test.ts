@@ -9,7 +9,7 @@ const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json"
   indexableApplications: string[];
   indexableInterfaces: string[];
   applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string }>;
-  guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[]; decisionResource?: { sections: Array<{ title: string; paragraphs: string[] }>; questions: Array<{ question: string; answer: string }> } }>;
+  guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[]; decisionResource?: { heading: string; sections: Array<{ title: string; paragraphs: string[] }>; table: { headers: string[]; rows: string[][] }; questions: Array<{ question: string; answer: string }>; relatedLinks: Array<{ href: string; label: string }> } }>;
   families: Array<{ slug: string }>;
 };
 
@@ -221,6 +221,31 @@ test("connectivity decision guide is discoverable and uses bounded, customer-fac
   assert.match(copy, /gateway backhaul/i);
   assert.match(copy, /NB-IoT.*not an active connectivity group/i);
   assert.doesNotMatch(copy, /catalogue|source specification|verified source|according to manufacturer|catalogue row|recorded application|FAQPage|â€”|(?<!-)--(?!-)/i);
+});
+
+test("water, temperature and TrackerD guides provide bounded decision support and valid internal links", () => {
+  const getDecisionGuide = (slug: string) => {
+    const guide = content.guides.find((item) => item.slug === slug);
+    assert.ok(guide);
+    const decisionResource = guide.decisionResource;
+    assert.ok(decisionResource);
+    assert.ok(decisionResource.sections.length >= 3);
+    assert.ok(decisionResource.table.rows.length >= 3);
+    assert.ok(decisionResource.questions.length >= 3);
+    assert.ok(decisionResource.relatedLinks.every((link) => link.href.startsWith("/")));
+    return { guide, decisionResource };
+  };
+
+  const water = getDecisionGuide("choose-water-monitoring-device");
+  const temperature = getDecisionGuide("choose-temperature-sensor");
+  const tracker = getDecisionGuide("choose-iot-tracker");
+  const waterCopy = [water.guide.question, water.guide.answerTemplate, water.guide.differenceSummary, ...water.decisionResource.sections.flatMap((section) => section.paragraphs), ...water.decisionResource.table.rows.flat()].join(" ");
+  const temperatureCopy = [temperature.guide.question, temperature.guide.answerTemplate, temperature.guide.differenceSummary, ...temperature.decisionResource.sections.flatMap((section) => section.paragraphs), ...temperature.decisionResource.table.rows.flat()].join(" ");
+  const trackerCopy = [tracker.guide.question, tracker.guide.answerTemplate, tracker.guide.differenceSummary, ...tracker.decisionResource.sections.flatMap((section) => section.paragraphs), ...tracker.decisionResource.table.rows.flat()].join(" ");
+  assert.match(waterCopy, /SW3L|DDS|WQS/);
+  assert.match(temperatureCopy, /S31B|S31|D20S/);
+  assert.match(trackerCopy, /GNSS|LoRaWAN|3-axis accelerometer/);
+  assert.doesNotMatch(`${waterCopy} ${temperatureCopy} ${trackerCopy}`, /catalogue|source specification|technical source|verified source|recorded application|catalogue row|manufacturer lists|FAQPage|\bbest\b|\bultimate\b|\bperfect\b|\bfuture-proof\b|â€”|(?<!-)--(?!-)/i);
 });
 
 test("guided application family overlap uses customer-friendly punctuation", () => {
