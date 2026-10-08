@@ -31,6 +31,13 @@ export type BuyingGuide = {
   relatedFamilySlugs: string[];
   verifiedDocumentationOnly?: boolean;
   comparisonProductSlugs?: string[];
+  relatedGuideSlugs?: string[];
+  decisionResource?: {
+    sections: Array<{ title: string; paragraphs: string[] }>;
+    table: { caption: string; headers: string[]; rows: string[][] };
+    questions: Array<{ question: string; answer: string }>;
+    relatedLinks: Array<{ href: string; label: string }>;
+  };
 };
 
 export type ApplicationGuidance = {

@@ -8,13 +8,15 @@ const sitemap = readFileSync(new URL("../app/sitemap.ts", import.meta.url), "utf
 const robots = readFileSync(new URL("../app/robots.ts", import.meta.url), "utf8");
 const nextConfig = readFileSync(new URL("../next.config.ts", import.meta.url), "utf8");
 const linkAudit = readFileSync(new URL("../scripts/audit-internal-links.ts", import.meta.url), "utf8");
+const guidePage = readFileSync(new URL("../app/guides/[slug]/page.tsx", import.meta.url), "utf8");
 
-test("current internal route inputs are unique and produce the expected 492 sitemap URLs", () => {
+test("current internal route inputs are unique and produce the expected 493 sitemap URLs", () => {
   assert.equal(catalogue.products.length, 448);
   assert.equal(new Set(catalogue.products.map((product) => product.sku)).size, 448);
   assert.equal(new Set(catalogue.products.map((product) => product.slug)).size, 448);
   const sitemapCount = 10 + discovery.indexableApplications.length + discovery.indexableInterfaces.length + discovery.families.length + discovery.guides.length + catalogue.products.length;
-  assert.equal(sitemapCount, 492);
+  assert.equal(discovery.guides.length, 7);
+  assert.equal(sitemapCount, 493);
 });
 
 test("sitemap and robots use the shared site origin and exclude comparison URLs", () => {
@@ -24,4 +26,12 @@ test("sitemap and robots use the shared site origin and exclude comparison URLs"
   assert.match(nextConfig, /NEXT_PUBLIC_SITE_URL/);
   assert.match(linkAudit, /https:\/\/loranetwork\.co\.za/);
   assert.match(linkAudit, /Duplicate sitemap URLs detected/);
+});
+
+test("connectivity decision guide is generated through the guide registry without FAQPage schema", () => {
+  assert.ok(discovery.guides.some((guide) => guide.slug === "choosing-iot-connectivity"));
+  assert.match(sitemap, /buyingGuides\.map/);
+  assert.match(guidePage, /"@type": "Article"/);
+  assert.match(guidePage, /"@type": "BreadcrumbList"/);
+  assert.doesNotMatch(guidePage, /FAQPage/);
 });

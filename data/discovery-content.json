@@ -196,7 +196,8 @@
         "Confirm regional frequency, power, package information and price for the exact SKU before ordering."
       ],
       "relatedFamilySlugs": [],
-      "comparisonProductSlugs": ["lps8n", "lps8v2", "ms48-lr", "dlos8n"]
+      "comparisonProductSlugs": ["lps8n", "lps8v2", "ms48-lr", "dlos8n"],
+      "relatedGuideSlugs": ["choosing-iot-connectivity"]
     },
     {
       "slug": "choose-water-monitoring-device",
@@ -232,7 +233,8 @@
       "considerations": ["Confirm that RS485 or Modbus appears explicitly in the product details.", "Distinguish the device's IoT connectivity from its wired sensor or equipment interface.", "Compare exact specification and package information where shown.", "Check wiring, protocol and register requirements before choosing."],
       "differenceSummary": "RS485 is a physical communication interface, while Modbus is a protocol that can use an RS485 link. An RS485 or Modbus reference alone does not prove every implementation detail of the other.",
       "decisionPath": ["Confirm whether the project requires RS485, Modbus or both.", "Keep only products whose details explicitly state the required term.", "Compare their IoT connectivity and confirm wiring and protocol details before choosing."],
-      "relatedFamilySlugs": ["rs485", "sn50v3"]
+      "relatedFamilySlugs": ["rs485", "sn50v3"],
+      "relatedGuideSlugs": ["choosing-iot-connectivity"]
     },
     {
       "slug": "choose-iot-tracker",
@@ -245,6 +247,57 @@
       "differenceSummary": "The two TrackerD models can be compared by exact SKU, specification, connectivity and public ZAR price. Only differences shown in those fields are established here.",
       "decisionPath": ["Compare the two product specifications.", "Confirm which connectivity option fits the project.", "Use the exact SKU when requesting any missing technical detail."],
       "relatedFamilySlugs": ["trackerd"]
+    },
+    {
+      "slug": "choosing-iot-connectivity",
+      "title": "Choosing IoT Connectivity for Devices and Gateways",
+      "question": "How should I choose IoT connectivity for a device or gateway?",
+      "answerTemplate": "Choose connectivity in three layers: the sensor or equipment interface, the device uplink, and the gateway backhaul. RS485 and Modbus describe local device communication, while LoRaWAN and LTE CAT 1 are connectivity options shown on different products. A LoRaWAN gateway can also need an IP backhaul path such as Wi-Fi, Ethernet or cellular where its exact product details state it.",
+      "applicationValues": ["Gateway: LoRaWAN"],
+      "searchTerms": ["RS485", "Modbus"],
+      "considerations": ["Identify the local sensor or equipment interface first, such as RS485 or Modbus where it is explicitly required.", "Choose the device uplink separately, using the exact SKU to confirm LoRaWAN or LTE CAT 1 where shown.", "For a LoRaWAN deployment, confirm whether a suitable gateway and network are available at the intended site.", "For a gateway, confirm the required upstream backhaul path, such as Wi-Fi, Ethernet or cellular, only where the exact gateway details state it.", "Confirm the deployment site can support the selected network path before ordering."],
+      "differenceSummary": "RS485 and Modbus are not alternatives to LoRaWAN or cellular connectivity. RS485 is a physical communication interface, while Modbus is a protocol that can use an RS485 link. LoRaWAN and LTE CAT 1 describe different IoT connectivity options. Gateway backhaul is the upstream connection a LoRaWAN gateway uses to reach network services.",
+      "decisionPath": ["List the sensor or equipment interface that must be connected.", "Choose a product whose exact details state that interface and the required IoT connectivity.", "Decide whether the device connects through a LoRaWAN gateway or uses cellular connectivity directly where shown.", "If using a gateway, confirm its stated backhaul option and the available network at the deployment site.", "Use the exact SKU to confirm regional configuration, power and project-specific requirements before ordering."],
+      "relatedFamilySlugs": ["rs485"],
+      "comparisonProductSlugs": ["lps8n", "lps8v2", "ms48-lr", "dlos8n"],
+      "relatedGuideSlugs": ["choose-lorawan-gateway", "rs485-modbus-iot-devices"],
+      "decisionResource": {
+        "sections": [
+          {"title": "What are you actually choosing?", "paragraphs": ["Start by separating three decisions. The local device interface is how a sensor or piece of equipment connects, such as RS485. The device uplink is how an IoT device sends data, such as LoRaWAN or LTE CAT 1 when the exact product details state it. Gateway backhaul is the upstream path a LoRaWAN gateway uses to reach network services.", "Keeping these layers separate avoids treating an equipment interface, an IoT uplink and a gateway's own network connection as the same choice."]},
+          {"title": "When LoRaWAN makes sense", "paragraphs": ["LoRaWAN is the IoT connectivity option shown across the site's LoRaWAN products. It is used for IoT deployments that exchange relatively small amounts of data and need wide-area or difficult indoor coverage. Confirm that a suitable LoRaWAN network and the correct regional configuration are available for the project.", "A LoRaWAN device uses a suitable LoRaWAN gateway and network. The gateway may then use a separate backhaul connection, depending on its stated features and the deployment."]},
+          {"title": "When cellular connectivity makes sense", "paragraphs": ["LTE CAT 1 is the cellular IoT connectivity option represented by the site's active connectivity page. Use it only where the exact product details state LTE CAT 1, and confirm supported mobile service at the intended deployment site.", "NB-IoT and LTE-M are cellular IoT terms buyers may encounter, but they are not separate active connectivity groups on this site. Do not assume an LTE CAT 1 product supports either one. Confirm the exact SKU before selecting any cellular technology."]},
+          {"title": "Wi-Fi, Ethernet and gateway backhaul", "paragraphs": ["Wi-Fi and Ethernet appear in the product details of selected LoRaWAN gateways as IP backhaul options. They describe how the gateway can connect upstream, not how every sensor communicates with the gateway.", "Use Ethernet on a LoRaWAN gateway when the exact gateway states Ethernet and the site can provide that connection. Use Wi-Fi only where the exact gateway states Wi-Fi. Some gateway variants also state cellular backhaul; confirm the exact model and deployment requirements."]},
+          {"title": "RS485 and Modbus in an IoT deployment", "paragraphs": ["RS485 is a physical communication interface. Modbus is a protocol that can use an RS485 link. Neither is the same as LoRaWAN or cellular connectivity.", "An RS485 or Modbus device can form part of an IoT deployment when a selected node or gateway explicitly states the required interface and its onward connectivity. Check wiring, protocol and register requirements before choosing."]}
+        ],
+        "table": {
+          "caption": "Use the exact product details to confirm each role and any supported feature.",
+          "headers": ["Technology or interface", "Typical role", "Gateway relationship", "Network path to confirm", "Common decision point"],
+          "rows": [
+            ["LoRaWAN", "IoT device uplink", "Typically uses a suitable LoRaWAN gateway and network", "Gateway and network availability", "Distributed sensor deployments"],
+            ["LTE CAT 1", "Cellular IoT device connectivity where stated", "Does not use a LoRaWAN gateway for its cellular link", "Supported mobile service at the site", "Direct cellular IoT connectivity"],
+            ["NB-IoT or LTE-M", "Cellular IoT terms to confirm for an exact product", "Depends on the exact product and deployment", "Exact SKU and site service", "Do not infer support from LTE CAT 1"],
+            ["Wi-Fi", "Gateway IP backhaul where stated", "May connect a gateway upstream", "Available Wi-Fi and exact gateway feature", "Gateway backhaul"],
+            ["Ethernet", "Gateway IP backhaul where stated", "May connect a gateway upstream", "Available Ethernet and exact gateway feature", "Gateway backhaul"],
+            ["RS485", "Local wired device interface", "May be connected through a selected node or gateway", "Wiring and the selected product's onward connectivity", "Sensor or equipment connection"],
+            ["Modbus", "Local equipment protocol", "May use an RS485 link and a selected node or gateway", "Protocol, registers and the selected product's onward connectivity", "Equipment integration"]
+          ]
+        },
+        "questions": [
+          {"question": "What is the difference between LoRaWAN and NB-IoT?", "answer": "They are different connectivity approaches. This site has active product sections for LoRaWAN and LTE CAT 1. NB-IoT is not an active connectivity group here, so confirm it only when an exact product states it."},
+          {"question": "Is RS485 the same as LoRaWAN?", "answer": "No. RS485 is a local physical communication interface. LoRaWAN is an IoT connectivity option. A selected node or gateway can connect those layers only when its exact product details state the required interface and connectivity."},
+          {"question": "Does Modbus require a gateway?", "answer": "Not necessarily. Modbus is a protocol, and whether a gateway is needed depends on the equipment and the required onward connection. Confirm the selected product's stated interface, protocol and connectivity."},
+          {"question": "When would I use Ethernet on a LoRaWAN gateway?", "answer": "Use Ethernet when the selected gateway states Ethernet as a backhaul option and the site can provide that connection. Ethernet is the gateway's upstream path, not a claim about every connected device."},
+          {"question": "What is gateway backhaul?", "answer": "Gateway backhaul is the upstream connection a LoRaWAN gateway uses to reach network services. On selected gateway models, the stated options can include Wi-Fi, Ethernet or cellular."},
+          {"question": "Should I choose LoRaWAN or cellular IoT?", "answer": "Start with the connectivity path the site can support, then compare only products whose exact details state the required option. For LoRaWAN, confirm a suitable network and gateway. For cellular options, confirm supported service at the deployment site."}
+        ],
+        "relatedLinks": [
+          {"href": "/connectivity/lorawan", "label": "Explore LoRaWAN products"},
+          {"href": "/connectivity/lte-cat-1", "label": "Explore LTE CAT 1 products"},
+          {"href": "/guides/choose-lorawan-gateway", "label": "Read the LoRaWAN gateway guide"},
+          {"href": "/guides/rs485-modbus-iot-devices", "label": "Read the RS485 and Modbus guide"},
+          {"href": "/families/rs485", "label": "Compare RS485 models"}
+        ]
+      }
     },
     {
       "slug": "compare-dds-distance-sensors",

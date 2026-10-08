@@ -9,7 +9,7 @@ const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json"
   indexableApplications: string[];
   indexableInterfaces: string[];
   applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string }>;
-  guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; applicationValues: string[]; relatedFamilySlugs: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[] }>;
+  guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[]; decisionResource?: { sections: Array<{ title: string; paragraphs: string[] }>; questions: Array<{ question: string; answer: string }> } }>;
   families: Array<{ slug: string }>;
 };
 
@@ -203,6 +203,24 @@ test("public application and buying-guide copy avoids internal catalogue and evi
     `${applicationCopy} ${guideCopy}`,
     /\bcatalogue\b|source specification|catalogue mention|recorded application|supplied specification|technical source|catalogue row|verified|source record|documentation record|technical documentation/i,
   );
+});
+
+test("connectivity decision guide is discoverable and uses bounded, customer-facing guidance", () => {
+  const guide = content.guides.find((item) => item.slug === "choosing-iot-connectivity");
+  assert.ok(guide);
+  assert.equal(content.guides.filter((item) => item.slug === guide.slug).length, 1);
+  assert.ok(guide.applicationValues.includes("Gateway: LoRaWAN"));
+  assert.ok(guide.searchTerms.includes("RS485"));
+  assert.ok(guide.searchTerms.includes("Modbus"));
+  assert.ok(guide.relatedFamilySlugs.includes("rs485"));
+  assert.deepEqual(guide.relatedGuideSlugs, ["choose-lorawan-gateway", "rs485-modbus-iot-devices"]);
+  assert.ok(guide.decisionResource);
+  const copy = [guide.question, guide.answerTemplate, ...guide.considerations, guide.differenceSummary, ...guide.decisionPath, ...guide.decisionResource.sections.flatMap((section) => [section.title, ...section.paragraphs]), ...guide.decisionResource.questions.flatMap((item) => [item.question, item.answer])].join(" ");
+  assert.match(copy, /RS485 is a physical communication interface/i);
+  assert.match(copy, /Modbus is a protocol/i);
+  assert.match(copy, /gateway backhaul/i);
+  assert.match(copy, /NB-IoT.*not an active connectivity group/i);
+  assert.doesNotMatch(copy, /catalogue|source specification|verified source|according to manufacturer|catalogue row|recorded application|FAQPage|â€”|(?<!-)--(?!-)/i);
 });
 
 test("guided application family overlap uses customer-friendly punctuation", () => {
