@@ -4,7 +4,7 @@ import test from "node:test";
 import { displayValue, facetSlug, facetValue, productApplicationLabel, productConnectivityLabel, productDefinition, productDisplayName, productFit, productFullName, productSummary, sentenceAwareDescription, specificationItems } from "../lib/product-presentation.ts";
 
 const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<Record<string, string>> };
-const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string }> };
+const documentation = JSON.parse(readFileSync(new URL("../data/product-documentation.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; status: string; sourceUrl: string; evidence: string }> };
 const guidance = JSON.parse(readFileSync(new URL("../data/product-guidance.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; definition?: string; uses?: string; suitability?: string; buyerChecks?: string[]; sourceUrl?: string; evidenceLevel: string }> };
 const productPage = readFileSync(new URL("../app/products/[slug]/page.tsx", import.meta.url), "utf8");
 const familyPage = readFileSync(new URL("../app/families/[slug]/page.tsx", import.meta.url), "utf8");
@@ -117,7 +117,7 @@ test("provides verified DDS75-LB guidance without changing catalogue data", () =
 });
 
 test("provides exact-source guidance for the selected representative products", () => {
-  const selected = ["SW3L-004", "S31-LB", "S31B-LB", "D20-LB", "D20S-LB", "DDS20-LB", "DDS45-LB", "SDI-12-LB", "PS-LB-Dxx", "RS485-LN", "WQS-LB", "WSC2-L", "TrackerD", "LPS8N"];
+  const selected = ["SW3L-004", "S31-LB", "S31B-LB", "D20-LB", "D20S-LB", "DDS20-LB", "DDS45-LB", "SDI-12-LB", "PS-LB-Dxx", "RS485-LN", "WQS-LB", "WSC2-L", "TrackerD", "LPS8N", "TrackerD-LS", "WSC2-Compact-LS", "DLOS8N-EC25"];
   for (const sku of selected) {
     const record = guidance.products.find((item) => item.sku === sku);
     assert.ok(record, sku);
@@ -125,9 +125,27 @@ test("provides exact-source guidance for the selected representative products", 
     assert.ok(record.definition, sku);
     assert.ok(record.suitability, sku);
     assert.ok(record.buyerChecks && record.buyerChecks.length >= 3, sku);
-    assert.match(record.sourceUrl ?? "", /^https:\/\/www\.dragino\.com\//, sku);
+    assert.match(record.sourceUrl ?? "", /^https:\/\/(?:www\.)?(?:wiki\.)?dragino\.com\//, sku);
   }
   assert.equal(guidance.products.length, selected.length + 1);
+});
+
+test("uses only the supplied exact-source gateway and weather-station reconciliation", () => {
+  const exact = ["WSC2-Compact-LS", "TrackerD-LS", "DLOS8N-EC25"];
+  for (const sku of exact) {
+    const record = documentation.products.find((item) => item.sku === sku);
+    assert.equal(record?.status, "EXACT_PRODUCT_SOURCE", sku);
+  }
+  assert.match(documentation.products.find((item) => item.sku === "WSC2-Compact-LS")?.sourceUrl ?? "", /wsc2-compact-ls/);
+  assert.match(documentation.products.find((item) => item.sku === "DLOS8N-EC25")?.sourceUrl ?? "", /outdoor-gateways\/dlos8n/);
+
+  for (const sku of ["LPS8N-EC25", "LPS8v2-EC25", "LG308N-EC25", "MS48-LR-EC25"]) {
+    const record = documentation.products.find((item) => item.sku === sku);
+    assert.equal(record?.status, "NO_VERIFIED_SOURCE", sku);
+    assert.equal(guidance.products.find((item) => item.sku === sku), undefined, sku);
+  }
+  assert.equal(documentation.products.find((item) => item.sku === "S31B-LB2")?.status, "FAMILY_SOURCE");
+  for (const sku of ["SW3L-LB2-004", "SW3L-LB2-006", "SW3L-LB2-010", "SW3L-LB2-020"]) assert.equal(documentation.products.find((item) => item.sku === sku)?.status, "AMBIGUOUS", sku);
 });
 
 test("keeps supplier provenance language out of public guidance fields", () => {

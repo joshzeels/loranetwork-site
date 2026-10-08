@@ -1499,10 +1499,10 @@
     {
       "sku": "WSC2-Compact-LS",
       "slug": "wsc2-compact-ls",
-      "status": "FAMILY_SOURCE",
-      "sourceUrl": "https://www.dragino.com/products/agriculture-weather-station/item/339-wsc2-l.html",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/weather-stations/wsc2-compact-ls/",
       "matchedFamily": "WSC2",
-      "evidence": "The verified WSC2 family has one official source for this exact catalogue connectivity value. Shared WSC2 SKU base and manufacturer family naming recorded by the existing product-image audit.",
+      "evidence": "Official Dragino documentation explicitly identifies WSC2-Compact-LS and its LoRaWAN weather-station operation.",
       "presentInOfficialPageIndex": true
     },
     {
@@ -3749,11 +3749,11 @@
     {
       "sku": "DLOS8N-EC25",
       "slug": "dlos8n-ec25",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-Gateway/outdoor-gateways/dlos8n/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly identifies the DLOS8N-EC25 shell label and EC25 cellular module option.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "PG1302-RPI",

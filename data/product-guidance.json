@@ -180,6 +180,48 @@
       "buyerChecks": ["Confirm that the stated GNSS and movement information matches the project need.", "Confirm a suitable LoRaWAN network and regional configuration.", "Check the stated 1000mAh Li-ion battery arrangement against the deployment."],
       "sourceUrl": "https://www.dragino.com/products/tracker/item/234-trackerd.html",
       "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "TrackerD-LS",
+      "definition": "TrackerD-LS is a solar-powered LoRaWAN asset tracker with GNSS, Bluetooth and a built-in 3-axis accelerometer.",
+      "uses": "TrackerD-LS is used where a project needs tracking or location information through LoRaWAN.",
+      "suitability": "TrackerD-LS suits location or movement-tracking projects that can use LoRaWAN and the stated solar-panel and 3000mAh Li-ion battery arrangement.",
+      "buyerChecks": [
+        "Confirm that the stated GNSS and movement information matches the project need.",
+        "Confirm a suitable LoRaWAN network and regional configuration.",
+        "Check that the solar panel, 3000mAh Li-ion battery and USB charging arrangement suit the deployment.",
+        "Confirm any reporting, positioning or installation requirement not stated for the exact model."
+      ],
+      "sourceUrl": "https://www.dragino.com/products/tracker/item/316-trackerd-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "WSC2-Compact-LS",
+      "definition": "WSC2-Compact-LS is a LoRaWAN weather-station kit with a temperature, humidity and air-pressure sensor, illumination sensor and rain gauge.",
+      "uses": "WSC2-Compact-LS is used where a project needs the stated weather measurements through LoRaWAN.",
+      "suitability": "WSC2-Compact-LS suits weather-monitoring projects that need its stated sensor kit and can use LoRaWAN connectivity.",
+      "buyerChecks": [
+        "Confirm that the required weather measurements are included in the stated sensor kit.",
+        "Confirm a suitable LoRaWAN network and regional configuration.",
+        "Check the rain-gauge, sensor and installation arrangement against the deployment.",
+        "Confirm any project-specific environmental or power requirement before ordering."
+      ],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/weather-stations/wsc2-compact-ls/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "DLOS8N-EC25",
+      "definition": "DLOS8N-EC25 is an outdoor LoRaWAN gateway with an EC25 cellular module.",
+      "uses": "DLOS8N-EC25 bridges a LoRa wireless network to an IP network through WiFi, Ethernet or cellular connectivity.",
+      "suitability": "DLOS8N-EC25 suits outdoor LoRaWAN gateway deployments that need WiFi, Ethernet or EC25 cellular backhaul, with cellular available as a primary or backup internet connection.",
+      "buyerChecks": [
+        "Confirm that an outdoor LoRaWAN gateway is appropriate for the deployment.",
+        "Confirm whether Ethernet, WiFi or cellular provides the required internet backhaul.",
+        "Confirm the required frequency band and regional EC25 modem option.",
+        "Check the SIM, power, installation and network requirements before ordering."
+      ],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-Gateway/outdoor-gateways/dlos8n/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
     }
   ]
 }
