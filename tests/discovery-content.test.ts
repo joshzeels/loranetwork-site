@@ -10,7 +10,7 @@ const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json"
   indexableInterfaces: string[];
   applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string }>;
   guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[]; decisionResource?: { heading: string; sections: Array<{ title: string; paragraphs: string[] }>; table: { headers: string[]; rows: string[][] }; questions: Array<{ question: string; answer: string }>; relatedLinks: Array<{ href: string; label: string }> } }>;
-  families: Array<{ slug: string }>;
+  families: Array<{ slug: string; name: string; selectionPath: string[] }>;
 };
 
 const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json", import.meta.url), "utf8")) as { products: Array<{ sku: string; slug: string; application: string; iotInterface: string; specification: string }> };
@@ -20,6 +20,18 @@ const facetDetail = readFileSync(new URL("../components/facet-detail.tsx", impor
 test("every application-guidance entry resolves to a real indexed application facet", () => {
   for (const value of Object.keys(content.applicationGuidance)) {
     assert.ok(content.indexableApplications.includes(value), `"${value}" has guidance but is not an indexable application facet`);
+  }
+});
+
+test("every curated product family has a concise, family-specific selection path", () => {
+  assert.equal(content.families.length, 7);
+  for (const family of content.families) {
+    assert.equal(family.selectionPath.length, 3, family.slug);
+    assert.equal(new Set(family.selectionPath).size, family.selectionPath.length, family.slug);
+    for (const step of family.selectionPath) {
+      assert.ok(step.length > 40, `${family.slug} selection step is too short`);
+      assert.doesNotMatch(step, /manufacturer|official|verified|source|documentation|datasheet|manual/i, family.slug);
+    }
   }
 });
 

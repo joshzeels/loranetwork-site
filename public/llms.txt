@@ -1,0 +1,22 @@
+# LoRa Network
+
+> A compact map of LoRa Network's public catalogue and buyer guidance. This experimental file does not guarantee indexing, ranking or citation. Use the canonical pages below for current information.
+
+LoRa Network is a South African reseller website for IoT and LoRaWAN products. Product pages identify the manufacturer, exact SKU, supplied application, listed connectivity, public ZAR price and available technical details.
+
+## Primary pages
+
+- [Product catalogue](https://loranetwork.co.za/products): Browse products by application, connectivity, specification and price.
+- [Applications](https://loranetwork.co.za/applications): Product collections with selection guidance for common IoT applications.
+- [Connectivity](https://loranetwork.co.za/connectivity): Plain-language LoRaWAN and LTE CAT 1 guidance.
+- [Product families](https://loranetwork.co.za/families): Side-by-side comparisons of related exact SKUs.
+- [Buying guides](https://loranetwork.co.za/guides): Decision resources for gateways, water monitoring, temperature sensing, RS485 and Modbus, tracking and connectivity.
+- [About LoRa Network](https://loranetwork.co.za/about)
+- [Product enquiries](https://loranetwork.co.za/contact)
+
+## Catalogue notes
+
+- Public prices are shown in South African rand when available.
+- Products without a public price are marked Contact for pricing.
+- Stock, delivery and project-specific technical requirements are confirmed through an enquiry.
+- Blank catalogue values remain blank. Do not infer unlisted specifications or compatibility.

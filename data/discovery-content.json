@@ -128,49 +128,56 @@
       "name": "SW3L",
       "skuPrefix": "SW3L",
       "purpose": "Compare SW3L models by connectivity, specification, package information and price.",
-      "evidence": "Shared SW3L SKU base and manufacturer family naming recorded by the existing product-image audit."
+      "evidence": "Shared SW3L SKU base and manufacturer family naming recorded by the existing product-image audit.",
+      "selectionPath": ["Start with the water-flow requirement and retain only models whose listed specification fits it.", "Compare the connectivity shown for each remaining exact SKU.", "Check package information and public ZAR price, then confirm any installation requirement not shown in the product details."]
     },
     {
       "slug": "s31b",
       "name": "S31B",
       "skuPrefix": "S31B",
       "purpose": "Compare S31B temperature and humidity sensor models by specification, connectivity and price.",
-      "evidence": "Shared S31B SKU base and manufacturer family naming recorded by the existing product-image audit."
+      "evidence": "Shared S31B SKU base and manufacturer family naming recorded by the existing product-image audit.",
+      "selectionPath": ["Confirm that the project needs both temperature and humidity sensing.", "Compare the stated specification and connectivity for each exact SKU.", "Use the product details to confirm any range, installation or environmental requirement before requesting a quote."]
     },
     {
       "slug": "sn50v3",
       "name": "SN50v3",
       "skuPrefix": "SN50V3",
       "purpose": "Compare SN50v3 generic-node variants and their connectivity options.",
-      "evidence": "Shared SN50v3 SKU base and common official family pages recorded by the existing product-image audit."
+      "evidence": "Shared SN50v3 SKU base and common official family pages recorded by the existing product-image audit.",
+      "selectionPath": ["Define the node function and any interface requirement for the project.", "Keep only models whose listed specification and connectivity match that requirement.", "Confirm wiring, power and installation details from the exact product before choosing a SKU."]
     },
     {
       "slug": "rs485",
       "name": "RS485",
       "skuPrefix": "RS485",
       "purpose": "Compare RS485 models by connectivity, specification and price.",
-      "evidence": "Shared RS485 SKU base and family naming in the catalogue."
+      "evidence": "Shared RS485 SKU base and family naming in the catalogue.",
+      "selectionPath": ["Confirm that the project needs an RS485 product or interface.", "Compare the exact SKU's listed specification and IoT connectivity separately.", "Check wiring, protocol and installation requirements before requesting a quote."]
     },
     {
       "slug": "wqs",
       "name": "WQS",
       "skuPrefix": "WQS",
       "purpose": "Compare WQS water-quality models by specification, connectivity and price.",
-      "evidence": "Shared WQS SKU base and manufacturer family naming recorded by the existing product-image audit."
+      "evidence": "Shared WQS SKU base and manufacturer family naming recorded by the existing product-image audit.",
+      "selectionPath": ["Start with the water-quality parameters the project needs to measure.", "Compare the listed specification and connectivity for suitable exact SKUs.", "Confirm probe, installation and calibration requirements in the selected product details before choosing."]
     },
     {
       "slug": "wsc2",
       "name": "WSC2",
       "skuPrefix": "WSC2",
       "purpose": "Compare WSC2 weather-station models and connectivity options.",
-      "evidence": "Shared WSC2 SKU base and manufacturer family naming recorded by the existing product-image audit."
+      "evidence": "Shared WSC2 SKU base and manufacturer family naming recorded by the existing product-image audit.",
+      "selectionPath": ["Define the weather measurements and sensor arrangement required for the deployment.", "Compare the listed connectivity and specification for each exact WSC2 SKU.", "Confirm sensor compatibility, power and environmental requirements before requesting a quote."]
     },
     {
       "slug": "trackerd",
       "name": "TrackerD",
       "skuPrefix": "TRACKERD",
       "purpose": "Compare the two TrackerD models side by side.",
-      "evidence": "Two exact TrackerD SKU variants with distinct official product pages in the catalogue."
+      "evidence": "Two exact TrackerD SKU variants with distinct official product pages in the catalogue.",
+      "selectionPath": ["Compare the stated capabilities of TrackerD and TrackerD-LS against the project requirement.", "Choose only the connectivity shown for the exact SKU.", "Review the listed power arrangement and any deployment requirement before requesting a quote."]
     }
   ],
   "guides": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T06:56:08.487Z",
+  "generatedAt": "2026-10-08T13:14:11.197Z",
   "policy": "Index only curated pages that answer a distinct buying question from authoritative catalogue facts.",
   "applicationPages": [
     {
@@ -8,7 +8,7 @@
       "sourceProductGroups": [
         "Distance Sensor"
       ],
-      "numberOfProductsRepresented": 233,
+      "numberOfProductsRepresented": 89,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -26,7 +26,7 @@
       "sourceProductGroups": [
         "Temperature Sensor"
       ],
-      "numberOfProductsRepresented": 129,
+      "numberOfProductsRepresented": 56,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -44,7 +44,7 @@
       "sourceProductGroups": [
         "Smart Agriculture"
       ],
-      "numberOfProductsRepresented": 97,
+      "numberOfProductsRepresented": 37,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -62,7 +62,7 @@
       "sourceProductGroups": [
         "Water Flow Sensor"
       ],
-      "numberOfProductsRepresented": 80,
+      "numberOfProductsRepresented": 32,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -80,7 +80,7 @@
       "sourceProductGroups": [
         "Pressure Sensor"
       ],
-      "numberOfProductsRepresented": 57,
+      "numberOfProductsRepresented": 21,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -98,7 +98,7 @@
       "sourceProductGroups": [
         "Temperature & Humidity Sensor"
       ],
-      "numberOfProductsRepresented": 52,
+      "numberOfProductsRepresented": 26,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -116,7 +116,7 @@
       "sourceProductGroups": [
         "Generic Node / RS485"
       ],
-      "numberOfProductsRepresented": 31,
+      "numberOfProductsRepresented": 11,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -134,7 +134,7 @@
       "sourceProductGroups": [
         "Water Quality Measurement"
       ],
-      "numberOfProductsRepresented": 29,
+      "numberOfProductsRepresented": 17,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -152,7 +152,7 @@
       "sourceProductGroups": [
         "Energy Control / Monitoring"
       ],
-      "numberOfProductsRepresented": 26,
+      "numberOfProductsRepresented": 14,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -170,7 +170,7 @@
       "sourceProductGroups": [
         "Water Leak Detect"
       ],
-      "numberOfProductsRepresented": 24,
+      "numberOfProductsRepresented": 12,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -188,7 +188,7 @@
       "sourceProductGroups": [
         "Smart Weather Station"
       ],
-      "numberOfProductsRepresented": 23,
+      "numberOfProductsRepresented": 15,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -206,7 +206,7 @@
       "sourceProductGroups": [
         "Door Sensor"
       ],
-      "numberOfProductsRepresented": 22,
+      "numberOfProductsRepresented": 10,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -224,7 +224,7 @@
       "sourceProductGroups": [
         "Dry Contact / Counting / Interrupt"
       ],
-      "numberOfProductsRepresented": 22,
+      "numberOfProductsRepresented": 9,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -242,7 +242,7 @@
       "sourceProductGroups": [
         "Generic Node"
       ],
-      "numberOfProductsRepresented": 21,
+      "numberOfProductsRepresented": 8,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -260,7 +260,7 @@
       "sourceProductGroups": [
         "Angle Sensor / Tilting"
       ],
-      "numberOfProductsRepresented": 19,
+      "numberOfProductsRepresented": 7,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -278,7 +278,7 @@
       "sourceProductGroups": [
         "Generic Node / Analog"
       ],
-      "numberOfProductsRepresented": 19,
+      "numberOfProductsRepresented": 7,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -292,11 +292,11 @@
     },
     {
       "url": "/applications/gateway-lorawan",
-      "purpose": "Answer which products are listed for the exact Gateway -- LoRaWAN application value and provide factual comparison.",
+      "purpose": "Answer which products are listed for the exact Gateway: LoRaWAN application value and provide factual comparison.",
       "sourceProductGroups": [
-        "Gateway -- LoRaWAN"
+        "Gateway: LoRaWAN"
       ],
-      "numberOfProductsRepresented": 10,
+      "numberOfProductsRepresented": 11,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -314,7 +314,25 @@
       "sourceProductGroups": [
         "Power Outage Monitoring Sensor"
       ],
-      "numberOfProductsRepresented": 7,
+      "numberOfProductsRepresented": 3,
+      "catalogueFactsUsed": [
+        "SKU",
+        "Application",
+        "Specification",
+        "IoT Interface",
+        "Package Dimension (mm)",
+        "Package Weight (g)",
+        "calculated public ZAR price"
+      ],
+      "externalTechnicalSourcesUsed": []
+    },
+    {
+      "url": "/applications/antenna",
+      "purpose": "Answer which products are listed for the exact Antenna application value and provide factual comparison.",
+      "sourceProductGroups": [
+        "Antenna"
+      ],
+      "numberOfProductsRepresented": 3,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -334,7 +352,7 @@
       "sourceProductGroups": [
         "LoRaWAN"
       ],
-      "numberOfProductsRepresented": 205,
+      "numberOfProductsRepresented": 206,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -345,7 +363,7 @@
         "calculated public ZAR price"
       ],
       "externalTechnicalSourcesUsed": [
-        "LoRa Alliance — What is LoRaWAN?: https://lora-alliance.org/resource_hub/what-is-lorawan/"
+        "LoRa Alliance: What is LoRaWAN?: https://lora-alliance.org/resource_hub/what-is-lorawan/"
       ]
     },
     {
@@ -365,98 +383,18 @@
         "calculated public ZAR price"
       ],
       "externalTechnicalSourcesUsed": [
-        "GSMA — Mobile IoT in a 5G Future: https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/wp-content/uploads/2024/10/Mobile-IoT-in-a-5G-Future-Final.pdf"
-      ]
-    },
-    {
-      "url": "/connectivity/nb-iot",
-      "purpose": "Explain NB-IoT with sourced technology context, then identify and compare products carrying that exact interface value.",
-      "sourceProductGroups": [
-        "NB-IoT"
-      ],
-      "numberOfProductsRepresented": 135,
-      "catalogueFactsUsed": [
-        "SKU",
-        "Application",
-        "Specification",
-        "IoT Interface",
-        "Package Dimension (mm)",
-        "Package Weight (g)",
-        "calculated public ZAR price"
-      ],
-      "externalTechnicalSourcesUsed": [
-        "GSMA — Mobile IoT Deployment Guide: https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
-      ]
-    },
-    {
-      "url": "/connectivity/lte-m-and-nb-iot",
-      "purpose": "Explain LTE-M & NB-IoT with sourced technology context, then identify and compare products carrying that exact interface value.",
-      "sourceProductGroups": [
-        "LTE-M & NB-IoT"
-      ],
-      "numberOfProductsRepresented": 131,
-      "catalogueFactsUsed": [
-        "SKU",
-        "Application",
-        "Specification",
-        "IoT Interface",
-        "Package Dimension (mm)",
-        "Package Weight (g)",
-        "calculated public ZAR price"
-      ],
-      "externalTechnicalSourcesUsed": [
-        "GSMA — Mobile IoT Deployment Guide: https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
-      ]
-    },
-    {
-      "url": "/connectivity/lte-m-and-nb-iot-10-years-500mb-data",
-      "purpose": "Explain LTE-M & NB-IoT, 10 years 500MB data with sourced technology context, then identify and compare products carrying that exact interface value.",
-      "sourceProductGroups": [
-        "LTE-M & NB-IoT, 10 years 500MB data"
-      ],
-      "numberOfProductsRepresented": 128,
-      "catalogueFactsUsed": [
-        "SKU",
-        "Application",
-        "Specification",
-        "IoT Interface",
-        "Package Dimension (mm)",
-        "Package Weight (g)",
-        "calculated public ZAR price"
-      ],
-      "externalTechnicalSourcesUsed": [
-        "GSMA — Mobile IoT Deployment Guide: https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
-      ]
-    },
-    {
-      "url": "/connectivity/nb-iot-10-years-500mb-data",
-      "purpose": "Explain NB-IoT, 10 years 500MB data with sourced technology context, then identify and compare products carrying that exact interface value.",
-      "sourceProductGroups": [
-        "NB-IoT, 10 years 500MB data"
-      ],
-      "numberOfProductsRepresented": 128,
-      "catalogueFactsUsed": [
-        "SKU",
-        "Application",
-        "Specification",
-        "IoT Interface",
-        "Package Dimension (mm)",
-        "Package Weight (g)",
-        "calculated public ZAR price"
-      ],
-      "externalTechnicalSourcesUsed": [
-        "GSMA — Mobile IoT Deployment Guide: https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/gsma_resources/mobile-iot-deployment-guide/"
+        "GSMA: Mobile IoT in a 5G Future: https://www.gsma.com/solutions-and-impact/technologies/internet-of-things/wp-content/uploads/2024/10/Mobile-IoT-in-a-5G-Future-Final.pdf"
       ]
     }
   ],
   "productFamilyPages": [
     {
       "url": "/families/sw3l",
-      "purpose": "Compare SW3L catalogue variants by interface, supplied specification, package information and ZAR price.",
+      "purpose": "Compare SW3L models by connectivity, specification, package information and price.",
       "sourceProductGroups": [
         "SW3L"
       ],
-      "numberOfProductsRepresented": 80,
+      "numberOfProductsRepresented": 32,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -470,11 +408,11 @@
     },
     {
       "url": "/families/s31b",
-      "purpose": "Compare S31B temperature and humidity sensor variants using only their supplied catalogue fields.",
+      "purpose": "Compare S31B temperature and humidity sensor models by specification, connectivity and price.",
       "sourceProductGroups": [
         "S31B"
       ],
-      "numberOfProductsRepresented": 23,
+      "numberOfProductsRepresented": 8,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -488,11 +426,11 @@
     },
     {
       "url": "/families/sn50v3",
-      "purpose": "Compare SN50v3 generic-node variants and their listed connectivity options.",
+      "purpose": "Compare SN50v3 generic-node variants and their connectivity options.",
       "sourceProductGroups": [
         "SN50v3"
       ],
-      "numberOfProductsRepresented": 20,
+      "numberOfProductsRepresented": 7,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -506,11 +444,11 @@
     },
     {
       "url": "/families/rs485",
-      "purpose": "Compare RS485 family variants by their exact interface, specification and public ZAR price.",
+      "purpose": "Compare RS485 models by connectivity, specification and price.",
       "sourceProductGroups": [
         "RS485"
       ],
-      "numberOfProductsRepresented": 20,
+      "numberOfProductsRepresented": 8,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -524,11 +462,11 @@
     },
     {
       "url": "/families/wqs",
-      "purpose": "Compare WQS water-quality catalogue variants without inferring unsupported sensor capabilities.",
+      "purpose": "Compare WQS water-quality models by specification, connectivity and price.",
       "sourceProductGroups": [
         "WQS"
       ],
-      "numberOfProductsRepresented": 19,
+      "numberOfProductsRepresented": 7,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -542,11 +480,11 @@
     },
     {
       "url": "/families/wsc2",
-      "purpose": "Compare WSC2 weather-station catalogue variants and listed interfaces.",
+      "purpose": "Compare WSC2 weather-station models and connectivity options.",
       "sourceProductGroups": [
         "WSC2"
       ],
-      "numberOfProductsRepresented": 10,
+      "numberOfProductsRepresented": 2,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -560,7 +498,7 @@
     },
     {
       "url": "/families/trackerd",
-      "purpose": "Compare the two TrackerD catalogue variants side by side.",
+      "purpose": "Compare the two TrackerD models side by side.",
       "sourceProductGroups": [
         "TrackerD"
       ],
@@ -582,9 +520,9 @@
       "url": "/guides/choose-lorawan-gateway",
       "purpose": "How to Choose a LoRaWAN Gateway",
       "sourceProductGroups": [
-        "Gateway -- LoRaWAN"
+        "Gateway: LoRaWAN"
       ],
-      "numberOfProductsRepresented": 10,
+      "numberOfProductsRepresented": 11,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -604,7 +542,7 @@
         "Water Quality Measurement",
         "Water Leak Detect"
       ],
-      "numberOfProductsRepresented": 133,
+      "numberOfProductsRepresented": 61,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -623,7 +561,7 @@
         "Temperature Sensor",
         "Temperature & Humidity Sensor"
       ],
-      "numberOfProductsRepresented": 181,
+      "numberOfProductsRepresented": 82,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -642,7 +580,7 @@
         "rs485",
         "modbus"
       ],
-      "numberOfProductsRepresented": 48,
+      "numberOfProductsRepresented": 24,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -661,6 +599,46 @@
         "Tracker"
       ],
       "numberOfProductsRepresented": 2,
+      "catalogueFactsUsed": [
+        "SKU",
+        "Application",
+        "Specification",
+        "IoT Interface",
+        "Package Dimension (mm)",
+        "Package Weight (g)",
+        "calculated public ZAR price"
+      ],
+      "externalTechnicalSourcesUsed": []
+    },
+    {
+      "url": "/guides/choosing-iot-connectivity",
+      "purpose": "Choosing IoT Connectivity for Devices and Gateways",
+      "sourceProductGroups": [
+        "Gateway: LoRaWAN",
+        "RS485",
+        "Modbus"
+      ],
+      "numberOfProductsRepresented": 33,
+      "catalogueFactsUsed": [
+        "SKU",
+        "Application",
+        "Specification",
+        "IoT Interface",
+        "Package Dimension (mm)",
+        "Package Weight (g)",
+        "calculated public ZAR price"
+      ],
+      "externalTechnicalSourcesUsed": []
+    },
+    {
+      "url": "/guides/compare-dds-distance-sensors",
+      "purpose": "Compare DDS20, DDS45 and DDS75 Distance Sensors",
+      "sourceProductGroups": [
+        "DDS20",
+        "DDS45",
+        "DDS75"
+      ],
+      "numberOfProductsRepresented": 21,
       "catalogueFactsUsed": [
         "SKU",
         "Application",
@@ -729,12 +707,6 @@
     {
       "type": "application",
       "sourceValue": "CO2 Sensor",
-      "productCount": 2,
-      "reason": "Not promoted as an indexable landing page because the group is thin, accessory-led, duplicated, malformed, or lacks enough distinct buying value."
-    },
-    {
-      "type": "application",
-      "sourceValue": "emperature & Humidity Sensor",
       "productCount": 1,
       "reason": "Not promoted as an indexable landing page because the group is thin, accessory-led, duplicated, malformed, or lacks enough distinct buying value."
     },
@@ -747,7 +719,7 @@
     {
       "type": "application",
       "sourceValue": "AI Image",
-      "productCount": 22,
+      "productCount": 10,
       "reason": "Not promoted as an indexable landing page because the group is thin, accessory-led, duplicated, malformed, or lacks enough distinct buying value."
     },
     {
@@ -800,19 +772,7 @@
     },
     {
       "type": "application",
-      "sourceValue": "Gateway -- Private LoRa",
-      "productCount": 2,
-      "reason": "Not promoted as an indexable landing page because the group is thin, accessory-led, duplicated, malformed, or lacks enough distinct buying value."
-    },
-    {
-      "type": "application",
-      "sourceValue": "Gateway -- Generic IoT",
-      "productCount": 1,
-      "reason": "Not promoted as an indexable landing page because the group is thin, accessory-led, duplicated, malformed, or lacks enough distinct buying value."
-    },
-    {
-      "type": "application",
-      "sourceValue": "Mesh Gateway",
+      "sourceValue": "Gateway: Private LoRa",
       "productCount": 2,
       "reason": "Not promoted as an indexable landing page because the group is thin, accessory-led, duplicated, malformed, or lacks enough distinct buying value."
     },
@@ -825,26 +785,8 @@
     {
       "type": "application",
       "sourceValue": "Accessories",
-      "productCount": 19,
+      "productCount": 18,
       "reason": "Not promoted as an indexable landing page because the group is thin, accessory-led, duplicated, malformed, or lacks enough distinct buying value."
-    },
-    {
-      "type": "application",
-      "sourceValue": "Antenna",
-      "productCount": 2,
-      "reason": "Not promoted as an indexable landing page because the group is thin, accessory-led, duplicated, malformed, or lacks enough distinct buying value."
-    },
-    {
-      "type": "connectivity",
-      "sourceValue": "Mesh Node",
-      "productCount": 2,
-      "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
-    },
-    {
-      "type": "connectivity",
-      "sourceValue": "LTE-M&NB-loT(NRF9151)",
-      "productCount": 2,
-      "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
     },
     {
       "type": "connectivity",
@@ -854,20 +796,8 @@
     },
     {
       "type": "connectivity",
-      "sourceValue": "NB-IoT&LTE-M",
-      "productCount": 1,
-      "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
-    },
-    {
-      "type": "connectivity",
       "sourceValue": "BLE & LoRaWAN",
       "productCount": 1,
-      "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
-    },
-    {
-      "type": "connectivity",
-      "sourceValue": "LTE-M & NB-IoT (NRF9151)",
-      "productCount": 2,
       "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
     },
     {
@@ -914,12 +844,6 @@
     },
     {
       "type": "connectivity",
-      "sourceValue": "NB-IoT & LTE-M",
-      "productCount": 2,
-      "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
-    },
-    {
-      "type": "connectivity",
       "sourceValue": "LTE CAT-1",
       "productCount": 2,
       "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
@@ -932,20 +856,8 @@
     },
     {
       "type": "connectivity",
-      "sourceValue": "Gateway",
-      "productCount": 1,
-      "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
-    },
-    {
-      "type": "connectivity",
-      "sourceValue": "Mesh Gateway",
-      "productCount": 2,
-      "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
-    },
-    {
-      "type": "connectivity",
       "sourceValue": "Antenna",
-      "productCount": 4,
+      "productCount": 5,
       "reason": "Not promoted as an indexable connectivity page because the value is thin, accessory-specific, duplicated, or is not a substantive connectivity group."
     },
     {

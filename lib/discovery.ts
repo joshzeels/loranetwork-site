@@ -16,6 +16,7 @@ export type ProductFamily = {
   skuPrefix: string;
   purpose: string;
   evidence: string;
+  selectionPath: string[];
 };
 
 export type BuyingGuide = {
