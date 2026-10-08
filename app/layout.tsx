@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { isGa4MeasurementId } from "@/lib/analytics/ga4";
 import { getSiteUrl } from "@/lib/catalogue";
 import "./globals.css";
 
@@ -35,11 +36,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en-ZA" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
-        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        {isGa4MeasurementId(gaMeasurementId) ? <GoogleAnalytics measurementId={gaMeasurementId} /> : null}
         <SiteHeader />
         <main id="main-content">{children}</main>
         <SiteFooter />

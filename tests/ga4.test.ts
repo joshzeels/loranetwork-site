@@ -20,6 +20,12 @@ test("GA4 remains disabled for a missing or invalid measurement ID", () => {
   assert.equal(isGa4MeasurementId("G-ABC123"), true);
 });
 
+test("the root layout omits the GA4 client boundary unless the measurement ID is valid", () => {
+  const layout = readFileSync(new URL("../app/layout.tsx", import.meta.url), "utf8");
+
+  assert.match(layout, /isGa4MeasurementId\(gaMeasurementId\) \? <GoogleAnalytics measurementId=\{gaMeasurementId\} \/> : null/);
+});
+
 test("GA4 maps product and enquiry conversion events without PII", () => {
   assert.deepEqual(mapToGa4({ name: "product_view", properties: { sku: "DDS75-LB", productName: "DDS75-LB", slug: "dds75-lb" } }), { name: "view_item", parameters: { items: [{ item_id: "DDS75-LB", item_name: "DDS75-LB" }], product_slug: "dds75-lb" } });
   assert.deepEqual(mapToGa4({ name: "enquiry_product_selected", properties: { sku: "DDS75-LB", productName: "DDS75-LB", sourcePathname: "/contact" } }), { name: "select_item", parameters: { items: [{ item_id: "DDS75-LB", item_name: "DDS75-LB" }], page_path: "/contact" } });
