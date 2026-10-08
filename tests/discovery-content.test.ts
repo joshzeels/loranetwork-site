@@ -191,6 +191,20 @@ test("application guidance avoids import-led public wording", () => {
   assert.doesNotMatch(copy, /This catalogue (lists|includes)|\blisted (?:for|as)\b|catalogue products|catalogue entries/i);
 });
 
+test("public application and buying-guide copy avoids internal catalogue and evidence language", () => {
+  const applicationCopy = Object.values(content.applicationGuidance)
+    .flatMap((guidance) => [guidance.directAnswer, guidance.hardwareSummary, ...guidance.considerations, guidance.selectionPath])
+    .join(" ");
+  const guideCopy = content.guides
+    .flatMap((guide) => [guide.question, guide.answerTemplate, ...guide.considerations, guide.differenceSummary, ...guide.decisionPath])
+    .join(" ");
+
+  assert.doesNotMatch(
+    `${applicationCopy} ${guideCopy}`,
+    /\bcatalogue\b|source specification|catalogue mention|recorded application|supplied specification|technical source|catalogue row|verified|source record|documentation record|technical documentation/i,
+  );
+});
+
 test("guided application family overlap uses customer-friendly punctuation", () => {
   assert.match(facetDetail, /<\/Link>, \{entry\.matched\}/);
   assert.doesNotMatch(facetDetail, /<\/Link> — \{entry\.matched\}/);

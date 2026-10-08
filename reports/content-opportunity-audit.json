@@ -1,93 +1,97 @@
 {
-  "generatedAt": "2026-09-11T06:39:42.254Z",
-  "totalProducts": 981,
+  "generatedAt": "2026-10-08T12:25:50.709Z",
+  "totalProducts": 448,
   "applications": [
     {
       "value": "Distance Sensor",
-      "count": 233
+      "count": 89
     },
     {
       "value": "Temperature Sensor",
-      "count": 129
+      "count": 56
     },
     {
       "value": "Smart Agriculture",
-      "count": 97
+      "count": 37
     },
     {
       "value": "Water Flow Sensor",
-      "count": 80
-    },
-    {
-      "value": "Pressure Sensor",
-      "count": 57
+      "count": 32
     },
     {
       "value": "Temperature & Humidity  Sensor",
-      "count": 51
+      "count": 25
     },
     {
-      "value": "Generic Node / RS485",
-      "count": 31
-    },
-    {
-      "value": "Water Quality Measurement",
-      "count": 29
-    },
-    {
-      "value": "Energy Control / Monitoring",
-      "count": 26
-    },
-    {
-      "value": "Water Leak Detect",
-      "count": 24
-    },
-    {
-      "value": "Smart Weather Station",
-      "count": 23
-    },
-    {
-      "value": "AI Image",
-      "count": 22
-    },
-    {
-      "value": "Door Sensor",
-      "count": 22
-    },
-    {
-      "value": "Dry Contact / Counting / Interrupt",
-      "count": 22
-    },
-    {
-      "value": "Generic Node",
+      "value": "Pressure Sensor",
       "count": 21
     },
     {
       "value": "Accessories",
-      "count": 19
+      "count": 18
     },
     {
-      "value": "Angle Sensor / Tilting",
-      "count": 19
+      "value": "Water Quality Measurement",
+      "count": 17
     },
     {
-      "value": "Generic Node / Analog",
-      "count": 19
+      "value": "Smart Weather Station",
+      "count": 15
     },
     {
-      "value": "Gateway -- LoRaWAN",
+      "value": "Energy Control / Monitoring",
+      "count": 14
+    },
+    {
+      "value": "Water Leak Detect",
+      "count": 12
+    },
+    {
+      "value": "Gateway: LoRaWAN",
+      "count": 11
+    },
+    {
+      "value": "Generic Node / RS485",
+      "count": 11
+    },
+    {
+      "value": "AI Image",
       "count": 10
+    },
+    {
+      "value": "Door Sensor",
+      "count": 10
+    },
+    {
+      "value": "Dry Contact / Counting / Interrupt",
+      "count": 9
     },
     {
       "value": "LoRa_NB Demo kit",
       "count": 9
     },
     {
-      "value": "Power Outage Monitoring Sensor",
+      "value": "Generic Node",
+      "count": 8
+    },
+    {
+      "value": "Angle Sensor / Tilting",
       "count": 7
     },
     {
+      "value": "Generic Node / Analog",
+      "count": 7
+    },
+    {
+      "value": "Antenna",
+      "count": 3
+    },
+    {
       "value": "Bluetooth to LoRaWAN",
+      "count": 3
+    },
+    {
+      "value": "Power Outage Monitoring Sensor",
       "count": 3
     },
     {
@@ -99,19 +103,7 @@
       "count": 2
     },
     {
-      "value": "Antenna",
-      "count": 2
-    },
-    {
-      "value": "CO2 Sensor",
-      "count": 2
-    },
-    {
-      "value": "Gateway -- Private LoRa",
-      "count": 2
-    },
-    {
-      "value": "Mesh Gateway",
+      "value": "Gateway: Private LoRa",
       "count": 2
     },
     {
@@ -143,15 +135,11 @@
       "count": 1
     },
     {
+      "value": "CO2 Sensor",
+      "count": 1
+    },
+    {
       "value": "DO Sensor",
-      "count": 1
-    },
-    {
-      "value": "emperature & Humidity Sensor",
-      "count": 1
-    },
-    {
-      "value": "Gateway -- Generic IoT",
       "count": 1
     },
     {
@@ -162,27 +150,11 @@
   "interfaces": [
     {
       "value": "LoRaWAN",
-      "count": 205
+      "count": 206
     },
     {
       "value": "LTE CAT 1",
       "count": 168
-    },
-    {
-      "value": "NB-IoT",
-      "count": 135
-    },
-    {
-      "value": "LTE-M & NB-IoT",
-      "count": 131
-    },
-    {
-      "value": "LTE-M & NB-IoT, 10 years 500MB data",
-      "count": 128
-    },
-    {
-      "value": "NB-IoT, 10 years 500MB data",
-      "count": 128
     },
     {
       "value": "Probe",
@@ -198,7 +170,7 @@
     },
     {
       "value": "Antenna",
-      "count": 4
+      "count": 5
     },
     {
       "value": "Battery",
@@ -221,26 +193,6 @@
       "count": 2
     },
     {
-      "value": "LTE-M & NB-IoT (NRF9151)",
-      "count": 2
-    },
-    {
-      "value": "LTE-M&NB-loT(NRF9151)",
-      "count": 2
-    },
-    {
-      "value": "Mesh Gateway",
-      "count": 2
-    },
-    {
-      "value": "Mesh Node",
-      "count": 2
-    },
-    {
-      "value": "NB-IoT & LTE-M",
-      "count": 2
-    },
-    {
       "value": "BLE & LoRaWAN",
       "count": 1
     },
@@ -250,14 +202,6 @@
     },
     {
       "value": "Fixture For WSS-21 or DR-RG-6P",
-      "count": 1
-    },
-    {
-      "value": "Gateway",
-      "count": 1
-    },
-    {
-      "value": "NB-IoT&LTE-M",
       "count": 1
     },
     {
@@ -275,160 +219,16 @@
   ],
   "families": [
     {
-      "value": "SW3L",
-      "count": 80
-    },
-    {
-      "value": "PS",
-      "count": 76
-    },
-    {
       "value": "DR",
       "count": 32
     },
     {
-      "value": "S31B",
-      "count": 23
+      "value": "SW3L",
+      "count": 32
     },
     {
-      "value": "CPL03",
-      "count": 20
-    },
-    {
-      "value": "RS485",
-      "count": 20
-    },
-    {
-      "value": "SN50V3",
-      "count": 20
-    },
-    {
-      "value": "AIS01",
-      "count": 19
-    },
-    {
-      "value": "CS01",
-      "count": 19
-    },
-    {
-      "value": "D20",
-      "count": 19
-    },
-    {
-      "value": "D20S",
-      "count": 19
-    },
-    {
-      "value": "D22",
-      "count": 19
-    },
-    {
-      "value": "D23",
-      "count": 19
-    },
-    {
-      "value": "DDS04",
-      "count": 19
-    },
-    {
-      "value": "DDS20",
-      "count": 19
-    },
-    {
-      "value": "DDS45",
-      "count": 19
-    },
-    {
-      "value": "DDS75",
-      "count": 19
-    },
-    {
-      "value": "DS03A",
-      "count": 19
-    },
-    {
-      "value": "LDS12",
-      "count": 19
-    },
-    {
-      "value": "LDS25",
-      "count": 19
-    },
-    {
-      "value": "LDS40",
-      "count": 19
-    },
-    {
-      "value": "LMS01",
-      "count": 19
-    },
-    {
-      "value": "LTC1",
-      "count": 19
-    },
-    {
-      "value": "LTC2",
-      "count": 19
-    },
-    {
-      "value": "MDS120",
-      "count": 19
-    },
-    {
-      "value": "MDS200",
-      "count": 19
-    },
-    {
-      "value": "MR-03",
-      "count": 19
-    },
-    {
-      "value": "MR-12",
-      "count": 19
-    },
-    {
-      "value": "MR-25",
-      "count": 19
-    },
-    {
-      "value": "S31",
-      "count": 19
-    },
-    {
-      "value": "SDI-12",
-      "count": 19
-    },
-    {
-      "value": "SE01",
-      "count": 19
-    },
-    {
-      "value": "SE0X",
-      "count": 19
-    },
-    {
-      "value": "SPH01",
-      "count": 19
-    },
-    {
-      "value": "TS01",
-      "count": 19
-    },
-    {
-      "value": "WL03A",
-      "count": 19
-    },
-    {
-      "value": "WQS",
-      "count": 19
-    },
-    {
-      "value": "RS485W",
-      "count": 11
-    },
-    {
-      "value": "WSC2",
-      "count": 10
+      "value": "PS",
+      "count": 28
     },
     {
       "value": "WSS",
@@ -439,7 +239,139 @@
       "count": 8
     },
     {
-      "value": "POM01",
+      "value": "RS485",
+      "count": 8
+    },
+    {
+      "value": "S31B",
+      "count": 8
+    },
+    {
+      "value": "AIS01",
+      "count": 7
+    },
+    {
+      "value": "CPL03",
+      "count": 7
+    },
+    {
+      "value": "CS01",
+      "count": 7
+    },
+    {
+      "value": "D20",
+      "count": 7
+    },
+    {
+      "value": "D20S",
+      "count": 7
+    },
+    {
+      "value": "D22",
+      "count": 7
+    },
+    {
+      "value": "D23",
+      "count": 7
+    },
+    {
+      "value": "DDS04",
+      "count": 7
+    },
+    {
+      "value": "DDS20",
+      "count": 7
+    },
+    {
+      "value": "DDS45",
+      "count": 7
+    },
+    {
+      "value": "DDS75",
+      "count": 7
+    },
+    {
+      "value": "DS03A",
+      "count": 7
+    },
+    {
+      "value": "LDS12",
+      "count": 7
+    },
+    {
+      "value": "LDS25",
+      "count": 7
+    },
+    {
+      "value": "LDS40",
+      "count": 7
+    },
+    {
+      "value": "LMS01",
+      "count": 7
+    },
+    {
+      "value": "LTC1",
+      "count": 7
+    },
+    {
+      "value": "LTC2",
+      "count": 7
+    },
+    {
+      "value": "MDS120",
+      "count": 7
+    },
+    {
+      "value": "MDS200",
+      "count": 7
+    },
+    {
+      "value": "MR-03",
+      "count": 7
+    },
+    {
+      "value": "MR-12",
+      "count": 7
+    },
+    {
+      "value": "MR-25",
+      "count": 7
+    },
+    {
+      "value": "S31",
+      "count": 7
+    },
+    {
+      "value": "SDI-12",
+      "count": 7
+    },
+    {
+      "value": "SE01",
+      "count": 7
+    },
+    {
+      "value": "SE0X",
+      "count": 7
+    },
+    {
+      "value": "SN50V3",
+      "count": 7
+    },
+    {
+      "value": "SPH01",
+      "count": 7
+    },
+    {
+      "value": "TS01",
+      "count": 7
+    },
+    {
+      "value": "WL03A",
+      "count": 7
+    },
+    {
+      "value": "WQS",
       "count": 7
     },
     {
@@ -455,7 +387,11 @@
       "count": 3
     },
     {
-      "value": "TC01",
+      "value": "POM01",
+      "count": 3
+    },
+    {
+      "value": "RS485W",
       "count": 3
     },
     {
@@ -463,15 +399,7 @@
       "count": 2
     },
     {
-      "value": "CO2",
-      "count": 2
-    },
-    {
       "value": "DLOS8N",
-      "count": 2
-    },
-    {
-      "value": "IM01V2",
       "count": 2
     },
     {
@@ -507,6 +435,10 @@
       "count": 2
     },
     {
+      "value": "TC01",
+      "count": 2
+    },
+    {
       "value": "TC11",
       "count": 2
     },
@@ -516,6 +448,10 @@
     },
     {
       "value": "UV254",
+      "count": 2
+    },
+    {
+      "value": "WSC2",
       "count": 2
     },
     {
@@ -559,7 +495,7 @@
       "count": 1
     },
     {
-      "value": "BCN02",
+      "value": "CO2",
       "count": 1
     },
     {
@@ -647,10 +583,6 @@
       "count": 1
     },
     {
-      "value": "MS20",
-      "count": 1
-    },
-    {
       "value": "NE117",
       "count": 1
     },
@@ -664,6 +596,10 @@
     },
     {
       "value": "PF52",
+      "count": 1
+    },
+    {
+      "value": "RBWAPR",
       "count": 1
     },
     {
@@ -703,6 +639,10 @@
       "count": 1
     },
     {
+      "value": "TOF",
+      "count": 1
+    },
+    {
       "value": "TYPE N ENCLOSURE KIT",
       "count": 1
     },
@@ -716,19 +656,19 @@
     }
   ],
   "searchTermCoverage": {
-    "water": 182,
+    "water": 86,
     "tank": 0,
-    "temperature": 250,
-    "humidity": 63,
-    "gateway": 15,
+    "temperature": 115,
+    "humidity": 35,
+    "gateway": 13,
     "tracker": 2,
-    "rs485": 48,
-    "modbus": 11,
-    "lorawan": 208,
-    "nb-iot": 527,
-    "agriculture": 97,
-    "level": 77,
-    "meter": 211,
-    "co2": 4
+    "rs485": 24,
+    "modbus": 3,
+    "lorawan": 209,
+    "nb-iot": 0,
+    "agriculture": 37,
+    "level": 29,
+    "meter": 92,
+    "co2": 3
   }
 }

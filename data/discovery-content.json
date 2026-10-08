@@ -27,32 +27,32 @@
   "applicationGuidance": {
     "Distance Sensor": {
       "directAnswer": "Explore {count} products for distance sensing. Start with the measurement details shown for each SKU, then compare connectivity and public ZAR price.",
-      "hardwareSummary": "The range contains several distinct model groups and connectivity variants. Product names alone do not establish range, mounting method or compatibility, so use the exact specification and technical source where available.",
-      "considerations": ["Check whether the required measurement detail is stated in the specification.", "Choose a connectivity option available at the deployment location.", "Compare exact SKUs because similarly named variants can have different specifications.", "Confirm any requirement not stated in the catalogue against linked technical documentation."],
-      "selectionPath": "Start with the required distance-measurement specification. Remove models that do not explicitly state the needed detail, then compare their listed connectivity and ZAR prices."
+      "hardwareSummary": "The range contains several distinct model groups and connectivity variants. Product names alone do not establish range, mounting method or compatibility, so check the exact product specification where available.",
+      "considerations": ["Check whether the required measurement detail is stated in the specification.", "Choose a connectivity option available at the deployment location.", "Compare exact SKUs because similarly named variants can have different specifications.", "Contact us if you need help confirming a requirement not shown in the product details."],
+      "selectionPath": "Start with the required distance-measurement specification. Remove models that do not explicitly state the needed detail, then compare their available connectivity and ZAR prices."
     },
     "Temperature Sensor": {
       "directAnswer": "Explore {count} products for temperature sensing. Compare the measurement details shown for each SKU, the connectivity option and the exact model.",
-      "hardwareSummary": "The catalogue contains temperature-product model groups and connectivity variants. Accuracy, probe type and operating range should only be relied on when they are stated in the product specification or linked technical documentation.",
-      "considerations": ["Confirm whether the project needs temperature only or a separately classified temperature-and-humidity product.", "Check the supplied specification for probe, range or accuracy details when present.", "Compare the listed connectivity options.", "Use the exact SKU when requesting confirmation or a quotation."],
+      "hardwareSummary": "Temperature product groups and connectivity variants are available. Accuracy, probe type and operating range should only be relied on when they are stated in the product specification.",
+      "considerations": ["Confirm whether the project needs temperature only or a separately classified temperature-and-humidity product.", "Check the product specification for probe, range or accuracy details when present.", "Compare the available connectivity options.", "Use the exact SKU when requesting confirmation or a quotation."],
       "selectionPath": "Choose the measurement category first. Next compare only the technical details stated for each SKU, followed by connectivity and ZAR price."
     },
     "Smart Agriculture": {
       "directAnswer": "Explore {count} products for Smart Agriculture projects. Check each product specification to establish the measurement or function it supports.",
       "hardwareSummary": "Products in this group cover different specifications and connectivity options. The Smart Agriculture label alone does not establish a particular crop, installation or sensor capability.",
-      "considerations": ["Identify the measurement or function explicitly stated in the specification.", "Do not infer a capability from the application label alone.", "Compare connectivity against the network available for the project.", "Confirm unstated environmental and installation requirements from technical documentation."],
+      "considerations": ["Identify the measurement or function explicitly stated in the specification.", "Do not infer a capability from the application label alone.", "Compare connectivity against the network available for the project.", "Contact us if you need help confirming environmental or installation requirements."],
       "selectionPath": "Define the measurement or control function first. Keep only products whose specification explicitly supports that function, then compare connectivity and exact model details."
     },
     "Water Flow Sensor": {
       "directAnswer": "Explore {count} products for water-flow monitoring, including SW3L family variants. Compare exact specifications, connectivity and public ZAR prices before choosing a model.",
       "hardwareSummary": "The page includes SW3L variants and other products classified for water-flow sensing. Size, pulse, interface or metering details should only be used when the individual specification states them.",
-      "considerations": ["Check the exact flow or meter detail stated for the SKU.", "Compare SW3L variants through the verified family table where relevant.", "Choose among the connectivity options represented in the catalogue.", "Confirm installation and meter compatibility when those details are not supplied."],
+      "considerations": ["Check the exact flow or meter detail stated for the SKU.", "Compare SW3L variants through the SW3L family comparison table where relevant.", "Compare the connectivity options shown for matching products.", "Confirm installation and meter compatibility when those details are not shown."],
       "selectionPath": "Start with the stated meter or flow requirement, then compare matching specifications. Use connectivity and ZAR price to narrow the remaining exact SKUs."
     },
     "Pressure Sensor": {
       "directAnswer": "Explore {count} products for pressure sensing. Compare the range, output or other measurement details shown for each model, followed by connectivity and exact SKU.",
       "hardwareSummary": "The category contains multiple model and connectivity variants. A shared pressure-sensor label does not establish identical range, output or installation requirements.",
-      "considerations": ["Check whether the required pressure range is explicitly stated.", "Compare any stated output or interface details.", "Choose connectivity that can be supported at the deployment location.", "Confirm missing accuracy, media and installation requirements from technical documentation."],
+      "considerations": ["Check whether the required pressure range is explicitly stated.", "Compare any stated output or interface details.", "Choose connectivity that can be supported at the deployment location.", "Contact us if you need help confirming accuracy, media or installation requirements."],
       "selectionPath": "Filter first by explicit pressure specification. Then compare connectivity, model-level details and public ZAR price without assuming unstated compatibility."
     },
     "Temperature & Humidity Sensor": {
@@ -178,7 +178,7 @@
       "slug": "choose-lorawan-gateway",
       "title": "How to Choose a LoRaWAN Gateway",
       "question": "Which LoRaWAN gateway should I choose?",
-      "answerTemplate": "Choose from {count} LoRaWAN gateways. Start with the deployment setting and required backhaul: the catalogue includes indoor models such as LPS8N, LPS8v2, MS48-LR and LG308N, plus the outdoor DLOS8N. Then compare the exact gateway functions, interfaces, power details and ZAR price stated for the SKU.",
+      "answerTemplate": "Choose from {count} LoRaWAN gateways. Start with the deployment setting and required backhaul: indoor models include LPS8N, LPS8v2, MS48-LR and LG308N, while DLOS8N is the outdoor model. Then compare the exact gateway functions, interfaces, power details and ZAR price stated for the SKU.",
       "applicationValues": ["Gateway: LoRaWAN"],
       "searchTerms": [],
       "considerations": [
@@ -188,7 +188,7 @@
         "Check gateway management and deployment features where stated, including LPS8N web/SSH management, LPS8v2 remote management, and DLOS8N auto-provisioning and remote monitoring.",
         "Confirm the regional LoRaWAN frequency configuration, supplied power requirement, package details and exact SKU before ordering."
       ],
-      "differenceSummary": "The catalogue contains indoor and outdoor gateway options. LPS8N bridges LoRaWAN to IP through Wi-Fi or Ethernet, with an optional cellular version. LPS8v2 adds local LoRaWAN and IoT server functions and also describes optional 4G. MS48-LR combines gateway, local server and Modbus functions with optional 4G. LG308N lists Wi-Fi, Ethernet and cellular backhaul, while DLOS8N is the outdoor model and lists cellular failover as optional alongside outdoor deployment features. Other rows should be checked by their exact supplied specification.",
+      "differenceSummary": "Indoor and outdoor gateway options are available. LPS8N bridges LoRaWAN to IP through Wi-Fi or Ethernet, with an optional cellular version. LPS8v2 adds local LoRaWAN and IoT server functions and also describes optional 4G. MS48-LR combines gateway, local server and Modbus functions with optional 4G. LG308N is available with Wi-Fi, Ethernet and cellular backhaul, while DLOS8N is the outdoor model and has optional cellular failover alongside outdoor deployment features. For other models, check the exact product details.",
       "decisionPath": [
         "Decide whether the gateway must be indoor or outdoor, then shortlist the models whose product details match that setting.",
         "Select the required backhaul: Wi-Fi or Ethernet, with optional cellular where the exact model supports it and the deployment requires it.",
@@ -205,9 +205,9 @@
       "answerTemplate": "Choose from {count} products for water flow, water quality and leak detection. Start with the application, then compare connectivity, specification and price.",
       "applicationValues": ["Water Flow Sensor", "Water Quality Measurement", "Water Leak Detect"],
       "searchTerms": [],
-      "considerations": ["Choose between water flow, water quality and water leak detection first.", "Compare only the measurement or interface details explicitly stated for each SKU.", "Check the listed connectivity against the deployment network.", "Confirm unstated ranges and compatibility in linked technical documentation."],
-      "differenceSummary": "Water-flow, water-quality and water-leak products perform different catalogue applications. Within each application, models can differ by specification, connectivity and price.",
-      "decisionPath": ["Select the water-related application that matches the task.", "Compare the source specification within that application.", "Choose a supported connectivity option and confirm any unstated installation requirement."],
+      "considerations": ["Choose between water flow, water quality and water leak detection first.", "Compare only the measurement or interface details explicitly stated for each SKU.", "Check the connectivity shown for each product against the deployment network.", "Contact us if you need help confirming range or compatibility."],
+      "differenceSummary": "Water-flow, water-quality and water-leak products serve different water-related applications. Within each application, models can differ by specification, connectivity and price.",
+      "decisionPath": ["Select the water-related application that matches the task.", "Compare the product specifications within that application.", "Choose a supported connectivity option and contact us if you need help confirming installation requirements."],
       "relatedFamilySlugs": ["sw3l", "wqs"]
     },
     {
@@ -217,9 +217,9 @@
       "answerTemplate": "Compare {count} temperature and temperature-and-humidity products. Decide which measurements you need, then compare connectivity, specification and price.",
       "applicationValues": ["Temperature Sensor", "Temperature & Humidity Sensor"],
       "searchTerms": [],
-      "considerations": ["Choose between temperature-only and temperature-and-humidity catalogue groups.", "Check the source specification for probe, range or accuracy details when present.", "Compare the listed connectivity options.", "Confirm any missing operating requirement in linked technical documentation."],
-      "differenceSummary": "Products differ first by recorded application: temperature only or temperature and humidity. Exact specifications, connectivity and public ZAR prices can also differ by SKU.",
-      "decisionPath": ["Choose the required measurement category.", "Shortlist models that explicitly state the needed technical detail.", "Compare connectivity and verify any requirement absent from the catalogue."],
+      "considerations": ["Choose between temperature-only and temperature-and-humidity product groups.", "Check the product specification for probe, range or accuracy details when present.", "Compare the available connectivity options.", "Contact us if you need help confirming an operating requirement."],
+      "differenceSummary": "Products differ first by application: temperature only or temperature and humidity. Exact specifications, connectivity and public ZAR prices can also differ by SKU.",
+      "decisionPath": ["Choose the required measurement category.", "Shortlist models that explicitly state the needed technical detail.", "Compare connectivity and contact us if you need help confirming a requirement not shown in the product details."],
       "relatedFamilySlugs": ["s31b"]
     },
     {
@@ -229,9 +229,9 @@
       "answerTemplate": "Compare {count} products that list RS485 or Modbus in their product details. Check each model’s specification and connectivity before choosing.",
       "applicationValues": [],
       "searchTerms": ["rs485", "modbus"],
-      "considerations": ["Confirm that RS485 or Modbus appears explicitly in the product record.", "Distinguish the device's listed IoT connectivity from its wired sensor or equipment interface.", "Compare exact specification and package information where supplied.", "Verify wiring, protocol and register requirements in technical documentation."],
-      "differenceSummary": "RS485 is a physical communication interface, while Modbus is a protocol that can use an RS485 link. A catalogue mention of one does not prove every implementation detail of the other.",
-      "decisionPath": ["Confirm whether the project requires RS485, Modbus or both.", "Keep only products whose record explicitly states the required term.", "Compare their IoT connectivity and verify wiring and protocol details from the technical source."],
+      "considerations": ["Confirm that RS485 or Modbus appears explicitly in the product details.", "Distinguish the device's IoT connectivity from its wired sensor or equipment interface.", "Compare exact specification and package information where shown.", "Check wiring, protocol and register requirements before choosing."],
+      "differenceSummary": "RS485 is a physical communication interface, while Modbus is a protocol that can use an RS485 link. An RS485 or Modbus reference alone does not prove every implementation detail of the other.",
+      "decisionPath": ["Confirm whether the project requires RS485, Modbus or both.", "Keep only products whose details explicitly state the required term.", "Compare their IoT connectivity and confirm wiring and protocol details before choosing."],
       "relatedFamilySlugs": ["rs485", "sn50v3"]
     },
     {
@@ -241,30 +241,30 @@
       "answerTemplate": "Compare {count} IoT trackers by model, specification, connectivity and price.",
       "applicationValues": ["Tracker"],
       "searchTerms": [],
-      "considerations": ["Compare the two exact TrackerD SKUs.", "Review each supplied specification without assuming unstated tracking features.", "Compare the listed connectivity.", "Check the linked technical details for requirements absent from the catalogue."],
-      "differenceSummary": "The two TrackerD records can be compared by exact SKU, supplied specification, connectivity and public ZAR price. Only differences visible in those fields are established here.",
-      "decisionPath": ["Compare the two specification rows.", "Confirm which listed connectivity fits the project.", "Use the exact SKU when requesting any missing technical detail."],
+      "considerations": ["Compare the two exact TrackerD SKUs.", "Review each product specification without assuming tracking features that are not shown.", "Compare the connectivity shown for each model.", "Contact us if you need help confirming a requirement not shown in the product details."],
+      "differenceSummary": "The two TrackerD models can be compared by exact SKU, specification, connectivity and public ZAR price. Only differences shown in those fields are established here.",
+      "decisionPath": ["Compare the two product specifications.", "Confirm which connectivity option fits the project.", "Use the exact SKU when requesting any missing technical detail."],
       "relatedFamilySlugs": ["trackerd"]
     },
     {
       "slug": "compare-dds-distance-sensors",
       "title": "Compare DDS20, DDS45 and DDS75 Distance Sensors",
       "question": "How do DDS20, DDS45 and DDS75 distance sensors differ?",
-      "answerTemplate": "DDS20, DDS45 and DDS75 are ultrasonic distance-sensing product lines. DDS20 is for non-contact liquid-level measurement through a container over 20mm to 2000mm. DDS45 and DDS75 measure distance to a flat object, with catalogue ranges of 30mm to 4500mm and 280mm to 7500mm respectively.",
+      "answerTemplate": "DDS20, DDS45 and DDS75 are ultrasonic distance-sensing product lines. DDS20 is for non-contact liquid-level measurement through a container over 20mm to 2000mm. DDS45 and DDS75 measure distance to a flat object, with ranges of 30mm to 4500mm and 280mm to 7500mm respectively.",
       "applicationValues": [],
       "searchTerms": ["DDS20", "DDS45", "DDS75"],
       "considerations": [
         "Choose DDS20 when the measurement is liquid level through a container without contacting the liquid.",
         "Choose between DDS45 and DDS75 by the flat-object range and measurement angle required: 30mm to 4500mm at 60° for DDS45, or 280mm to 7500mm at 40° for DDS75.",
-        "Compare the exact SKU connectivity shown in the catalogue, including LoRaWAN and LTE CAT 1 variants.",
+        "Compare the connectivity shown for the exact SKU, including LoRaWAN and LTE CAT 1 variants.",
         "For LB and LS variants, compare the exact power entry: 8500mAh for LB or solar panel plus 3000mAh Li-ion battery for LS.",
         "Confirm the target or container arrangement, required range, regional connectivity variant, and exact SKU before ordering."
       ],
-      "differenceSummary": "DDS20 measures liquid level through a container without contacting the liquid. DDS45 and DDS75 measure distance to a flat object. DDS45 covers the shorter 30mm to 4500mm catalogue range with a 60° angle, while DDS75 covers 280mm to 7500mm with a 40° angle. Connectivity and power options vary by exact SKU.",
+      "differenceSummary": "DDS20 measures liquid level through a container without contacting the liquid. DDS45 and DDS75 measure distance to a flat object. DDS45 covers the shorter 30mm to 4500mm range with a 60° angle, while DDS75 covers 280mm to 7500mm with a 40° angle. Connectivity and power options vary by exact SKU.",
       "decisionPath": [
         "Identify whether the project measures liquid level through a container or distance to a flat object.",
-        "For flat-object measurement, compare the required range and angle against DDS45 and DDS75 catalogue values.",
-        "Select the exact connectivity and power variant, then confirm the full catalogue row before ordering."
+        "For flat-object measurement, compare the required range and angle against the DDS45 and DDS75 product details.",
+        "Select the exact connectivity and power variant, then confirm the full product details before ordering."
       ],
       "relatedFamilySlugs": [],
       "verifiedDocumentationOnly": true,
