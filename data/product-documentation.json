@@ -131,20 +131,20 @@
     {
       "sku": "RS485-KN-GE",
       "slug": "rs485-kn-ge",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/rs485-sdi-12-sensor-nodes/rs485-ks-kn-copy/",
       "matchedFamily": "RS485",
-      "evidence": "The verified family has no official source for this connectivity value.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies RS485-KN-XX, including the GE order version, as a CAT-1 RS485/UART converter.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "RS485-KN-1T",
       "slug": "rs485-kn-1t",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/rs485-sdi-12-sensor-nodes/rs485-ks-kn-copy/",
       "matchedFamily": "RS485",
-      "evidence": "The verified family has no official source for this connectivity value.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies RS485-KN-XX, including the 1T order version, as a CAT-1 RS485/UART converter.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "RS485W-LB",
@@ -176,11 +176,11 @@
     {
       "sku": "IVS-LN",
       "slug": "ivs-ln",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/vibration-sensor/ivs-ln/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact IVS-LN model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "LHT65N-VIB",
@@ -194,29 +194,29 @@
     {
       "sku": "AirFlow-LN ",
       "slug": "airflow-ln",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/weather-stations/airflow-ln/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact AirFlow-LN model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": " CO2-LE ",
       "slug": "co2-le",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://www.dragino.com/products/water-air-quality-sensor/item/391-co2-le.html",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino product page title explicitly identifies the exact CO2-LE model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "Dishsense",
       "slug": "dishsense",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/dishsense/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact DishSense model; catalogue casing is normalized only.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": " S31B-LE",
@@ -230,11 +230,11 @@
     {
       "sku": "LPT01",
       "slug": "lpt01",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/lpt01/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact LPT01 model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "D20S-LB",
@@ -266,20 +266,20 @@
     {
       "sku": "D20S-KS-GE",
       "slug": "d20s-ks-ge",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/d20-d22-d23-ks/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies D20S-KS in the D2x-KS CAT-1 family and defines its GE order version.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "D20S-KS-1T",
       "slug": "d20s-ks-1t",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/d20-d22-d23-ks/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies D20S-KS in the D2x-KS CAT-1 family and defines its 1T order version.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "D20S-KN-GE",
@@ -329,20 +329,20 @@
     {
       "sku": "D20-KS-GE",
       "slug": "d20-ks-ge",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/d20-d22-d23-ks/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies D20-KS-XX, including the GE order version, as a CAT-1 temperature sensor.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "D20-KS-1T",
       "slug": "d20-ks-1t",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/d20-d22-d23-ks/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies D20-KS-XX, including the 1T order version, as a CAT-1 temperature sensor.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "D20-KN-GE",
@@ -662,11 +662,11 @@
     {
       "sku": "TC01-LB",
       "slug": "tc01-lb",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://www.dragino.com/products/temperature-humidity-sensor/item/321-tc01-tc11-lb.html",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino product page explicitly identifies TC01-LB and its part-number syntax.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "TC01-LB2",
@@ -680,11 +680,11 @@
     {
       "sku": "TC11-LB",
       "slug": "tc11-lb",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://www.dragino.com/products/temperature-humidity-sensor/item/321-tc01-tc11-lb.html",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino product page explicitly identifies TC11-LB and its part-number syntax.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "TC11-LB2",
@@ -734,20 +734,20 @@
     {
       "sku": "S31-KS-GE",
       "slug": "s31-ks-ge",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/s31-ks/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies S31-KS-XX, including the GE order version, as a CAT-1 temperature and humidity sensor.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "S31-KS-1T",
       "slug": "s31-ks-1t",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/s31-ks/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies S31-KS-XX, including the 1T order version, as a CAT-1 temperature and humidity sensor.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "S31-KN-GE",
@@ -797,20 +797,20 @@
     {
       "sku": "S31B-KS-GE",
       "slug": "s31b-ks-ge",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/s31-ks/",
       "matchedFamily": "S31B",
-      "evidence": "The verified family has no official source for this connectivity value.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies S31B-KS-XX, including the GE order version, as a CAT-1 temperature and humidity sensor.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "S31B-KS-1T",
       "slug": "s31b-ks-1t",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/s31-ks/",
       "matchedFamily": "S31B",
-      "evidence": "The verified family has no official source for this connectivity value.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation identifies S31B-KS-XX, including the 1T order version, as a CAT-1 temperature and humidity sensor.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "S31B-KN-GE",
@@ -932,11 +932,11 @@
     {
       "sku": "LHT52",
       "slug": "lht52",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://www.dragino.com/products/temperature-humidity-sensor/item/199-lht52.html",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino product page title explicitly identifies the exact LHT52 model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "AS-02",
@@ -950,11 +950,11 @@
     {
       "sku": "BH01-LB",
       "slug": "bh01-lb",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://www.dragino.com/products/lora-lorawan-end-node/item/359-bh01-lb-ls-ble-to-lorawan-hub.html",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino product page title explicitly identifies the BH01-LB model variant.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "BH01-LB2",
@@ -1067,11 +1067,11 @@
     {
       "sku": "SVC01-LS2",
       "slug": "svc01-ls2",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/soil-agriculture-sensors/svc01-ls2/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact SVC01-LS2 model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "SDI-12-LB",
@@ -1508,38 +1508,38 @@
     {
       "sku": "DR-RG-6P",
       "slug": "dr-rg-6p",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/weather-stations/wsc2-compact-ls/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names DR-RG-6P as the rain gauge component.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "DR-THP-6P",
       "slug": "dr-thp-6p",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/weather-stations/wsc2-compact-ls/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names DR-THP-6P as the three-in-one sensor component.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "DR-IL-6P",
       "slug": "dr-il-6p",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/weather-stations/wsc2-compact-ls/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names DR-IL-6P as the illumination-sensor component.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "UV254-LB",
       "slug": "uv254-lb",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://www.dragino.com/products/agriculture-weather-station/item/267-uv254-lb.html",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino product page title explicitly identifies the exact UV254-LB model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "UV254-LB2",
@@ -1625,29 +1625,29 @@
     {
       "sku": "SCT013G-D-100",
       "slug": "sct013g-d-100",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/current-tilting-power-monitoring/cs01-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact SCT013G-D-100 current-transformer model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "SCT024-300",
       "slug": "sct024-300",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/current-tilting-power-monitoring/cs01-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact SCT024-300 current-transformer model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "SCT036-600",
       "slug": "sct036-600",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/current-tilting-power-monitoring/cs01-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact SCT036-600 current-transformer model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "LC01",
@@ -1931,38 +1931,38 @@
     {
       "sku": "A01A-15",
       "slug": "a01a-15",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/distance-level-detection/dds04-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact A01A-15 probe model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "A02-15",
       "slug": "a02-15",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/distance-level-detection/dds04-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact A02-15 probe model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "A13-15",
       "slug": "a13-15",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/distance-level-detection/dds04-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact A13-15 probe model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "A16-15",
       "slug": "a16-15",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/distance-level-detection/dds04-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact A16-15 probe model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "LDS12-LB",
@@ -2813,11 +2813,11 @@
     {
       "sku": "WeightScale-LB",
       "slug": "weightscale-lb",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/flow-pressure-weight-sensors/weight-scale-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation page title explicitly identifies the WeightScale-LB model variant.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "LCC01-LB",
@@ -3452,11 +3452,11 @@
     {
       "sku": "POM01-L",
       "slug": "pom01-l",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/current-tilting-power-monitoring/pom01-l/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact POM01-L model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "POM01-K-GE",
@@ -3983,11 +3983,11 @@
     {
       "sku": "IBPv1",
       "slug": "ibpv1",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/smart-home-controls/ibpv1/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact IBPv1 model.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "Type N Enclosure Kit ",

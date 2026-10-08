@@ -90,9 +90,9 @@ test("Energy Control / Monitoring guidance supports a practical, bounded selecti
   const energyProducts = catalogue.products.filter((product) => product.application.trim() === "Energy Control / Monitoring");
   const statuses = energyProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
   assert.equal(energyProducts.length, 14);
-  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 4);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 7);
   assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 0);
-  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 10);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 7);
   assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
   assert.ok(energyProducts.some((product) => product.sku === "CS01-LB"));
   assert.ok(energyProducts.some((product) => product.sku === "SCT013G-D-100" && product.iotInterface === "For CS01"));

@@ -222,6 +222,159 @@
       ],
       "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-Gateway/outdoor-gateways/dlos8n/",
       "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "S31-KS-GE",
+      "definition": "S31-KS-GE is an LTE CAT 1 temperature and humidity sensor with a 3-metre external SHT31 probe and solar-powered KS configuration.",
+      "uses": "S31-KS-GE is used where a project needs combined temperature and humidity measurement through LTE CAT 1.",
+      "suitability": "S31-KS-GE suits projects that need the stated external probe arrangement and can provide their own SIM card and server configuration.",
+      "buyerChecks": ["Confirm that an external 3-metre probe suits the measurement arrangement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Plan for a SIM card, APN and IoT-server configuration for the GE version.", "Check that the solar panel and 3000mAh Li-ion battery arrangement suits the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/s31-ks/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "S31-KS-1T",
+      "definition": "S31-KS-1T is an LTE CAT 1 temperature and humidity sensor with a 3-metre external SHT31 probe and solar-powered KS configuration.",
+      "uses": "S31-KS-1T is used where a project needs combined temperature and humidity measurement through LTE CAT 1.",
+      "suitability": "S31-KS-1T suits projects that need the stated external probe arrangement and the 1T ordering configuration with its pre-installed SIM and ThingsEye setup.",
+      "buyerChecks": ["Confirm that an external 3-metre probe suits the measurement arrangement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Confirm that the 1T SIM and ThingsEye configuration fits the project.", "Check that the solar panel and 3000mAh Li-ion battery arrangement suits the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/s31-ks/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "S31B-KS-GE",
+      "definition": "S31B-KS-GE is an LTE CAT 1 temperature and humidity sensor with an on-device SHT31 probe and solar-powered KS configuration.",
+      "uses": "S31B-KS-GE is used where a project needs combined temperature and humidity measurement through LTE CAT 1.",
+      "suitability": "S31B-KS-GE suits projects that need the stated on-device probe arrangement and can provide their own SIM card and server configuration.",
+      "buyerChecks": ["Confirm that an on-device probe suits the measurement arrangement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Plan for a SIM card, APN and IoT-server configuration for the GE version.", "Check that the solar panel and 3000mAh Li-ion battery arrangement suits the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/s31-ks/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "S31B-KS-1T",
+      "definition": "S31B-KS-1T is an LTE CAT 1 temperature and humidity sensor with an on-device SHT31 probe and solar-powered KS configuration.",
+      "uses": "S31B-KS-1T is used where a project needs combined temperature and humidity measurement through LTE CAT 1.",
+      "suitability": "S31B-KS-1T suits projects that need the stated on-device probe arrangement and the 1T ordering configuration with its pre-installed SIM and ThingsEye setup.",
+      "buyerChecks": ["Confirm that an on-device probe suits the measurement arrangement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Confirm that the 1T SIM and ThingsEye configuration fits the project.", "Check that the solar panel and 3000mAh Li-ion battery arrangement suits the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/s31-ks/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "D20-KS-GE",
+      "definition": "D20-KS-GE is an LTE CAT 1 temperature sensor with a solar-powered KS configuration.",
+      "uses": "D20-KS-GE is used where a project needs temperature measurement through LTE CAT 1.",
+      "suitability": "D20-KS-GE suits temperature-monitoring projects that can provide their own SIM card and server configuration.",
+      "buyerChecks": ["Confirm that temperature-only measurement is the required sensor arrangement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Plan for a SIM card, APN and IoT-server configuration for the GE version.", "Check that the solar panel and 3000mAh Li-ion battery arrangement suits the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/d20-d22-d23-ks/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "D20-KS-1T",
+      "definition": "D20-KS-1T is an LTE CAT 1 temperature sensor with a solar-powered KS configuration.",
+      "uses": "D20-KS-1T is used where a project needs temperature measurement through LTE CAT 1.",
+      "suitability": "D20-KS-1T suits temperature-monitoring projects that need the 1T ordering configuration with its pre-installed SIM and ThingsEye setup.",
+      "buyerChecks": ["Confirm that temperature-only measurement is the required sensor arrangement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Confirm that the 1T SIM and ThingsEye configuration fits the project.", "Check that the solar panel and 3000mAh Li-ion battery arrangement suits the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/d20-d22-d23-ks/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "D20S-KS-GE",
+      "definition": "D20S-KS-GE is an LTE CAT 1 temperature sensor for soil or road use with a solar-powered KS configuration.",
+      "uses": "D20S-KS-GE is used where a project needs the stated soil or road temperature-sensor arrangement through LTE CAT 1.",
+      "suitability": "D20S-KS-GE suits soil or road temperature projects that can provide their own SIM card and server configuration.",
+      "buyerChecks": ["Confirm that the soil or road sensor arrangement suits the measurement requirement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Plan for a SIM card, APN and IoT-server configuration for the GE version.", "Check that the solar panel and 3000mAh Li-ion battery arrangement suits the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/d20-d22-d23-ks/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "D20S-KS-1T",
+      "definition": "D20S-KS-1T is an LTE CAT 1 temperature sensor for soil or road use with a solar-powered KS configuration.",
+      "uses": "D20S-KS-1T is used where a project needs the stated soil or road temperature-sensor arrangement through LTE CAT 1.",
+      "suitability": "D20S-KS-1T suits soil or road temperature projects that need the 1T ordering configuration with its pre-installed SIM and ThingsEye setup.",
+      "buyerChecks": ["Confirm that the soil or road sensor arrangement suits the measurement requirement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Confirm that the 1T SIM and ThingsEye configuration fits the project.", "Check that the solar panel and 3000mAh Li-ion battery arrangement suits the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/temperature-humidity-sensors/d20-d22-d23-ks/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "RS485-KN-GE",
+      "definition": "RS485-KN-GE is an RS485 and UART to LTE CAT 1 converter with a charging-pad and 1000mAh Li-ion battery configuration.",
+      "uses": "RS485-KN-GE connects RS485, Modbus or UART sensors to an IoT server through LTE CAT 1.",
+      "suitability": "RS485-KN-GE suits projects that need to read connected RS485, Modbus or UART sensors and can provide their own SIM card and server configuration.",
+      "buyerChecks": ["Confirm the connected sensor uses the required RS485, Modbus or UART arrangement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Plan for a SIM card, APN and IoT-server configuration for the GE version.", "Check the charging-pad and 1000mAh Li-ion battery arrangement against the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/rs485-sdi-12-sensor-nodes/rs485-ks-kn-copy/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "RS485-KN-1T",
+      "definition": "RS485-KN-1T is an RS485 and UART to LTE CAT 1 converter with a charging-pad and 1000mAh Li-ion battery configuration.",
+      "uses": "RS485-KN-1T connects RS485, Modbus or UART sensors to an IoT server through LTE CAT 1.",
+      "suitability": "RS485-KN-1T suits projects that need to read connected RS485, Modbus or UART sensors and the 1T ordering configuration with its pre-installed SIM and ThingsEye setup.",
+      "buyerChecks": ["Confirm the connected sensor uses the required RS485, Modbus or UART arrangement.", "Confirm suitable LTE CAT 1 service is available at the deployment location.", "Confirm that the 1T SIM and ThingsEye configuration fits the project.", "Check the charging-pad and 1000mAh Li-ion battery arrangement against the deployment."],
+      "sourceUrl": "https://wiki.dragino.com/docs/CAT-1/rs485-sdi-12-sensor-nodes/rs485-ks-kn-copy/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "IVS-LN",
+      "definition": "IVS-LN is a LoRaWAN industrial vibration sensor for measuring vibration in rotating equipment.",
+      "uses": "IVS-LN can be used to monitor vibration on industrial motors, water pumps, fans and similar rotating equipment.",
+      "suitability": "IVS-LN suits projects that need vibration measurement from the stated industrial sensor arrangement and can provide suitable LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that vibration measurement is the required monitoring method.", "Confirm that the rotating equipment and mounting arrangement suit the sensor.", "Confirm suitable LoRaWAN connectivity is available at the deployment location.", "Check the required vibration parameters and alarm configuration before ordering."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/vibration-sensor/ivs-ln/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "AirFlow-LN",
+      "definition": "AirFlow-LN is a LoRaWAN air-flow sensor.",
+      "uses": "AirFlow-LN is used where a project needs air-flow measurements sent through LoRaWAN.",
+      "suitability": "AirFlow-LN suits air-flow monitoring projects that can use LoRaWAN connectivity and the documented sensor arrangement.",
+      "buyerChecks": ["Confirm that air-flow measurement is the required measurement role.", "Confirm that the installation arrangement suits the documented sensor.", "Confirm suitable LoRaWAN connectivity is available at the deployment location.", "Check project-specific measurement range and installation requirements before ordering."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/weather-stations/airflow-ln/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "CO2-LE",
+      "definition": "CO2-LE is a LoRaWAN sensor for carbon-dioxide, temperature, humidity and pressure measurements.",
+      "uses": "CO2-LE is used where a project needs the stated indoor-environment measurements through LoRaWAN.",
+      "suitability": "CO2-LE suits projects that require carbon-dioxide together with temperature, humidity and pressure measurements and can use LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that carbon-dioxide, temperature, humidity and pressure are all required measurements.", "Confirm the installation environment and sensor placement suit the project.", "Confirm suitable LoRaWAN connectivity is available at the deployment location.", "Check project-specific measurement and calibration requirements before ordering."],
+      "sourceUrl": "https://www.dragino.com/products/water-air-quality-sensor/item/391-co2-le.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "Dishsense",
+      "definition": "DishSense is a LoRaWAN dishwasher thermometer.",
+      "uses": "DishSense is used where dishwasher temperature monitoring is required through LoRaWAN.",
+      "suitability": "DishSense suits projects that need temperature monitoring for a dishwasher installation and can use LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that dishwasher temperature monitoring is the required use case.", "Confirm that the sensor placement suits the dishwasher installation.", "Confirm suitable LoRaWAN connectivity is available at the deployment location.", "Check project-specific temperature and installation requirements before ordering."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/dishsense/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "LPT01",
+      "definition": "LPT01 is a LoRaWAN handheld food thermometer with a PT100 temperature sensor.",
+      "uses": "LPT01 can be used for remote food-temperature monitoring, including food management and cold-chain applications.",
+      "suitability": "LPT01 suits projects that need the documented handheld PT100 probe arrangement and can use LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that a handheld probe is the required temperature-sensing arrangement.", "Confirm that the PT100 probe dimensions and temperature range suit the product being measured.", "Confirm suitable LoRaWAN connectivity is available at the deployment location.", "Check the required operating workflow and hygiene requirements before ordering."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/temperature-humidity-sensors/lpt01/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "SVC01-LS2",
+      "definition": "SVC01-LS2 is a LoRaWAN solenoid-valve controller for smart irrigation.",
+      "uses": "SVC01-LS2 can control two solenoid valves and count water-flow pulses for remote irrigation and water monitoring.",
+      "suitability": "SVC01-LS2 suits irrigation projects that need two-channel valve control and water-flow pulse counting through LoRaWAN.",
+      "buyerChecks": ["Confirm that two-channel solenoid-valve control is required.", "Confirm that the selected valves use the documented DC latching-pulse arrangement.", "Confirm that the flow meters provide compatible pulse outputs.", "Confirm suitable LoRaWAN connectivity is available at the deployment location."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/soil-agriculture-sensors/svc01-ls2/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "POM01-L",
+      "definition": "POM01-L is a LoRaWAN power-outage monitoring sensor for AC mains status.",
+      "uses": "POM01-L can monitor AC power status and report power-outage and low-voltage events through LoRaWAN.",
+      "suitability": "POM01-L suits projects that need remote AC mains-status monitoring and can provide the documented AC power arrangement and LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that AC mains-status monitoring is the required measurement role.", "Confirm that the documented AC supply range suits the installation.", "Confirm suitable LoRaWAN connectivity is available at the deployment location.", "Check electrical installation and safety requirements before ordering."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/current-tilting-power-monitoring/pom01-l/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
     }
   ]
 }

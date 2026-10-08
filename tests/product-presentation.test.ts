@@ -117,7 +117,7 @@ test("provides verified DDS75-LB guidance without changing catalogue data", () =
 });
 
 test("provides exact-source guidance for the selected representative products", () => {
-  const selected = ["SW3L-004", "S31-LB", "S31B-LB", "D20-LB", "D20S-LB", "DDS20-LB", "DDS45-LB", "SDI-12-LB", "PS-LB-Dxx", "RS485-LN", "WQS-LB", "WSC2-L", "TrackerD", "LPS8N", "TrackerD-LS", "WSC2-Compact-LS", "DLOS8N-EC25"];
+  const selected = ["SW3L-004", "S31-LB", "S31B-LB", "D20-LB", "D20S-LB", "DDS20-LB", "DDS45-LB", "SDI-12-LB", "PS-LB-Dxx", "RS485-LN", "WQS-LB", "WSC2-L", "TrackerD", "LPS8N", "TrackerD-LS", "WSC2-Compact-LS", "DLOS8N-EC25", "S31-KS-GE", "S31-KS-1T", "S31B-KS-GE", "S31B-KS-1T", "D20-KS-GE", "D20-KS-1T", "D20S-KS-GE", "D20S-KS-1T", "RS485-KN-GE", "RS485-KN-1T"];
   for (const sku of selected) {
     const record = guidance.products.find((item) => item.sku === sku);
     assert.ok(record, sku);
@@ -127,7 +127,22 @@ test("provides exact-source guidance for the selected representative products", 
     assert.ok(record.buyerChecks && record.buyerChecks.length >= 3, sku);
     assert.match(record.sourceUrl ?? "", /^https:\/\/(?:www\.)?(?:wiki\.)?dragino\.com\//, sku);
   }
-  assert.equal(guidance.products.length, selected.length + 1);
+  assert.equal(guidance.products.length, selected.length + 8);
+});
+
+test("uses only newly verified exact models from the focused discovery pass", () => {
+  const exact = ["IVS-LN", "AirFlow-LN ", " CO2-LE ", "Dishsense", "LPT01", "TC01-LB", "TC11-LB", "LHT52", "BH01-LB", "SVC01-LS2", "UV254-LB", "WeightScale-LB", "POM01-L", "IBPv1", "DR-RG-6P", "DR-THP-6P", "DR-IL-6P", "SCT013G-D-100", "SCT024-300", "SCT036-600", "A01A-15", "A02-15", "A13-15", "A16-15"];
+  for (const sku of exact) {
+    const record = documentation.products.find((item) => item.sku === sku);
+    assert.equal(record?.status, "EXACT_PRODUCT_SOURCE", sku);
+    assert.match(record?.sourceUrl ?? "", /^https:\/\/(?:www\.)?(?:wiki\.)?dragino\.com\//, sku);
+  }
+  for (const sku of ["TC01-LB2", "TC11-LB2", "BH01-LB2", "UV254-LB2", "Thermostat"]) {
+    assert.equal(documentation.products.find((item) => item.sku === sku)?.status, "NO_VERIFIED_SOURCE", sku);
+  }
+  for (const sku of ["IVS-LN", "AirFlow-LN", "CO2-LE", "Dishsense", "LPT01", "SVC01-LS2", "POM01-L"]) {
+    assert.equal(guidance.products.find((item) => item.sku === sku)?.evidenceLevel, "EXACT_PRODUCT_SOURCE", sku);
+  }
 });
 
 test("uses only the supplied exact-source gateway and weather-station reconciliation", () => {
@@ -146,6 +161,25 @@ test("uses only the supplied exact-source gateway and weather-station reconcilia
   }
   assert.equal(documentation.products.find((item) => item.sku === "S31B-LB2")?.status, "FAMILY_SOURCE");
   for (const sku of ["SW3L-LB2-004", "SW3L-LB2-006", "SW3L-LB2-010", "SW3L-LB2-020"]) assert.equal(documentation.products.find((item) => item.sku === sku)?.status, "AMBIGUOUS", sku);
+});
+
+test("scopes CAT-1 evidence to the exact KS and KN order structures", () => {
+  const s31Ks = ["S31-KS-GE", "S31-KS-1T", "S31B-KS-GE", "S31B-KS-1T"];
+  const d20Ks = ["D20-KS-GE", "D20-KS-1T", "D20S-KS-GE", "D20S-KS-1T"];
+  const rs485Kn = ["RS485-KN-GE", "RS485-KN-1T"];
+  for (const sku of [...s31Ks, ...d20Ks, ...rs485Kn]) {
+    const record = documentation.products.find((item) => item.sku === sku);
+    assert.equal(record?.status, "EXACT_PRODUCT_SOURCE", sku);
+    assert.match(record?.sourceUrl ?? "", /^https:\/\/wiki\.dragino\.com\/docs\/CAT-1\//, sku);
+    assert.equal(guidance.products.find((item) => item.sku === sku)?.evidenceLevel, "EXACT_PRODUCT_SOURCE", sku);
+  }
+  for (const sku of ["S31-KN-GE", "S31-KN-1T", "S31B-KN-GE", "S31B-KN-1T", "D20-KN-GE", "D20S-KN-GE", "RS485-KS-GE", "RS485-KS-1T", "DDS20-KS-GE", "DDS20-KS-1T", "DDS45-KS-GE", "DDS45-KS-1T", "DDS75-KS-GE", "DDS75-KS-1T"]) {
+    const record = documentation.products.find((item) => item.sku === sku);
+    assert.equal(record?.status, "NO_VERIFIED_SOURCE", sku);
+    assert.equal(guidance.products.find((item) => item.sku === sku), undefined, sku);
+  }
+  assert.match(guidance.products.find((item) => item.sku === "S31-KS-GE")?.suitability ?? "", /own SIM card/i);
+  assert.match(guidance.products.find((item) => item.sku === "S31-KS-1T")?.suitability ?? "", /pre-installed SIM/i);
 });
 
 test("keeps supplier provenance language out of public guidance fields", () => {
