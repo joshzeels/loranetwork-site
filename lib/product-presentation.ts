@@ -1,5 +1,4 @@
 export type PublicDraginoProduct = {
-  sourceRow: number;
   slug: string;
   sku: string;
   application: string;

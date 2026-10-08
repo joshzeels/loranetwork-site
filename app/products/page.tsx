@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { ProductCatalogue } from "@/components/product-catalogue";
 import { StructuredData } from "@/components/structured-data";
-import { applicationOptions, catalogue, getSiteUrl, interfaceOptions, products, publicProducts } from "@/lib/catalogue";
+import { applicationOptions, getSiteUrl, interfaceOptions, products, publicProducts } from "@/lib/catalogue";
 import { getVatDisplayNotice } from "@/lib/pricing";
 import { productDisplayName } from "@/lib/product-presentation";
 
 export const metadata: Metadata = {
   title: "LoRaWAN & IoT Product Catalogue",
-  description: `Search ${catalogue.source.productCount} LoRaWAN and IoT products by SKU, application, specification and connectivity, with prices in South African rand.`,
+  description: `Search ${products.length} LoRaWAN and IoT products by SKU, application, specification and connectivity, with prices in South African rand.`,
   alternates: { canonical: "/products" },
   openGraph: {
     title: "LoRaWAN & IoT Product Catalogue",

@@ -5,7 +5,7 @@ import { WhySensorCable } from "@/components/home-cable";
 import { HomeCable } from "@/components/measured-home-cable";
 import { ProductCard } from "@/components/product-card";
 import { StructuredData } from "@/components/structured-data";
-import { applicationFacets, catalogue, getSiteUrl, interfaceFacets, publicProducts } from "@/lib/catalogue";
+import { applicationFacets, getSiteUrl, interfaceFacets, products, publicProducts } from "@/lib/catalogue";
 import { productApplicationLabel, productConnectivityLabel } from "@/lib/product-presentation";
 import { buildOrganizationSchema, buildWebsiteSchema } from "@/lib/structured-data";
 
@@ -29,9 +29,9 @@ export default function Home() {
       <section className="hero"><div className="shell hero-inner">
         <div className="hero-copy">
           <h1>LoRaWAN &amp; IoT Solutions for South Africa.</h1>
-          <p className="hero-lede">Explore {catalogue.source.productCount.toLocaleString("en-ZA")} sensors, gateways, trackers and connected devices. Compare specifications, connectivity and prices in rand.</p>
+          <p className="hero-lede">Explore {products.length.toLocaleString("en-ZA")} sensors, gateways, trackers and connected devices. Compare specifications, connectivity and prices in rand.</p>
           <div className="hero-actions"><Link href="/products#catalogue" className="button button-primary"><SearchIcon /> Search products</Link><Link href="/applications" className="button button-secondary">Browse applications <ArrowIcon /></Link></div>
-          <div className="hero-proof"><div><strong>{catalogue.source.productCount}</strong><span>Products</span></div><div><strong>{applicationFacets.length}</strong><span>Applications</span></div><div><strong>{interfaceFacets.length}</strong><span>Connectivity options</span></div></div>
+          <div className="hero-proof"><div><strong>{products.length}</strong><span>Products</span></div><div><strong>{applicationFacets.length}</strong><span>Applications</span></div><div><strong>{interfaceFacets.length}</strong><span>Connectivity options</span></div></div>
         </div>
         <div className="hero-image-wrap">
           <div className="hero-device-art">

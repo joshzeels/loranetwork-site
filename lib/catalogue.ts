@@ -98,7 +98,6 @@ export const publicProducts: PublicDraginoProduct[] = products.map((product) => 
   const publicPrice = getPublicPriceForProduct(product.sku, product.priceUsd);
 
   return {
-    sourceRow: product.sourceRow,
     slug: product.slug,
     sku: product.sku,
     application: displayValue(product.application),
