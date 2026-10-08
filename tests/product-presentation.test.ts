@@ -127,11 +127,11 @@ test("provides exact-source guidance for the selected representative products", 
     assert.ok(record.buyerChecks && record.buyerChecks.length >= 3, sku);
     assert.match(record.sourceUrl ?? "", /^https:\/\/(?:www\.)?(?:wiki\.)?dragino\.com\//, sku);
   }
-  assert.equal(guidance.products.length, selected.length + 8);
+  assert.equal(guidance.products.length, selected.length + 11);
 });
 
 test("uses only newly verified exact models from the focused discovery pass", () => {
-  const exact = ["IVS-LN", "AirFlow-LN ", " CO2-LE ", "Dishsense", "LPT01", "TC01-LB", "TC11-LB", "LHT52", "BH01-LB", "SVC01-LS2", "UV254-LB", "WeightScale-LB", "POM01-L", "IBPv1", "DR-RG-6P", "DR-THP-6P", "DR-IL-6P", "SCT013G-D-100", "SCT024-300", "SCT036-600", "A01A-15", "A02-15", "A13-15", "A16-15"];
+  const exact = ["IVS-LN", "AirFlow-LN ", " CO2-LE ", "Dishsense", "LPT01", "TC01-LB", "TC11-LB", "LHT52", "BH01-LB", "SVC01-LS2", "UV254-LB", "WeightScale-LB", "POM01-L", "IBPv1", "DR-RG-6P", "DR-THP-6P", "DR-IL-6P", "SCT013G-D-100", "SCT024-300", "SCT036-600", "A01A-15", "A02-15", "A13-15", "A16-15", "RS485W-LB", "RS485W-LB2", "RS485W-LS", "CS01-LS"];
   for (const sku of exact) {
     const record = documentation.products.find((item) => item.sku === sku);
     assert.equal(record?.status, "EXACT_PRODUCT_SOURCE", sku);
@@ -140,7 +140,7 @@ test("uses only newly verified exact models from the focused discovery pass", ()
   for (const sku of ["TC01-LB2", "TC11-LB2", "BH01-LB2", "UV254-LB2", "Thermostat"]) {
     assert.equal(documentation.products.find((item) => item.sku === sku)?.status, "NO_VERIFIED_SOURCE", sku);
   }
-  for (const sku of ["IVS-LN", "AirFlow-LN", "CO2-LE", "Dishsense", "LPT01", "SVC01-LS2", "POM01-L"]) {
+  for (const sku of ["IVS-LN", "AirFlow-LN", "CO2-LE", "Dishsense", "LPT01", "SVC01-LS2", "POM01-L", "RS485W-LB", "RS485W-LS", "CS01-LS"]) {
     assert.equal(guidance.products.find((item) => item.sku === sku)?.evidenceLevel, "EXACT_PRODUCT_SOURCE", sku);
   }
 });

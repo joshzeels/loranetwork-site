@@ -149,29 +149,29 @@
     {
       "sku": "RS485W-LB",
       "slug": "rs485w-lb",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/rs485-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact RS485W-LB model and identifies it as the 12V-output derivative.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "RS485W-LB2",
       "slug": "rs485w-lb2",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/rs485-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact RS485W-LB2 model in the RS485 LoRaWAN series.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "RS485W-LS",
       "slug": "rs485w-ls",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/rs485-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names the exact RS485W-LS model and identifies the RS485W-LB/LS 12V-output derivative.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "IVS-LN",
@@ -1580,11 +1580,11 @@
     {
       "sku": "CS01-LS",
       "slug": "cs01-ls",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/current-tilting-power-monitoring/cs01-lb/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly identifies the CS01-LB/LS current-sensor converter models, including CS01-LS.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "CS01-KS-GE",

@@ -375,6 +375,33 @@
       "buyerChecks": ["Confirm that AC mains-status monitoring is the required measurement role.", "Confirm that the documented AC supply range suits the installation.", "Confirm suitable LoRaWAN connectivity is available at the deployment location.", "Check electrical installation and safety requirements before ordering."],
       "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/current-tilting-power-monitoring/pom01-l/",
       "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "RS485W-LB",
+      "definition": "RS485W-LB is a LoRaWAN RS485 and UART converter with a 12 V output for connected sensors.",
+      "uses": "RS485W-LB can read compatible RS485 or UART sensors and send their data to an IoT server through LoRaWAN.",
+      "suitability": "RS485W-LB suits projects that need to connect compatible RS485 or UART equipment, including sensors requiring the documented 12 V output, through LoRaWAN.",
+      "buyerChecks": ["Confirm that the connected equipment uses a compatible RS485 or UART interface.", "Confirm that the connected sensor's power requirement fits the documented 12 V output.", "Confirm the required data-reading, uplink and downlink behaviour.", "Confirm suitable LoRaWAN connectivity is available at the deployment location."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/rs485-lb/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "RS485W-LS",
+      "definition": "RS485W-LS is a LoRaWAN RS485 and UART converter with a 12 V output for connected sensors.",
+      "uses": "RS485W-LS can read compatible RS485 or UART sensors and send their data to an IoT server through LoRaWAN.",
+      "suitability": "RS485W-LS suits projects that need to connect compatible RS485 or UART equipment, including sensors requiring the documented 12 V output, through LoRaWAN.",
+      "buyerChecks": ["Confirm that the connected equipment uses a compatible RS485 or UART interface.", "Confirm that the connected sensor's power requirement fits the documented 12 V output.", "Confirm the required data-reading, uplink and downlink behaviour.", "Confirm suitable LoRaWAN connectivity is available at the deployment location."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/rs485-lb/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "CS01-LS",
+      "definition": "CS01-LS is a LoRaWAN four-channel current-sensor converter.",
+      "uses": "CS01-LS can collect readings from compatible current sensors and send them to an IoT platform through LoRaWAN.",
+      "suitability": "CS01-LS suits projects that need four-channel current monitoring with compatible current sensors and LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that four current-measurement channels are required.", "Select compatible current sensors for the circuits and measurement range.", "Confirm the connected-sensor wiring and installation arrangement.", "Confirm suitable LoRaWAN connectivity is available at the deployment location."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/current-tilting-power-monitoring/cs01-lb/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
     }
   ]
 }
