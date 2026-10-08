@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import { FormEvent, KeyboardEvent, useMemo, useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics/client";
 import { formatProductSelection, getProductSuggestions, moveActiveProduct, resolveProductOption, type EnquiryProductOption } from "@/lib/enquiries/product-options";
 
 type Result = { ok: boolean; message: string; errors?: Record<string, string> };
@@ -51,6 +52,7 @@ function ProductCombobox({ products, value, onChange, invalid, describedBy }: {
 
   function select(product: EnquiryProductOption) {
     onChange(formatProductSelection(product));
+    trackEvent("enquiry_product_selected", { sku: product.sku, productName: product.name, sourcePathname: window.location.pathname });
     setOpen(false);
     setActiveIndex(-1);
   }
@@ -124,6 +126,7 @@ function ProductCombobox({ products, value, onChange, invalid, describedBy }: {
 
 export function EnquiryBuilder({ initialSku, products }: { initialSku: string; products: readonly EnquiryProductOption[] }) {
   const startedAt = useRef(0);
+  const enquiryOpened = useRef(false);
   const [result, setResult] = useState<Result | null>(null);
   const [pending, setPending] = useState(false);
   const initialProduct = products.find((product) => product.sku.toLocaleLowerCase("en-ZA") === initialSku.toLocaleLowerCase("en-ZA"));
@@ -137,6 +140,7 @@ export function EnquiryBuilder({ initialSku, products }: { initialSku: string; p
     const payload = Object.fromEntries(new FormData(form));
     const product = resolveProductOption(products, String(payload.productSku ?? ""));
     if (!product) {
+      trackEvent("enquiry_submit_failure", { reason: "client_validation", sourcePathname: window.location.pathname });
       setResult({ ok: false, message: "Please correct the highlighted fields.", errors: { productSku: "Please select a product from the suggestions." } });
       return;
     }
@@ -147,14 +151,15 @@ export function EnquiryBuilder({ initialSku, products }: { initialSku: string; p
       const response = await fetch("/api/enquiries", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...payload, startedAt: startedAt.current, recaptchaToken }) });
       const nextResult = await response.json() as Result;
       setResult(nextResult);
-      if (nextResult.ok) { form.reset(); setProductValue(initialProductValue); }
-    } catch { setResult({ ok: false, message: unavailableMessage }); }
+      if (nextResult.ok) { trackEvent("enquiry_submit_success", { sku: product.sku, sourcePathname: window.location.pathname }); form.reset(); setProductValue(initialProductValue); }
+      else trackEvent("enquiry_submit_failure", { reason: nextResult.errors ? "server_validation" : "unknown", sourcePathname: window.location.pathname });
+    } catch { trackEvent("enquiry_submit_failure", { reason: "network", sourcePathname: window.location.pathname }); setResult({ ok: false, message: unavailableMessage }); }
     finally { setPending(false); }
   }
 
   const error = (field: string) => result?.errors?.[field] ? <span className="field-error" id={`${field}-error`}>{result.errors[field]}</span> : null;
   const a11y = (field: string) => ({ "aria-invalid": Boolean(result?.errors?.[field]), "aria-describedby": result?.errors?.[field] ? `${field}-error` : undefined });
-  return <div className="enquiry-builder">{siteKey ? <Script id="recaptcha-v3" src={`https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(siteKey)}`} strategy="afterInteractive" /> : null}<form onSubmit={submit} onFocusCapture={() => { if (!startedAt.current) startedAt.current = Date.now(); }} className="enquiry-form" noValidate aria-busy={pending}>
+  return <div className="enquiry-builder">{siteKey ? <Script id="recaptcha-v3" src={`https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(siteKey)}`} strategy="afterInteractive" /> : null}<form onSubmit={submit} onFocusCapture={() => { if (!startedAt.current) startedAt.current = Date.now(); if (!enquiryOpened.current) { enquiryOpened.current = true; trackEvent("enquiry_open", { sourcePathname: window.location.pathname, preselectedSku: initialProduct?.sku || undefined }); } }} className="enquiry-form" noValidate aria-busy={pending}>
     <div className="form-row"><label htmlFor="firstName"><span className="field-label">First Name <span aria-hidden="true">*</span></span><input id="firstName" name="firstName" required maxLength={100} autoComplete="given-name" {...a11y("firstName")} />{error("firstName")}</label><label htmlFor="lastName"><span className="field-label">Last Name <span aria-hidden="true">*</span></span><input id="lastName" name="lastName" required maxLength={100} autoComplete="family-name" {...a11y("lastName")} />{error("lastName")}</label></div>
     <div className="form-row"><label htmlFor="email"><span className="field-label">Email <span aria-hidden="true">*</span></span><input id="email" name="email" type="email" required maxLength={254} autoComplete="email" {...a11y("email")} />{error("email")}</label><label htmlFor="phone"><span className="field-label">Phone <span aria-hidden="true">*</span></span><input id="phone" name="phone" type="tel" required maxLength={40} autoComplete="tel" {...a11y("phone")} />{error("phone")}</label></div>
     <label htmlFor="productSku"><span className="field-label">Product / SKU <span aria-hidden="true">*</span></span><ProductCombobox products={products} value={productValue} onChange={setProductValue} invalid={Boolean(result?.errors?.productSku)} describedBy={result?.errors?.productSku ? "productSku-error" : undefined} />{error("productSku")}</label>

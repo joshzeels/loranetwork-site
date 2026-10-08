@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowIcon } from "@/components/icons";
+import { ProductViewTracker } from "@/components/analytics-trackers";
 import { ProductCard } from "@/components/product-card";
 import { ProductImage } from "@/components/product-image";
 import { StructuredData } from "@/components/structured-data";
@@ -70,6 +71,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   ].filter((item): item is { question: string; answer: string } => item !== null);
 
   return <>
+    <ProductViewTracker sku={product.sku} productName={name} slug={product.slug} />
     <StructuredData data={productSchema} />
     <StructuredData data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/products` }, { "@type": "ListItem", position: 3, name, item: `${siteUrl}/products/${product.slug}` }] }} />
     <section className="product-detail-hero"><div className="shell"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>{name}</span></nav><div className="product-buy-grid">
