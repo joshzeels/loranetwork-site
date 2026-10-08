@@ -23,6 +23,7 @@
     "documentation:audit": "node --experimental-strip-types scripts/audit-product-documentation.ts",
     "mojibake:audit": "node --experimental-strip-types scripts/audit-mojibake.ts",
     "launch:audit": "node --experimental-strip-types scripts/audit-launch-readiness.ts",
+    "audit:links": "node --experimental-strip-types scripts/audit-internal-links.ts",
     "catalogue:import": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/import-dragino-catalogue.ps1"
   },
   "dependencies": {
