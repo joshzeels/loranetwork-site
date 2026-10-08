@@ -117,7 +117,7 @@ test("provides verified DDS75-LB guidance without changing catalogue data", () =
 });
 
 test("provides exact-source guidance for the selected representative products", () => {
-  const selected = ["SW3L-004", "S31-LB", "D20S-LB", "SDI-12-LB", "PS-LB-Dxx", "RS485-LN", "WQS-LB", "LPS8N"];
+  const selected = ["SW3L-004", "S31-LB", "S31B-LB", "D20-LB", "D20S-LB", "DDS20-LB", "DDS45-LB", "SDI-12-LB", "PS-LB-Dxx", "RS485-LN", "WQS-LB", "WSC2-L", "TrackerD", "LPS8N"];
   for (const sku of selected) {
     const record = guidance.products.find((item) => item.sku === sku);
     assert.ok(record, sku);

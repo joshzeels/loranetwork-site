@@ -126,6 +126,60 @@
       ],
       "sourceUrl": "https://www.dragino.com/products/lora-lorawan-gateway/item/200-lps8n.html",
       "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "DDS20-LB",
+      "definition": "DDS20-LB is a LoRaWAN ultrasonic sensor for non-contact liquid-level measurement through a container.",
+      "uses": "DDS20-LB is used where the required measurement is liquid level through a container rather than flow.",
+      "suitability": "DDS20-LB suits projects whose stated measurement arrangement is non-contact liquid level through a container and that can use LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that liquid level through a container is the required measurement.", "Check the stated 20 mm to 2000 mm level range against the project.", "Confirm the LoRaWAN regional frequency variant and installation arrangement."],
+      "sourceUrl": "https://www.dragino.com/products/distance-level-sensor/item/273-dds20-lb-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "DDS45-LB",
+      "definition": "DDS45-LB is a LoRaWAN ultrasonic distance sensor for measuring distance to a flat object.",
+      "uses": "DDS45-LB is used where the stated flat-object distance measurement arrangement is required.",
+      "suitability": "DDS45-LB suits projects that need the stated 30 mm to 4500 mm flat-object distance measurement and can use LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that the target is a flat object.", "Check the stated 30 mm to 4500 mm range and 60 degree reference angle.", "Confirm the LoRaWAN regional frequency variant and installation arrangement."],
+      "sourceUrl": "https://www.dragino.com/products/distance-level-sensor/item/272-dds45-lb-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "S31B-LB",
+      "definition": "S31B-LB is a LoRaWAN temperature and humidity sensor with an on-device SHT31 probe.",
+      "uses": "S31B-LB is used where both temperature and humidity are required from the stated on-device sensor arrangement.",
+      "suitability": "S31B-LB suits projects that need combined temperature and humidity measurement with an on-device probe and LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that both temperature and humidity are required.", "Confirm that an on-device probe fits the measurement arrangement.", "Select the required LoRaWAN regional frequency variant."],
+      "sourceUrl": "https://www.dragino.com/products/temperature-humidity-sensor/item/265-s31b-lb-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "D20-LB",
+      "definition": "D20-LB is a LoRaWAN temperature sensor with one stated DS18B20 temperature sensor.",
+      "uses": "D20-LB is used where temperature-only measurement from the stated DS18B20 sensor is required.",
+      "suitability": "D20-LB suits projects that need the stated temperature-only sensor arrangement and LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm that temperature only is the required measurement.", "Check the stated DS18B20 sensor arrangement against the project.", "Select the required LoRaWAN regional frequency variant."],
+      "sourceUrl": "https://www.dragino.com/products/temperature-humidity-sensor/item/259-d20-d20s-lb-d20-d20s-ls.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "WSC2-L",
+      "definition": "WSC2-L is a LoRaWAN weather-station controller with stated compatibility for listed WSS sensors and an RS485 interface for third-party sensors.",
+      "uses": "WSC2-L is used where the project needs to connect one of its stated compatible weather sensors or an RS485 sensor to LoRaWAN.",
+      "suitability": "WSC2-L suits weather-station projects that can use the stated sensor compatibility or RS485 interface and LoRaWAN connectivity.",
+      "buyerChecks": ["Confirm the exact sensor is in the stated compatible WSS list or uses the required RS485 interface.", "Confirm the required weather measurement and sensor arrangement.", "Select the required LoRaWAN regional frequency variant."],
+      "sourceUrl": "https://www.dragino.com/products/agriculture-weather-station/item/339-wsc2-l.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "TrackerD",
+      "definition": "TrackerD is a LoRaWAN tracker with stated GNSS, Bluetooth and a built-in 3-axis accelerometer.",
+      "uses": "TrackerD is used where the project needs the stated location or movement information through LoRaWAN.",
+      "suitability": "TrackerD suits projects that can use LoRaWAN and need the stated GNSS, Bluetooth and accelerometer features.",
+      "buyerChecks": ["Confirm that the stated GNSS and movement information matches the project need.", "Confirm a suitable LoRaWAN network and regional configuration.", "Check the stated 1000mAh Li-ion battery arrangement against the deployment."],
+      "sourceUrl": "https://www.dragino.com/products/tracker/item/234-trackerd.html",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
     }
   ]
 }
