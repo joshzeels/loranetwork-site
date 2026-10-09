@@ -6,10 +6,11 @@ import { StructuredData } from "@/components/structured-data";
 import { getProductBySlug, getSiteUrl } from "@/lib/catalogue";
 import { buyingGuides, getFamilyBySlug, getGuideBySlug, getGuideProducts, getIndexableApplicationsForProducts, getIndexableInterfacesForProducts } from "@/lib/discovery";
 import { productApplicationLabel, productConnectivityLabel, sentenceAwareDescription } from "@/lib/product-presentation";
+import { buildRouteMetadata } from "@/lib/route-metadata";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return buyingGuides.map(({ slug }) => ({ slug })); }
-export async function generateMetadata({ params }: PageProps<"/guides/[slug]">): Promise<Metadata> { const { slug } = await params; const guide = getGuideBySlug(slug); return guide ? { title: guide.title, description: sentenceAwareDescription([guide.answerTemplate.replace("{count}", String(getGuideProducts(guide).length))]), alternates: { canonical: `/guides/${slug}` } } : {}; }
+export async function generateMetadata({ params }: PageProps<"/guides/[slug]">): Promise<Metadata> { const { slug } = await params; const guide = getGuideBySlug(slug); return guide ? buildRouteMetadata(getSiteUrl(), `/guides/${guide.slug}`, guide.title, sentenceAwareDescription([guide.answerTemplate.replace("{count}", String(getGuideProducts(guide).length))])) : {}; }
 
 export default async function GuidePage({ params }: PageProps<"/guides/[slug]">) {
   const { slug } = await params; const guide = getGuideBySlug(slug); if (!guide) notFound();

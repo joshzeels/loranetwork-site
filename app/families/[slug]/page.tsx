@@ -7,10 +7,11 @@ import { StructuredData } from "@/components/structured-data";
 import { getSiteUrl } from "@/lib/catalogue";
 import { buyingGuides, getFamilyBySlug, getFamilyComparisonSummary, getFamilyProducts, getGuideProducts, getIndexableApplicationsForProducts, getIndexableInterfacesForProducts, productFamilies } from "@/lib/discovery";
 import { productApplicationLabel, productConnectivityLabel, productDisplayName } from "@/lib/product-presentation";
+import { buildRouteMetadata } from "@/lib/route-metadata";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return productFamilies.map(({ slug }) => ({ slug })); }
-export async function generateMetadata({ params }: PageProps<"/families/[slug]">): Promise<Metadata> { const { slug } = await params; const family = getFamilyBySlug(slug); if (!family) return {}; const count = getFamilyProducts(family).length; return { title: `${family.name} Product Family`, description: `Compare ${count} ${family.name} models by specification, IoT interface, package information and ZAR price.`, alternates: { canonical: `/families/${slug}` } }; }
+export async function generateMetadata({ params }: PageProps<"/families/[slug]">): Promise<Metadata> { const { slug } = await params; const family = getFamilyBySlug(slug); if (!family) return {}; return buildRouteMetadata(getSiteUrl(), `/families/${family.slug}`, `${family.name} Product Family`, family.purpose); }
 
 export default async function FamilyPage({ params }: PageProps<"/families/[slug]">) {
   const { slug } = await params; const family = getFamilyBySlug(slug); if (!family) notFound();
