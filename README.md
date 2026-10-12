@@ -4,22 +4,23 @@ A source-grounded South African catalogue for Dragino IoT products. The applicat
 
 ## Production configuration
 
-Copy `.env.example` to an ignored local environment file or configure these values in Vercel. `NEXT_PUBLIC_SITE_URL` is the only public value; pricing and enquiry values remain server/build-side.
+Copy `.env.example` to an ignored local environment file or configure these values in Vercel. Public values are embedded at build time; pricing and enquiry values remain server/build-side.
 
 - `NEXT_PUBLIC_SITE_URL`: production origin used by metadata, canonicals, structured data, robots and sitemap.
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID`: optional public GA4 measurement ID in `G-XXXXXXXXXX` format. Leave it blank to disable analytics; production uses `G-7J6T1GVHDQ`.
 - `USD_ZAR_RATE`: optional override for the centrally approved R16.75/USD buffered rate. A change requires a new build/deployment because catalogue prices are statically generated.
 - `PRICING_RATE_UPDATED_AT`: required launch audit date in `YYYY-MM-DD` format; it remains private and must be no more than 14 days old when the audit runs.
 - `VAT_DISPLAY_MODE`: `inclusive` or `exclusive` for launch (`none` remains a safe local-development fallback); this changes only the label and never adds VAT.
 - `MAUTIC_BASE_URL`: private Mautic origin, without the form path.
 - `MAUTIC_ENQUIRY_FORM_ID`: private Mautic enquiry form ID.
 - `MAUTIC_ENQUIRY_FORM_NAME`: private Mautic enquiry form name.
-- `ANALYTICS_ID`: reserved for a future selected integration; no analytics currently loads.
+- `ANALYTICS_ID`: reserved for any future server-side analytics integration; GA4 uses the public variable above.
 - `BUSINESS_EMAIL`, `BUSINESS_PHONE`, `BUSINESS_ADDRESS`: optional confirmed public details, omitted when blank.
 - `LEGAL_CONTENT_APPROVED`: set to `true` only after the operating business has approved the privacy notice and website terms.
 
 The enquiry endpoint validates submissions server-side and uses a honeypot, minimum submission time and best-effort in-memory rate limiting. Because Vercel instances do not share memory, distributed rate limiting is the recommended later hardening step if abuse appears.
 
-No live exchange-rate service is used. The current application sets no cookies, writes no browser storage and loads no analytics. Reassess consent requirements before enabling tracking.
+No live exchange-rate service is used. When configured, GA4 loads with automatic page views, Google signals and ad personalisation disabled; the application sends explicit pathname-only page views and typed, non-PII events. Reassess consent requirements if the tracking policy changes.
 
 ## Technology
 

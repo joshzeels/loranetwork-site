@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { forwardToGa4, initialiseGa4, isGa4MeasurementId, mapToGa4, trackGa4PageView, type Gtag } from "../lib/analytics/ga4.ts";
+import { createGa4PageViewTracker, forwardToGa4, initialiseGa4, isGa4MeasurementId, mapToGa4, type Gtag } from "../lib/analytics/ga4.ts";
 
 const googleAnalytics = readFileSync(new URL("../components/google-analytics.tsx", import.meta.url), "utf8");
 const applicationAnalytics = [
@@ -17,12 +17,15 @@ test("GA4 remains disabled for a missing or invalid measurement ID", () => {
   assert.equal(isGa4MeasurementId(undefined), false);
   assert.equal(isGa4MeasurementId(""), false);
   assert.equal(isGa4MeasurementId("UA-123"), false);
-  assert.equal(isGa4MeasurementId("G-ABC123"), true);
+  assert.equal(isGa4MeasurementId("G-ABC123"), false);
+  assert.equal(isGa4MeasurementId("g-7j6t1gvhdq"), false);
+  assert.equal(isGa4MeasurementId("G-7J6T1GVHDQ"), true);
 });
 
 test("the root layout omits the GA4 client boundary unless the measurement ID is valid", () => {
   const layout = readFileSync(new URL("../app/layout.tsx", import.meta.url), "utf8");
 
+  assert.match(layout, /process\.env\.NEXT_PUBLIC_GA_MEASUREMENT_ID\?\.trim\(\)/);
   assert.match(layout, /isGa4MeasurementId\(gaMeasurementId\) \? <GoogleAnalytics measurementId=\{gaMeasurementId\} \/> : null/);
 });
 
@@ -35,24 +38,50 @@ test("GA4 maps product and enquiry conversion events without PII", () => {
 
 test("GA4 forwarding and page views do not throw when a provider is absent or fails", () => {
   const event = { name: "contact_email_click", properties: { pathname: "/contact" } } as const;
+  const trackPageView = createGa4PageViewTracker();
   assert.doesNotThrow(() => forwardToGa4(event, undefined));
-  assert.doesNotThrow(() => trackGa4PageView("/contact", undefined));
+  assert.doesNotThrow(() => trackPageView("/contact", undefined));
   const failingGtag: Gtag = () => { throw new Error("provider unavailable"); };
   assert.doesNotThrow(() => forwardToGa4(event, failingGtag));
-  assert.doesNotThrow(() => trackGa4PageView("/contact", failingGtag));
+  assert.doesNotThrow(() => trackPageView("/contact", failingGtag));
 });
 
 test("GA4 initialisation configures one measurement ID only once", () => {
   const calls: unknown[][] = [];
   const target = { dataLayer: [] as unknown[][], gtag: (...args: unknown[]) => { calls.push(args); } } as unknown as Window;
-  assert.equal(initialiseGa4(target, "G-ABC123"), true);
   assert.equal(initialiseGa4(target, "G-ABC123"), false);
+  assert.equal(calls.length, 0);
+  assert.equal(initialiseGa4(target, "G-7J6T1GVHDQ"), true);
+  assert.equal(initialiseGa4(target, "G-7J6T1GVHDQ"), false);
   assert.equal(calls.filter(([command]) => command === "config").length, 1);
-  assert.deepEqual(calls.find(([command]) => command === "config"), ["config", "G-ABC123", { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false }]);
+  assert.deepEqual(calls.find(([command]) => command === "config"), ["config", "G-7J6T1GVHDQ", { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false }]);
+});
+
+test("page views send once per pathname and never include query parameters", () => {
+  const calls: unknown[][] = [];
+  const gtag: Gtag = (...arguments_) => { calls.push(arguments_); };
+  const trackPageView = createGa4PageViewTracker();
+
+  const origin = "https://loranetwork.co.za";
+  assert.equal(trackPageView("/?campaign=private#top", gtag, origin), true);
+  assert.equal(trackPageView("/?campaign=other", gtag, origin), false);
+  assert.equal(trackPageView("/products?search=user-entered", gtag, origin), true);
+  assert.equal(trackPageView("/products", gtag, origin), false);
+  assert.equal(trackPageView("/products/dds75-lb", gtag, origin), true);
+  assert.equal(trackPageView("/applications/distance-sensor?sku=private", gtag, origin), true);
+  assert.equal(trackPageView("/contact", gtag, origin), true);
+  assert.equal(trackPageView("https://loranetwork.co.za/contact", gtag, origin), false);
+  assert.deepEqual(calls, [
+    ["event", "page_view", { page_path: "/", page_location: "https://loranetwork.co.za/" }],
+    ["event", "page_view", { page_path: "/products", page_location: "https://loranetwork.co.za/products" }],
+    ["event", "page_view", { page_path: "/products/dds75-lb", page_location: "https://loranetwork.co.za/products/dds75-lb" }],
+    ["event", "page_view", { page_path: "/applications/distance-sensor", page_location: "https://loranetwork.co.za/applications/distance-sensor" }],
+    ["event", "page_view", { page_path: "/contact", page_location: "https://loranetwork.co.za/contact" }],
+  ]);
 });
 
 test("only the GA4 provider adapter calls gtag and it uses pathname-only page views", () => {
   assert.doesNotMatch(applicationAnalytics, /\bgtag\b/);
-  assert.match(googleAnalytics, /trackGa4PageView\(pathname, window\.gtag\)/);
+  assert.match(googleAnalytics, /pageViewTracker\.current\(pathname, window\.gtag, window\.location\.origin\)/);
   assert.match(googleAnalytics, /strategy="afterInteractive"/);
 });

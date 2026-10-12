@@ -4,7 +4,7 @@ import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { ANALYTICS_BROWSER_EVENT } from "@/lib/analytics/client";
-import { forwardToGa4, initialiseGa4, isGa4MeasurementId, trackGa4PageView, type Gtag } from "@/lib/analytics/ga4";
+import { createGa4PageViewTracker, forwardToGa4, initialiseGa4, isGa4MeasurementId, type Gtag } from "@/lib/analytics/ga4";
 import type { AnalyticsEvent } from "@/lib/analytics/events";
 
 declare global {
@@ -13,7 +13,7 @@ declare global {
 
 export function GoogleAnalytics({ measurementId }: { measurementId?: string }) {
   const pathname = usePathname();
-  const lastPagePath = useRef<string | null>(null);
+  const pageViewTracker = useRef(createGa4PageViewTracker());
   const enabled = isGa4MeasurementId(measurementId);
 
   useLayoutEffect(() => {
@@ -25,9 +25,8 @@ export function GoogleAnalytics({ measurementId }: { measurementId?: string }) {
   }, [enabled, measurementId]);
 
   useEffect(() => {
-    if (!enabled || !measurementId || !pathname || lastPagePath.current === pathname) return;
-    lastPagePath.current = pathname;
-    trackGa4PageView(pathname, window.gtag);
+    if (!enabled || !measurementId) return;
+    pageViewTracker.current(pathname, window.gtag, window.location.origin);
   }, [enabled, measurementId, pathname]);
 
   if (!enabled || !measurementId) return null;

@@ -2,6 +2,7 @@ import type { AnalyticsEvent } from "./events";
 
 export type Ga4Event = { name: string; parameters: Record<string, unknown> };
 export type Gtag = (command: "config" | "event" | "js", target: string | Date, parameters?: Record<string, unknown>) => void;
+export type Ga4PageViewTracker = (pathname: string | null | undefined, gtag: Gtag | undefined, origin?: string) => boolean;
 
 type Ga4Window = Window & {
   dataLayer?: unknown[][];
@@ -10,7 +11,7 @@ type Ga4Window = Window & {
 };
 
 export function isGa4MeasurementId(value: string | undefined) {
-  return /^G-[A-Z0-9]+$/i.test(value?.trim() ?? "");
+  return /^G-[A-Z0-9]{10}$/.test(value?.trim() ?? "");
 }
 
 export function mapToGa4(event: AnalyticsEvent): Ga4Event {
@@ -49,11 +50,21 @@ export function forwardToGa4(event: AnalyticsEvent, gtag: Gtag | undefined) {
   }
 }
 
-export function trackGa4PageView(pathname: string, gtag: Gtag | undefined) {
-  if (!gtag) return;
-  try {
-    gtag("event", "page_view", { page_path: pathname });
-  } catch {
-    // Provider failures must never interrupt navigation.
-  }
+export function createGa4PageViewTracker(): Ga4PageViewTracker {
+  let lastPagePath: string | null = null;
+
+  return (pathname, gtag, origin) => {
+    const pagePath = pathname?.trim().split(/[?#]/, 1)[0];
+    if (!gtag || !pagePath?.startsWith("/") || lastPagePath === pagePath) return false;
+
+    try {
+      const pageLocation = origin ? `${new URL(origin).origin}${pagePath}` : undefined;
+      gtag("event", "page_view", { page_path: pagePath, ...(pageLocation ? { page_location: pageLocation } : {}) });
+      lastPagePath = pagePath;
+      return true;
+    } catch {
+      // Provider failures must never interrupt navigation.
+      return false;
+    }
+  };
 }

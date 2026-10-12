@@ -151,7 +151,7 @@ export function EnquiryBuilder({ initialSku, products }: { initialSku: string; p
       const response = await fetch("/api/enquiries", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...payload, startedAt: startedAt.current, recaptchaToken }) });
       const nextResult = await response.json() as Result;
       setResult(nextResult);
-      if (nextResult.ok) { trackEvent("enquiry_submit_success", { sku: product.sku, sourcePathname: window.location.pathname }); form.reset(); setProductValue(initialProductValue); }
+      if (response.ok && nextResult.ok) { trackEvent("enquiry_submit_success", { sku: product.sku, sourcePathname: window.location.pathname }); form.reset(); setProductValue(initialProductValue); }
       else trackEvent("enquiry_submit_failure", { reason: nextResult.errors ? "server_validation" : "unknown", sourcePathname: window.location.pathname });
     } catch { trackEvent("enquiry_submit_failure", { reason: "network", sourcePathname: window.location.pathname }); setResult({ ok: false, message: unavailableMessage }); }
     finally { setPending(false); }
