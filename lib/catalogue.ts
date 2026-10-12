@@ -50,6 +50,10 @@ export function getDocumentationForProduct(sku: string) {
   return record && (record.status === "EXACT_PRODUCT_SOURCE" || record.status === "FAMILY_SOURCE") ? record : undefined;
 }
 
+export function getProductDocumentationStatus(sku: string) {
+  return documentationBySku.get(sku)?.status;
+}
+
 type ProductImageRecord = {
   sku: string;
   slug: string;

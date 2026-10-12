@@ -19,6 +19,7 @@
     "images:provenance": "node --experimental-strip-types scripts/normalize-image-provenance.ts",
     "brand:audit": "node --experimental-strip-types scripts/audit-brand-copy.ts",
     "content:audit": "node --experimental-strip-types scripts/audit-content-opportunities.ts",
+    "answers:coverage": "node --experimental-strip-types scripts/report-product-answer-coverage.ts",
     "content:architecture-audit": "node --experimental-strip-types scripts/audit-content-architecture.ts",
     "documentation:audit": "node --experimental-strip-types scripts/audit-product-documentation.ts",
     "mojibake:audit": "node --experimental-strip-types scripts/audit-mojibake.ts",
