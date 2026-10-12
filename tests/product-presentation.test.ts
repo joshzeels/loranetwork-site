@@ -192,7 +192,7 @@ test("keeps Dragino source URLs out of the public product page", () => {
   assert.doesNotMatch(productPage, /documentation\.sourceUrl/);
   assert.match(productPage, /Manufacturer<\/dt><dd>{buildProductManufacturer\(product\.sku\)\.manufacturer\.name}/);
   assert.match(productPage, /href={`\/contact\?sku=/);
-  assert.match(productPage, /buildProductAnswers\(product, guidance, getProductDocumentationStatus\(product\.sku\)\)/);
+  assert.match(productPage, /buildProductAnswers\(product, guidance, getProductDocumentationStatus\(product\.sku\), \{ familyName: family\?\.name, familyProducts \}\)/);
   assert.doesNotMatch(productPage, /Key catalogue details|Reseller<\/dt>/);
   assert.doesNotMatch(familyPage, /source catalogue/);
   assert.doesNotMatch(facetDetail, /verified product family/);
