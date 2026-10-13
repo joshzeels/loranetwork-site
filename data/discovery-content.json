@@ -102,6 +102,55 @@
       "hardwareSummary": "Some PS product specifications state one 0 to 20 mA input, one 0 to 30 V input, and 5 V and 12 V power outputs. Check the selected model's stated inputs and outputs before choosing, because the application label alone does not define the required wiring or signal arrangement.",
       "considerations": ["Identify the analogue signal and input range the project needs to read.", "Choose an individual PS model only after checking its stated input and power-output details.", "Check the selected model's stated wiring, power and installation requirements.", "Choose the connectivity option shown for the selected model and confirm that the deployment can support it.", "Use the exact SKU and public ZAR price to choose between suitable models."],
       "selectionPath": "Start with the signal to read. Then shortlist models with the required stated input and output details, compare wiring and connectivity requirements, and use public ZAR price to select the exact model."
+    },
+    "Generic Node / RS485": {
+      "directAnswer": "These {count} products connect RS485 equipment or sensors to an IoT uplink. Choose the required wired interface first, then compare LoRaWAN or LTE CAT 1 connectivity and the stated power arrangement.",
+      "hardwareSummary": "The group includes RS485 models with LoRaWAN or LTE CAT 1 connectivity. Some specifications also state UART, I2C, one-wire or digital input and output interfaces; RS485W models explicitly describe support for RS485 or Modbus sensor connections.",
+      "considerations": ["Confirm whether the connected equipment requires RS485, Modbus over RS485, UART or another stated local interface.", "Treat the wired equipment interface separately from the product's LoRaWAN or LTE CAT 1 uplink.", "Compare the stated battery, solar or external-input arrangement for the exact SKU.", "Check wiring, protocol and register requirements before ordering."],
+      "selectionPath": "Identify the equipment interface and protocol that must be supported. Next choose the available IoT uplink for the site. Finally compare the exact power arrangement and wiring details before selecting a model.",
+      "relatedFamilySlugs": ["rs485"],
+      "relatedGuideSlugs": ["rs485-modbus-iot-devices", "choosing-iot-connectivity"],
+      "comparison": {"caption": "RS485 product groups differ by uplink and stated power arrangement.", "headers": ["Option", "Stated distinction", "Confirm next"], "rows": [["RS485-LN", "LoRaWAN, RS485 interface and external 7 to 24 V DC input", "Class mode, wiring and equipment protocol"], ["RS485-LB / LB2 / LS", "LoRaWAN with multiple stated local interfaces and battery or solar options", "Required interfaces and power arrangement"], ["RS485-KN / KS", "LTE CAT 1 with multiple stated local interfaces and rechargeable-battery or solar options", "Mobile service, interface wiring and exact SKU"], ["RS485W", "RS485 or Modbus sensor connection plus UART where stated", "Sensor protocol and selected power option"]]}
+    },
+    "Water Leak Detect": {
+      "directAnswer": "These {count} products cover point-based and rope-based water-leak detection, plus separate leak-detection cables. Decide where a leak must be detected before comparing connectivity, sensing format and power.",
+      "hardwareSummary": "LWL02 and LWL04 state contact-point sensing. WL03A models state rope-type detection up to 50 metres, with LoRaWAN or LTE CAT 1 and different power arrangements. DR-WLN products are one-, five- or ten-metre leak cables rather than connected detectors.",
+      "considerations": ["Choose contact-point sensing for a defined detection location or investigate rope-type models where the stated coverage format fits the project.", "Separate connected detector models from DR-WLN cable components.", "For WL03A variants, compare LoRaWAN or LTE CAT 1 and the exact battery or solar arrangement.", "Confirm cable coverage, detector compatibility and installation requirements before ordering."],
+      "selectionPath": "Map the area or point where water must be detected. Then choose a connected detector or a cable component with the required stated length. Finish by confirming connectivity, power and component compatibility for the exact SKU.",
+      "relatedGuideSlugs": ["choose-water-monitoring-device"],
+      "comparison": {"caption": "Water-leak options serve different detection and component roles.", "headers": ["Option", "Stated distinction", "Confirm next"], "rows": [["LWL02 / LWL04", "Contact-point detection with different stated battery arrangements", "Detection point and installation"], ["WL03A LoRaWAN", "Rope-type detection up to 50 metres with battery or solar variants", "Rope layout, LoRaWAN and power"], ["WL03A LTE CAT 1", "Rope-type detection up to 50 metres with rechargeable-battery or solar variants", "Mobile service, rope layout and exact SKU"], ["DR-WLN cable", "One-, five- or ten-metre cable component", "Required length and detector compatibility"]]}
+    },
+    "Generic Node": {
+      "directAnswer": "These {count} generic nodes provide configurable input and output interfaces for connecting equipment to LoRaWAN or LTE CAT 1. Start with the required electrical interface rather than choosing by connectivity alone.",
+      "hardwareSummary": "SN50v3 specifications state digital input and output, one-wire, UART and I2C interfaces with battery, solar and cellular variants. LT-22222-L states digital inputs, digital and relay outputs, and analogue inputs, so it represents a different control and signal arrangement.",
+      "considerations": ["List the digital, relay, analogue, one-wire, UART or I2C connections the project requires.", "Compare those requirements with the exact model specification before selecting an uplink.", "Choose LoRaWAN or LTE CAT 1 only where shown for the exact SKU and supported at the site.", "Confirm voltage, current, wiring and power requirements before ordering."],
+      "selectionPath": "Define every input, output and local interface the connected equipment needs. Keep only nodes whose stated specification includes those interfaces. Then compare uplink and power arrangements and confirm the exact wiring limits.",
+      "relatedFamilySlugs": ["sn50v3"],
+      "relatedGuideSlugs": ["choosing-iot-connectivity"],
+      "comparison": {"caption": "Generic nodes differ first by their stated input and output arrangement.", "headers": ["Option", "Stated distinction", "Confirm next"], "rows": [["SN50v3 LoRaWAN", "Digital input/output, one-wire, UART and I2C with battery or solar options", "Required interfaces and LoRaWAN availability"], ["SN50v3 LTE CAT 1", "The same stated interface group with rechargeable-battery or solar variants", "Mobile service, power and exact SKU"], ["LT-22222-L", "Digital inputs, digital and relay outputs, plus 0 to 20 mA and 0 to 30 V analogue inputs", "Signal ranges, relay load and wiring"]]}
+    },
+    "Gateway: LoRaWAN": {
+      "directAnswer": "These {count} products provide LoRaWAN gateway functions. Choose indoor or outdoor placement first, then compare the stated backhaul, server functions and local interfaces for the exact gateway.",
+      "hardwareSummary": "The group includes indoor and outdoor multi-channel gateways. Selected models state built-in network or application servers, Ethernet or Wi-Fi backhaul, RS232 or RS485 interfaces, and optional LTE 4G variants; these features are not shared by every gateway.",
+      "considerations": ["Choose an indoor or outdoor model from the placement stated for the exact gateway.", "Confirm the upstream backhaul available at the site, such as Ethernet, Wi-Fi or cellular where stated.", "Decide whether the stated built-in server functions or local RS232 and RS485 interfaces are required.", "Confirm regional radio configuration, power and installation requirements before ordering."],
+      "selectionPath": "Set the installation environment and required LoRaWAN role first. Next match the gateway's stated backhaul and local interfaces to the site. Then compare the exact model's server functions, regional configuration and power input.",
+      "relatedGuideSlugs": ["choose-lorawan-gateway", "choosing-iot-connectivity"],
+      "comparison": {"caption": "Gateway groups differ by placement, backhaul and stated local functions.", "headers": ["Option", "Stated distinction", "Confirm next"], "rows": [["LPS8N", "Indoor multi-channel gateway; an EC25 variant states LTE 4G", "Required backhaul and exact variant"], ["LPS8v2", "Indoor gateway with built-in network and application servers; an EC25 variant states LTE 4G", "Server role and backhaul"], ["MS48-LR", "Indoor gateway with built-in servers plus RS232 and RS485; an EC25 variant states LTE 4G", "Local interfaces and backhaul"], ["DLOS8N", "Outdoor multi-channel gateway; an EC25 variant states LTE 4G", "Outdoor installation and backhaul"], ["MikroTik wAP LoRa8 kit", "Outdoor gateway with Ethernet, Wi-Fi and passive PoE details stated", "Regional configuration, backhaul and power"]]}
+    },
+    "Power Outage Monitoring Sensor": {
+      "directAnswer": "These {count} products monitor a mains-power outage and state an internal backup battery for continued monitoring. The main selection difference is the IoT connectivity shown for the exact model.",
+      "hardwareSummary": "POM01-L states LoRaWAN, while POM01-K-GE and POM01-K-1T state LTE CAT 1. Each specification states direct 85 to 305 VAC power and an internal 1000 mAh lithium-ion backup battery.",
+      "considerations": ["Confirm that the stated 85 to 305 VAC input suits the monitored supply.", "Choose LoRaWAN or LTE CAT 1 according to the connectivity available at the site.", "Treat the backup battery as a stated continuity feature rather than an assumed runtime claim.", "Confirm electrical installation, alert behaviour and exact model requirements before ordering."],
+      "selectionPath": "Confirm the mains supply and installation requirement first. Then choose the stated LoRaWAN or LTE CAT 1 connectivity path. Finally verify the exact model's alert and electrical-installation requirements.",
+      "comparison": {"caption": "Power-outage models share the stated input and backup arrangement but use different connectivity.", "headers": ["Option", "Stated distinction", "Confirm next"], "rows": [["POM01-L", "LoRaWAN with 85 to 305 VAC input and 1000 mAh internal backup battery", "LoRaWAN availability and electrical installation"], ["POM01-K-GE / K-1T", "LTE CAT 1 with 85 to 305 VAC input and 1000 mAh internal backup battery", "Mobile service, exact variant and electrical installation"]]}
+    },
+    "Antenna": {
+      "directAnswer": "These {count} LoRa antenna products differ by frequency range, gain, connector and mounting details. Match those stated characteristics to the radio equipment before comparing price.",
+      "hardwareSummary": "The outdoor antenna records include 868 to 915 MHz fold and fiberglass options with RP-SMA plugs, plus a MikroTik 824 to 960 MHz kit with a 6.5 dBi omni antenna, one-metre SMA cable and mast-mount holder.",
+      "considerations": ["Match the antenna's stated frequency range to the radio equipment and regional configuration.", "Confirm whether the equipment requires RP-SMA or SMA and the correct connector gender.", "Compare gain, mounting format and any included cable or holder stated for the exact product.", "Confirm equipment compatibility and installation requirements before ordering."],
+      "selectionPath": "Start with frequency and connector compatibility. Next compare the stated gain and mounting format. Then confirm any included cable or holder and the installation requirements for the exact antenna.",
+      "relatedGuideSlugs": ["choose-lorawan-gateway"],
+      "comparison": {"caption": "The antenna options have different stated frequency, gain and mounting details.", "headers": ["Option", "Stated distinction", "Confirm next"], "rows": [["DR-ANT-OD-Fold-868-915", "868 to 915 MHz fold antenna, 0.9 dBi maximum gain and RP-SMA plug", "Equipment connector and mounting"], ["BLG-AN-020", "868 to 915 MHz fiberglass antenna, 1.2 dBi maximum gain and RP-SMA plug", "Equipment connector and mounting"], ["TOF-0809-7V-S1", "824 to 960 MHz, 6.5 dBi omni antenna with SMA cable and mast holder", "Frequency, SMA connection and mast installation"]]}
     }
   },
   "connectivityGuidance": {
@@ -129,6 +178,9 @@
       "skuPrefix": "SW3L",
       "purpose": "Compare SW3L models by connectivity, specification, package information and price.",
       "evidence": "Shared SW3L SKU base and manufacturer family naming recorded by the existing product-image audit.",
+      "variantGuidance": "Choose the stated flow-sensor diameter and pulse relationship first. Within that size, compare LoRaWAN or LTE CAT 1 connectivity, then choose among the stated 8500 mAh, 19000 mAh, solar plus 3000 mAh, or rechargeable 1000 mAh power arrangements.",
+      "representativeSkus": ["SW3L-LB-004", "SW3L-LB2-004", "SW3L-LS-004", "SW3L-KN-GE-004"],
+      "relatedGuideSlugs": ["choose-water-monitoring-device"],
       "selectionPath": ["Start with the water-flow requirement and retain only models whose listed specification fits it.", "Compare the connectivity shown for each remaining exact SKU.", "Check package information and public ZAR price, then confirm any installation requirement not shown in the product details."]
     },
     {
@@ -137,6 +189,9 @@
       "skuPrefix": "S31B",
       "purpose": "Compare S31B temperature and humidity sensor models by specification, connectivity and price.",
       "evidence": "Shared S31B SKU base and manufacturer family naming recorded by the existing product-image audit.",
+      "variantGuidance": "S31B-LB, LB2, LS and cellular variants state an on-device SHT31 probe and differ in connectivity and power. S31B-LE instead states temperature and humidity ranges, an 8000 mAh Li-SOCl2 battery and a 2.7-inch E-Ink display.",
+      "representativeSkus": ["S31B-LE", "S31B-LB", "S31B-LS", "S31B-KN-GE"],
+      "relatedGuideSlugs": ["choose-temperature-sensor"],
       "selectionPath": ["Confirm that the project needs both temperature and humidity sensing.", "Compare the stated specification and connectivity for each exact SKU.", "Use the product details to confirm any range, installation or environmental requirement before requesting a quote."]
     },
     {
@@ -145,6 +200,9 @@
       "skuPrefix": "SN50V3",
       "purpose": "Compare SN50v3 generic-node variants and their connectivity options.",
       "evidence": "Shared SN50v3 SKU base and common official family pages recorded by the existing product-image audit.",
+      "variantGuidance": "The SN50v3 records share the stated digital input/output, one-wire, UART and I2C interface group. Choose between LoRaWAN and LTE CAT 1, then compare the stated 8500 mAh, 19000 mAh, solar plus 3000 mAh, or rechargeable 1000 mAh power arrangement.",
+      "representativeSkus": ["SN50v3-LB", "SN50v3-LB2", "SN50v3-LS", "SN50v3-KN-GE"],
+      "relatedGuideSlugs": ["rs485-modbus-iot-devices", "choosing-iot-connectivity"],
       "selectionPath": ["Define the node function and any interface requirement for the project.", "Keep only models whose listed specification and connectivity match that requirement.", "Confirm wiring, power and installation details from the exact product before choosing a SKU."]
     },
     {
@@ -153,6 +211,9 @@
       "skuPrefix": "RS485",
       "purpose": "Compare RS485 models by connectivity, specification and price.",
       "evidence": "Shared RS485 SKU base and family naming in the catalogue.",
+      "variantGuidance": "RS485-LN states an RS485 interface, external 7 to 24 V DC input and LoRaWAN class details. Other family models add a broader stated interface group and differ between LoRaWAN or LTE CAT 1 and battery or solar power arrangements.",
+      "representativeSkus": ["RS485-LN", "RS485-LB2", "RS485-LS", "RS485-KN-GE"],
+      "relatedGuideSlugs": ["rs485-modbus-iot-devices", "choosing-iot-connectivity"],
       "selectionPath": ["Confirm that the project needs an RS485 product or interface.", "Compare the exact SKU's listed specification and IoT connectivity separately.", "Check wiring, protocol and installation requirements before requesting a quote."]
     },
     {
@@ -161,6 +222,9 @@
       "skuPrefix": "WQS",
       "purpose": "Compare WQS water-quality models by specification, connectivity and price.",
       "evidence": "Shared WQS SKU base and manufacturer family naming recorded by the existing product-image audit.",
+      "variantGuidance": "The WQS records state support for one to three EC, pH, dissolved-oxygen, ORP or TS-type probes. Choose the required probe set first, then compare LoRaWAN or LTE CAT 1 and the stated battery or solar arrangement.",
+      "representativeSkus": ["WQS-LB", "WQS-LB2", "WQS-LS", "WQS-KN-GE"],
+      "relatedGuideSlugs": ["choose-water-monitoring-device"],
       "selectionPath": ["Start with the water-quality parameters the project needs to measure.", "Compare the listed specification and connectivity for suitable exact SKUs.", "Confirm probe, installation and calibration requirements in the selected product details before choosing."]
     },
     {
@@ -169,6 +233,9 @@
       "skuPrefix": "WSC2",
       "purpose": "Compare WSC2 weather-station models and connectivity options.",
       "evidence": "Shared WSC2 SKU base and manufacturer family naming recorded by the existing product-image audit.",
+      "variantGuidance": "WSC2-L lists WSS-21 to WSS-27, WSS-08 and WSS-09 compatibility plus an RS485 interface for third-party sensors. WSC2-Compact-LS lists DR-RG-6P, DR-THP-6P and DR-IL-6P compatibility and states a rechargeable battery with solar panel.",
+      "representativeSkus": ["WSC2-L", "WSC2-Compact-LS"],
+      "relatedGuideSlugs": ["choosing-iot-connectivity"],
       "selectionPath": ["Define the weather measurements and sensor arrangement required for the deployment.", "Compare the listed connectivity and specification for each exact WSC2 SKU.", "Confirm sensor compatibility, power and environmental requirements before requesting a quote."]
     },
     {
@@ -177,6 +244,9 @@
       "skuPrefix": "TRACKERD",
       "purpose": "Compare the two TrackerD models side by side.",
       "evidence": "Two exact TrackerD SKU variants with distinct official product pages in the catalogue.",
+      "variantGuidance": "Both TrackerD records state LoRaWAN, GNSS, Bluetooth, a built-in three-axis accelerometer and USB charging. TrackerD states a 1000 mAh Li-ion battery, while TrackerD-LS states a solar panel plus 3000 mAh Li-ion battery.",
+      "representativeSkus": ["TrackerD", "TrackerD-LS"],
+      "relatedGuideSlugs": ["choose-iot-tracker"],
       "selectionPath": ["Compare the stated capabilities of TrackerD and TrackerD-LS against the project requirement.", "Choose only the connectivity shown for the exact SKU.", "Review the listed power arrangement and any deployment requirement before requesting a quote."]
     }
   ],

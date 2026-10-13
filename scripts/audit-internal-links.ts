@@ -9,11 +9,12 @@ for (const name of [".env", ".env.local"]) {
 
 type Product = { sku: string; slug: string; application: string; iotInterface: string };
 type Facet = { slug: string; value: string };
-type Family = { slug: string; skuPrefix: string };
+type Family = { slug: string; skuPrefix: string; representativeSkus: string[]; relatedGuideSlugs: string[] };
 type Guide = { slug: string; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[]; decisionResource?: { relatedLinks: Array<{ href: string }> } };
+type ApplicationGuidance = { relatedFamilySlugs?: string[]; relatedGuideSlugs?: string[] };
 
 const catalogue = JSON.parse(readFileSync(resolve(root, "data", "dragino-products.json"), "utf8")) as { products: Product[] };
-const discovery = JSON.parse(readFileSync(resolve(root, "data", "discovery-content.json"), "utf8")) as { indexableApplications: string[]; indexableInterfaces: string[]; families: Family[]; guides: Guide[] };
+const discovery = JSON.parse(readFileSync(resolve(root, "data", "discovery-content.json"), "utf8")) as { indexableApplications: string[]; indexableInterfaces: string[]; applicationGuidance: Record<string, ApplicationGuidance>; families: Family[]; guides: Guide[] };
 const normalise = (value: string) => value.trim().toLocaleLowerCase("en-ZA");
 const slugify = (value: string) => normalise(value).replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 const applicationValues = new Set(discovery.indexableApplications.map(normalise));
@@ -64,6 +65,13 @@ for (const [label, values] of [["product SKU", catalogue.products.map((product) 
 for (const family of discovery.families) {
   const prefix = normalise(family.skuPrefix);
   check(catalogue.products.some((product) => normalise(product.sku) === prefix || normalise(product.sku).startsWith(`${prefix}-`)), `Family ${family.slug} has no matching product.`);
+  check(family.representativeSkus.every((sku) => catalogue.products.some((product) => normalise(product.sku) === normalise(sku) && (normalise(product.sku) === prefix || normalise(product.sku).startsWith(`${prefix}-`)))), `Family ${family.slug} has an invalid representative SKU.`);
+  check(family.relatedGuideSlugs.every((slug) => discovery.guides.some((guide) => guide.slug === slug)), `Family ${family.slug} references an unknown guide.`);
+}
+for (const [application, guidance] of Object.entries(discovery.applicationGuidance)) {
+  check(discovery.indexableApplications.includes(application), `Application guidance ${application} is not indexable.`);
+  check((guidance.relatedFamilySlugs ?? []).every((slug) => discovery.families.some((family) => family.slug === slug)), `Application guidance ${application} references an unknown family.`);
+  check((guidance.relatedGuideSlugs ?? []).every((slug) => discovery.guides.some((guide) => guide.slug === slug)), `Application guidance ${application} references an unknown guide.`);
 }
 for (const guide of discovery.guides) {
   check(guide.applicationValues.every((value) => catalogue.products.some((product) => normalise(product.application) === normalise(value))), `Guide ${guide.slug} references an unknown application.`);

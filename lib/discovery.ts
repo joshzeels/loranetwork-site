@@ -16,6 +16,9 @@ export type ProductFamily = {
   skuPrefix: string;
   purpose: string;
   evidence: string;
+  variantGuidance: string;
+  representativeSkus: string[];
+  relatedGuideSlugs: string[];
   selectionPath: string[];
 };
 
@@ -47,6 +50,13 @@ export type ApplicationGuidance = {
   hardwareSummary: string;
   considerations: string[];
   selectionPath: string;
+  relatedFamilySlugs?: string[];
+  relatedGuideSlugs?: string[];
+  comparison?: {
+    caption: string;
+    headers: string[];
+    rows: string[][];
+  };
 };
 
 export type ConnectivityGuidance = {
@@ -84,6 +94,10 @@ export function getApplicationGuidance(value: string) {
   return content.applicationGuidance[value];
 }
 
+export function getApplicationDecisionSteps(guidance: ApplicationGuidance) {
+  return guidance.selectionPath.split(/(?<=[.!?])\s+/).map(displayValue).filter(Boolean);
+}
+
 function cleanSku(value: string) {
   return displayValue(value).toUpperCase();
 }
@@ -104,6 +118,14 @@ export function getFamilyProducts(family: ProductFamily) {
     const sku = cleanSku(product.sku);
     return sku === prefix || sku.startsWith(`${prefix}-`);
   });
+}
+
+export function getFamilyRepresentativeProducts(family: ProductFamily) {
+  const familySkus = new Set(getFamilyProducts(family).map((product) => cleanSku(product.sku)));
+  return family.representativeSkus
+    .filter((sku) => familySkus.has(cleanSku(sku)))
+    .map((sku) => products.find((product) => cleanSku(product.sku) === cleanSku(sku)))
+    .filter((product): product is DraginoProduct => Boolean(product));
 }
 
 export function getFamilyBySlug(slug: string) {
