@@ -5,7 +5,7 @@ export type Gtag = (command: "config" | "event" | "js", target: string | Date, p
 export type Ga4PageViewTracker = (pathname: string | null | undefined, gtag: Gtag | undefined, origin?: string) => boolean;
 
 type Ga4Window = Window & {
-  dataLayer?: unknown[][];
+  dataLayer?: IArguments[];
   gtag?: Gtag;
   __loranetworkGa4MeasurementId?: string;
 };
@@ -33,7 +33,11 @@ export function initialiseGa4(target: Ga4Window, measurementId: string) {
   if (!isGa4MeasurementId(measurementId) || target.__loranetworkGa4MeasurementId === measurementId) return false;
 
   target.dataLayer ??= [];
-  target.gtag ??= ((...arguments_: unknown[]) => { target.dataLayer?.push(arguments_); }) as Gtag;
+  target.gtag ??= function gtag() {
+    // Google's loader reads the native Arguments object queued by its canonical snippet.
+    // eslint-disable-next-line prefer-rest-params
+    target.dataLayer?.push(arguments);
+  } as Gtag;
   target.gtag("js", new Date());
   target.gtag("config", measurementId, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false });
   target.__loranetworkGa4MeasurementId = measurementId;

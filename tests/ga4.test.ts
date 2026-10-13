@@ -4,6 +4,7 @@ import test from "node:test";
 import { createGa4PageViewTracker, forwardToGa4, initialiseGa4, isGa4MeasurementId, mapToGa4, type Gtag } from "../lib/analytics/ga4.ts";
 
 const googleAnalytics = readFileSync(new URL("../components/google-analytics.tsx", import.meta.url), "utf8");
+const ga4Adapter = readFileSync(new URL("../lib/analytics/ga4.ts", import.meta.url), "utf8");
 const applicationAnalytics = [
   "../components/analytics-trackers.tsx",
   "../components/enquiry-builder.tsx",
@@ -46,15 +47,44 @@ test("GA4 forwarding and page views do not throw when a provider is absent or fa
   assert.doesNotThrow(() => trackPageView("/contact", failingGtag));
 });
 
-test("GA4 initialisation configures one measurement ID only once", () => {
-  const calls: unknown[][] = [];
-  const target = { dataLayer: [] as unknown[][], gtag: (...args: unknown[]) => { calls.push(args); } } as unknown as Window;
-  assert.equal(initialiseGa4(target, "G-ABC123"), false);
-  assert.equal(calls.length, 0);
+test("GA4 initialisation queues native Arguments in Google's required order only once", () => {
+  const invalidTarget = {} as Window & { dataLayer?: IArguments[]; gtag?: Gtag };
+  assert.equal(initialiseGa4(invalidTarget, "G-ABC123"), false);
+  assert.equal(invalidTarget.dataLayer, undefined);
+
+  const target = {} as Window & { dataLayer?: IArguments[]; gtag?: Gtag };
   assert.equal(initialiseGa4(target, "G-7J6T1GVHDQ"), true);
   assert.equal(initialiseGa4(target, "G-7J6T1GVHDQ"), false);
-  assert.equal(calls.filter(([command]) => command === "config").length, 1);
-  assert.deepEqual(calls.find(([command]) => command === "config"), ["config", "G-7J6T1GVHDQ", { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false }]);
+
+  assert.ok(Array.isArray(target.dataLayer));
+  const dataLayer = target.dataLayer;
+  assert.equal(dataLayer.length, 2);
+  assert.ok(dataLayer.every((entry) => !Array.isArray(entry)));
+  assert.ok(dataLayer.every((entry) => Object.prototype.toString.call(entry) === "[object Arguments]"));
+
+  const calls = dataLayer.map((entry) => Array.from(entry));
+  assert.equal(calls[0]?.[0], "js");
+  assert.ok(calls[0]?.[1] instanceof Date);
+  assert.deepEqual(calls[1], ["config", "G-7J6T1GVHDQ", { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false }]);
+
+  forwardToGa4({ name: "contact_email_click", properties: { pathname: "/contact" } }, target.gtag);
+  assert.equal(dataLayer.length, 3);
+  assert.equal(Object.prototype.toString.call(dataLayer[2]), "[object Arguments]");
+  assert.deepEqual(Array.from(dataLayer[2]!), ["event", "contact_email_click", { page_path: "/contact" }]);
+});
+
+test("GA4 bootstrap source preserves the official command contract and ordering", () => {
+  const dataLayerIndex = ga4Adapter.indexOf("target.dataLayer ??= []");
+  const gtagIndex = ga4Adapter.indexOf("function gtag()");
+  const jsIndex = ga4Adapter.indexOf('target.gtag("js"');
+  const configIndex = ga4Adapter.indexOf('target.gtag("config"');
+
+  assert.ok(dataLayerIndex >= 0);
+  assert.ok(dataLayerIndex < gtagIndex);
+  assert.ok(gtagIndex < jsIndex);
+  assert.ok(jsIndex < configIndex);
+  assert.match(ga4Adapter, /dataLayer\?\.push\(arguments\)/);
+  assert.doesNotMatch(ga4Adapter, /\.\.\.arguments_/);
 });
 
 test("page views send once per pathname and never include query parameters", () => {
@@ -84,4 +114,7 @@ test("only the GA4 provider adapter calls gtag and it uses pathname-only page vi
   assert.doesNotMatch(applicationAnalytics, /\bgtag\b/);
   assert.match(googleAnalytics, /pageViewTracker\.current\(pathname, window\.gtag, window\.location\.origin\)/);
   assert.match(googleAnalytics, /strategy="afterInteractive"/);
+  assert.equal(googleAnalytics.match(/googletagmanager\.com\/gtag\/js/g)?.length, 1);
+  assert.equal(googleAnalytics.match(/initialiseGa4\(window, measurementId\)/g)?.length, 1);
+  assert.equal(googleAnalytics.match(/id="google-analytics"/g)?.length, 1);
 });
