@@ -10,13 +10,16 @@ const nextConfig = readFileSync(new URL("../next.config.ts", import.meta.url), "
 const linkAudit = readFileSync(new URL("../scripts/audit-internal-links.ts", import.meta.url), "utf8");
 const guidePage = readFileSync(new URL("../app/guides/[slug]/page.tsx", import.meta.url), "utf8");
 
-test("current internal route inputs are unique and produce the expected 493 sitemap URLs", () => {
+test("current internal route inputs are unique and produce the expected 496 sitemap URLs", () => {
   assert.equal(catalogue.products.length, 448);
   assert.equal(new Set(catalogue.products.map((product) => product.sku)).size, 448);
   assert.equal(new Set(catalogue.products.map((product) => product.slug)).size, 448);
   const sitemapCount = 10 + discovery.indexableApplications.length + discovery.indexableInterfaces.length + discovery.families.length + discovery.guides.length + catalogue.products.length;
-  assert.equal(discovery.guides.length, 7);
-  assert.equal(sitemapCount, 493);
+  assert.equal(discovery.guides.length, 10);
+  assert.equal(sitemapCount, 496);
+  for (const slug of ["choose-energy-monitoring-or-control-device", "choose-lorawan-door-sensor", "choose-dry-contact-counter-interrupt-device"]) {
+    assert.ok(discovery.guides.some((guide) => guide.slug === slug), slug);
+  }
 });
 
 test("sitemap and robots use the shared site origin and exclude comparison URLs", () => {

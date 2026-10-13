@@ -12,6 +12,7 @@ const catalogue = JSON.parse(readFileSync(new URL("../data/dragino-products.json
 const facetPage = readFileSync(new URL("../components/facet-detail.tsx", import.meta.url), "utf8");
 const familyPage = readFileSync(new URL("../app/families/[slug]/page.tsx", import.meta.url), "utf8");
 const guidePage = readFileSync(new URL("../app/guides/[slug]/page.tsx", import.meta.url), "utf8");
+const discoveryReport = readFileSync(new URL("../scripts/report-discovery-quality.ts", import.meta.url), "utf8");
 const clean = (value: string) => value.replace(/\s+/g, " ").trim().toLocaleLowerCase("en-ZA");
 
 test("all 19 application pages have meaningful guidance and distinct decision paths", () => {
@@ -81,5 +82,14 @@ test("application, family and guide templates retain comparison and enquiry path
   assert.match(guidePage, /Compare representative products/);
   assert.match(guidePage, /href="\/contact">Discuss this buying decision/);
   assert.doesNotMatch(`${facetPage} ${familyPage} ${guidePage}`, /FAQPage|AggregateRating|"@type": "Review"/);
+});
+
+test("discovery reporting measures guide coverage and duplicate intent risk", () => {
+  assert.equal(content.guides.length, 10);
+  assert.match(discoveryReport, /applicationsWithRelevantGuideCoverage/);
+  assert.match(discoveryReport, /decisionPath: percent\(guideRows/);
+  assert.match(discoveryReport, /comparisonPath: percent\(guideRows/);
+  assert.match(discoveryReport, /enquiryPath: percent\(guideRows/);
+  assert.match(discoveryReport, /duplicateIntentRisk/);
 });
 

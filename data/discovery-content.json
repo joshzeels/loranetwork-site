@@ -78,19 +78,22 @@
       "directAnswer": "This group brings together {count} products for energy monitoring and control. Start by deciding whether the project needs current monitoring, electrical control or a thermostat, then compare the exact model, connectivity and public ZAR price.",
       "hardwareSummary": "The group includes CS01 current-monitoring models, current-transformer accessories marked for CS01, relay and socket control products, and a thermostat. These product types serve different jobs, so begin with the electrical function the project needs rather than choosing by connectivity alone.",
       "considerations": ["Decide whether the project needs to monitor current, control an electrical load or manage an HVAC system.", "For current monitoring, compare the selected CS01 model and any compatible current-transformer requirement shown for the product.", "For control hardware, check the stated voltage, current and channel details for the exact relay or socket model.", "For a thermostat, check that the stated HVAC configuration suits the system.", "Choose from the connectivity options shown for the selected model, then check its stated power, installation and environmental requirements before ordering."],
-      "selectionPath": "Start with the electrical function. Then shortlist the product type that matches it, compare the stated model-specific electrical and installation details, and use connectivity and public ZAR price to choose between the remaining options."
+      "selectionPath": "Start with the electrical function. Then shortlist the product type that matches it, compare the stated model-specific electrical and installation details, and use connectivity and public ZAR price to choose between the remaining options.",
+      "relatedGuideSlugs": ["choose-energy-monitoring-or-control-device"]
     },
     "Door Sensor": {
       "directAnswer": "Door sensors help monitor whether an opening is open or closed. This group has {count} products, so start with the sensing and alert function you need, then compare the exact model, connectivity and public ZAR price.",
       "hardwareSummary": "Some DS03A product specifications state datalog and open-alarm features. The group also includes LDS02 open/close detection and LHT65 door-sensor variants with a stated one-metre metal door sensor. Details differ by model, so select from the stated product specification rather than assuming the same installation or alert behaviour across the group.",
       "considerations": ["Decide whether the project needs an individual DS03A model with stated datalog and open-alarm features, LDS02 open/close detection, or an LHT65 door-sensor variant.", "Check the selected model's stated sensor, mounting and outdoor-use details against the installation location.", "Choose the connectivity option shown for the selected model and confirm that the deployment can support it.", "Compare the stated power arrangement and any included sensor detail for the exact SKU.", "Before ordering, check the selected specification for the opening, alarm and installation requirements that matter to the project."],
-      "selectionPath": "Start with the opening state or alert behaviour the project needs. Then compare the stated sensing and installation details, choose a suitable connectivity option, and use public ZAR price to select the exact model."
+      "selectionPath": "Start with the opening state or alert behaviour the project needs. Then compare the stated sensing and installation details, choose a suitable connectivity option, and use public ZAR price to select the exact model.",
+      "relatedGuideSlugs": ["choose-lorawan-door-sensor"]
     },
     "Dry Contact / Counting / Interrupt": {
       "directAnswer": "This group brings together {count} products for pulse counting and interrupt detection. Start with the input or event the project needs to monitor, then compare the exact model, connectivity and public ZAR price.",
       "hardwareSummary": "Some CPL03 product specifications state three pulse-counting and three interrupt-detection channels. LHT65N-DC and LHT65S-DC specifications state open/close uplink and pulse counting through a three-wire connection. Choose between these product types by the required input and connection arrangement.",
       "considerations": ["Decide whether the project needs an individual CPL03 model with stated pulse-counting and interrupt-detection channels or an LHT65 open/close uplink and pulse-counting arrangement.", "Check the selected model's stated input, channel and connection details against the equipment or contact being monitored.", "Choose the connectivity option shown for the selected model and confirm that the deployment can support it.", "Compare the stated power arrangement and installation details for the exact SKU.", "Before ordering, check the selected specification for the event, wiring and installation requirements that matter to the project."],
-      "selectionPath": "Start with the input or event to monitor. Then choose the product type whose stated channels and connection arrangement fit the project, compare connectivity and installation details, and use public ZAR price to select the exact model."
+      "selectionPath": "Start with the input or event to monitor. Then choose the product type whose stated channels and connection arrangement fit the project, compare connectivity and installation details, and use public ZAR price to select the exact model.",
+      "relatedGuideSlugs": ["choose-dry-contact-counter-interrupt-device"]
     },
     "Angle Sensor / Tilting": {
       "directAnswer": "These products monitor pitch and roll angle for tilting applications. Start with the movement or angle condition the project needs to track, then compare the exact model, connectivity and public ZAR price.",
@@ -430,6 +433,117 @@
       "relatedFamilySlugs": [],
       "verifiedDocumentationOnly": true,
       "comparisonProductSlugs": ["dds20-lb", "dds45-lb", "dds75-lb"]
+    },
+    {
+      "slug": "choose-energy-monitoring-or-control-device",
+      "title": "Choosing an Energy Monitoring or Control Device",
+      "question": "Do I need current monitoring, load control, a socket or relay, or thermostat control?",
+      "answerTemplate": "Choose among {count} energy-monitoring and control products by deciding on the electrical role first. CS01 models monitor current and power-consumption trends; LC01 is a smart relay, LC03 is a smart socket, LC04 provides four low-voltage control channels, and the thermostat product is for stated 24 VAC HVAC configurations. Monitoring does not imply load switching.",
+      "applicationValues": ["Energy Control / Monitoring"],
+      "searchTerms": [],
+      "considerations": [
+        "Choose current measurement when the requirement is to observe machine status or power-consumption trends without assuming a switching function.",
+        "Choose a relay, socket or low-voltage control product only when its exact stated voltage, current and channel arrangement matches the load or control circuit.",
+        "Treat the thermostat as a separate HVAC-control role and confirm the stated 24 VAC configuration against the system.",
+        "For CS01, include compatible current transformers selected for the required current and conductor aperture, but do not treat those components as standalone monitoring devices.",
+        "Confirm LoRaWAN availability, exact power arrangements, electrical installation requirements and the selected SKU before ordering."
+      ],
+      "differenceSummary": "CS01 products are monitoring devices: they state machine-status monitoring, power-consumption trend analysis and support for up to four current sensors. LC01 controls a stated resistive load through a relay, LC03 provides a stated smart-socket role, and LC04 provides four stated low-voltage control channels. The thermostat serves a separate 24 VAC HVAC-control role. A monitoring function must not be treated as permission to switch a load.",
+      "decisionPath": [
+        "Write down whether the project must measure current, switch a mains load, control a socket, drive low-voltage control channels or manage a stated 24 VAC HVAC configuration.",
+        "Shortlist only the product role that performs that job; do not infer switching from CS01 monitoring or monitoring from a control product.",
+        "Check the exact current-sensor arrangement, voltage, current, channel count or HVAC configuration stated for the shortlisted model.",
+        "Confirm LoRaWAN availability, power, wiring, installation responsibility and the exact SKU before requesting a quote."
+      ],
+      "relatedFamilySlugs": [],
+      "comparisonProductSlugs": ["cs01-lb", "cs01-ls", "lc01", "lc03", "lc04"],
+      "relatedGuideSlugs": ["choosing-iot-connectivity"],
+      "decisionResource": {
+        "heading": "Start with monitor versus control",
+        "sections": [
+          {"title": "Who is this guide for?", "paragraphs": ["Use this guide when the project must observe current or machine operation, switch a stated electrical load, control a socket or low-voltage output, or manage a stated 24 VAC HVAC configuration. Start with that role before comparing connectivity or price."]},
+          {"title": "Current and power-trend monitoring", "paragraphs": ["CS01-LB and CS01-LS state machine-running monitoring, power-consumption trend analysis and support for up to four current sensors. They are monitoring choices; their stated function does not establish load switching.", "Current transformers are selected components for CS01. Confirm the required current rating, conductor aperture and connected-sensor arrangement separately from the CS01 main unit."]},
+          {"title": "Relay, socket and low-voltage control", "paragraphs": ["LC01 states a smart-relay role for an 80 to 275 V AC, 15 A resistive load. LC03 states a smart-socket role with the same stated voltage and resistive-load current. LC04 states four low-voltage control channels over 8 to 28 V, with a stated maximum of 200 mA per channel.", "These control arrangements are different. Select only the exact electrical role and ratings that fit the circuit, and use an appropriately qualified installer where required."]},
+          {"title": "Thermostat control is a separate decision", "paragraphs": ["The thermostat product states LoRaWAN, a 24 VAC HVAC role and several listed heating and cooling configurations. Confirm the actual HVAC configuration and wiring before treating it as suitable; do not substitute a relay, socket or current monitor for that control role."]}
+        ],
+        "table": {"caption": "Choose the electrical role before comparing the exact model and installation details.", "headers": ["Required role", "Products to investigate", "Stated distinction", "Confirm next"], "rows": [["Current measurement and operating trends", "CS01-LB or CS01-LS", "Up to four current sensors; battery or solar power arrangement differs", "Current transformers, conductor size, LoRaWAN and installation"], ["Relay/load control", "LC01", "Smart relay for stated AC voltage and resistive-load current", "Load type, ratings, wiring and installation"], ["Socket control", "LC03", "Smart socket for stated AC voltage and resistive-load current", "Socket/load arrangement, ratings and installation"], ["Low-voltage multi-channel control", "LC04", "Four stated 8 to 28 V control channels", "Channel count, 200 mA-per-channel limit and wiring"], ["HVAC thermostat control", "Thermostat", "Stated 24 VAC HVAC configurations", "Exact HVAC configuration and wiring"]]},
+        "questions": [{"question": "Does a CS01 switch the load it monitors?", "answer": "Do not assume that. Its stated role is monitoring machine status and power-consumption trends through connected current sensors. Choose a separately stated control product when switching is required."}, {"question": "When should I investigate LC01 rather than LC03?", "answer": "Investigate LC01 for its stated smart-relay role and LC03 for its stated smart-socket role. Confirm the exact load arrangement, voltage, current and installation before selecting either one."}, {"question": "What must be selected with CS01?", "answer": "Confirm the number of current channels and select compatible current transformers for the required current rating and conductor aperture. Confirm the exact CS01 power arrangement as well."}, {"question": "When is the thermostat relevant?", "answer": "Use it only for a project whose HVAC system matches one of its stated 24 VAC configurations, after confirming the exact wiring and control requirement."}],
+        "relatedLinks": [{"href": "/applications/energy-control-monitoring", "label": "Explore energy monitoring and control products"}, {"href": "/products/cs01-lb", "label": "View CS01-LB"}, {"href": "/products/lc01", "label": "View LC01 smart relay"}, {"href": "/products/lc03", "label": "View LC03 smart socket"}, {"href": "/products/lc04", "label": "View LC04 low-voltage control"}, {"href": "/contact", "label": "Enquire about an energy monitoring or control project"}]
+      }
+    },
+    {
+      "slug": "choose-lorawan-door-sensor",
+      "title": "Choosing a Door Sensor for LoRaWAN Monitoring",
+      "question": "Which door sensor fits the contact arrangement, reporting need and power option?",
+      "answerTemplate": "Choose among {count} door-sensor products by comparing the stated sensing arrangement, reporting role and power configuration. DS03A models state datalog and open-alarm functions, LDS02 states door open/close detection, and LHT65 door-sensor variants include a stated one-metre metal door sensor. All representative models use LoRaWAN.",
+      "applicationValues": ["Door Sensor"],
+      "searchTerms": [],
+      "considerations": [
+        "Choose DS03A only when its stated datalog and open-alarm role matches the reporting requirement.",
+        "Choose LDS02 when its stated door open/close detection and two-AAA-battery arrangement fit the project.",
+        "Choose an LHT65 door-sensor variant when the stated one-metre metal door sensor is the required contact arrangement.",
+        "Compare only power arrangements explicitly stated for the exact SKU, including battery and solar variants where shown.",
+        "Confirm LoRaWAN coverage, regional configuration, mounting, wiring or contact placement, and the exact SKU before ordering."
+      ],
+      "differenceSummary": "DS03A-LB and DS03A-LS state datalog and open-alarm functions, with battery and solar power arrangements respectively. LDS02 states door open/close detection and two AAA batteries. LHT65N-DS and LHT65S-DS state an included one-metre metal door sensor. These facts establish only the listed functions and arrangements; confirm any other project requirement separately.",
+      "decisionPath": [
+        "Define whether the project needs a stated open alarm and datalog role, basic open/close detection, or an included one-metre metal door sensor.",
+        "Shortlist the exact model whose stated contact or sensing arrangement matches the opening being monitored.",
+        "Compare only the power configuration and installation details stated for that exact SKU.",
+        "Confirm LoRaWAN availability, regional configuration, mounting or wiring details and the exact SKU before requesting a quote."
+      ],
+      "relatedFamilySlugs": [],
+      "comparisonProductSlugs": ["ds03a-lb", "ds03a-ls", "lds02", "lht65n-ds"],
+      "relatedGuideSlugs": ["choosing-iot-connectivity"],
+      "decisionResource": {
+        "heading": "Match the opening and reporting role",
+        "sections": [
+          {"title": "Who is this guide for?", "paragraphs": ["Use this guide when a LoRaWAN project needs to report a door or other opening state. The useful differences are the explicitly stated sensing arrangement, reporting role and power configuration, not an assumed security or alarm-system capability."]},
+          {"title": "DS03A reporting choices", "paragraphs": ["DS03A-LB and DS03A-LS state datalog and open-alarm functions. Their stated power arrangements differ: DS03A-LB lists an 8,500 mAh battery, while DS03A-LS lists a solar panel plus a 3,000 mAh Li-ion battery.", "Select between them only after confirming the required reporting behaviour, contact arrangement, mounting and exact power setup."]},
+          {"title": "LDS02 open and close detection", "paragraphs": ["LDS02 states door open/close detection, LoRaWAN and two AAA batteries. Treat it as its own open/close-detection option and confirm the physical installation details before choosing it."]},
+          {"title": "LHT65 door-sensor arrangement", "paragraphs": ["LHT65N-DS and LHT65S-DS state an LHT65N unit with a one-metre metal door sensor. This is an explicit sensor arrangement, but it does not establish compatibility with an alarm panel or any unstated installation condition."]}
+        ],
+        "table": {"caption": "Compare the stated reporting, sensor and power arrangement for each representative option.", "headers": ["Door-monitoring need", "Product to investigate", "Stated arrangement", "Confirm next"], "rows": [["Datalog and open-alarm role with battery power", "DS03A-LB", "LoRaWAN, datalog, open alarm and 8,500 mAh battery", "Contact arrangement, mounting and reporting requirement"], ["Datalog and open-alarm role with solar power", "DS03A-LS", "LoRaWAN, datalog, open alarm, solar panel and 3,000 mAh battery", "Solar installation, contact arrangement and reporting requirement"], ["Door open/close detection", "LDS02", "LoRaWAN and two AAA batteries", "Physical placement and exact reporting requirement"], ["One-metre metal door sensor", "LHT65N-DS or LHT65S-DS", "LHT65N with stated one-metre metal door sensor", "Contact placement, wiring and exact SKU"]]},
+        "questions": [{"question": "When should I investigate DS03A?", "answer": "Investigate DS03A when its stated datalog and open-alarm functions match the project. Then compare its exact battery or solar power arrangement."}, {"question": "What is stated for LDS02?", "answer": "LDS02 states door open/close detection, LoRaWAN and two AAA batteries. Confirm the physical installation and reporting requirement separately."}, {"question": "What contact arrangement is stated for the LHT65 door variants?", "answer": "LHT65N-DS and LHT65S-DS state an LHT65N unit with a one-metre metal door sensor. Do not infer alarm-panel compatibility from that description."}, {"question": "What should I confirm before ordering?", "answer": "Confirm the opening and contact arrangement, required event reporting, exact power configuration, LoRaWAN availability, regional configuration, mounting and the exact SKU."}],
+        "relatedLinks": [{"href": "/applications/door-sensor", "label": "Explore door-sensor products"}, {"href": "/products/ds03a-lb", "label": "View DS03A-LB"}, {"href": "/products/ds03a-ls", "label": "View DS03A-LS"}, {"href": "/products/lds02", "label": "View LDS02"}, {"href": "/products/lht65n-ds", "label": "View LHT65N-DS"}, {"href": "/contact", "label": "Enquire about a door-monitoring project"}]
+      }
+    },
+    {
+      "slug": "choose-dry-contact-counter-interrupt-device",
+      "title": "Choosing a Dry Contact, Counter or Interrupt Input Device",
+      "question": "Do I need event detection, pulse counting, interrupt input or multiple dry-contact channels?",
+      "answerTemplate": "Choose among {count} input-monitoring products by defining the signal and channel requirement first. CPL03 models state three pulse-counting channels and three interrupt-detection channels. LHT65N-DC and LHT65S-DC state open/close uplink, pulse counting and a three-wire VCC, GND and INT connection. These are input roles, not analogue or RS485 functions.",
+      "applicationValues": ["Dry Contact / Counting / Interrupt"],
+      "searchTerms": [],
+      "considerations": [
+        "Define whether the source produces an open/close event, pulses to count, or an interrupt event before choosing hardware.",
+        "Choose CPL03 when the stated requirement for three pulse-counting and three interrupt-detection channels fits the project.",
+        "Choose an LHT65-DC variant when its stated open/close uplink, pulse-counting role and three-wire VCC, GND and INT connection fit the source.",
+        "Do not substitute an analogue-input or RS485/Modbus product unless its exact details also state the required event or contact input.",
+        "Confirm electrical compatibility, channel count, wiring, LoRaWAN, power and the exact SKU before ordering."
+      ],
+      "differenceSummary": "CPL03-LB and CPL03-LS state three pulse-counting channels and three interrupt-detection channels, with battery and solar power arrangements respectively. LHT65N-DC and LHT65S-DC state open/close uplink and pulse counting through a three-wire VCC, GND and INT connection. Analogue inputs and RS485 or Modbus interfaces serve different signal roles unless an exact product explicitly combines them.",
+      "decisionPath": [
+        "Identify the source signal as open/close, pulse or interrupt, and record how many independent channels are required.",
+        "Choose between the stated CPL03 multi-channel arrangement and the stated LHT65-DC three-wire arrangement without inferring unsupported interfaces.",
+        "Confirm the electrical levels, wiring and whether the selected input can be connected safely to the source equipment.",
+        "Compare the exact LoRaWAN and power arrangement, then provide the signal, channel count and SKU when requesting a quote."
+      ],
+      "relatedFamilySlugs": [],
+      "comparisonProductSlugs": ["cpl03-lb", "cpl03-ls", "lht65n-dc", "lht65s-dc"],
+      "relatedGuideSlugs": ["choosing-iot-connectivity"],
+      "decisionResource": {
+        "heading": "Start with the input signal and channel count",
+        "sections": [
+          {"title": "Who is this guide for?", "paragraphs": ["Use this guide when equipment provides an event, pulse or interrupt that must be reported over LoRaWAN. Establish the signal, electrical connection and number of channels before comparing power or price."]},
+          {"title": "Multiple pulse and interrupt channels", "paragraphs": ["CPL03-LB and CPL03-LS each state three pulse-counting channels and three interrupt-detection channels. Their stated power arrangements differ: CPL03-LB lists an 8,500 mAh battery, while CPL03-LS lists a solar panel plus a 3,000 mAh Li-ion battery."]},
+          {"title": "Open/close and pulse input", "paragraphs": ["LHT65N-DC and LHT65S-DC state open/close uplink, pulse counting and a three-wire VCC, GND and INT connection. Confirm that this stated connection matches the source equipment; the description alone does not establish every electrical input characteristic."]},
+          {"title": "Keep interface roles separate", "paragraphs": ["An event or pulse input is not automatically an analogue measurement input or an RS485/Modbus interface. If the source uses analogue voltage, current or serial data, investigate the corresponding product group and require an explicit matching interface."]}
+        ],
+        "table": {"caption": "Choose by signal role, channel count and stated connection before comparing power.", "headers": ["Input requirement", "Product to investigate", "Stated input arrangement", "Confirm next"], "rows": [["Three pulse-counting and three interrupt channels", "CPL03-LB", "Six stated channel roles with 8,500 mAh battery", "Electrical input, wiring, channel use and LoRaWAN"], ["Same multi-channel role with solar power", "CPL03-LS", "Three pulse and three interrupt channels; solar plus 3,000 mAh battery", "Solar installation, wiring and channel use"], ["Open/close uplink or pulse counting", "LHT65N-DC", "Three-wire VCC, GND and INT connection", "Electrical compatibility, wiring and event behaviour"], ["Alternative exact DC SKU", "LHT65S-DC", "Same stated open/close, pulse and three-wire roles", "Exact SKU details and project connection"], ["Analogue or serial source", "Use the matching analogue or RS485 product group", "Different signal/interface role", "Explicit support for the source signal"]]},
+        "questions": [{"question": "When should I investigate CPL03?", "answer": "Investigate CPL03 when the project needs its stated three pulse-counting and three interrupt-detection channels. Confirm the electrical input and exact battery or solar model."}, {"question": "What is stated for LHT65N-DC and LHT65S-DC?", "answer": "They state open/close uplink, pulse counting and a three-wire VCC, GND and INT connection. Confirm the connection against the source equipment before choosing."}, {"question": "Can I use an RS485 device for a dry-contact event?", "answer": "Do not assume so. RS485 is a serial interface. Use a product only when its exact details explicitly state both the required source interface and event-input role."}, {"question": "What must I confirm before ordering?", "answer": "Provide the source signal, electrical details, number of channels, required event or counting behaviour, LoRaWAN deployment, power arrangement and exact SKU."}],
+        "relatedLinks": [{"href": "/applications/dry-contact-counting-interrupt", "label": "Explore dry-contact, counter and interrupt products"}, {"href": "/products/cpl03-lb", "label": "View CPL03-LB"}, {"href": "/products/cpl03-ls", "label": "View CPL03-LS"}, {"href": "/products/lht65n-dc", "label": "View LHT65N-DC"}, {"href": "/applications/generic-node-analog", "label": "Explore separate analogue-input products"}, {"href": "/applications/generic-node-rs485", "label": "Explore separate RS485 products"}, {"href": "/contact", "label": "Enquire about an input-monitoring project"}]
+      }
     }
   ]
 }

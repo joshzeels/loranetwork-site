@@ -36,7 +36,11 @@ test("family metadata is route-specific and uses the curated family purpose", ()
 
 test("guide metadata is route-specific and uses the guide answer as its description", () => {
   assertRouteMetadata("/guides/choosing-iot-connectivity", "Choosing IoT Connectivity for Devices and Gateways", "Choose connectivity from the guide.");
+  assertRouteMetadata("/guides/choose-energy-monitoring-or-control-device", "Choosing an Energy Monitoring or Control Device", "Choose monitoring or control from the guide.");
+  assertRouteMetadata("/guides/choose-lorawan-door-sensor", "Choosing a Door Sensor for LoRaWAN Monitoring", "Choose a door sensor from the guide.");
+  assertRouteMetadata("/guides/choose-dry-contact-counter-interrupt-device", "Choosing a Dry Contact, Counter or Interrupt Input Device", "Choose an input device from the guide.");
   assert.match(guidePage, /buildRouteMetadata\(getSiteUrl\(\), `\/guides\/\$\{guide\.slug\}`/);
+  assert.doesNotMatch(guidePage, /og:image|openGraph.*images/i);
 });
 
 test("product metadata remains on its existing product-specific implementation", () => {

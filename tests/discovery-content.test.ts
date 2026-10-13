@@ -8,8 +8,8 @@ import { summariseFamilyOverlap } from "../lib/product-presentation.ts";
 const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json", import.meta.url), "utf8")) as {
   indexableApplications: string[];
   indexableInterfaces: string[];
-  applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string; comparison?: { headers: string[]; rows: string[][] } }>;
-  guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[]; decisionResource?: { heading: string; sections: Array<{ title: string; paragraphs: string[] }>; table: { headers: string[]; rows: string[][] }; questions: Array<{ question: string; answer: string }>; relatedLinks: Array<{ href: string; label: string }> } }>;
+  applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string; relatedGuideSlugs?: string[]; comparison?: { headers: string[]; rows: string[][] } }>;
+  guides: Array<{ slug: string; title: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[]; decisionResource?: { heading: string; sections: Array<{ title: string; paragraphs: string[] }>; table: { headers: string[]; rows: string[][] }; questions: Array<{ question: string; answer: string }>; relatedLinks: Array<{ href: string; label: string }> } }>;
   families: Array<{ slug: string; name: string; selectionPath: string[] }>;
 };
 
@@ -104,7 +104,7 @@ test("Energy Control / Monitoring guidance supports a practical, bounded selecti
   assert.ok(energyProducts.some((product) => product.sku === "Thermostat"));
   assert.equal(content.indexableInterfaces.includes("For CS01"), false);
   assert.equal(content.families.some((family) => family.slug === "cs01"), false);
-  assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Energy Control / Monitoring")), false);
+  assert.ok(content.guides.some((guide) => guide.slug === "choose-energy-monitoring-or-control-device" && guide.applicationValues.includes("Energy Control / Monitoring")));
   for (const connectivity of ["LoRaWAN", "LTE CAT 1"]) {
     assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
   }
@@ -132,7 +132,7 @@ test("Door Sensor guidance supports a practical, bounded selection", () => {
   assert.ok(doorProducts.some((product) => product.sku === "LDS02" && /Door Open\/Close detect/i.test(product.specification)));
   assert.ok(doorProducts.some((product) => product.sku === "LHT65N-DS" && /1 meter metal Door Sensor/i.test(product.specification)));
   assert.equal(content.families.some((family) => /door|ds03|lds02/i.test(family.slug)), false);
-  assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Door Sensor")), false);
+  assert.ok(content.guides.some((guide) => guide.slug === "choose-lorawan-door-sensor" && guide.applicationValues.includes("Door Sensor")));
   for (const connectivity of ["LoRaWAN", "LTE CAT 1"]) {
     assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
   }
@@ -161,7 +161,7 @@ test("Dry Contact / Counting / Interrupt guidance supports a practical, bounded 
   assert.ok(dryContactProducts.some((product) => product.sku === "CPL03-LB" && /Pulse Counting x 3,Interrupt Detect x 3 channel/i.test(product.specification)));
   assert.ok(dryContactProducts.some((product) => product.sku === "LHT65N-DC" && /Support Open\/ Close uplink,Support pulse counting,3 wire/i.test(product.specification)));
   assert.equal(content.families.some((family) => /cpl03|lht65/i.test(family.slug)), false);
-  assert.equal(content.guides.some((guide) => guide.applicationValues.includes("Dry Contact / Counting / Interrupt")), false);
+  assert.ok(content.guides.some((guide) => guide.slug === "choose-dry-contact-counter-interrupt-device" && guide.applicationValues.includes("Dry Contact / Counting / Interrupt")));
   assert.equal(content.indexableInterfaces.includes("Mesh Node"), false);
   for (const connectivity of ["LoRaWAN", "LTE CAT 1"]) {
     assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
@@ -173,6 +173,66 @@ test("Dry Contact / Counting / Interrupt guidance supports a practical, bounded 
   assert.doesNotMatch(copy, /all CPL03|every CPL03/i);
   assert.doesNotMatch(copy, /all (?:dry contact )?products|every (?:dry contact )?product|manufacturer|official|verified|source|documentation|according to|Dragino|datasheet|manual/i);
   assert.doesNotMatch(copy, /dragino\.com|â€”|Ã¢â‚¬â€|(?<!-)--(?!-)/);
+});
+
+test("energy, door and dry-contact guides provide distinct evidence-bounded decisions", () => {
+  const expected = [
+    {
+      slug: "choose-energy-monitoring-or-control-device",
+      application: "Energy Control / Monitoring",
+      applicationHref: "/applications/energy-control-monitoring",
+      intent: /monitor(?:ing)? does not imply load switching|monitor versus control/i,
+      products: ["cs01-lb", "cs01-ls", "lc01", "lc03", "lc04"],
+    },
+    {
+      slug: "choose-lorawan-door-sensor",
+      application: "Door Sensor",
+      applicationHref: "/applications/door-sensor",
+      intent: /contact arrangement|opening and reporting role/i,
+      products: ["ds03a-lb", "ds03a-ls", "lds02", "lht65n-ds"],
+    },
+    {
+      slug: "choose-dry-contact-counter-interrupt-device",
+      application: "Dry Contact / Counting / Interrupt",
+      applicationHref: "/applications/dry-contact-counting-interrupt",
+      intent: /input signal and channel count|pulse-counting channels/i,
+      products: ["cpl03-lb", "cpl03-ls", "lht65n-dc", "lht65s-dc"],
+    },
+  ];
+  const titles = new Set<string>();
+  const questions = new Set<string>();
+  const openingSteps = new Set<string>();
+
+  for (const item of expected) {
+    const guide = content.guides.find((candidate) => candidate.slug === item.slug);
+    assert.ok(guide, item.slug);
+    assert.deepEqual(guide.applicationValues, [item.application], item.slug);
+    assert.ok(content.applicationGuidance[item.application].relatedGuideSlugs?.includes(item.slug), item.slug);
+    assert.deepEqual(guide.comparisonProductSlugs, item.products, item.slug);
+    assert.ok(guide.decisionResource, item.slug);
+    assert.ok(guide.decisionResource.table.rows.length >= 4, item.slug);
+    assert.ok(guide.decisionResource.relatedLinks.some((link) => link.href === item.applicationHref), item.slug);
+    assert.ok(guide.decisionResource.relatedLinks.some((link) => link.href === "/contact"), item.slug);
+    assert.ok(guide.decisionResource.relatedLinks.every((link) => link.href.startsWith("/")), item.slug);
+
+    for (const slug of item.products) {
+      const product = catalogue.products.find((candidate) => candidate.slug === slug);
+      assert.ok(product, `${item.slug}: ${slug}`);
+      assert.equal(documentation.products.find((record) => record.sku === product.sku)?.status, "EXACT_PRODUCT_SOURCE", `${item.slug}: ${slug}`);
+    }
+
+    const copy = [guide.title, guide.question, guide.answerTemplate, guide.differenceSummary, ...guide.considerations, ...guide.decisionPath, ...guide.decisionResource.sections.flatMap((section) => [section.title, ...section.paragraphs]), ...guide.decisionResource.table.rows.flat(), ...guide.decisionResource.questions.flatMap((entry) => [entry.question, entry.answer])].join(" ");
+    assert.match(copy, item.intent, item.slug);
+    assert.doesNotMatch(copy, /https?:\/\/|EXACT_PRODUCT_SOURCE|FAMILY_SOURCE|evidence label|source URL|supplier/i, item.slug);
+    assert.doesNotMatch(copy, /IP\d+|security certification|radio range|battery life|guaranteed compatibility/i, item.slug);
+    titles.add(guide.title);
+    questions.add(guide.question);
+    openingSteps.add(guide.decisionPath[0]);
+  }
+
+  assert.equal(titles.size, expected.length);
+  assert.equal(questions.size, expected.length);
+  assert.equal(openingSteps.size, expected.length);
 });
 
 test("Angle Sensor / Tilting guidance supports a practical, bounded selection", () => {

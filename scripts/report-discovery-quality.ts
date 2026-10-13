@@ -4,7 +4,17 @@ type Product = { sku: string; application: string; specification: string; iotInt
 type Comparison = { caption: string; headers: string[]; rows: string[][] };
 type ApplicationGuidance = { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string; relatedFamilySlugs?: string[]; relatedGuideSlugs?: string[]; comparison?: Comparison };
 type Family = { slug: string; skuPrefix: string; variantGuidance: string; representativeSkus: string[]; relatedGuideSlugs: string[]; selectionPath: string[] };
-type Guide = { slug: string; applicationValues: string[]; searchTerms: string[]; relatedFamilySlugs: string[] };
+type Guide = {
+  slug: string;
+  question: string;
+  applicationValues: string[];
+  searchTerms: string[];
+  relatedFamilySlugs: string[];
+  differenceSummary: string;
+  decisionPath: string[];
+  comparisonProductSlugs?: string[];
+  decisionResource?: { table: { rows: string[][] }; relatedLinks: Array<{ href: string }> };
+};
 type Content = { indexableApplications: string[]; applicationGuidance: Record<string, ApplicationGuidance>; families: Family[]; guides: Guide[] };
 
 const catalogue = JSON.parse(await readFile("data/dragino-products.json", "utf8")) as { products: Product[] };
@@ -19,6 +29,15 @@ const familyProducts = (family: Family) => catalogue.products.filter((product) =
 const guideProducts = (guide: Guide) => {
   const applications = new Set(guide.applicationValues.map(key));
   return catalogue.products.filter((product) => applications.has(key(product.application)) || guide.searchTerms.some((term) => searchText(product).includes(key(term))));
+};
+const guideIntentText = (guide: Guide) => key([guide.question, guide.differenceSummary, guide.decisionPath[0] ?? ""].join(" "));
+const intentTokens = (guide: Guide) => new Set(guideIntentText(guide).split(" ").filter((token) => token.length > 3));
+const intentSimilarity = (left: Guide, right: Guide) => {
+  const leftTokens = intentTokens(left);
+  const rightTokens = intentTokens(right);
+  const intersection = [...leftTokens].filter((token) => rightTokens.has(token)).length;
+  const union = new Set([...leftTokens, ...rightTokens]).size;
+  return union ? intersection / union : 0;
 };
 
 const applicationRows = content.indexableApplications.map((value) => {
@@ -56,12 +75,30 @@ const familyRows = content.families.map((family) => {
   };
 });
 
+const duplicateIntentPairs: string[] = [];
+for (let leftIndex = 0; leftIndex < content.guides.length; leftIndex += 1) {
+  for (let rightIndex = leftIndex + 1; rightIndex < content.guides.length; rightIndex += 1) {
+    const left = content.guides[leftIndex];
+    const right = content.guides[rightIndex];
+    const leftProducts = new Set(guideProducts(left).map((product) => key(product.sku)));
+    const overlappingProducts = guideProducts(right).filter((product) => leftProducts.has(key(product.sku))).length;
+    if (overlappingProducts > 0 && intentSimilarity(left, right) >= 0.7) duplicateIntentPairs.push(`${left.slug} <> ${right.slug}`);
+  }
+}
+const guideRows = content.guides.map((guide) => ({
+  slug: guide.slug,
+  decisionPath: guide.decisionPath.length >= 3,
+  comparisonPath: Boolean((guide.comparisonProductSlugs?.length ?? 0) >= 2 || (guide.decisionResource?.table.rows.length ?? 0) >= 2),
+  enquiryPath: true,
+}));
+
 const applicationGuidance = Object.values(content.applicationGuidance);
 const familyCopy = content.families.map((family) => [family.variantGuidance, ...family.selectionPath].join(" "));
 const result = {
   baseline: {
     applications: { curatedGuidance: 13, answerFirstIntro: 13, decisionPath: 13, curatedSelectionTable: 0, catalogueComparisonTable: 19, enquiryPath: 0, genericFallbackRisk: 6 },
     families: { explicitVariantExplanation: 0, compactCuratedVariantMatrix: 0, comparisonPath: 7, enquiryPath: 7 },
+    guides: { total: 7, applicationsWithRelevantGuideCoverage: 12, decisionPath: 7, comparisonPath: 6, enquiryPath: 7, duplicateIntentRisk: 0 },
   },
   current: {
     applications: {
@@ -88,6 +125,14 @@ const result = {
       comparisonPath: percent(familyRows.filter((row) => row.comparisonPath).length, familyRows.length),
       enquiryPath: percent(familyRows.filter((row) => row.enquiryPath).length, familyRows.length),
       duplicateVariantBlocks: familyCopy.length - uniqueCount(familyCopy),
+    },
+    guides: {
+      total: guideRows.length,
+      applicationsWithRelevantGuideCoverage: percent(applicationRows.filter((row) => row.guideLinks).length, applicationRows.length),
+      decisionPath: percent(guideRows.filter((row) => row.decisionPath).length, guideRows.length),
+      comparisonPath: percent(guideRows.filter((row) => row.comparisonPath).length, guideRows.length),
+      enquiryPath: percent(guideRows.filter((row) => row.enquiryPath).length, guideRows.length),
+      duplicateIntentRisk: { count: duplicateIntentPairs.length, pairs: duplicateIntentPairs },
     },
   },
 };
