@@ -125,9 +125,56 @@ test("provides exact-source guidance for the selected representative products", 
     assert.ok(record.definition, sku);
     assert.ok(record.suitability, sku);
     assert.ok(record.buyerChecks && record.buyerChecks.length >= 3, sku);
-    assert.match(record.sourceUrl ?? "", /^https:\/\/(?:www\.)?(?:wiki\.)?dragino\.com\//, sku);
+    assert.match(record.sourceUrl ?? "", /^https:\/\/(?:www\.)?(?:wiki\.|docs\.)?dragino\.com\//, sku);
   }
-  assert.equal(guidance.products.length, selected.length + 11);
+  assert.equal(guidance.products.length, selected.length + 14);
+});
+
+test("promotes only exact first-party models from the commercial evidence pass", () => {
+  const exactSources = new Map([
+    ["RS485-LB2", /io-controllers-sensor-nodes\/rs485-lb/],
+    ["DR-SE-6P", /item\/351-se0x-lb/],
+    ["DR-ECK1.0 ", /dr-eck1\.0-dr-eck10\.0-ec200/],
+    ["DR-ECK10.0", /dr-eck1\.0-dr-eck10\.0-ec200/],
+    ["DR-EC200", /dr-eck1\.0-dr-eck10\.0-ec200/],
+    ["DR-CL-2ML", /dr-cl-2ml-10ml/],
+    ["DR-CL-10ML", /dr-cl-2ml-10ml/],
+    ["DR-PH01", /dr-ph01-water-ph-sensor/],
+    ["DR-ORP1", /dr-orp1-oxidation-reduction/],
+    ["DR-DO1", /dr-do1-do2-dissolved-oxygen/],
+    ["DR-TS200", /dr-ts200-dr-ts4000/],
+    ["DR-TS4000", /dr-ts200-dr-ts4000/],
+    ["DR-DO2", /dr-do1-do2-dissolved-oxygen/],
+    ["DR-COD", /dr-cod-chemical-oxygen-demand/],
+  ]);
+  for (const [sku, sourcePattern] of exactSources) {
+    const record = documentation.products.find((item) => item.sku === sku);
+    assert.equal(record?.status, "EXACT_PRODUCT_SOURCE", sku);
+    assert.match(record?.sourceUrl ?? "", /^https:\/\/(?:www\.)?(?:wiki\.|docs\.)?dragino\.com\//, sku);
+    assert.match(record?.sourceUrl ?? "", sourcePattern, sku);
+  }
+
+  for (const sku of ["AI01", "LG01v2-EC25", "DDS20-LB2", "DDS45-LB2", "DDS75-LB2"]) {
+    assert.equal(documentation.products.find((item) => item.sku === sku)?.status, "NO_VERIFIED_SOURCE", sku);
+    assert.equal(guidance.products.find((item) => item.sku === sku), undefined, sku);
+  }
+  for (const sku of ["SW3L-LB2-004", "SW3L-LB2-006", "SW3L-LB2-010", "SW3L-LB2-020"]) {
+    assert.equal(documentation.products.find((item) => item.sku === sku)?.status, "AMBIGUOUS", sku);
+    assert.equal(guidance.products.find((item) => item.sku === sku), undefined, sku);
+  }
+});
+
+test("new exact guidance stays SKU-scoped and avoids unsupported claims", () => {
+  const rs485Lb2 = guidance.products.find((item) => item.sku === "RS485-LB2");
+  const drDo2 = guidance.products.find((item) => item.sku === "DR-DO2");
+  const drCod = guidance.products.find((item) => item.sku === "DR-COD");
+  assert.match(rs485Lb2?.suitability ?? "", /19000 mAh/);
+  assert.match(drDo2?.definition ?? "", /seawater/);
+  assert.match(drCod?.buyerChecks?.join(" ") ?? "", /0 to 500 mg\/L.*0 to 200 NTU/);
+  const copy = JSON.stringify([rs485Lb2, drDo2, drCod]);
+  assert.doesNotMatch(copy, /IP\d+|certif|battery life|environmental suitability|radio range/i);
+  assert.equal(guidance.products.find((item) => item.sku === "DR-DO1"), undefined);
+  assert.equal(guidance.products.find((item) => item.sku === "RS485-LB"), undefined);
 });
 
 test("uses only newly verified exact models from the focused discovery pass", () => {

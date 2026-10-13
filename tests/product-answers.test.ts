@@ -80,6 +80,9 @@ test("covers representative gateway, LoRaWAN, LTE CAT 1, and accessory products 
   assert.equal(lorawan.connectivity, undefined);
   assert.equal(accessory.isAccessory, true);
   assert.equal(accessory.functionAnswer, undefined);
+  for (const sku of ["AI01", "DR-IL-6P", "DR-SE-6P", "SCT013G-D-100", "SCT024-300", "SCT036-600"]) {
+    assert.equal(buildProductAnswers(product(sku), productGuidance(sku), documentationStatus(sku)).isAccessory, true, sku);
+  }
 });
 
 test("does not create answer sections from missing fields", () => {

@@ -245,6 +245,7 @@ export function parseProductSpecification(product: AnswerProduct): ProductSemant
 function isAccessoryProduct(product: AnswerProduct) {
   const classification = `${product.application} ${product.iotInterface} ${product.sku}`;
   const specification = displayValue(product.specification);
+  if (/^(?:AI01|DR-(?:IL|SE)-6P|SCT013G-D-100|SCT024-300|SCT036-600)$/i.test(product.sku.trim())) return true;
   return /\b(?:accessor|cable|antenna|battery|enclosure|fixture|clamp|extension|kit)\b/i.test(classification) || /\b(?:probe|cable|antenna|battery|enclosure|fixture|clamp|extension)\s+(?:for|only)\b|program module/i.test(specification);
 }
 

@@ -402,6 +402,33 @@
       "buyerChecks": ["Confirm that four current-measurement channels are required.", "Select compatible current sensors for the circuits and measurement range.", "Confirm the connected-sensor wiring and installation arrangement.", "Confirm suitable LoRaWAN connectivity is available at the deployment location."],
       "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/current-tilting-power-monitoring/cs01-lb/",
       "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "RS485-LB2",
+      "definition": "RS485-LB2 is a LoRaWAN converter for connecting RS485 and other stated wired interfaces to an IoT deployment.",
+      "uses": "RS485-LB2 can collect data from compatible wired equipment and send it to an IoT server through LoRaWAN.",
+      "suitability": "RS485-LB2 suits projects that need its stated wired interfaces, LoRaWAN connectivity and 19000 mAh battery arrangement.",
+      "buyerChecks": ["Confirm that the connected equipment uses a stated interface supported by RS485-LB2.", "Confirm the equipment protocol, register map and wiring before ordering.", "Choose RS485-LB2 when the 19000 mAh battery arrangement is required rather than assuming another RS485 variant is equivalent.", "Confirm suitable LoRaWAN connectivity is available at the deployment location."],
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/rs485-lb/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "DR-DO2",
+      "definition": "DR-DO2 is an RS485 dissolved-oxygen sensor intended for seawater measurement.",
+      "uses": "DR-DO2 measures dissolved oxygen and temperature in seawater applications.",
+      "suitability": "DR-DO2 suits projects that require the documented seawater model rather than the DR-DO1 ordinary-water model.",
+      "buyerChecks": ["Confirm that the water is seawater before selecting DR-DO2.", "Confirm that the 0 to 20 mg/L dissolved-oxygen range suits the measurement requirement.", "Confirm the RS485 wiring and power arrangement with the selected main unit.", "Check the installation and maintenance requirements before ordering."],
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-do1-do2-dissolved-oxygen-sensor/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
+    },
+    {
+      "sku": "DR-COD",
+      "definition": "DR-COD is an RS485 chemical-oxygen-demand and turbidity sensor for water-quality monitoring.",
+      "uses": "DR-COD measures chemical oxygen demand and turbidity using a dual-wavelength ultraviolet absorption method.",
+      "suitability": "DR-COD suits routine water-quality projects that need the stated COD and turbidity measurements through RS485.",
+      "buyerChecks": ["Confirm that the 0 to 500 mg/L COD range suits the measurement requirement.", "Confirm that the 0 to 200 NTU turbidity range suits the measurement requirement.", "Confirm the RS485 wiring and 12 to 30 V DC power arrangement.", "Check the installation depth, flow and maintenance requirements before ordering."],
+      "sourceUrl": "https://docs.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-cod-chemical-oxygen-demand-sensor/",
+      "evidenceLevel": "EXACT_PRODUCT_SOURCE"
     }
   ]
 }

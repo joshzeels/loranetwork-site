@@ -8,7 +8,7 @@ import { summariseFamilyOverlap } from "../lib/product-presentation.ts";
 const content = JSON.parse(readFileSync(new URL("../data/discovery-content.json", import.meta.url), "utf8")) as {
   indexableApplications: string[];
   indexableInterfaces: string[];
-  applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string }>;
+  applicationGuidance: Record<string, { directAnswer: string; hardwareSummary: string; considerations: string[]; selectionPath: string; comparison?: { headers: string[]; rows: string[][] } }>;
   guides: Array<{ slug: string; question: string; answerTemplate: string; differenceSummary: string; searchTerms: string[]; applicationValues: string[]; relatedFamilySlugs: string[]; relatedGuideSlugs?: string[]; verifiedDocumentationOnly?: boolean; comparisonProductSlugs?: string[]; considerations: string[]; decisionPath: string[]; decisionResource?: { heading: string; sections: Array<{ title: string; paragraphs: string[] }>; table: { headers: string[]; rows: string[][] }; questions: Array<{ question: string; answer: string }>; relatedLinks: Array<{ href: string; label: string }> } }>;
   families: Array<{ slug: string; name: string; selectionPath: string[] }>;
 };
@@ -60,9 +60,9 @@ test("Water Quality Measurement guidance supports safe buyer selection", () => {
   const waterQualityProducts = catalogue.products.filter((product) => product.application.trim() === "Water Quality Measurement");
   const statuses = waterQualityProducts.map((product) => documentation.products.find((record) => record.sku === product.sku)?.status);
   assert.equal(waterQualityProducts.length, 17);
-  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 1);
+  assert.equal(statuses.filter((status) => status === "EXACT_PRODUCT_SOURCE").length, 11);
   assert.equal(statuses.filter((status) => status === "FAMILY_SOURCE").length, 2);
-  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 14);
+  assert.equal(statuses.filter((status) => status === "NO_VERIFIED_SOURCE").length, 4);
   assert.equal(statuses.filter((status) => status === "AMBIGUOUS").length, 0);
   assert.equal(waterQualityProducts.filter((product) => product.sku.trim().startsWith("WQS-")).length, 7);
   assert.ok(content.families.some((family) => family.slug === "wqs"));
@@ -70,6 +70,9 @@ test("Water Quality Measurement guidance supports safe buyer selection", () => {
   assert.ok(guide);
   assert.ok(guide.applicationValues.includes("Water Quality Measurement"));
   assert.ok(guide.relatedFamilySlugs.includes("wqs"));
+  assert.deepEqual(guidance.comparison?.headers, ["Probe option", "Stated distinction", "Confirm next"]);
+  assert.equal(guidance.comparison?.rows.length, 6);
+  assert.match(guidance.comparison?.rows.flat().join(" ") ?? "", /DR-DO1 is for ordinary waters; DR-DO2 is the seawater model/);
   for (const connectivity of ["LoRaWAN", "LTE CAT 1"]) {
     assert.ok(content.indexableInterfaces.includes(connectivity), connectivity);
   }

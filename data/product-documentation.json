@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-15T08:58:41.240Z",
-  "policy": "Only exact catalogue-row sources and unambiguous sources from the seven verified families are eligible for public display.",
+  "generatedAt": "2026-10-13T00:00:00.000Z",
+  "policy": "Only exact first-party Dragino model evidence, unambiguous official ordering evidence, and established family sources are eligible for use.",
   "products": [
     {
       "sku": "SN50v3-LB",
@@ -95,11 +95,11 @@
     {
       "sku": "RS485-LB2",
       "slug": "rs485-lb2",
-      "status": "AMBIGUOUS",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/LoRaWAN-End-Node/io-controllers-sensor-nodes/rs485-lb/",
       "matchedFamily": "RS485",
-      "evidence": "More than one official family source matches this connectivity value, so no source is exposed.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino documentation explicitly names RS485-LB2 and distinguishes its 19000mAh battery from RS485-LB.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "RS485-LS",
@@ -1265,11 +1265,11 @@
     {
       "sku": "DR-SE-6P",
       "slug": "dr-se-6p",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://www.dragino.com/products/agriculture-weather-station/item/351-se0x-lb.html",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
-      "presentInOfficialPageIndex": false
+      "evidence": "Official Dragino product documentation explicitly names DR-SE-6P as the separately purchased probe for SE0X-LB.",
+      "presentInOfficialPageIndex": true
     },
     {
       "sku": "LMS01-LB",
@@ -3479,109 +3479,109 @@
     {
       "sku": "DR-ECK1.0 ",
       "slug": "dr-eck1-0",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-eck1.0-dr-eck10.0-ec200-ec-digital-electrode-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation explicitly names DR-ECK1.0 and gives its exact conductivity range and probe type.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-ECK10.0",
       "slug": "dr-eck10-0",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-eck1.0-dr-eck10.0-ec200-ec-digital-electrode-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation explicitly names DR-ECK10.0 and gives its exact conductivity range and probe type.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-EC200",
       "slug": "dr-ec200",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-eck1.0-dr-eck10.0-ec200-ec-digital-electrode-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation explicitly names DR-EC200 and distinguishes its four-electrode conductivity and salinity measurements.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-CL-2ML",
       "slug": "dr-cl-2ml",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-cl-2ml-10ml-integrated-residual-chlorine-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation title explicitly names DR-CL-2ML and distinguishes its 0 to 2mg/L residual-chlorine range.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-CL-10ML",
       "slug": "dr-cl-10ml",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-cl-2ml-10ml-integrated-residual-chlorine-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation title explicitly names DR-CL-10ML and distinguishes its 0 to 10mg/L residual-chlorine range.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-PH01",
       "slug": "dr-ph01",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-ph01-water-ph-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact DR-PH01 pH sensor.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-ORP1",
       "slug": "dr-orp1",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-orp1-oxidation-reduction-potential-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact DR-ORP1 oxidation-reduction potential sensor.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-DO1",
       "slug": "dr-do1",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-do1-do2-dissolved-oxygen-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation title explicitly names DR-DO1 and distinguishes it as the ordinary-water dissolved-oxygen model.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-TS200",
       "slug": "dr-ts200",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-ts200-dr-ts4000-water-turbidity-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation title explicitly names DR-TS200 and distinguishes its 0 to 200NTU turbidity range.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-TS4000",
       "slug": "dr-ts4000",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-ts200-dr-ts4000-water-turbidity-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation title explicitly names DR-TS4000 and distinguishes its 0 to 4000NTU turbidity range.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-DO2",
       "slug": "dr-do2",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://wiki.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-do1-do2-dissolved-oxygen-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation title explicitly names DR-DO2 and distinguishes it as the seawater dissolved-oxygen model.",
       "presentInOfficialPageIndex": false
     },
     {
       "sku": "DR-COD",
       "slug": "dr-cod",
-      "status": "NO_VERIFIED_SOURCE",
-      "sourceUrl": "",
+      "status": "EXACT_PRODUCT_SOURCE",
+      "sourceUrl": "https://docs.dragino.com/docs/Non-Wireless-Sensors/water-quality/dr-cod-chemical-oxygen-demand-sensor/",
       "matchedFamily": "",
-      "evidence": "No direct official URL or verified family relationship is available.",
+      "evidence": "Official Dragino documentation page title explicitly identifies the exact DR-COD chemical-oxygen-demand sensor.",
       "presentInOfficialPageIndex": false
     },
     {
